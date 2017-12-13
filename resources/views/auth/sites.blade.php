@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" >
 <head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no">
     <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="{{ asset('img/Biometrico-Logo-Final.jpg') }}">
+
     <title>Select Sites</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
@@ -110,107 +117,15 @@
                         </form>
                     </td>
                     <td>
-                        <button type="submit" class="btn btn-primary">
-                            Next
-                        </button>
+                       <a class="btn btn-primary" href="{{ route('home') }}">Next</a>
+                        {{--<button type="submit" class="btn btn-primary">--}}
+                            {{--Next--}}
+                        {{--</button>--}}
                     </td>
                 </tr>
             </table>
         </div>
     </div>
-    {{--<input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>--}}
-    {{--<form class="form-horizontal" method="POST" action="{{ route('login') }}">--}}
-        {{--{{ csrf_field() }}--}}
-
-        {{--<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">--}}
-
-            {{--<div class="col-md-6">--}}
-                {{--<input id="email" placeholder="email" type="email" class="form-control" name="email" required autofocus>--}}
-
-                {{--@if ($errors->has('email'))--}}
-                    {{--<span class="help-block">--}}
-                                        {{--<strong>{{ $errors->first('email') }}</strong>--}}
-                                    {{--</span>--}}
-                {{--@endif--}}
-            {{--</div>--}}
-        {{--</div>--}}
-
-        {{--<div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">--}}
-
-            {{--<div class="col-md-6">--}}
-                {{--<input id="password" placeholder="password" type="password" class="form-control" name="password" required>--}}
-
-                {{--@if ($errors->has('password'))--}}
-                    {{--<span class="help-block">--}}
-                                        {{--<strong>{{ $errors->first('password') }}</strong>--}}
-                                    {{--</span>--}}
-                {{--@endif--}}
-            {{--</div>--}}
-        {{--</div>--}}
-
-        {{--<div class="form-group">--}}
-            {{--<div class="col-md-6">--}}
-                {{--<select class="form-control" style="width: 300px; height: 30px">--}}
-                    {{--<option>Select Company</option>--}}
-                    {{--@if($allCompanies->count() > 0)--}}
-                        {{--@foreach($allCompanies as $allCompany)--}}
-                            {{--<option value="{{$allCompany->id}}">{{$allCompany->name}}</option>--}}
-                        {{--@endForeach--}}
-                    {{--@else--}}
-                        {{--No Record Found--}}
-                    {{--@endif--}}
-                {{--</select>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-
-        {{--<br/>--}}
-
-        {{--<div class="form-group">--}}
-            {{--<div class="col-md-6">--}}
-                {{--<select class="form-control" style="width: 300px; height: 30px">--}}
-                    {{--<option>Select Site</option>--}}
-                    {{--@if($allCompanies->count() > 0)--}}
-                        {{--@foreach($allCompanies as $allCompany)--}}
-                            {{--<option value="{{$allCompany->id}}">{{$allCompany->name}}</option>--}}
-                        {{--@endForeach--}}
-                    {{--@else--}}
-                        {{--No Record Found--}}
-                    {{--@endif--}}
-                {{--</select>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-
-        {{--<br/>--}}
-        {{--<br/>--}}
-
-        {{--<div class="form-group">--}}
-            {{--<div class="col-md-6 col-md-offset-4">--}}
-                {{--<div class="checkbox">--}}
-                    {{--<label>--}}
-                        {{--Remember Me <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>--}}
-                    {{--</label>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-
-        {{--<br/>--}}
-
-        {{--<div class="form-group">--}}
-            {{--<div class="col-md-8 col-md-offset-4">--}}
-
-                {{--<a class="btn btn-link" href="{{ route('password.request') }}">--}}
-                    {{--Forgot Your Password?--}}
-                {{--</a>--}}
-
-                {{--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--}}
-
-                {{--<button type="submit" class="btn btn-primary">--}}
-                    {{--Next--}}
-                {{--</button>--}}
-
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</form>--}}
 
 </div>
 

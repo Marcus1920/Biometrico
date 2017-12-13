@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" >
 <head>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no">
     <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="{{ asset('img/Biometrico-Logo-Final.jpg') }}">
+
     <title>Login</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
@@ -124,32 +132,16 @@
             {{--</div>--}}
         {{--</div>--}}
 
-        {{--<br/>--}}
-
-        {{--<div class="form-group">--}}
-            {{--<div class="col-md-6">--}}
-                {{--<select class="form-control" style="width: 300px; height: 30px">--}}
-                    {{--<option>Select Site</option>--}}
-                    {{--@if($allCompanies->count() > 0)--}}
-                        {{--@foreach($allCompanies as $allCompany)--}}
-                            {{--<option value="{{$allCompany->id}}">{{$allCompany->name}}</option>--}}
-                        {{--@endForeach--}}
-                    {{--@else--}}
-                        {{--No Record Found--}}
-                    {{--@endif--}}
-                {{--</select>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-
-        <div class="form-group">
-            <div class="col-md-6 col-md-offset-4">
-                <div class="checkbox">
-                    <label>
-                        <h4 style="color: white;">Remember Me </h4><input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
-                    </label>
-                </div>
-            </div>
-        </div>
+        <table>
+            <tr>
+                <td width="250px">
+                    <h4 style="color: white;">Remember Me </h4>
+                </td>
+                <td width="50px">
+                    <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
+                </td>
+            </tr>
+        </table>
 
         <br/>
 
