@@ -1,5 +1,9 @@
 <?php
 
+
+use App\Company;
+use App\Site;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,9 +16,18 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $allCompanies = Company::all();
+
+    $allSites = Site::all();
+
+    return view('auth.login', compact('allCompanies'));
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/sites', 'SitesController@sites')->name('sites');
+
+
