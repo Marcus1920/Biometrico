@@ -30,4 +30,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/sites', 'SitesController@sites')->name('sites');
 
+Route::get('/create', 'SitesController@create')->name('createSite');
+
+Route::post('/store', 'SitesController@createSite')->name('saveSite');
+
+Route::get('/createDb', 'SitesController@createDatabase')->name('createDb');
+
 
