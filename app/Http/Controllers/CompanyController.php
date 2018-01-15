@@ -9,9 +9,10 @@ use App\Site;
 class CompanyController extends Controller
 {
 
+
     public function index()
     {
-        $company=Company::with('site')->get();
+        $company = Company::with('site')->get();
         return $company;
     }
 
@@ -23,11 +24,10 @@ class CompanyController extends Controller
 
     public function getAllCompany()
     {
-        $companies=Company::all();
-        return response()->Json(['data'=>$companies->toArray()],200);
+        $companies = Company::all();
+        return response()->Json(['data' => $companies->toArray()], 200);
 //        return response()->Json($companies);
 //        return $companies;
-
 
 
     }
@@ -46,6 +46,7 @@ class CompanyController extends Controller
 //        return $companies;
 
     }
-
-
 }
+
+
+

@@ -18,6 +18,8 @@ class CreateSitesTable extends Migration
             $table->integer('company_id')->unsigned();
             $table->string('site_name');
             $table->string('db_name');
+            $table->string('site_code');
+            $table->string('end_point');
             $table->foreign('company_id')->references('id')->on('companies');
             $table->timestamps();
         });
