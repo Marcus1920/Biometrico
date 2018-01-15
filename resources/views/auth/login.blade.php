@@ -83,9 +83,10 @@
 </head>
 
 <body>
+{{--<center>--}}
+{{--<img src="{{ asset('/img/Biometrico-Logo-Final.jpg') }}" alt="Biometrico" width="250px" height="250px" style="border-radius: 90%;">--}}
+{{--</center>--}}
 <center>
-<img src="{{ asset('/img/Biometrico-Logo-Final.jpg') }}" alt="Biometrico" width="250px" height="250px" style="border-radius: 90%;">
-</center>
 <div class="login">
 
     <h1>Login</h1>
@@ -164,6 +165,7 @@
     </form>
 
 </div>
+</center>
 
 <script  src="js/index.js"></script>
 

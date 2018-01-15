@@ -1,22 +1,40 @@
 <?php
-$conn =new mysqli('localhost', 'root', '' , 'biometricdb2');
 
-$query = '';
-$sqlScript = file('Users\user-04\Desktop\Biome\Biometrico\schema\Biometricdb.sql');
-foreach ($sqlScript as $line)	{
+$sqlFileToExecute = 'Biometricodb.sql';
+$hostname = 'localhost';
+$db_user = 'root';
+$db_password = '';
+$link = mysql_connect($hostname, $db_user, $db_password);
+if (!$link) {
+    die ("MySQL Connection error");
+}
 
-    $startWith = substr(trim($line), 0 ,2);
-    $endWith = substr(trim($line), -1 ,1);
+$database_name = 'zipho_db';
+mysql_select_db($database_name, $link) or die ("Wrong MySQL Database");
 
-    if (empty($line) || $startWith == '--' || $startWith == '/*' || $startWith == '//') {
-        continue;
-    }
-
-    $query = $query . $line;
-    if ($endWith == ';') {
-        mysqli_query($conn,$query) or die('<div class="error-response sql-import-response">Problem in executing the SQL query <b>' . $query. '</b></div>');
-        $query= '';
+// read the sql file
+$f = fopen($sqlFileToExecute,"r+");
+$sqlFile = fread($f, filesize($sqlFileToExecute));
+$sqlArray = explode(';',$sqlFile);
+foreach ($sqlArray as $stmt) {
+    if (strlen($stmt)>3 && substr(ltrim($stmt),0,2)!='/*') {
+        $result = mysql_query($stmt);
+        if (!$result) {
+            $sqlErrorCode = mysql_errno();
+            $sqlErrorText = mysql_error();
+            $sqlStmt = $stmt;
+            break;
+        }
     }
 }
-echo '<div class="success-response sql-import-response">SQL file imported successfully</div>';
-?>s
+if ($sqlErrorCode == 0) {
+    echo "Script is executed succesfully!";
+} else {
+    echo "An error occured during installation!<br/>";
+    echo "Error code: $sqlErrorCode<br/>";
+    echo "Error text: $sqlErrorText<br/>";
+    echo "Statement:<br/> $sqlStmt<br/>";
+}
+
+?>
+

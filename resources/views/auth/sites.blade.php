@@ -82,7 +82,7 @@
 
 <body>
 <center>
-    <img src="{{ asset('/img/Biometrico-Logo-Final.jpg') }}" alt="Biometrico" width="250px" height="250px" style="border-radius: 90%;">
+    {{--<img src="{{ asset('/img/Biometrico-Logo-Final.jpg') }}" alt="Biometrico" width="250px" height="250px" style="border-radius: 90%;">--}}
 </center>
 <div class="login">
     <h1>Sites of {{ $company->name }}</h1>

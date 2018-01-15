@@ -48,6 +48,7 @@ class SitesController extends Controller
         $conn =new mysqli('localhost', 'root', '' , ''.$dbName.'');
 
         $query = '';
+
         $sqlScript = file('C:\Users\Siyaleader-04\Desktop\biometricdb.sql');
         foreach ($sqlScript as $line) {
 
@@ -83,6 +84,7 @@ class SitesController extends Controller
         $conn =new mysqli('localhost', 'root', '' , ''.$dbName.'');
 
         $query = '';
+
         $sqlScript = file('C:\Users\user-04\Desktop\Biome\Biometrico\public\Biometricodb.sql');
         foreach ($sqlScript as $line) {
 
@@ -105,4 +107,8 @@ class SitesController extends Controller
 
         return "database created";
     }
+
+
+
 }
+

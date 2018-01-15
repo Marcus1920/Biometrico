@@ -25,7 +25,12 @@ Route::get('/', function () {
     return view('auth.login', compact('allCompanies'));
 });
 
+
+
 Auth::routes();
+
+Route::get('/register','Auth\RegisterController@create')
+  ->name('register');
 
 
 Route::get('/home', 'HomeController@index')
@@ -74,5 +79,11 @@ Route::group(array('prefix' => 'api/v1'), function()
 //});
 
 
+
+Route::get('/create', 'SitesController@create')->name('createSite');
+
+Route::post('/store', 'SitesController@createSite')->name('saveSite');
+
+Route::get('/createDb', 'SitesController@createDatabase')->name('createDb');
 
 
