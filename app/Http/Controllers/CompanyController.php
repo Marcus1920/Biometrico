@@ -4,9 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Company;
+use App\Site;
 
 class CompanyController extends Controller
 {
+
+    public function index()
+    {
+        $company=Company::with('site')->get();
+        return $company;
+    }
 
     public function __construct()
     {
@@ -22,20 +29,21 @@ class CompanyController extends Controller
 //        return $companies;
 
 
+
     }
 
     public function createCompany(Request $request)
     {
 
-        $companies = New Company();
-        $companies->company_id = $request['company_id'];
-        $companies->name = $request['name'];
+//        $companies = New Company();
+//        $companies->company_id = $request['company_id'];
+//        $companies->name = $request['name'];
 
 
-        $companies->save();
+//        $companies->save();
 
 //        return "successfuly created a site";
-        return $companies;
+//        return $companies;
 
     }
 

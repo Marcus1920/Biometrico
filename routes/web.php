@@ -22,7 +22,7 @@ Route::get('/', function () {
 
     $allSites = Site::all();
 
-    return view('auth.login', compact('allCompanies'));
+    return view('auth.login', compact('allCompanies','allSites'));
 });
 
 
@@ -50,14 +50,21 @@ Route::group(array('prefix' => 'api/v1'), function()
 
     Route::post('create','CompanyController@createCompany');
 
+  Route::resource('/company','CompanyController');
+  Route::get('allUsers', 'UsersControler@getallUsers');
+
+
 });
 
 
-//Route::get('biometricdb',function()
-//{
-//    $users=DB::connection("mysql")->tabloginle("companies")->get();
-//    dd($users);
-//});
+Route::get('biometricdb',function()
+{
+    $users=DB::connection("mysql")->table("sites")->get();
+    dd($users);
+});
+
+
+
 //
 //
 //Route::get('biometricdb2',function()
