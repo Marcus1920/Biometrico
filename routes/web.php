@@ -36,4 +36,8 @@ Route::post('/store', 'SitesController@createSite')->name('saveSite');
 
 Route::get('/createDb', 'SitesController@createDatabase')->name('createDb');
 
+Route::group(array('prefix' => 'api/v1'), function() {
 
+    Route::resource('/company','CompanyController');
+
+});
