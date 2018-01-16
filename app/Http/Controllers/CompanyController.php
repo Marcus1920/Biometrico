@@ -35,6 +35,7 @@ class CompanyController extends Controller
     public function createCompany(Request $request)
     {
 
+
 //        $companies = New Company();
 //        $companies->company_id = $request['company_id'];
 //        $companies->name = $request['name'];
@@ -46,6 +47,7 @@ class CompanyController extends Controller
 //        return $companies;
 
     }
+
 }
 
 

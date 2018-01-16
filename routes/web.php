@@ -1,9 +1,8 @@
 <?php
 
-
 use App\Company;
 use App\Site;
-
+use App\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,12 +24,19 @@ Route::get('/', function () {
     return view('auth.login', compact('allCompanies','allSites'));
 });
 
+Route::post('/register', function(){
+
+    return view('register');
+});
+
 
 
 Auth::routes();
 
-Route::get('/register','Auth\RegisterController@create')
-  ->name('register');
+
+
+//Route::post('auth/register','Auth\RegisterController@create')
+//->name('register');
 
 
 Route::get('/home', 'HomeController@index')
@@ -42,19 +48,6 @@ Route::get('/sites', 'SitesController@sites')
 ->middleware('auth');
 
 
-
-Route::group(array('prefix' => 'api/v1'), function()
-{
-
-    Route::get ('allCompanies' , 'CompanyController@getAllCompany');
-
-    Route::post('create','CompanyController@createCompany');
-
-  Route::resource('/company','CompanyController');
-  Route::get('allUsers', 'UsersControler@getallUsers');
-
-
-});
 
 
 Route::get('biometricdb',function()
@@ -96,5 +89,13 @@ Route::get('/createDb', 'SitesController@createDatabase')->name('createDb');
 Route::group(array('prefix' => 'api/v1'), function() {
 
     Route::resource('/company','CompanyController');
+
+    Route::get ('allCompanies' , 'CompanyController@getAllCompany');
+
+    Route::post('create','CompanyController@createCompany');
+
+//    Route::resource('/company','CompanyController');
+    Route::get('allUsers', 'UsersControler@getallUsers');
+    Route::get('siteCode', 'UsersController@getSideCode');
 
 });

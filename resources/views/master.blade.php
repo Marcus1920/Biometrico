@@ -207,9 +207,9 @@
 
 
                 <ul class="list-unstyled menu-item">
-                    @auth
-                    <li><a href="{{ route('register') }}"><span class="badge badge-r"></span>Register </a></li>
-                    @endauth
+                    {{--@auth--}}
+                    <li><a href="{{ url('register') }}"><span class="badge badge-r"></span>Register </a></li>
+                    {{--@endauth--}}
 
                 {{--@if (Route::has('login'))--}}
                     {{--<div class="top-right links">--}}
