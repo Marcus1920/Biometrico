@@ -3,6 +3,7 @@
 use App\Company;
 use App\Site;
 use App\User;
+use App\role;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,7 +15,6 @@ use App\User;
 |
 */
 
-
 Route::get('/', function () {
 
     $allCompanies = Company::all();
@@ -24,16 +24,18 @@ Route::get('/', function () {
     return view('auth.login', compact('allCompanies','allSites'));
 });
 
-Route::post('/register', function(){
 
-    return view('register');
-});
+Route::get('/registerUser','RolesController@index')
+    ->name('registerUser');
 
-
+Route::post('/comp','CompanyController@createCompany')
+   ->name('/comp');
 
 Auth::routes();
 
-
+//Route::get('/registerUser', 'Auth\RegisterController@register')
+//    ->name('registerUser');
+//    ->middleware('auth');
 
 //Route::post('auth/register','Auth\RegisterController@create')
 //->name('register');
@@ -50,6 +52,7 @@ Route::get('/sites', 'SitesController@sites')
 
 
 
+
 Route::get('biometricdb',function()
 {
     $users=DB::connection("mysql")->table("sites")->get();
@@ -57,9 +60,6 @@ Route::get('biometricdb',function()
 });
 
 
-
-//
-//
 //Route::get('biometricdb2',function()
 //{
 //    $data=DB::connetion("mysql")->table("attendance")->get();
@@ -90,7 +90,7 @@ Route::group(array('prefix' => 'api/v1'), function() {
 
     Route::resource('/company','CompanyController');
 
-    Route::get ('allCompanies' , 'CompanyController@getAllCompany');
+//    Route::get ('allCompanies' , 'CompanyController@getAllCompany');
 
     Route::post('create','CompanyController@createCompany');
 

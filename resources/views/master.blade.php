@@ -201,14 +201,15 @@
 
             <li {{ (Request::is('list-users') ? "class=active dropdown" : 'dropdown') }}>
 
-                <a class="sa-side-ui"href="#">
+                <a class="sa-side-ui">
                     <span class="menu-item">Settings</span>
                 </a>
 
-
                 <ul class="list-unstyled menu-item">
                     {{--@auth--}}
-                    <li><a href="{{ url('register') }}"><span class="badge badge-r"></span>Register </a></li>
+                    <li>
+                        <a href="{{ route('registerUser') }}"><span class="badge badge-r"></span>Register </a>
+                    </li>
                     {{--@endauth--}}
 
                 {{--@if (Route::has('login'))--}}

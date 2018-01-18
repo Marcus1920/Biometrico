@@ -32,8 +32,10 @@ class UsersController extends Controller
 
 
     }
-    public function postRole($request)
+    public function getRole()
     {
+        $roles=Role::all();
+         return view('auth.register',compact('roles'));
 
 
     }

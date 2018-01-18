@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('master')
 @section('content')
 <div class="container">
     <div class="row">
@@ -7,7 +7,8 @@
                 <div class="panel-heading">Register</div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('registerUser') }}">
+                    {{--<form method="Post" action="/auth/register">--}}
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -22,7 +23,8 @@
                                     </span>
                                 @endif
                             </div>
-                        </div>s
+                        </div>
+
 
                         <div class="form-group{{ $errors->has('surname') ? ' has-error' : '' }}">
                             <label for="surname" class="col-md-4 control-label">Surname</label>
@@ -37,6 +39,73 @@
                                 @endif
                             </div>
                         </div>
+
+
+                        <div class="form-group{{ $errors->has('role') ? ' has-error' : '' }}">
+                            <label for="role" class="col-md-4 control-label">Role</label>
+
+                        <div class="col-md-6 ">
+
+                           <select class="form-control m-bot15" name="role_id">
+                                <option value="0" selected disabled> Select Role</option>
+
+                                @if ($roles->count())
+
+                                    @foreach($roles as $role)
+                                        <option value="{{ $role->id }}" {{ $selectedRole == $role->id ? 'selected="selected"' : '' }}>{{ $role->name }}
+                                        </option>
+                                    @endforeach
+
+                                @endif
+
+                            </select>
+
+                        </div>
+                        </div>
+
+
+                        <div class="form-group{{ $errors->has('company') ? ' has-error' : '' }}">
+                            <label for="company" class="col-md-4 control-label">Company</label>
+
+                        <div class="col-md-6 ">
+
+                            <select class="form-control m-bot15" >
+                                <option value="0" selected disabled>Select Company</option>
+
+
+                                @if($companies->count())
+
+                                  @foreach($companies as $company)
+                                      <option value="{{$company->id}}"> {{$company->name}}</option>
+                                @endforeach
+                                @endif
+
+                                {{--@if ($companies->count()>0)--}}
+
+
+                                    {{--@foreach($companies as $company)--}}
+                                        {{--<option value="{{ $company->id }}" name="company" id="{{$company->id}}" required>{{$company->name}}--}}
+                                        {{--</option>--}}
+
+                                    {{--@endforeach--}}
+
+
+
+                                {{--@if ($companies->count()>0)--}}
+                                    {{--@foreach($companies as $company)--}}
+                                        {{--<option value="{{ $company->id }}">{{ $company->name }}--}}
+                                        {{--</option>--}}
+                                    {{--@endforeach--}}
+
+                                {{--@endif--}}
+
+                            </select>
+
+
+
+                        </div>
+                        </div>
+
 
 
                         <div class="form-group{{ $errors->has('cellphone') ? ' has-error' : '' }}">
