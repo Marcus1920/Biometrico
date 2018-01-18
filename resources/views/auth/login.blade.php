@@ -83,13 +83,23 @@
 </head>
 
 <body>
+
 {{--<center>--}}
 {{--<img src="{{ asset('/img/Biometrico-Logo-Final.jpg') }}" alt="Biometrico" width="250px" height="250px" style="border-radius: 90%;">--}}
 {{--</center>--}}
 <center>
+
+
+    <div  style="margin-bottom: 300px; text-align: center">
+
+        <img src="{{ asset('/img/biometrico-logo.png') }}" alt="Biometrico" width="40%" height="40%" style="">
+    </div>
+
+
+
 <div class="login">
 
-    <h1>Login</h1>
+<br> <br>
     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
         {{ csrf_field() }}
 
@@ -119,6 +129,7 @@
             </div>
         </div>
 
+
         {{--<div class="form-group">--}}
 
 
@@ -135,6 +146,7 @@
                 {{--</select>--}}
             {{--</div>--}}
         {{--</div>--}}
+
 
         <table>
             <tr>
@@ -165,6 +177,8 @@
             </div>
         </div>
     </form>
+
+
 
 </div>
 </center>

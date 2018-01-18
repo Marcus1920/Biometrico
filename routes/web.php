@@ -98,4 +98,20 @@ Route::group(array('prefix' => 'api/v1'), function() {
     Route::get('allUsers', 'UsersControler@getallUsers');
     Route::get('siteCode', 'UsersController@getSideCode');
 
+<<<<<<< HEAD
 });
+=======
+Route::get('clockinglist', 'ClockingController@index')->name('clockinglist');
+Route::get('getClockingList', 'ClockingController@getClockingList')->name('getClockingList');
+
+
+Route::get('workshedul', 'WorkScheduleController@index')->name('workshedul');
+Route::get('getworksheduleList', 'WorkScheduleController@getworksheduleList')->name('getworksheduleList');
+
+Route::group(array('prefix' => 'api/v1'), function() {
+    Route::post('attendstoreance', 'AttendecyController@store')->name('attendstoreance');
+});
+Route::post('attendstoreance', 'AttendecyController@store')->name('attendstoreance');
+Route::get('attendance', 'AttendecyController@index')->name('attendance');
+Route::get('getattendanceList', 'AttendecyController@getattendanceList')->name('getattendanceList');
+>>>>>>> 9a438e03562d67f162476e4e7d5a2fc13c51826e

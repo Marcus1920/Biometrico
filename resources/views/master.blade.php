@@ -206,6 +206,7 @@
                 </a>
 
                 <ul class="list-unstyled menu-item">
+<<<<<<< HEAD
                     {{--@auth--}}
                     <li>
                         <a href="{{ route('registerUser') }}"><span class="badge badge-r"></span>Register </a>
@@ -231,6 +232,12 @@
                     {{--<li><a href="{{ url('allProduct') }}"><span class="badge badge-r"></span>Product List</a></li>--}}
                     {{--<li><a href="{{ url('packaginglist') }}"><span class="badge badge-r"></span>Packaging List</a></li>--}}
                     {{--<li><a href="{{ url('countrylistView') }}"><span class="badge badge-r"></span>Countries</a></li>--}}
+=======
+                    <li><a href="{{ url('register') }}"><span class="badge badge-r"></span>Register Admin</a></li>
+                    <li><a href="{{ url('adminUser') }}"><span class="badge badge-r"></span>Admin List</a></li>
+                    <li><a href="{{ url('userroleslist')}}"><span class="badge badge-r"></span>User Roles List</a></li>
+
+>>>>>>> 9a438e03562d67f162476e4e7d5a2fc13c51826e
                 </ul>
             </li>
 
@@ -246,32 +253,40 @@
                 </ul>
             </li>
 
-            <li {{ (Request::is('map') ? "class=active" : '') }}>
-                <a class="sa-side-home" href="{{ url('getUsers') }}">
-                    <span class="menu-item">map</span>
+            {{--<li {{ (Request::is('map') ? "class=active" : '') }}>--}}
+                {{--<a class="sa-side-home" href="{{ url('getUsers') }}">--}}
+                    {{--<span class="menu-item">map</span>--}}
+                {{--</a>--}}
+            {{--</li>--}}
+
+            <li {{ (Request::is('posts') ? "class=active" : '') }}>
+                <a class="sa-side-list" href="{{ url('clockinglist') }}">
+                    <span class="menu-item">Clocking Time Print</span>
+
                 </a>
             </li>
 
             <li {{ (Request::is('posts') ? "class=active" : '') }}>
-                <a class="sa-side-list" href="{{ url('postslist') }}">
-                    <span class="menu-item">Post List</span>
+                <a class="sa-side-list" href="{{ url('attendance') }}">
+                    <span class="menu-item">Attendance List</span>
 
                 </a>
             </li>
+
 
             <li {{ (Request::is('research') ? "class=active" : '') }}>
-                <a class="sa-side-research" href="{{ url('researchList') }}">
-                    <span class="menu-item">Researchers List</span>
+                <a class="sa-side-research" href="{{ url('workshedul') }}">
+                    <span class="menu-item">work schedule </span>
 
                 </a>
             </li>
 
-            <li {{ (Request::is('public_wall') ? "class=active" : '') }}>
-                <a class="sa-side-public_wall" href="{{ url('publicWall') }}">
-                    <span class="menu-item">Public Wall</span>
+            {{--<li {{ (Request::is('public_wall') ? "class=active" : '') }}>--}}
+                {{--<a class="sa-side-public_wall" href="{{ url('publicWall') }}">--}}
+                    {{--<span class="menu-item">Public Wall</span>--}}
 
-                </a>
-            </li>
+                {{--</a>--}}
+            {{--</li>--}}
 
             <li {{ (Request::is('reports') ? "class=active" : '') }}>
                 <a class="sa-side-reports" href="{{ url('reports') }}">
@@ -280,11 +295,11 @@
                 </a>
             </li>
 
-            <li {{ (Request::is('transaction') ? "class=active" : '') }}>
-                <a class="sa-side-transaction" href="{{ url('transactionList') }}">
-                    <span class="menu-item">Transaction history</span>
-                </a>
-            </li>
+            {{--<li {{ (Request::is('transaction') ? "class=active" : '') }}>--}}
+                {{--<a class="sa-side-transaction" href="{{ url('transactionList') }}">--}}
+                    {{--<span class="menu-item">Transaction history</span>--}}
+                {{--</a>--}}
+            {{--</li>--}}
 
         </ul>
     </aside>
@@ -298,15 +313,22 @@
  </section>
 @yield('footer')
 
+
 <script src="{{ asset('js/toggles.js') }}"></script>
 
 <script src="{{ asset('js/jquery-ui.min.js') }}"></script> <!-- jQuery UI -->
 <script src="{{ asset('js/jquery.easing.1.3.js') }}"></script> <!-- jQuery Easing - Requirred for Lightbox + Pie Charts-->
 
 <script src="{{ asset('js/toggles.js') }}"></script>
-<script src="{{ asset('js/pagination.js') }}"></script>
-<script src="{{ asset('js/pagination.min.js') }}"></script>
-<script src="{{ asset('js/jquery-ui.min.js') }}"></script> <!-- jQuery UI -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.0/pagination.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.0/pagination.min.js"></script>
+{{--<script src="{{ asset('js/pagination.js') }}"></script>--}}
+{{--<script src="{{ asset('js/pagination.min.js') }}"></script>--}}
+<script src="{{ asset('js/jquery-ui.min.js') }}"></script> <!--
+
+
+jQuery UI -->
 <script src="{{ asset('js/jquery.easing.1.3.js') }}"></script> <!-- jQuery Easing - Requirred for Lightbox + Pie Charts-->
 
 
