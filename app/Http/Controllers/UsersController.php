@@ -50,12 +50,12 @@ class UsersController extends Controller
             }
             else
             {
-                return "Wrong Password";
+                return "Wrong email or password";
             }
         }
         else
         {
-            return "Wrong email";
+            return "Wrong email or password";
         }
     }
 }
