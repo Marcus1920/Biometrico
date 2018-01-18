@@ -66,6 +66,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $hasher = app()->make('hash');
+
         return User::create([
             'name' => $data['name'],
             'surname' => $data['surname'],
@@ -73,7 +75,8 @@ class RegisterController extends Controller
             'role' => 1,
             'cellphone' => $data['cellphone'],
             'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+//            'password' => $data['password'],
+            'password' => $hasher->make($data['password']),
         ]);
     }
 }

@@ -40,4 +40,6 @@ Route::group(array('prefix' => 'api/v1'), function() {
 
     Route::resource('/company','CompanyController');
 
+    Route::post('/loginUser','UsersController@login');
+
 });
