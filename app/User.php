@@ -14,6 +14,8 @@ class User extends Authenticatable
      *
      * @var array
      */
+    protected $table ='users';
+
     protected $fillable = [
         'name','surname','company_id', 'role','cellphone' ,'email', 'password',
     ];
@@ -24,6 +26,11 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'remember_token',
     ];
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class,'company_id','id');
+    }
 }
