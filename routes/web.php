@@ -37,3 +37,16 @@ Route::post('/store', 'SitesController@createSite')->name('saveSite');
 Route::get('/createDb', 'SitesController@createDatabase')->name('createDb');
 
 
+Route::get('clockinglist', 'ClockingController@index')->name('clockinglist');
+Route::get('getClockingList', 'ClockingController@getClockingList')->name('getClockingList');
+
+
+Route::get('workshedul', 'WorkScheduleController@index')->name('workshedul');
+Route::get('getworksheduleList', 'WorkScheduleController@getworksheduleList')->name('getworksheduleList');
+
+Route::group(array('prefix' => 'api/v1'), function() {
+    Route::post('attendstoreance', 'AttendecyController@store')->name('attendstoreance');
+});
+Route::post('attendstoreance', 'AttendecyController@store')->name('attendstoreance');
+Route::get('attendance', 'AttendecyController@index')->name('attendance');
+Route::get('getattendanceList', 'AttendecyController@getattendanceList')->name('getattendanceList');

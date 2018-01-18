@@ -82,12 +82,16 @@
 </head>
 
 <body>
-<center>
-<img src="{{ asset('/img/Biometrico-Logo-Final.jpg') }}" alt="Biometrico" width="250px" height="250px" style="border-radius: 90%;">
-</center>
+
+    <div  style="margin-bottom: 300px; text-align: center">
+
+        <img src="{{ asset('/img/biometrico-logo.png') }}" alt="Biometrico" width="40%" height="40%" style="">
+    </div>
+
+
 <div class="login">
 
-    <h1>Login</h1>
+<br> <br>
     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
         {{ csrf_field() }}
 
@@ -117,20 +121,7 @@
             </div>
         </div>
 
-        {{--<div class="form-group">--}}
-            {{--<div class="col-md-6">--}}
-                {{--<select class="form-control" style="width: 300px; height: 30px">--}}
-                    {{--<option>Select Company</option>--}}
-                    {{--@if($allCompanies->count() > 0)--}}
-                        {{--@foreach($allCompanies as $allCompany)--}}
-                            {{--<option value="{{$allCompany->id}}">{{$allCompany->name}}</option>--}}
-                        {{--@endForeach--}}
-                    {{--@else--}}
-                        {{--No Record Found--}}
-                    {{--@endif--}}
-                {{--</select>--}}
-            {{--</div>--}}
-        {{--</div>--}}
+
 
         <table>
             <tr>
@@ -161,6 +152,8 @@
             </div>
         </div>
     </form>
+
+
 
 </div>
 
