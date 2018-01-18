@@ -44,7 +44,8 @@
             background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg,  #670d10 0%,#092756 100%);
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#092756',GradientType=1 );
         }
-        .login {
+        .login
+        {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -82,12 +83,23 @@
 </head>
 
 <body>
+
+{{--<center>--}}
+{{--<img src="{{ asset('/img/Biometrico-Logo-Final.jpg') }}" alt="Biometrico" width="250px" height="250px" style="border-radius: 90%;">--}}
+{{--</center>--}}
 <center>
-<img src="{{ asset('/img/Biometrico-Logo-Final.jpg') }}" alt="Biometrico" width="250px" height="250px" style="border-radius: 90%;">
-</center>
+
+
+    <div  style="margin-bottom: 300px; text-align: center">
+
+        <img src="{{ asset('/img/biometrico-logo.png') }}" alt="Biometrico" width="40%" height="40%" style="">
+    </div>
+
+
+
 <div class="login">
 
-    <h1>Login</h1>
+<br> <br>
     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
         {{ csrf_field() }}
 
@@ -117,7 +129,10 @@
             </div>
         </div>
 
+
         {{--<div class="form-group">--}}
+
+
             {{--<div class="col-md-6">--}}
                 {{--<select class="form-control" style="width: 300px; height: 30px">--}}
                     {{--<option>Select Company</option>--}}
@@ -131,6 +146,7 @@
                 {{--</select>--}}
             {{--</div>--}}
         {{--</div>--}}
+
 
         <table>
             <tr>
@@ -162,7 +178,10 @@
         </div>
     </form>
 
+
+
 </div>
+</center>
 
 <script  src="js/index.js"></script>
 

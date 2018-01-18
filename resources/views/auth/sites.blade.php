@@ -108,7 +108,7 @@
                     <td>
                         <a class="btn btn-link" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                   document.getElementById('logout-form').submit();">
                             Previous
                         </a>
 

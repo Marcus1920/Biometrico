@@ -50,8 +50,8 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'surname' => 'required|string|max:255',
-//            'company_id' => 'required',
-//            'role' => 'required',
+            'company_id' => 'required',
+            'role' => 'required',
             'cellphone' => 'required',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
@@ -79,4 +79,11 @@ class RegisterController extends Controller
             'password' => $hasher->make($data['password']),
         ]);
     }
+
+    public function register()
+    {
+        return view('auth.register');
+
+    }
+
 }

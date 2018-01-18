@@ -7,13 +7,29 @@ use App\User;
 use App\Site;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Hash;
+use App\Role;
 
 class UsersController extends Controller
 {
-    public function login()
+    public function getallUsers()
     {
-        $response = array();
+        $Users=User::all();
+        return $Users;
+    }
 
+    public function getSideCode()
+    {
+        $siteCode=Site::select([
+            'id',
+            'site_code',
+            'site_name',
+            'end_point']
+        )->get();
+        return $siteCode;
+    }
+
+    public function login(Request $request)
+    {
         $hasher = app()->make('hash');
 
         $email = Input::get('email');
@@ -57,5 +73,10 @@ class UsersController extends Controller
         {
             return "Wrong email or password";
         }
+    }
+    public function getRole()
+    {
+        $roles=Role::all();
+         return view('auth.register',compact('roles'));
     }
 }
