@@ -7,7 +7,7 @@
                 <div class="panel-heading">Register</div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('registerUser') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                     {{--<form method="Post" action="/auth/register">--}}
                         {{ csrf_field() }}
 

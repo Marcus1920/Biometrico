@@ -206,38 +206,13 @@
                 </a>
 
                 <ul class="list-unstyled menu-item">
-<<<<<<< HEAD
-                    {{--@auth--}}
                     <li>
                         <a href="{{ route('registerUser') }}"><span class="badge badge-r"></span>Register </a>
                     </li>
-                    {{--@endauth--}}
-
-                {{--@if (Route::has('login'))--}}
-                    {{--<div class="top-right links">--}}
-                        {{--@auth--}}
-                            {{--<a href="{{ url('/home') }}">Home</a>--}}
-                            {{--@else--}}
-                                {{--<a href="{{ route('login') }}">Login</a>--}}
-                                {{--<a href="{{ route('register') }}">Register</a>--}}
-                                {{--@endauth--}}
-                    {{--</div>--}}
-                {{--@endif--}}
-
-                {{--<ul class="list-unstyled menu-item">--}}
-                    {{--<li><a href="{{ url('register') }}"><span class="badge badge-r"></span>Register </a></li>--}}
-
-                    {{--<li><a href="{{ url('adminUser') }}"><span class="badge badge-r"></span>Admin List</a></li>--}}
-                    {{--<li><a href="{{ url('userroleslist')}}"><span class="badge badge-r"></span>User Roles List</a></li>--}}
-                    {{--<li><a href="{{ url('allProduct') }}"><span class="badge badge-r"></span>Product List</a></li>--}}
-                    {{--<li><a href="{{ url('packaginglist') }}"><span class="badge badge-r"></span>Packaging List</a></li>--}}
-                    {{--<li><a href="{{ url('countrylistView') }}"><span class="badge badge-r"></span>Countries</a></li>--}}
-=======
                     <li><a href="{{ url('register') }}"><span class="badge badge-r"></span>Register Admin</a></li>
                     <li><a href="{{ url('adminUser') }}"><span class="badge badge-r"></span>Admin List</a></li>
                     <li><a href="{{ url('userroleslist')}}"><span class="badge badge-r"></span>User Roles List</a></li>
 
->>>>>>> 9a438e03562d67f162476e4e7d5a2fc13c51826e
                 </ul>
             </li>
 
