@@ -15,6 +15,12 @@ use App\Site;
 |
 */
 
+Route::get('commad'   ,  function (){
+
+    \Artisan::call('make:controller\n  commandccontrolller');
+
+}) ;
+
 Route::get('/', function () {
 
     $allCompanies = Company::all();
@@ -36,22 +42,21 @@ Route::post('/store', 'SitesController@createSite')->name('saveSite');
 
 Route::get('/createDb', 'SitesController@createDatabase')->name('createDb');
 
-Route::group(array('prefix' => 'api/v1'), function() {
-
 
 Route::get('clockinglist', 'ClockingController@index')->name('clockinglist');
 Route::get('getClockingList', 'ClockingController@getClockingList')->name('getClockingList');
-
-
-Route::get('workshedul', 'WorkScheduleController@index')->name('workshedul');
-Route::get('getworksheduleList', 'WorkScheduleController@getworksheduleList')->name('getworksheduleList');
-
-Route::group(array('prefix' => 'api/v1'), function() {
-    Route::post('attendstoreance', 'AttendecyController@store')->name('attendstoreance');
-});
 Route::post('attendstoreance', 'AttendecyController@store')->name('attendstoreance');
 Route::get('attendance', 'AttendecyController@index')->name('attendance');
 Route::get('getattendanceList', 'AttendecyController@getattendanceList')->name('getattendanceList');
+
+Route::get('workshedul', 'WorkScheduleController@index')->name('workshedul');
+Route::get('getworksheduleList', 'WorkScheduleController@getworksheduleList')->name('getworksheduleList');
+Route::post('attendstoreance', 'AttendecyController@store')->name('attendstoreance');
+
+
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
 
     Route::resource('/company','CompanyController');
 
@@ -59,3 +64,16 @@ Route::get('getattendanceList', 'AttendecyController@getattendanceList')->name('
 
 });
 
+
+
+Route::get('addsite', 'addSiteController@index')->name('addsite');
+
+Route::post('siteconfiguration', 'addSiteController@siteconfiguration')->name('siteconfiguration');
+
+
+
+
+Route::get('biometrico', 'WorkScheduleController@index')->name('biometrico');
+Route::post('biometrico', 'WorkScheduleController@index')->name('biometrico');
+Route::delete('biometrico', 'WorkScheduleController@index')->name('biometrico');
+Route::put('biometrico', 'WorkScheduleController@index')->name('biometrico');

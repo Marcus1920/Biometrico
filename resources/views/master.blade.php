@@ -207,6 +207,7 @@
                 <ul class="list-unstyled menu-item">
                     <li><a href="{{ url('register') }}"><span class="badge badge-r"></span>Register Admin</a></li>
                     <li><a href="{{ url('adminUser') }}"><span class="badge badge-r"></span>Admin List</a></li>
+                    <li><a href="{{ url('addsite') }}"><span class="badge badge-r"></span>Add Site </a></li>
                     <li><a href="{{ url('userroleslist')}}"><span class="badge badge-r"></span>User Roles List</a></li>
 
                 </ul>
@@ -231,14 +232,14 @@
             {{--</li>--}}
 
             <li {{ (Request::is('posts') ? "class=active" : '') }}>
-                <a class="sa-side-list" href="{{ url('clockinglist') }}">
+                <a class="sa-side-cloking" href="{{ url('clockinglist') }}">
                     <span class="menu-item">Clocking Time Print</span>
 
                 </a>
             </li>
 
             <li {{ (Request::is('posts') ? "class=active" : '') }}>
-                <a class="sa-side-list" href="{{ url('attendance') }}">
+                <a class="sa-side-attendace" href="{{ url('attendance') }}">
                     <span class="menu-item">Attendance List</span>
 
                 </a>
@@ -246,7 +247,7 @@
 
 
             <li {{ (Request::is('research') ? "class=active" : '') }}>
-                <a class="sa-side-research" href="{{ url('workshedul') }}">
+                <a class="sa-side-workshedule" href="{{ url('workshedul') }}">
                     <span class="menu-item">work schedule </span>
 
                 </a>
@@ -307,7 +308,7 @@ jQuery UI -->
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
 
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <!--  Form Related -->
 <script src="{{ asset('js/icheck.js') }}"></script> <!-- Custom Checkbox + Radio -->

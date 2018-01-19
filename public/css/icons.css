@@ -26,6 +26,10 @@
     width: 44px;
     height: 44px;
 }
+
+.sa-side-workshedule { background-image: url(../img/icon/meeting-deadlines.png); }
+.sa-side-attendace { background-image: url(../img/icon/signing-the-contract.png); }
+.sa-side-cloking { background-image: url(../img/icon/person-with-a-huge-clock-outlines-in-a-circle.png); }
 .sa-side-map { background-image: url(../img/icon/map-marker-24.png); }
 .sa-side-home { background-image: url(../img/icon/map-marker-24.png); }
 .sa-side-homepage {background-image: url("../img/icon/home.png")}
@@ -39,7 +43,7 @@
 .sa-side-calendar { background-image: url(../img/icon/calendar.png); }
 .sa-side-page { background-image: url(../img/icon/pages.png); }
 .sa-side-user { background-image: url(../img/icon/user.png); }
-.sa-side-photos { background-image: url(../img/icon/photos.png); }
+.sa-side-photos { background-image: url(../img/icon/meeting-deadlines.png); }
 .sa-side-list { background-image: url(../img/icon/form.png); }
 .sa-side-research { background-image: url(../img/icon/search.png); }
 .sa-side-transaction { background-image: url(../img/icon/transaction.png); }
