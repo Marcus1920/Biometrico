@@ -42,6 +42,10 @@ Route::post('/store', 'SitesController@createSite')->name('saveSite');
 
 Route::get('/createDb', 'SitesController@createDatabase')->name('createDb');
 
+Route::get('/registerUser', 'UsersController@registerUser')->name('register');
+
+Route::post('/storeUser', 'UsersController@create')->name('register');
+
 
 Route::get('clockinglist', 'ClockingController@index')->name('clockinglist');
 Route::get('getClockingList', 'ClockingController@getClockingList')->name('getClockingList');
@@ -61,6 +65,8 @@ Route::group(array('prefix' => 'api/v1'), function() {
     Route::resource('/company','CompanyController');
 
     Route::post('/loginUser','UsersController@login');
+
+    Route::post('/getSite','SitesController@getSite');
 
 });
 
