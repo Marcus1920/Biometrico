@@ -11,6 +11,13 @@
                 {{ csrf_field() }}
 
                 <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-2 col-form-label">SITE_NAME</label>
+                    <div class="col-sm-10">
+                        <input type="text"  name="SITE_NAME" class="form-control" id="inputPassword3" placeholder="">
+                    </div>
+                </div>
+
+                <div class="form-group row">
                     <label for="inputEmail3"  class="col-sm-2 col-form-label">DB_CONNECTION</label>
                     <div class="col-sm-10">
                         <input type="text" name="DB_CONNECTION" class="form-control" id="inputEmail3" placeholder="mysql">
@@ -51,6 +58,9 @@
                         <input type="text"  name="DB_PASSWORD" class="form-control" id="inputPassword3" placeholder="*****">
                     </div>
                 </div>
+
+
+
 
                 <div>
 

@@ -73,7 +73,4 @@ Route::post('siteconfiguration', 'addSiteController@siteconfiguration')->name('s
 
 
 
-Route::get('biometrico', 'WorkScheduleController@index')->name('biometrico');
-Route::post('biometrico', 'WorkScheduleController@index')->name('biometrico');
-Route::delete('biometrico', 'WorkScheduleController@index')->name('biometrico');
-Route::put('biometrico', 'WorkScheduleController@index')->name('biometrico');
+
