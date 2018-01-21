@@ -12,10 +12,6 @@ use mysqli;
 
 class SitesController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     public function sites()
     {
@@ -26,6 +22,13 @@ class SitesController extends Controller
         $sites = Site::with('company')->where('company_id',$user->company_id)->get();
 
         return view('auth.sites',compact('sites','company'));
+    }
+
+    public function getSite(Request $request)
+    {
+        $site = Site::where('site_code',$request['site_code'])->get();
+
+        return response()->json($site);
     }
 
     public function create()
