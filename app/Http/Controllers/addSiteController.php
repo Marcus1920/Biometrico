@@ -19,8 +19,11 @@ class addSiteController extends Controller
 
      public  function  siteconfiguration  (Request $request) {
          // Variable  Declation
+         $shedule  = "shedule" ;
+
          $SiteName   = $request->input('SITE_NAME');
          $SiteName_conif = "_".$request->input('SITE_NAME');
+         $SiteController_conifg = $request->input('SITE_NAME')."Controller";
          $SiteUrl = "/".$request->input('SITE_NAME');
          $site_api_ulr = strtolower($SiteUrl) ;
 
@@ -30,8 +33,8 @@ class addSiteController extends Controller
              'driver' => 'mysql',
              'host' => env('DB_HOST', '127.0.0.1'),
              'port' => env('DB_PORT', '3306'),
-             'database' => env('DB_DATABASE$SiteName_conif', 'forge'),
-             'username' => env('DB_USERNAME$SiteName_conif', 'forge'),
+             'database' => env('DB_DATABASE$SiteName_conif', '$SiteName_conif'),
+             'username' => env('DB_USERNAME$SiteName_conif', 'root'),
              'password' => env('DB_PASSWORD$SiteName_conif', ''),
              'unix_socket' => env('DB_SOCKET', ''),
              'charset' => 'utf8mb4',
@@ -57,7 +60,7 @@ class addSiteController extends Controller
          // Function   to   write  on  the Eviromental  File
          $fille  = "C:/xampp/htdocs/Biometrico/.env" ;
          $space  =   "\r\n";
-         $DB_CONNECTION        ="DB_CONNECTION=" . $request->input('DB_CONNECTION')."\n";
+         $DB_CONNECTION        ="DB_CONNECTION=" ."mysql"."\n";
 
          $DB_HOST              ="DB_HOST =" . $request->input('DB_HOST')."\n";
          $DB_DATABAS           = "DB_DATABAS$SiteName_conif =" .$request->input('DB_DATABASE')."\n";
@@ -74,25 +77,93 @@ class addSiteController extends Controller
          //End  Function
 
          // Function  to  create  a  Controller
+         $fn = "C:/xampp/htdocs/Biometrico/app/Http/Controllers/AttendecyController.php";
 
-         $Create_controller = fopen($SiteName_conif.".php", "w") ;
+         $Create_controller = fopen("C:/xampp/htdocs/Biometrico/app/Http/Controllers/".$SiteController_conifg.".php", "w") ;
+         $methode  = "<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class $SiteController_conifg extends Controller
+{
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
 
 
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getattendanceList()
+    {
+        return view('home');
+    }
+    
+    
+     public  function  index ()
+    {
+
+        $$shedule= \DB::connection('mysql$SiteName')->table('attendance')
+            ->select(
+                \DB::raw(
+                    \"
+                                attendance.ATTENDANCE_KEY     ,             
+                                attendance.COMPANY_KEY      ,                       
+                                attendance.TERMINAL_KEY      ,
+                                attendance.TERMINAL_REC_NO  ,
+                                attendance.DEPARTMENT_KEY    ,
+                                attendance.ATTENDANCE_DATE  ,
+                                attendance.ATTENDANCE_TIME  ,
+                                attendance.EVENT_KEY      ,
+                                
+                                attendance.DEVICE_CONFIGURATION_KEY    ,
+                                attendance.CALCULATED  ,
+                                attendance.VERIFIED       ,
+                               
+                                attendance.OPERATOR_KEY        ,
+                                attendance.ENROLL_ID        
+                            
+                                      
+                                \"
+                )
+            )
+            ->get();
+
+        return json_encode($$shedule) ;
+    }
+}
+" ;
+
+         fwrite($Create_controller, $methode);
+         fclose($Create_controller);
 
          // add   Resource  Route
          $route  = "C:/xampp/htdocs/Biometrico/routes/web.php" ;
-         $rout_api_get   =   "Route::get('$site_api_ulr', 'WorkScheduleController@index')->name('$site_api_ulr');"."\n";
-         $rout_api_post   =  "Route::post('$site_api_ulr', 'WorkScheduleController@index')->name('$site_api_ulr');"."\n";
-         $rout_api_delete   =  "Route::delete('$site_api_ulr', 'WorkScheduleController@index')->name('$site_api_ulr');"."\n";
-         $rout_api_put   =  "Route::put('$site_api_ulr', 'WorkScheduleController@index')->name('$site_api_ulr');"."\n";
+
+
+
+           $routes  ="Route::group(array('prefix' => 'api/v1'), function() {"."\n"."\n".
+
+             "Route::get('$site_api_ulr', '$SiteController_conifg@index')->name('$site_api_ulr');"."\n".
+             "Route::post('$site_api_ulr', '$SiteController_conifg@index')->name('$site_api_ulr');"."\n".
+             "Route::delete('$site_api_ulr', '$SiteController_conifg@index')->name('$site_api_ulr');"."\n".
+             "Route::put('$site_api_ulr', '$SiteController_conifg@index')->name('$site_api_ulr');
+
+         });
+";
 
          file_put_contents($route ,$space , FILE_APPEND);
-         file_put_contents($route ,$rout_api_get , FILE_APPEND);
-         file_put_contents($route ,$rout_api_post , FILE_APPEND);
-         file_put_contents($route ,$rout_api_delete , FILE_APPEND);
-         file_put_contents($route ,$rout_api_put , FILE_APPEND);
+         file_put_contents($route ,$routes , FILE_APPEND);
 
 
+         // Function  to  save  to  Database
+         
          return   "ok";
 
 

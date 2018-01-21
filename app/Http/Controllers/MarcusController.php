@@ -3,21 +3,31 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use phpDocumentor\Reflection\DocBlockFactory;
 
-class AttendecyController extends Controller
+class MarcusController extends Controller
 {
-    public  function index ()
-    {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
 
-        return  view ( 'Attendance.attendance') ;
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return view('home');
     }
-
-
-    public  function  getattendanceList ()
+    
+    
+     public  function  getattendanceList ()
     {
 
-        $shedule=\DB::table('attendance')
+    $ff    =\DB::table('attendance')
             ->select(
                 \DB::raw(
                     "
@@ -43,16 +53,6 @@ class AttendecyController extends Controller
             )
             ->get();
 
-        return json_encode($shedule) ;
+        return json_encode($ff) ;
     }
-
-
-    public  function  store (Request $request ){
-
-         $insert  = \DB::table('attendance')->insert($request->all()) ;
-
-         return json_decode($insert);
-    }
-
-
 }

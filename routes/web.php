@@ -57,7 +57,7 @@ Route::post('attendstoreance', 'AttendecyController@store')->name('attendstorean
 
 Route::group(array('prefix' => 'api/v1'), function() {
 
-
+    Route::post('attendstoreance', 'AttendecyController@store')->name('attendstoreance');
     Route::resource('/company','CompanyController');
 
     Route::post('/loginUser','UsersController@login');
@@ -74,3 +74,50 @@ Route::post('siteconfiguration', 'addSiteController@siteconfiguration')->name('s
 
 
 
+
+
+
+
+Route::get('/zipho', 'ziphoController@index')->name('/zipho');
+Route::post('/zipho', 'ziphoController@index')->name('/zipho');
+Route::delete('/zipho', 'ziphoController@index')->name('/zipho');
+Route::put('/zipho', 'ziphoController@index')->name('/zipho');
+
+
+Route::get('/laboratory', 'laboratoryController@index')->name('/laboratory');
+Route::post('/laboratory', 'laboratoryController@index')->name('/laboratory');
+Route::delete('/laboratory', 'laboratoryController@index')->name('/laboratory');
+Route::put('/laboratory', 'laboratoryController@index')->name('/laboratory');
+
+Route::get('/zipho2', 'zipho2Controller@index')->name('/zipho2');
+Route::post('/zipho2', 'zipho2Controller@index')->name('/zipho2');
+Route::delete('/zipho2', 'zipho2Controller@index')->name('/zipho2');
+Route::put('/zipho2', 'zipho2Controller@index')->name('/zipho2');
+
+Route::get('/zipho2', 'zipho2Controller@index')->name('/zipho2');
+Route::post('/zipho2', 'zipho2Controller@index')->name('/zipho2');
+Route::delete('/zipho2', 'zipho2Controller@index')->name('/zipho2');
+Route::put('/zipho2', 'zipho2Controller@index')->name('/zipho2');
+
+Route::get('/marcoss', 'marcossController@index')->name('/marcoss');
+Route::post('/marcoss', 'marcossController@index')->name('/marcoss');
+Route::delete('/marcoss', 'marcossController@index')->name('/marcoss');
+Route::put('/marcoss', 'marcossController@index')->name('/marcoss');
+
+
+Route::group(array('prefix' => 'api/v1'), function() {
+Route::get('/tetrews', 'tetrewsController@index')->name('/tetrews');
+Route::post('/tetrews', 'tetrewsController@index')->name('/tetrews');
+Route::delete('/tetrews', 'tetrewsController@index')->name('/tetrews');
+Route::put('/tetrews', 'tetrewsController@index')->name('/tetrews');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/tetrews', 'tetrewsController@index')->name('/tetrews');
+Route::post('/tetrews', 'tetrewsController@index')->name('/tetrews');
+Route::delete('/tetrews', 'tetrewsController@index')->name('/tetrews');
+Route::put('/tetrews', 'tetrewsController@index')->name('/tetrews');
+
+         });
