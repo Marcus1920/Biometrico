@@ -87,7 +87,6 @@
                 </div>
             </div>
 
->>>>>>> a89ab3070301ee10b3da8e5509d4fea65d8a4fc7
         </div>
 
     </div>
@@ -117,8 +116,7 @@
                                 <th>SITE NAME</th>
                                 <th>DB NAME</th>
                                 <th>SITE CODE</th>
-                                <th>END POINT</th>
-
+                                {{--<th>ACTIONS</th>--}}
 
                             </tr>
                             </thead>
@@ -178,18 +176,18 @@
                         {data: 'db_name', name: 'db_name'},
                         {data: 'site_code', name: 'site_code'},
 
-                        {data: 'end_point', name: 'end_point'},
 
-
-
-
+                        {data: function(d)
+                            {
+                                return "<a href='{!! url('/" + d.id + "') !!}' class='btn btn-sm'>" + 'View' + "</a>";
+                            },"name" : 'name'},
 
 
                     ],
 
                     "aoColumnDefs": [
                         {
-                            "aTargets": [0],
+                            "aTargets": [4],
                             "bSearchable": false,
                             "bSortable": false,
                             "bSort": false,

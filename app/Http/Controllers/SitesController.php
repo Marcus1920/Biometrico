@@ -42,8 +42,7 @@ class SitesController extends Controller
                         sites.company_id ,
                         sites.site_name,
                         sites.db_name,
-                        sites.site_code,
-                        sites.end_point
+                        sites.site_code
                        
 				
                  
