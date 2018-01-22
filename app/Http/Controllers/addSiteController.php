@@ -185,7 +185,7 @@ class $SiteController_conifg extends Controller
          $conn =new mysqli('localhost', 'root', '' , ''.$dbName.'');
 
          $query = '';
-         $sqlScript = file("C:/xampp/htdocs/Biometrico/public/Biometricodb.sql");
+         $sqlScript = file("C:/Users/Siyaleader-0.1/Desktop/Biometric Latest/Biometrico/public/Biometricodb.sql");
          foreach ($sqlScript as $line)	{
 
              $startWith = substr(trim($line), 0 ,2);
