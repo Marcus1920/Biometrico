@@ -89,7 +89,10 @@
 
     <div >
         <div class="col-md-6">
-            <table>
+            <form class="form-horizontal" method="POST" action="/selectSite">
+                {{ csrf_field() }}
+
+                <table>
                 @if($sites->count() > 0)
                     @foreach($sites as $site)
                 <tr>
@@ -97,7 +100,7 @@
                         <h4 style="color: white">{{ $site->site_name }}</h4>
                     </td>
                     <td style="width: 50px">
-                        <input type="checkbox" name="remember" value="{{ $site->id }}">
+                        <input type="checkbox" name="site_id" value="{{ $site->id }}">
                     </td>
                 </tr>
                     @endForeach
@@ -118,12 +121,13 @@
                     </td>
                     <td>
                        <a class="btn btn-primary" href="{{ route('home') }}">Next</a>
-                        {{--<button type="submit" class="btn btn-primary">--}}
-                            {{--Next--}}
-                        {{--</button>--}}
+                        <button type="submit" class="btn btn-primary">
+                            Submit
+                        </button>
                     </td>
                 </tr>
             </table>
+            </form>
         </div>
     </div>
 

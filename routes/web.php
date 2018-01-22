@@ -70,7 +70,7 @@ Route::group(array('prefix' => 'api/v1'), function() {
 
 });
 
-
+Route::post('/selectSite', 'SitesController@selectSite');
 
 Route::get('addsite', 'addSiteController@index')->name('addsite');
 

@@ -8,6 +8,7 @@ use App\User;
 use App\Company;
 use Illuminate\Support\Facades\Auth;
 use DB;
+use Illuminate\Support\Facades\Redirect;
 use mysqli;
 
 class SitesController extends Controller
@@ -29,6 +30,15 @@ class SitesController extends Controller
         $site = Site::where('site_code',$request['site_code'])->get();
 
         return response()->json($site);
+    }
+
+    public function selectSite(Request $request)
+    {
+        $site_id = $request['site_id'];
+
+        $site = Site::where('id',$site_id)->first();
+
+        return $site;
     }
 
     public function create()
