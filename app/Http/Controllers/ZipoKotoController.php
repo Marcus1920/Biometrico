@@ -20,6 +20,7 @@ class ZipoKotoController extends Controller
      */
     public function getattendanceList()
     {
+
         return view('home');
     }
     

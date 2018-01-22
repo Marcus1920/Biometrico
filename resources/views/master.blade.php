@@ -388,7 +388,15 @@ jQuery UI -->
 <script src="{{ asset('js/raphael.js') }}"> </script>
 
 
+<!-- Charts -->
+<script src="js/charts/jquery.flot.js"></script> <!-- Flot Main -->
+<script src="js/charts/jquery.flot.time.js"></script> <!-- Flot sub -->
+<script src="js/charts/jquery.flot.animator.min.js"></script> <!-- Flot sub -->
+<script src="js/charts/jquery.flot.resize.min.js"></script> <!-- Flot sub - for repaint when resizing the screen -->
 
+<script src="js/sparkline.min.js"></script> <!-- Sparkline - Tiny charts -->
+<script src="js/easypiechart.js"></script> <!-- EasyPieChart - Animated Pie Charts -->
+<script src="js/charts.js"></script> <!-- All the above chart related functions -->
 
 
 <!-- D3.js

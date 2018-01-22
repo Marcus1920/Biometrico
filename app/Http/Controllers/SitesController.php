@@ -15,13 +15,46 @@ class SitesController extends Controller
 
     public function sites()
     {
-        $user = User::find(Auth::user()->id);
+       $user = User::find(Auth::user()->id);
 
-        $company = Company::find($user->company_id);
+       $company = Company::find($user->company_id);
 
-        $sites = Site::with('company')->where('company_id',$user->company_id)->get();
+      $sites = Site::with('company')->where('company_id',$user->company_id)->get();
 
-        return view('auth.sites',compact('sites','company'));
+      return view('auth.sites',compact('sites','company'));
+
+
+
+
+
+    }
+
+
+    public  function  getsitelist() {
+
+        $Site_tabs=Site::where('company_id',1)
+            ->join('companies', 'sites.company_id', '=', 'companies.id')
+            ->select(
+                \DB::raw(
+                    "
+                        sites.id,
+                        sites.company_id ,
+                        sites.site_name,
+                        sites.db_name,
+                        sites.site_code,
+                        sites.end_point
+                       
+				
+                 
+                        
+                        "
+                )
+            )
+            ->get();
+
+        return response()->json($Site_tabs);
+
+
     }
 
     public function getSite(Request $request)
