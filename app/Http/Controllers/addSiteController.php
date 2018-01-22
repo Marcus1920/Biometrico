@@ -179,6 +179,8 @@ class $SiteController_conifg extends Controller
 
          $newSite->db_name = $dbName;
          $newSite->site_code = '001'.$SiteName;
+         $newSite->end_point =   $_ENV['APP_URL']."api/v1".$site_api_ulr ;
+
 
          \DB::statement(\DB::raw('CREATE DATABASE '.$dbName.''));
 
