@@ -32,14 +32,14 @@ class addSiteController extends Controller
          $SiteController_conifg = $request->input('SITE_NAME')."Controller";
          $SiteUrl = "/".$request->input('SITE_NAME');
          $site_api_ulr = strtolower($SiteUrl) ;
-
+         $dbName = ''.$SiteName.'_db';
          // Function  to  configure  the  Datatabase  connection
          $db_config    =  "C:/xampp/htdocs/Biometrico/config/database.php" ;
          $connection   = "'mysql$SiteName' => [
              'driver' => 'mysql',
              'host' => env('DB_HOST', '127.0.0.1'),
              'port' => env('DB_PORT', '3306'),
-             'database' => env('DB_DATABASE$SiteName_conif', '$SiteName_conif'),
+             'database' => env('DB_DATABASE$SiteName_conif', '$dbName'),
              'username' => env('DB_USERNAME$SiteName_conif', 'root'),
              'password' => env('DB_PASSWORD$SiteName_conif', 'Null'),
              'unix_socket' => env('DB_SOCKET', ''),
