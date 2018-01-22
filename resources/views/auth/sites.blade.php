@@ -94,7 +94,7 @@
 
     <!-- Main Widgets -->
 
-    <h4 class="page-title">Compangy   Listing</h4>
+    <h4 class="page-title">Sites   Listing</h4>
 
     <div class="row">
         <div class="col-md-12" >
@@ -102,8 +102,8 @@
                 <!-- Responsive Table -->
                 <div class="block-area" id="responsiveTable">
                     <div class="table-responsive">
-                        <h3 class="block-title"> CLOCK </h3>
-                        <a href="{{ url('') }}" class="btn btn-sm">
+                        <h3 class="block-title"> ADD SITE </h3>
+                        <a href="{{ url('addsite') }}" class="btn btn-sm">
                             <i class="fa fa-plus" aria-hidden="true" title="Add new recipe" data-toggle="tooltip"></i>
                         </a>
                         <table class="table tile table-striped" id="ClockingTimePrintTable">
