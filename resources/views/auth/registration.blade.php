@@ -3,8 +3,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
+                <div> <h1>   Add     user  </h1>  </div>
                 <div class="panel panel-default">
-                    <div class="panel-heading">Register</div>
 
                     <div class="panel-body">
                         <form class="form-horizontal" method="POST" action="/storeUser">
@@ -13,7 +13,7 @@
                             {{ csrf_field() }}
 
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                <label for="name" class="col-md-4 control-label">Name</label>
+                                <label for="name"  style="text-align: left" class="col-md-4 control-label">NAME</label>
 
                                 <div class="col-md-6">
                                     <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
@@ -25,10 +25,10 @@
                                     @endif
                                 </div>
                             </div>
-
+                            </br>
 
                             <div class="form-group{{ $errors->has('surname') ? ' has-error' : '' }}">
-                                <label for="surname" class="col-md-4 control-label">Surname</label>
+                                <label for="surname"  style="text-align: left" class="col-md-4 control-label">SURNAME</label>
 
                                 <div class="col-md-6">
                                     <input id="surname" type="text" class="form-control" name="surname" value="{{ old('surname') }}" required autofocus>
@@ -41,9 +41,10 @@
                                 </div>
                             </div>
 
+                            </br>
 
                             <div class="form-group{{ $errors->has('role') ? ' has-error' : '' }}">
-                                <label for="role" class="col-md-4 control-label">Role</label>
+                                <label for="role"   style="text-align: left" class="col-md-4 control-label">ROLE</label>
 
                                 <div class="col-md-6 ">
 
@@ -64,8 +65,10 @@
                                 </div>
                             </div>
 
+                            </br>
+
                             <div class="form-group{{ $errors->has('company') ? ' has-error' : '' }}">
-                                <label for="company" class="col-md-4 control-label">Company</label>
+                                <label for="company"  style="text-align: left" class="col-md-4 control-label">COMPANY</label>
 
                                 <div class="col-md-6 ">
 
@@ -84,8 +87,10 @@
                                 </div>
                             </div>
 
+                            </br>
+
                             <div class="form-group{{ $errors->has('cellphone') ? ' has-error' : '' }}">
-                                <label for="cellphone" class="col-md-4 control-label">CellPhone</label>
+                                <label for="cellphone"  style="text-align: left"  class="col-md-4 control-label">CELL PHOME</label>
 
                                 <div class="col-md-6">
                                     <input id="cellphone" type="text" class="form-control" name="cellphone" value="{{ old('cellphone') }}" required autofocus>
@@ -98,9 +103,10 @@
                                 </div>
                             </div>
 
+                            </br>
 
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                                <label for="email"  style="text-align: left" class="col-md-4 control-label">E-MAIL  ADDRESS</label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
@@ -113,8 +119,10 @@
                                 </div>
                             </div>
 
+                            </br>
+
                             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                <label for="password" class="col-md-4 control-label">Password</label>
+                                <label for="password" style="text-align: left" class="col-md-4 control-label">PASSWEORD </label>
 
                                 <div class="col-md-6">
                                     <input id="password" type="password" class="form-control" name="password" required>
@@ -127,18 +135,20 @@
                                 </div>
                             </div>
 
+                            </br>
+
                             <div class="form-group">
-                                <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+                                <label for="password-confirm"  style="text-align: left" class="col-md-4 control-label">CONFIRM  PASSWORD</label>
 
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                                 </div>
                             </div>
-
+  </br>
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        Register
+                                    <button type="submit" class="btn  btn-danger"  style="background-color: forestgreen">
+                                         Add
                                     </button>
                                 </div>
                             </div>

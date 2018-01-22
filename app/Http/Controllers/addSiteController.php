@@ -3,16 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\User;
+use App\Site;
+use App\role;
+use App\Company;
+use mysqli;
 class addSiteController extends Controller
 {
 
      public  function index()
      {
 
+         $companies=Company::all();
+         $selectedCompany=User::first()->company_id;
 
 
-         return view('addsite.addsite');
+         return view('addsite.addsite',compact('companies','selectedCompany'));
 
      }
 
@@ -35,7 +41,7 @@ class addSiteController extends Controller
              'port' => env('DB_PORT', '3306'),
              'database' => env('DB_DATABASE$SiteName_conif', '$SiteName_conif'),
              'username' => env('DB_USERNAME$SiteName_conif', 'root'),
-             'password' => env('DB_PASSWORD$SiteName_conif', ''),
+             'password' => env('DB_PASSWORD$SiteName_conif', 'Null'),
              'unix_socket' => env('DB_SOCKET', ''),
              'charset' => 'utf8mb4',
              'collation' => 'utf8mb4_unicode_ci',
@@ -163,8 +169,44 @@ class $SiteController_conifg extends Controller
 
 
          // Function  to  save  to  Database
-         
-         return   "ok";
+
+
+         $newSite = New Site();
+         $newSite->company_id = $request['company_id'];
+         $newSite->site_name = $SiteName;
+
+         $dbName = ''.$SiteName.'_db';
+
+         $newSite->db_name = $dbName;
+         $newSite->site_code = '001'.$SiteName;
+
+         \DB::statement(\DB::raw('CREATE DATABASE '.$dbName.''));
+
+         $conn =new mysqli('localhost', 'root', '' , ''.$dbName.'');
+
+         $query = '';
+         $sqlScript = file("C:/xampp/htdocs/Biometrico/public/Biometricodb.sql");
+         foreach ($sqlScript as $line)	{
+
+             $startWith = substr(trim($line), 0 ,2);
+             $endWith = substr(trim($line), -1 ,1);
+
+             if (empty($line) || $startWith == '--' || $startWith == '/*' || $startWith == '//') {
+                 continue;
+             }
+
+             $query = $query . $line;
+             if ($endWith == ';') {
+                 mysqli_query($conn,$query) or die('<div class="error-response sql-import-response">Problem in executing the SQL query <b>' . $query. '</b></div>');
+                 $query= '';
+             }
+         }
+
+         $newSite->save();
+
+         return "successfuly created a site";
+
+
 
 
      }

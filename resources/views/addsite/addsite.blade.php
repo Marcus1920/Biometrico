@@ -6,9 +6,32 @@
     <div  style="position: absolute ; left: 15%; right: 15%" >
         <br> <br>
         <div class="container">
-            <form action="siteconfiguration" method="post">
+            <form action="siteconfiguration" method="post"  onsubmit="$('#loading').show();">
+                <div id="loading" style="display:none">Uploading...</div>
 
                 {{ csrf_field() }}
+
+
+                <div class="form-group row {{ $errors->has('company') ? ' has-error' : '' }}">
+                    <label for="company"  class="col-sm-2 col-form-label">COMPANY</label>
+
+                    <div class="col-md-10 ">
+
+                        <select class="form-control  " name="company_id">
+                            <option value="0" selected disabled>Select Company</option>
+
+                            @if($companies->count())
+
+                                @foreach($companies as $company)
+                                    <option value="{{$company->id}}"> {{$company->name}}</option>
+                                @endforeach
+                            @endif
+
+                        </select>
+
+                    </div>
+                </div>
+ </br>
 
                 <div class="form-group row">
                     <label for="inputPassword3" class="col-sm-2 col-form-label">SITE_NAME</label>
@@ -17,45 +40,56 @@
                     </div>
                 </div>
 
+
+                </br>
+
                 <div class="form-group row">
                     <label for="inputEmail3"  class="col-sm-2 col-form-label">DB_CONNECTION</label>
                     <div class="col-sm-10">
-                        <input type="text" name="DB_CONNECTION" class="form-control" id="inputEmail3" placeholder="mysql">
+                        <input type="text" name="DB_CONNECTION" class="form-control" id="inputEmail3"  value="mysql" placeholder="mysql" disabled>
                     </div>
                 </div>
+
+                </br>
 
                 <div class="form-group row">
                     <label for="inputPassword3" class="col-sm-2 col-form-label">DB_HOST</label>
                     <div class="col-sm-10">
-                        <input type="text" name="DB_HOST" class="form-control" id="inputPassword3" placeholder="127.0.0.1">
+                        <input type="text" name="DB_HOST" class="form-control" value="127.0.0.1" id="inputPassword3" placeholder="127.0.0.1" disabled>
                     </div>
                 </div>
+
+                </br>
 
                 <div class="form-group row">
                     <label for="inputPassword3" class="col-sm-2 col-form-label">DB_PORT</label>
                     <div class="col-sm-10">
-                        <input type="text" name="DB_PORT" class="form-control" id="inputPassword3" placeholder="3306">
+                        <input type="text" name="DB_PORT" class="form-control" id="inputPassword3" value="3306" placeholder="3306" disabled>
                     </div>
                 </div>
+
+                </br>
 
                 <div class="form-group row">
                     <label for="inputPassword3" class="col-sm-2 col-form-label">DB_DATABASE</label>
                     <div class="col-sm-10">
-                        <input type="text" name="DB_DATABASE" class="form-control" id="inputPassword3" placeholder="DB Name">
+                        <input type="text" name="DB_DATABASE" class="form-control" id="inputPassword3" placeholder="DB Name" disabled>
                     </div>
                 </div>
+                </br>
 
                 <div class="form-group row">
                     <label for="inputPassword3" class="col-sm-2 col-form-label">DB_USERNAME</label>
                     <div class="col-sm-10">
-                        <input type="text" name="DB_USERNAME" class="form-control" id="inputPassword3" placeholder="*****">
+                        <input type="text" name="DB_USERNAME" class="form-control" id="inputPassword3" value="root" placeholder="*****" disabled>
                     </div>
                 </div>
+                </br>
 
                 <div class="form-group row">
                     <label for="inputPassword3" class="col-sm-2 col-form-label">DB_PASSWORD</label>
                     <div class="col-sm-10">
-                        <input type="text"  name="DB_PASSWORD" class="form-control" id="inputPassword3" placeholder="*****">
+                        <input type="text"  name="DB_PASSWORD" class="form-control" id="inputPassword3"  value="Null" placeholder="*****" disabled>
                     </div>
                 </div>
 
@@ -65,16 +99,29 @@
                 <div>
 
                     <div   style="position: absolute" >
-                        <input type="submit" class="btn-info" id="inputPassword3" value="Add Site">
+                        <input type="submit" class="btn-info" id="inputPassword3" value="Add Site" onclick="$('#loading').show();">
                     </div>
                 </div>
 
 
             </form>
+
+            <div id="loading" style="display:none;"><img src="ajax_progress2.gif" alt="" /></div>
         </div>
 
 </div>
     </div>
     </div>
     </div>
+@endsection
+@section('footer')
+    <script>
+
+        jQuery(document).ready(function($){
+
+
+
+
+        });
+    </script>
 @endsection

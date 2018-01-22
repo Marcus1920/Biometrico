@@ -127,3 +127,183 @@ Route::delete('/tetrews', 'tetrewsController@index')->name('/tetrews');
 Route::put('/tetrews', 'tetrewsController@index')->name('/tetrews');
 
          });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/cataloge', 'catalogeController@index')->name('/cataloge');
+Route::post('/cataloge', 'catalogeController@index')->name('/cataloge');
+Route::delete('/cataloge', 'catalogeController@index')->name('/cataloge');
+Route::put('/cataloge', 'catalogeController@index')->name('/cataloge');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/cataloge', 'catalogeController@index')->name('/cataloge');
+Route::post('/cataloge', 'catalogeController@index')->name('/cataloge');
+Route::delete('/cataloge', 'catalogeController@index')->name('/cataloge');
+Route::put('/cataloge', 'catalogeController@index')->name('/cataloge');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/cataloge', 'catalogeController@index')->name('/cataloge');
+Route::post('/cataloge', 'catalogeController@index')->name('/cataloge');
+Route::delete('/cataloge', 'catalogeController@index')->name('/cataloge');
+Route::put('/cataloge', 'catalogeController@index')->name('/cataloge');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/cataloge', 'catalogeController@index')->name('/cataloge');
+Route::post('/cataloge', 'catalogeController@index')->name('/cataloge');
+Route::delete('/cataloge', 'catalogeController@index')->name('/cataloge');
+Route::put('/cataloge', 'catalogeController@index')->name('/cataloge');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/barakat10', 'Barakat10Controller@index')->name('/barakat10');
+Route::post('/barakat10', 'Barakat10Controller@index')->name('/barakat10');
+Route::delete('/barakat10', 'Barakat10Controller@index')->name('/barakat10');
+Route::put('/barakat10', 'Barakat10Controller@index')->name('/barakat10');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/barakat10', 'Barakat10Controller@index')->name('/barakat10');
+Route::post('/barakat10', 'Barakat10Controller@index')->name('/barakat10');
+Route::delete('/barakat10', 'Barakat10Controller@index')->name('/barakat10');
+Route::put('/barakat10', 'Barakat10Controller@index')->name('/barakat10');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/barakat10', 'Barakat10Controller@index')->name('/barakat10');
+Route::post('/barakat10', 'Barakat10Controller@index')->name('/barakat10');
+Route::delete('/barakat10', 'Barakat10Controller@index')->name('/barakat10');
+Route::put('/barakat10', 'Barakat10Controller@index')->name('/barakat10');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/barakate1025', 'barakate1025Controller@index')->name('/barakate1025');
+Route::post('/barakate1025', 'barakate1025Controller@index')->name('/barakate1025');
+Route::delete('/barakate1025', 'barakate1025Controller@index')->name('/barakate1025');
+Route::put('/barakate1025', 'barakate1025Controller@index')->name('/barakate1025');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/kololo', 'KololoController@index')->name('/kololo');
+Route::post('/kololo', 'KololoController@index')->name('/kololo');
+Route::delete('/kololo', 'KololoController@index')->name('/kololo');
+Route::put('/kololo', 'KololoController@index')->name('/kololo');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/kololo2013', 'Kololo2013Controller@index')->name('/kololo2013');
+Route::post('/kololo2013', 'Kololo2013Controller@index')->name('/kololo2013');
+Route::delete('/kololo2013', 'Kololo2013Controller@index')->name('/kololo2013');
+Route::put('/kololo2013', 'Kololo2013Controller@index')->name('/kololo2013');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/kololo2013000000', 'Kololo2013000000Controller@index')->name('/kololo2013000000');
+Route::post('/kololo2013000000', 'Kololo2013000000Controller@index')->name('/kololo2013000000');
+Route::delete('/kololo2013000000', 'Kololo2013000000Controller@index')->name('/kololo2013000000');
+Route::put('/kololo2013000000', 'Kololo2013000000Controller@index')->name('/kololo2013000000');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/garagisteslobo', 'garagistesLOboController@index')->name('/garagisteslobo');
+Route::post('/garagisteslobo', 'garagistesLOboController@index')->name('/garagisteslobo');
+Route::delete('/garagisteslobo', 'garagistesLOboController@index')->name('/garagisteslobo');
+Route::put('/garagisteslobo', 'garagistesLOboController@index')->name('/garagisteslobo');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/bonjoure claseses', 'Bonjoure clasesesController@index')->name('/bonjoure claseses');
+Route::post('/bonjoure claseses', 'Bonjoure clasesesController@index')->name('/bonjoure claseses');
+Route::delete('/bonjoure claseses', 'Bonjoure clasesesController@index')->name('/bonjoure claseses');
+Route::put('/bonjoure claseses', 'Bonjoure clasesesController@index')->name('/bonjoure claseses');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/bonjoure claseses', 'Bonjoure clasesesController@index')->name('/bonjoure claseses');
+Route::post('/bonjoure claseses', 'Bonjoure clasesesController@index')->name('/bonjoure claseses');
+Route::delete('/bonjoure claseses', 'Bonjoure clasesesController@index')->name('/bonjoure claseses');
+Route::put('/bonjoure claseses', 'Bonjoure clasesesController@index')->name('/bonjoure claseses');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/zetusbor', 'ZETUSBORController@index')->name('/zetusbor');
+Route::post('/zetusbor', 'ZETUSBORController@index')->name('/zetusbor');
+Route::delete('/zetusbor', 'ZETUSBORController@index')->name('/zetusbor');
+Route::put('/zetusbor', 'ZETUSBORController@index')->name('/zetusbor');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/zetusbor2018', 'ZETUSBOR2018Controller@index')->name('/zetusbor2018');
+Route::post('/zetusbor2018', 'ZETUSBOR2018Controller@index')->name('/zetusbor2018');
+Route::delete('/zetusbor2018', 'ZETUSBOR2018Controller@index')->name('/zetusbor2018');
+Route::put('/zetusbor2018', 'ZETUSBOR2018Controller@index')->name('/zetusbor2018');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/zetusbor20120', 'ZETUSBOR20120Controller@index')->name('/zetusbor20120');
+Route::post('/zetusbor20120', 'ZETUSBOR20120Controller@index')->name('/zetusbor20120');
+Route::delete('/zetusbor20120', 'ZETUSBOR20120Controller@index')->name('/zetusbor20120');
+Route::put('/zetusbor20120', 'ZETUSBOR20120Controller@index')->name('/zetusbor20120');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/zetusbor201222', 'ZETUSBOR201222Controller@index')->name('/zetusbor201222');
+Route::post('/zetusbor201222', 'ZETUSBOR201222Controller@index')->name('/zetusbor201222');
+Route::delete('/zetusbor201222', 'ZETUSBOR201222Controller@index')->name('/zetusbor201222');
+Route::put('/zetusbor201222', 'ZETUSBOR201222Controller@index')->name('/zetusbor201222');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/zetusbor201222', 'ZETUSBOR201222Controller@index')->name('/zetusbor201222');
+Route::post('/zetusbor201222', 'ZETUSBOR201222Controller@index')->name('/zetusbor201222');
+Route::delete('/zetusbor201222', 'ZETUSBOR201222Controller@index')->name('/zetusbor201222');
+Route::put('/zetusbor201222', 'ZETUSBOR201222Controller@index')->name('/zetusbor201222');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/', 'Controller@index')->name('/');
+Route::post('/', 'Controller@index')->name('/');
+Route::delete('/', 'Controller@index')->name('/');
+Route::put('/', 'Controller@index')->name('/');
+
+         });
