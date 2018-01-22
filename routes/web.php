@@ -307,3 +307,21 @@ Route::delete('/', 'Controller@index')->name('/');
 Route::put('/', 'Controller@index')->name('/');
 
          });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/zipokoto', 'ZipoKotoController@index')->name('/zipokoto');
+Route::post('/zipokoto', 'ZipoKotoController@index')->name('/zipokoto');
+Route::delete('/zipokoto', 'ZipoKotoController@index')->name('/zipokoto');
+Route::put('/zipokoto', 'ZipoKotoController@index')->name('/zipokoto');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/zipokoto2018', 'ZipoKoto2018Controller@index')->name('/zipokoto2018');
+Route::post('/zipokoto2018', 'ZipoKoto2018Controller@index')->name('/zipokoto2018');
+Route::delete('/zipokoto2018', 'ZipoKoto2018Controller@index')->name('/zipokoto2018');
+Route::put('/zipokoto2018', 'ZipoKoto2018Controller@index')->name('/zipokoto2018');
+
+         });
