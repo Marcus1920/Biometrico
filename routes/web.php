@@ -1,9 +1,9 @@
 <?php
 
-
 use App\Company;
 use App\Site;
-
+use App\User;
+use App\role;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,15 +27,60 @@ Route::get('/', function () {
 
     $allSites = Site::all();
 
-    return view('auth.login', compact('allCompanies'));
+    return view('auth.login', compact('allCompanies','allSites'));
 });
+
+
+Route::get('/registerUser','RolesController@index')
+    ->name('registerUser');
+
+Route::post('/comp','CompanyController@createCompany')
+   ->name('/comp');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')
+    ->name('home')
+   ->middleware('auth');
+
+Route::get('/sites', 'SitesController@sites')
+    ->name('sites')
+->middleware('auth');
+
+
+
+
+
+Route::get('biometricdb',function()
+{
+    $users=DB::connection("mysql")->table("sites")->get();
+    dd($users);
+});
+
+
+//Route::get('biometricdb2',function()
+//{
+//    $data=DB::connetion("mysql")->table("attendance")->get();
+//    dd($data);
+//});
+
+//Route::get('biometricdb',function()
+//{
+//    $users=DB::connection("mysql")->table("users")->get();
+//    dd($users);
+//});
+
+//Route::get('biometricdb2',function ()
+//{
+//    $data=DB::connection("mysql")->table("attendance")->get();
+//    dd($data);
+//});
+
+
 
 Route::get('/sites', 'SitesController@sites')->name('sites');
 Route::get('/getsitelist', 'SitesController@getsitelist')->name('getsitelist');
+
 
 Route::get('/create', 'SitesController@create')->name('createSite');
 
@@ -46,6 +91,22 @@ Route::get('/createDb', 'SitesController@createDatabase')->name('createDb');
 Route::get('/registerUser', 'UsersController@registerUser')->name('register');
 
 Route::post('/storeUser', 'UsersController@create')->name('register');
+
+
+
+    Route::resource('/company','CompanyController');
+
+    Route::post('/loginUser','UsersController@login');
+
+    Route::post('/getSite','SitesController@getSite');
+//    Route::get ('allCompanies' , 'CompanyController@getAllCompany');
+
+    Route::post('create','CompanyController@createCompany');
+
+//    Route::resource('/company','CompanyController');
+    Route::get('allUsers', 'UsersControler@getallUsers');
+    Route::get('siteCode', 'UsersController@getSideCode');
+
 
 
 Route::get('clockinglist', 'ClockingController@index')->name('clockinglist');
@@ -63,6 +124,7 @@ Route::post('attendstoreance', 'AttendecyController@store')->name('attendstorean
 Route::group(array('prefix' => 'api/v1'), function() {
 
     Route::post('attendstoreance', 'AttendecyController@store')->name('attendstoreance');
+
     Route::resource('/company','CompanyController');
 
     Route::post('/loginUser','UsersController@login');

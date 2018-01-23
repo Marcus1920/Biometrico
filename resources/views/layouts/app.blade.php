@@ -81,7 +81,26 @@
 
 
             <div class="container">
+<<<<<<< HEAD
+                <div class="navbar-header">
 
+                    <!-- Collapsed Hamburger -->
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <!-- Branding Image -->
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        {{ config('app.name', 'Laravel') }}
+                    </a>
+
+                </div>
+=======
+
+>>>>>>> 9a438e03562d67f162476e4e7d5a2fc13c51826e
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
@@ -91,7 +110,12 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @guest
+<<<<<<< HEAD
+                            <li><a href="{{ route('login') }}">Login</a></li>
+                            <li><a href="{{ route('registerUser') }}">Register</a></li>
+=======
 
+>>>>>>> 9a438e03562d67f162476e4e7d5a2fc13c51826e
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">

@@ -73,18 +73,10 @@
             font-family: Oswald, sans-serif;
             text-align: center;
         }
-        h1 span {
-            font-family: sans-serif;
-            letter-spacing: 0;
-            font-weight: 300;
-            font-size: 16px;
-            line-height: 24px;
-        }
-        h1 span a {
-            color: #fff;
-        }
 
-        .login {
+        .login
+        {
+
             position: absolute;
             top: 50%;
             left: 45%;
@@ -128,6 +120,12 @@ background-color: black;
 
 <body>
 
+{{--<center>--}}
+{{--<img src="{{ asset('/img/Biometrico-Logo-Final.jpg') }}" alt="Biometrico" width="250px" height="250px" style="border-radius: 90%;">--}}
+{{--</center>--}}
+<center>
+
+
     <div  style="margin-bottom: 300px; text-align: center">
 
         <img src="{{ asset('/img/biometrico-logo.png') }}" alt="Biometrico" width="40%" height="40%" style="">
@@ -138,6 +136,7 @@ background-color: black;
         <source src="{{ asset('biometric.mp4') }}" type="video/mp4">
     </video>
     <body>
+
 
 <div class="login">
 
@@ -171,6 +170,23 @@ background-color: black;
             </div>
         </div>
 
+
+        {{--<div class="form-group">--}}
+
+
+            {{--<div class="col-md-6">--}}
+                {{--<select class="form-control" style="width: 300px; height: 30px">--}}
+                    {{--<option>Select Company</option>--}}
+                    {{--@if($allCompanies->count() > 0)--}}
+                        {{--@foreach($allCompanies as $allCompany)--}}
+                            {{--<option value="{{$allCompany->id}}">{{$allCompany->name}}</option>--}}
+                        {{--@endForeach--}}
+                    {{--@else--}}
+                        {{--No Record Found--}}
+                    {{--@endif--}}
+                {{--</select>--}}
+            {{--</div>--}}
+        {{--</div>--}}
 
 
         <table>
@@ -206,6 +222,7 @@ background-color: black;
 
 
 </div>
+</center>
 
 <script  src="js/index.js"></script>
 

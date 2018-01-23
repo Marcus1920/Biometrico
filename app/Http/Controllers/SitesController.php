@@ -84,8 +84,9 @@ class SitesController extends Controller
         $conn =new mysqli('localhost', 'root', '' , ''.$dbName.'');
 
         $query = '';
-        $sqlScript = file('C:\Users\Siyaleader-0.1\Desktop\Biometric\Biometrico\public\Biometricodb.sql');
-        foreach ($sqlScript as $line)	{
+
+        $sqlScript = file('C:\Users\Siyaleader-04\Desktop\biometricdb.sql');
+        foreach ($sqlScript as $line) {
 
             $startWith = substr(trim($line), 0 ,2);
             $endWith = substr(trim($line), -1 ,1);
@@ -107,38 +108,6 @@ class SitesController extends Controller
 
     }
 
-    public function createDatabase()
-    {
 
-        $dbName = 'marcus_db';
-
-//        $newSite->db_name = $dbName;
-
-        DB::statement(DB::raw('CREATE DATABASE '.$dbName.''));
-
-        $conn =new mysqli('localhost', 'root', '' , ''.$dbName.'');
-
-        $query = '';
-        $sqlScript = file('C:\Users\Siyaleader-0.1\Desktop\Biometric\Biometrico\public\Biometricodb.sql');
-        foreach ($sqlScript as $line)	{
-
-            $startWith = substr(trim($line), 0 ,2);
-            $endWith = substr(trim($line), -1 ,1);
-
-            if (empty($line) || $startWith == '--' || $startWith == '/*' || $startWith == '//') {
-                continue;
-            }
-
-            $query = $query . $line;
-            if ($endWith == ';') {
-                mysqli_query($conn,$query) or die('<div class="error-response sql-import-response">Problem in executing the SQL query <b>' . $query. '</b></div>');
-                $query= '';
-            }
-        }
-
-//        $dbName = 'zzzzz';
-//        DB::statement(DB::raw('CREATE DATABASE '.$dbName.''));
-
-        return "database created";
-    }
 }
+

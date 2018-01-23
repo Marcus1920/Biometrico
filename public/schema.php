@@ -1,4 +1,5 @@
 <?php
+
 $sqlFileToExecute = 'Biometricodb.sql';
 $hostname = 'localhost';
 $db_user = 'root';
@@ -36,3 +37,4 @@ if ($sqlErrorCode == 0) {
 }
 
 ?>
+

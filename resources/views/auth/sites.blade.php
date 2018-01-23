@@ -1,15 +1,125 @@
-@extends('master')
+<!DOCTYPE html>
+<!--[if IE 9 ]>
+![endif]-->
+<html class="ie9">
 
-@section('content')
-<div class="login">
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no">
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="{{ asset('img/Biometrico-Logo-Final.jpg') }}">
+
+
+    <title>Biometrico</title>
+
+
+    <!-- CSS -->
+    <link href="{{ asset('css/token-input.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/form.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/calendar.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/generics.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/token-input.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/lightbox.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/media-player.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/file-manager.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/buttons.dataTables.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/HoldOn.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap-switch.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('incl/animate.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/Treant.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/collapsable.css') }}" rel="stylesheet">
+
+    <link href="{{ asset('css/toggles.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/toggle-themes/toggles-all.css') }}" rel="stylesheet">
+
+    <link href="{{ asset('css/toggles.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/toggle-themes/toggles-all.css') }}" rel="stylesheet">
+
+    <!-- DataTables CSS -->
+    <link href="{{ asset('bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css') }}" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+{{--<link href="{{ asset('public/bower_components/datatables-responsive/css/responsive.dataTables.scss') }}" rel="stylesheet">--}}
+<!-- jQuery Library -->
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+
+    <!-- jQuery Library -->
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+
+
+
+
+
+    <!-- DataTables CSS -->
+    <link href="{{ asset('bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css') }}" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="{{ asset('bower_components/datatables-responsive/css/responsive.dataTables.scss') }}" rel="stylesheet">
+
+
+
+    <script>
+
+
+        var placeSearch, autocomplete;
+        var componentForm = {
+            street_number: 'short_name',
+            route: 'long_name',
+            locality: 'long_name',
+            administrative_area_level_1: 'short_name',
+            country: 'long_name',
+            postal_code: 'short_name'
+        };
+
+    </script>
+
+    <style>
+        body {
+            width: 100%;
+            height:100%;
+            font-family: 'Open Sans', sans-serif;
+            background: #092756;
+            background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%),-moz-linear-gradient(top,  rgba(57,173,219,.25) 0%, rgba(42,60,87,.4) 100%), -moz-linear-gradient(-45deg,  #670d10 0%, #092756 100%);
+            background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -webkit-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -webkit-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
+            background: -o-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -o-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -o-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
+            background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -ms-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -ms-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
+            background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg,  #670d10 0%,#092756 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#092756',GradientType=1 );
+        }
+    </style>
+
+</head>
+<body>
+
+
+
+<div class="col-md-12" style="margin-top: 3%;">
+
     <!-- Breadcrumb -->
     <ol class="breadcrumb hidden-xs">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Library</a></li>
-        <li class="active">Data</li>
+        <li>
+            <a href="{{ route('logout') }}"
+               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                Logout /
+            </a>
+        </li>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            {{ csrf_field() }}
+        </form>
+        <li class="active">Dashboard for {{$company->name}}</li>
     </ol>
 
-    <h4 class="page-title">DASHBOARD</h4>
+    <h1 class="page-title">DASHBOARD FOR {{$company->name}}</h1>
 
     <!-- Shortcuts -->
     <div class="block-area shortcut-area">
@@ -96,8 +206,8 @@
 
     <h4 class="page-title">Sites   Listing</h4>
 
-    <div class="row">
-        <div class="col-md-12" >
+    <div class="row" style="margin-left: 1%;margin-right: 1%;">
+        <div class="col-md-12">
             <div class="tab-pane" id="closure">
                 <!-- Responsive Table -->
                 <div class="block-area" id="responsiveTable">
@@ -115,8 +225,7 @@
                                 <th>SITE NAME</th>
                                 <th>DB NAME</th>
                                 <th>SITE CODE</th>
-                                <th>END POINT</th>
-
+                                {{--<th>ACTIONS</th>--}}
 
                             </tr>
                             </thead>
@@ -131,78 +240,224 @@
     <!-- Chat -->
 </div>
 
-@endsection
-@section('footer')
-    <script>
+@yield('footer')
 
-        jQuery(document).ready(function($){
 
-            $.ajax({
-                url: '{!! url('/getsitelist/')!!}',
-                type: 'GET',
-                dataType: 'json',
-                success: function (data) {
-                    assignToEventsColumns(data);
+<script src="{{ asset('js/toggles.js') }}"></script>
+
+<script src="{{ asset('js/jquery-ui.min.js') }}"></script> <!-- jQuery UI -->
+<script src="{{ asset('js/jquery.easing.1.3.js') }}"></script> <!-- jQuery Easing - Requirred for Lightbox + Pie Charts-->
+
+<script src="{{ asset('js/toggles.js') }}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.0/pagination.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.0/pagination.min.js"></script>
+{{--<script src="{{ asset('js/pagination.js') }}"></script>--}}
+{{--<script src="{{ asset('js/pagination.min.js') }}"></script>--}}
+<script src="{{ asset('js/jquery-ui.min.js') }}"></script> <!--
+
+
+jQuery UI -->
+<script src="{{ asset('js/jquery.easing.1.3.js') }}"></script> <!-- jQuery Easing - Requirred for Lightbox + Pie Charts-->
+
+
+<!-- Bootstrap -->
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<!--  Form Related -->
+<script src="{{ asset('js/icheck.js') }}"></script> <!-- Custom Checkbox + Radio -->
+
+<!-- UX -->
+<script src="{{ asset('js/scroll.min.js') }}"></script> <!-- Custom Scrollbar -->
+
+<!-- Other -->
+<script src="{{ asset('js/calendar.min.js') }}"></script> <!-- Calendar -->
+<script src="{{ asset('js/feeds.min.js') }}"></script> <!-- News Feeds -->
+
+
+<!--  Form Related -->
+<script src="{{ asset('js/validation/validate.min.js') }}"></script> <!-- jQuery Form Validation Library -->
+<script src="{{ asset('js/validation/validationEngine.min.js') }}"></script> <!-- jQuery Form Validation Library - requirred with above js -->
+
+
+<!-- All JS functions -->
+<script src="{{ asset('js/functions.js') }}"></script>
+
+
+<!-- Token Input -->
+<script src="{{ asset('js/jquery.tokeninput.js') }}"></script> <!-- Token Input -->
+
+
+
+<!-- Noty JavaScript -->
+<script src="{{ asset('bower_components/noty/js/noty/packaged/jquery.noty.packaged.js') }}"></script>
+
+<!-- DataTables JavaScript -->
+
+
+<script src="{{ asset('bower_components/datatables/media/js/datatables-plugins/pagination/scrolling.js') }}"></script>
+<script src="{{ asset('bower_components/datatables/media/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js') }}"></script>
+
+
+
+<!-- Jquery Bootstrap Maxlength -->
+<script src="{{ asset('bower_components/bootstrap-maxlength/bootstrap-maxlength.min.js') }}"></script>
+
+
+<!-- Media -->
+<script src="{{ asset('js/media-player.min.js') }}"></script> <!-- Video Player -->
+<script src="{{ asset('js/pirobox.min.js') }}"></script> <!-- Lightbox -->
+<script src="{{ asset('js/file-manager/elfinder.js') }}"></script> <!-- File Manager -->
+
+
+<script type="text/javascript" src="{{ asset('incl/oms.min.js') }}"></script>
+
+
+
+<!-- File Upload -->
+<script src="{{ asset('js/fileupload.min.js') }}"></script> <!-- File Upload -->
+
+<!-- Spinner -->
+<script src="{{ asset('js/HoldOn.min.js') }}"></script> <!-- Spinner -->
+
+<!-- bootstrap-switch. -->
+<script src="{{ asset('js/bootstrap-switch.js') }}"></script> <!-- bootstrap-switch. -->
+
+<!-- Date & Time Picker -->
+<script src="{{ asset('js/datetimepicker.min.js') }}"></script> <!-- Date & Time Picker -->
+
+<!-- Buttons HTML5 -->
+<script src="{{ asset('js/dataTables.buttons.min.js') }}"></script>
+<script src="{{ asset('js/buttons.html5.min.js') }}"></script>
+<script src="{{ asset('js/jszip.min.js') }}"></script>
+<script src="{{ asset('js/pdfmake.min.js') }}"></script>
+<script src="{{ asset('js/vfs_fonts.js') }}"></script>
+<!--  Buttons HTML5 -->
+
+<script src="{{ asset('js/socket.io.js') }}"></script>
+
+<script src="{{ asset('js/calendar.min.js') }}"></script> <!-- Calendar -->
+
+<script src="{{ asset('js/raphael.js') }}"> </script>
+
+
+<!-- Charts -->
+<script src="js/charts/jquery.flot.js"></script> <!-- Flot Main -->
+<script src="js/charts/jquery.flot.time.js"></script> <!-- Flot sub -->
+<script src="js/charts/jquery.flot.animator.min.js"></script> <!-- Flot sub -->
+<script src="js/charts/jquery.flot.resize.min.js"></script> <!-- Flot sub - for repaint when resizing the screen -->
+
+<script src="js/sparkline.min.js"></script> <!-- Sparkline - Tiny charts -->
+<script src="js/easypiechart.js"></script> <!-- EasyPieChart - Animated Pie Charts -->
+<script src="js/charts.js"></script> <!-- All the above chart related functions -->
+
+
+<!-- D3.js
+        <script src="{{ asset('js/d3/plugins.js') }}"></script>
+        <script src="{{ asset('js/d3/script.js') }}"></script>
+        <script src="{{ asset('js/d3/libs/coffee-script.js') }}"></script>
+        <script src="{{ asset('js/d3/libs/d3.v2.js') }}"></script>
+        <script src="{{ asset('js/d3/Tooltip.js') }}"></script>
+        <script src="{{ asset('js/d3/Tooltip.js') }}"></script>
+    -->
+
+<script>
+    $("#country").tokenInput("{!! url('/getCountries')!!}",
+        {tokenLimit: 1,
+            animateDropdown: false,
+            onAdd: function (results) {
+
+                if(results.name)
+                {
+                    $("#code").val(results.dial_code);
                 }
-            });
+                else
+                {
 
-            function assignToEventsColumns(data) {
-                var table = $('#ClockingTimePrintTable').dataTable({
-                    "dom": 'Bfrtip',
-                    "scrollX": true,
-                    "bAutoWidth": false,
-                    "aaData": data,
-                    "aaSorting": [],
-                    "buttons": [
-                        'copyHtml5',
-                        'excelHtml5',
-                        ,{
-                            extend : 'pdfHtml5',
-                            title  : 'Biometrico',
-                            header : 'I am text in',
-                        },
-                    ],
-                    "buttons": [
-                        'excelHtml5',
-                        'csvHtml5',
-                        'pdfHtml5'
-                    ],
-                    "columns": [
-                        //                    {data: 'id', name: 'id'},
-                        {data: 'id', name: 'id'},
-                        {data: 'company_id', name: 'company_id'},
-
-                        {data: 'site_name', name: 'site_name'},
-                        {data: 'db_name', name: 'db_name'},
-                        {data: 'site_code', name: 'site_code'},
-
-                        {data: 'end_point', name: 'end_point'},
-
-
-
-
-
-
-                    ],
-
-                    "aoColumnDefs": [
-                        {
-                            "aTargets": [0],
-                            "bSearchable": false,
-                            "bSortable": false,
-                            "bSort": false,
-                            "mData": "EventTypeId",
-
-                        },
-                        {
-                            "aTargets": [1],
-                            "mData": "EventType"
-                        }
-                    ]
-                });
-            }
-
-
+                }
+                return results;
+            },
         });
-    </script>
-@endsection
+
+
+
+</script>
+
+<script>
+
+    jQuery(document).ready(function($){
+
+        $.ajax({
+            url: '{!! url('/getsitelist/')!!}',
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                assignToEventsColumns(data);
+            }
+        });
+
+        function assignToEventsColumns(data) {
+            var table = $('#ClockingTimePrintTable').dataTable({
+                "dom": 'Bfrtip',
+                "scrollX": true,
+                "bAutoWidth": false,
+                "aaData": data,
+                "aaSorting": [],
+                "buttons": [
+                    'copyHtml5',
+                    'excelHtml5',
+                    ,{
+                        extend : 'pdfHtml5',
+                        title  : 'Biometrico',
+                        header : 'I am text in',
+                    },
+                ],
+                "buttons": [
+                    'excelHtml5',
+                    'csvHtml5',
+                    'pdfHtml5'
+                ],
+                "columns": [
+                    //                    {data: 'id', name: 'id'},
+                    {data: 'id', name: 'id'},
+                    {data: 'company_id', name: 'company_id'},
+
+                    {data: 'site_name', name: 'site_name'},
+                    {data: 'db_name', name: 'db_name'},
+                    {data: 'site_code', name: 'site_code'},
+
+
+                    {data: function(d)
+                    {
+                        return "<a href='{!! url('selectSite/" + d.id + "') !!}' class='btn btn-sm glyphicon glyphicon-eye-open'>" + ' View' + "</a>";
+                    },"name" : 'name'},
+
+
+                ],
+
+                "aoColumnDefs": [
+                    {
+                        "aTargets": [4],
+                        "bSearchable": false,
+                        "bSortable": false,
+                        "bSort": false,
+                        "mData": "EventTypeId",
+
+                    },
+                    {
+                        "aTargets": [1],
+                        "mData": "EventType"
+                    }
+                ]
+            });
+        }
+
+
+    });
+</script>
+
+</body>
