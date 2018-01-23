@@ -179,7 +179,7 @@
 
                         {data: function(d)
                             {
-                                return "<a href='{!! url('/" + d.id + "') !!}' class='btn btn-sm'>" + 'View' + "</a>";
+                                return "<a href='{!! url('selectSite/" + d.id + "') !!}' class='btn btn-sm'>" + 'View' + "</a>";
                             },"name" : 'name'},
 
 

@@ -64,13 +64,34 @@ class SitesController extends Controller
         return response()->json($site);
     }
 
-    public function selectSite(Request $request)
+    public function selectSite($id)
     {
-        $site_id = $request['site_id'];
+        $site = Site::where('id',$id)->first();
 
-        $site = Site::where('id',$site_id)->first();
+        $shedule= \DB::connection($site->connection_name)->table('clocking_temp_print')
+            ->select(
+                \DB::raw(
+                    "
+                                clocking_temp_print.CLOCK_DATE  ,             
+                                clocking_temp_print.CLOCK_DAY  ,                       
+                                clocking_temp_print.TIME_IN_1  ,
+                                clocking_temp_print.TIME_IN_2  ,
+                                clocking_temp_print.TIME_OUT_2  ,
+                                clocking_temp_print.TIME_IN_3  ,
+                                clocking_temp_print.TIME_OUT_3  ,
+                                clocking_temp_print.TIME_IN_4  ,
+                                clocking_temp_print.TIME_OUT_4,
+                                clocking_temp_print.TIME_IN_5    
+                                "
+                )
+            )
+            ->get();
 
-        return $site;
+//        return json_encode($shedule) ;
+
+                return view('home',compact('shedule'));
+
+//        return $site;
     }
 
     public function create()

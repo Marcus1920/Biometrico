@@ -71,7 +71,7 @@ Route::group(array('prefix' => 'api/v1'), function() {
 
 });
 
-Route::post('/selectSite', 'SitesController@selectSite');
+Route::get('/selectSite/{id}', 'SitesController@selectSite');
 
 Route::get('addsite', 'addSiteController@index')->name('addsite');
 
@@ -324,5 +324,14 @@ Route::get('/zipokoto2018', 'ZipoKoto2018Controller@index')->name('/zipokoto2018
 Route::post('/zipokoto2018', 'ZipoKoto2018Controller@index')->name('/zipokoto2018');
 Route::delete('/zipokoto2018', 'ZipoKoto2018Controller@index')->name('/zipokoto2018');
 Route::put('/zipokoto2018', 'ZipoKoto2018Controller@index')->name('/zipokoto2018');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/sitec', 'SiteCController@index')->name('/sitec');
+Route::post('/sitec', 'SiteCController@index')->name('/sitec');
+Route::delete('/sitec', 'SiteCController@index')->name('/sitec');
+Route::put('/sitec', 'SiteCController@index')->name('/sitec');
 
          });

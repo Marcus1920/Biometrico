@@ -48,14 +48,18 @@
 
         jQuery(document).ready(function($){
 
-            $.ajax({
-                url: '{!! url('/getClockingList/')!!}',
-                type: 'GET',
-                dataType: 'json',
-                success: function (data) {
-                    assignToEventsColumns(data);
-                }
-            });
+            var $data = {!! $shedule !!};
+
+            {{--$.ajax({--}}
+                {{--url: '{!! url('/getClockingList/')!!}',--}}
+                {{--type: 'GET',--}}
+                {{--dataType: 'json',--}}
+                {{--success: function (data) {--}}
+                    {{--assignToEventsColumns(data);--}}
+                {{--}--}}
+            {{--});--}}
+
+            assignToEventsColumns($data);
 
             function assignToEventsColumns(data) {
                 var table = $('#ClockingTimePrintTable').dataTable({

@@ -34,7 +34,7 @@ class addSiteController extends Controller
          $site_api_ulr = strtolower($SiteUrl) ;
          $dbName = ''.$SiteName.'_db';
          // Function  to  configure  the  Datatabase  connection
-         $db_config    =  "C:/xampp/htdocs/Biometrico/config/database.php" ;
+         $db_config    =  "C:/Users/Siyaleader-0.1/Desktop/Biometric Latest/Biometrico/config/database.php" ;
          $connection   = "'mysql$SiteName' => [
              'driver' => 'mysql',
              'host' => env('DB_HOST', '127.0.0.1'),
@@ -64,7 +64,7 @@ class addSiteController extends Controller
 
 
          // Function   to   write  on  the Eviromental  File
-         $fille  = "C:/xampp/htdocs/Biometrico/.env" ;
+         $fille  = "C:/Users/Siyaleader-0.1/Desktop/Biometric Latest/Biometrico/.env" ;
          $space  =   "\r\n";
          $DB_CONNECTION        ="DB_CONNECTION=" ."mysql"."\n";
 
@@ -85,7 +85,7 @@ class addSiteController extends Controller
          // Function  to  create  a  Controller
          $fn = "C:/xampp/htdocs/Biometrico/app/Http/Controllers/AttendecyController.php";
 
-         $Create_controller = fopen("C:/xampp/htdocs/Biometrico/app/Http/Controllers/".$SiteController_conifg.".php", "w") ;
+         $Create_controller = fopen("C:/Users/Siyaleader-0.1/Desktop/Biometric Latest/Biometrico/app/Http/Controllers".$SiteController_conifg.".php", "w") ;
          $methode  = "<?php
 
 namespace App\Http\Controllers;
@@ -150,7 +150,7 @@ class $SiteController_conifg extends Controller
          fclose($Create_controller);
 
          // add   Resource  Route
-         $route  = "C:/xampp/htdocs/Biometrico/routes/web.php" ;
+         $route  = "C:/Users/Siyaleader-0.1/Desktop/Biometric Latest/Biometrico/routes/web.php" ;
 
 
 
