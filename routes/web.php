@@ -506,3 +506,12 @@ Route::delete('/test1292', 'test1292Controller@index')->name('/test1292');
 Route::put('/test1292', 'test1292Controller@index')->name('/test1292');
 
          });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/test2025', 'test2025Controller@index')->name('/test2025');
+Route::post('/test2025', 'test2025Controller@index')->name('/test2025');
+Route::delete('/test2025', 'test2025Controller@index')->name('/test2025');
+Route::put('/test2025', 'test2025Controller@index')->name('/test2025');
+
+         });
