@@ -69,8 +69,8 @@ class addSiteController extends Controller
          $DB_CONNECTION        ="DB_CONNECTION=" ."mysql"."\n";
 
          $DB_HOST              ="DB_HOST =" . $request->input('DB_HOST')."\n";
-         $DB_DATABAS           = "DB_DATABAS$SiteName_conif =" .$request->input('DB_DATABASE')."\n";
-         $DB_USERNAME          = "DB_USERNAME$SiteName_conif =" .$request->input('DB_USERNAME')."\n";
+         $DB_DATABAS           = "DB_DATABAS$SiteName_conif =" .$dbName."\n";
+         $DB_USERNAME          = "DB_USERNAME$SiteName_conif =" .'root'."\n";
          $DB_PASSWORD          = "DB_PASSWORD$SiteName_conif=" .$request->input('DB_PASSWORD')."\n";
 
          file_put_contents($fille ,$space , FILE_APPEND);
