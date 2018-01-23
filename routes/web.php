@@ -35,6 +35,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/sites', 'SitesController@sites')->name('sites');
+Route::get('/getsitelist', 'SitesController@getsitelist')->name('getsitelist');
 
 Route::get('/create', 'SitesController@create')->name('createSite');
 
@@ -56,10 +57,10 @@ Route::get('emails.forgotPassword','UsersController@forgotPassword');
 Route::get('clockinglist', 'ClockingController@index')->name('clockinglist');
 Route::get('getClockingList', 'ClockingController@getClockingList')->name('getClockingList');
 Route::post('attendstoreance', 'AttendecyController@store')->name('attendstoreance');
-Route::get('attendance', 'AttendecyController@index')->name('attendance');
+Route::get('attendance/{id}', 'AttendecyController@index')->name('attendance');
 Route::get('getattendanceList', 'AttendecyController@getattendanceList')->name('getattendanceList');
 
-Route::get('workshedul', 'WorkScheduleController@index')->name('workshedul');
+Route::get('workshedul/{id}', 'WorkScheduleController@index')->name('workshedul');
 Route::get('getworksheduleList', 'WorkScheduleController@getworksheduleList')->name('getworksheduleList');
 Route::post('attendstoreance', 'AttendecyController@store')->name('attendstoreance');
 
@@ -67,7 +68,7 @@ Route::post('attendstoreance', 'AttendecyController@store')->name('attendstorean
 
 Route::group(array('prefix' => 'api/v1'), function() {
 
-
+    Route::post('attendstoreance', 'AttendecyController@store')->name('attendstoreance');
     Route::resource('/company','CompanyController');
 
     Route::post('/loginUser','UsersController@login');
@@ -75,6 +76,7 @@ Route::group(array('prefix' => 'api/v1'), function() {
     Route::post('/getSite','SitesController@getSite');
 
 });
+
 
 
 Route::get('addsite', 'addSiteController@index')->name('addsite');

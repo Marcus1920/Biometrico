@@ -96,12 +96,24 @@
     </style>
 
 </head>
+
+<?php
+
+        use App\User;
+        use App\role;
+
+        $user = User::where('id',Auth::user()->id )->with('company')->first();
+
+        $role = role::where('id',$user->role)->first();
+
+?>
+
 <body>
 
 <header id="header" class="media">
     <a href="" id="menu-toggle"></a>
     <a class="logo pull-left" href="#">
-    {{--<img class="" src="{{ asset('/img/Biometrico-Logo-Final.png') }}" width="60%" alt="">--}}
+        {{--<img class="" src="{{ asset('/img/Biometrico-Logo-Final.png') }}" width="60%" alt="">--}}
     </a>
 
     <div class="media-body">
@@ -160,25 +172,33 @@
                 </ul>
 
 
-            @if (Auth::user())
+                @if (Auth::user())
                     <h4 class="m-0">
                         {{ Auth::user()->name }}  {{ Auth::user()->surname }}
-                    </h4>
-                    {{--{{ $systemRole->name }}<br>--}}
-                    {{ Auth::user()->email }}
+                    </h4><br>
+                    {{ Auth::user()->email }}<br>
+                    {{ $role->name }}<br>
+                    of<br>
+                    {{$user->company->name}}
+
+
+
+
+{{--                    {{$user}}--}}
+
                 @endif
                 <span style="margin-top:20px"></span>
-                 <br/>
-                 <br/>
-                    <a href="{{ route('logout') }}"
-                       onclick="event.preventDefault();
+                <br/>
+                <br/>
+                <a href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                        <h4>Logout</h4>
-                    </a>
+                    <h4>Logout</h4>
+                </a>
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        {{ csrf_field() }}
-                    </form>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
 
 
             </div>
@@ -207,70 +227,77 @@
                 <ul class="list-unstyled menu-item">
                     <li><a href="{{ url('registerUser') }}"><span class="badge badge-r"></span>Register</a></li>
                     {{--<li><a href="{{ url('adminUser') }}"><span class="badge badge-r"></span>Admin List</a></li>--}}
-                    {{--<li><a href="{{ url('addsite') }}"><span class="badge badge-r"></span>Add Site </a></li>--}}
+                    <li><a href="{{ url('addsite') }}"><span class="badge badge-r"></span>Add Site </a></li>
                     {{--<li><a href="{{ url('userroleslist')}}"><span class="badge badge-r"></span>User Roles List</a></li>--}}
 
                 </ul>
             </li>
 
-            <li {{ (Request::is('') ? "class=active dropdown" : 'dropdown') }}>
-                <a class="sa-side-user" href="#">
+            {{--<li {{ (Request::is('') ? "class=active dropdown" : 'dropdown') }}>--}}
+
+                {{--<a class="sa-side-user" href="#">--}}
                     {{--<span class="menu-item">App Users</span>--}}
-                </a>
-                <ul class="list-unstyled menu-item">
-                    <h6><b>APP USERS</b></h6>
-                    <li><a href="{{ url('inactiveUsers') }}"><span class="badge badge-r"></span>Inactive Users</a></li>
-                    <li><a href="{{ url('activeUsers') }}"><span class="badge badge-r"></span>Active Users</a></li>
-                    <li><a href="{{ url('deactivatedUser') }}"><span class="badge badge-r"></span>Deactivated Users</a></li>
-                </ul>
-            </li>
+                {{--</a>--}}
+                {{--<ul class="list-unstyled menu-item">--}}
+                    {{--<h6><b>APP USERS</b></h6>--}}
+                    {{--<li><a href="{{ url('inactiveUsers') }}"><span class="badge badge-r"></span>Inactive Users</a></li>--}}
+                    {{--<li><a href="{{ url('activeUsers') }}"><span class="badge badge-r"></span>Active Users</a></li>--}}
+                    {{--<li><a href="{{ url('deactivatedUser') }}"><span class="badge badge-r"></span>Deactivated Users</a></li>--}}
+                {{--</ul>--}}
+
+            {{--</li>--}}
 
             {{--<li {{ (Request::is('map') ? "class=active" : '') }}>--}}
-                {{--<a class="sa-side-home" href="{{ url('getUsers') }}">--}}
-                    {{--<span class="menu-item">map</span>--}}
+            {{--<a class="sa-side-home" href="{{ url('getUsers') }}">--}}
+            {{--<span class="menu-item">map</span>--}}
+            {{--</a>--}}
+            {{--</li>--}}
+
+            {{--<li {{ (Request::is('posts') ? "class=active" : '') }}>--}}
+
+                {{--<a class="sa-side-cloking" href="{{ url('clockinglist') }}">--}}
+                    {{--<span class="menu-item">Clocking Time Print</span>--}}
+
                 {{--</a>--}}
             {{--</li>--}}
 
-            <li {{ (Request::is('posts') ? "class=active" : '') }}>
-                <a class="sa-side-cloking" href="{{ url('clockinglist') }}">
-                    <span class="menu-item">Clocking Time Print</span>
+            {{--<li {{ (Request::is('posts') ? "class=active" : '') }}>--}}
+                {{--<a class="sa-side-attendace" href="{{ url('attendance') }}">--}}
+                    {{--<span class="menu-item">Attendance List</span>--}}
 
-                </a>
-            </li>
+                {{--</a>--}}
 
-            <li {{ (Request::is('posts') ? "class=active" : '') }}>
-                <a class="sa-side-attendace" href="{{ url('attendance') }}">
-                    <span class="menu-item">Attendance List</span>
-
-                </a>
-            </li>
+            {{--</li>--}}
 
 
-            <li {{ (Request::is('research') ? "class=active" : '') }}>
-                <a class="sa-side-workshedule" href="{{ url('workshedul') }}">
-                    <span class="menu-item">work schedule </span>
+            {{--<li {{ (Request::is('research') ? "class=active" : '') }}>--}}
 
-                </a>
-            </li>
+                {{--<a class="sa-side-workshedule" href="{{ url('workshedul') }}">--}}
+                    {{--<span class="menu-item">work schedule </span>--}}
+
+                {{--</a>--}}
+
+            {{--</li>--}}
 
             {{--<li {{ (Request::is('public_wall') ? "class=active" : '') }}>--}}
-                {{--<a class="sa-side-public_wall" href="{{ url('publicWall') }}">--}}
-                    {{--<span class="menu-item">Public Wall</span>--}}
+            {{--<a class="sa-side-public_wall" href="{{ url('publicWall') }}">--}}
+            {{--<span class="menu-item">Public Wall</span>--}}
 
-                {{--</a>--}}
+            {{--</a>--}}
             {{--</li>--}}
 
-            <li {{ (Request::is('reports') ? "class=active" : '') }}>
-                <a class="sa-side-reports" href="{{ url('reports') }}">
-                    <span class="menu-item">Reports</span>
+            {{--<li {{ (Request::is('reports') ? "class=active" : '') }}>--}}
+       {{--<a class="sa-side-reports" href="{{ url('reports') }}">--}}
+                    {{--<span class="menu-item">Reports</span>--}}
 
-                </a>
-            </li>
+                {{--</a>--}}
+
+            {{--</li>--}}
 
             {{--<li {{ (Request::is('transaction') ? "class=active" : '') }}>--}}
-                {{--<a class="sa-side-transaction" href="{{ url('transactionList') }}">--}}
-                    {{--<span class="menu-item">Transaction history</span>--}}
-                {{--</a>--}}
+            {{--<a class="sa-side-transaction" href="{{ url('transactionList') }}">--}}
+            {{--<span class="menu-item">Transaction history</span>--}}
+            {{--</a>--}}
             {{--</li>--}}
 
         </ul>
@@ -282,7 +309,7 @@
 
         @yield('content')
     </section>
- </section>
+</section>
 @yield('footer')
 
 
@@ -388,7 +415,15 @@ jQuery UI -->
 <script src="{{ asset('js/raphael.js') }}"> </script>
 
 
+<!-- Charts -->
+<script src="js/charts/jquery.flot.js"></script> <!-- Flot Main -->
+<script src="js/charts/jquery.flot.time.js"></script> <!-- Flot sub -->
+<script src="js/charts/jquery.flot.animator.min.js"></script> <!-- Flot sub -->
+<script src="js/charts/jquery.flot.resize.min.js"></script> <!-- Flot sub - for repaint when resizing the screen -->
 
+<script src="js/sparkline.min.js"></script> <!-- Sparkline - Tiny charts -->
+<script src="js/easypiechart.js"></script> <!-- EasyPieChart - Animated Pie Charts -->
+<script src="js/charts.js"></script> <!-- All the above chart related functions -->
 
 <!-- D3.js
         <script src="{{ asset('js/d3/plugins.js') }}"></script>
@@ -402,7 +437,7 @@ jQuery UI -->
 <script>
     $("#country").tokenInput("{!! url('/getCountries')!!}",
         {tokenLimit: 1,
-        animateDropdown: false,
+            animateDropdown: false,
             onAdd: function (results) {
 
                 if(results.name)
@@ -410,11 +445,11 @@ jQuery UI -->
                     $("#code").val(results.dial_code);
                 }
                 else
-                    {
+                {
 
-            }
-            return results;
-    },
+                }
+                return results;
+            },
         });
 
 

@@ -90,6 +90,7 @@ class UsersController extends Controller
             return "Wrong email";
         }
     }
+
     public  function forgotPassword()
     {
         $response=array();
@@ -137,3 +138,4 @@ class UsersController extends Controller
 
 
 }
+
