@@ -34,7 +34,7 @@ class addSiteController extends Controller
          $site_api_ulr = strtolower($SiteUrl) ;
          $dbName = ''.$SiteName.'_db';
          // Function  to  configure  the  Datatabase  connection
-         $db_config    =  "C:/xampp/htdocs/Biometrico/config/database.php" ;
+         $db_config    =  "C:/Users/Siyaleader-0.1/Desktop/Biometric Latest/Biometrico/config/database.php" ;
          $connection   = "'mysql$SiteName' => [
              'driver' => 'mysql',
              'host' => env('DB_HOST', '127.0.0.1'),
@@ -64,7 +64,7 @@ class addSiteController extends Controller
 
 
          // Function   to   write  on  the Eviromental  File
-         $fille  = "C:/xampp/htdocs/Biometrico/.env" ;
+         $fille  = "C:/Users/Siyaleader-0.1/Desktop/Biometric Latest/Biometrico/.env" ;
          $space  =   "\r\n";
          $DB_CONNECTION        ="DB_CONNECTION=" ."mysql"."\n";
 
@@ -85,7 +85,7 @@ class addSiteController extends Controller
          // Function  to  create  a  Controller
          $fn = "C:/xampp/htdocs/Biometrico/app/Http/Controllers/AttendecyController.php";
 
-         $Create_controller = fopen("C:/xampp/htdocs/Biometrico/app/Http/Controllers/".$SiteController_conifg.".php", "w") ;
+         $Create_controller = fopen("C:/Users/Siyaleader-0.1/Desktop/Biometric Latest/Biometrico/app/Http/Controllers".$SiteController_conifg.".php", "w") ;
          $methode  = "<?php
 
 namespace App\Http\Controllers;
@@ -150,7 +150,7 @@ class $SiteController_conifg extends Controller
          fclose($Create_controller);
 
          // add   Resource  Route
-         $route  = "C:/xampp/htdocs/Biometrico/routes/web.php" ;
+         $route  = "C:/Users/Siyaleader-0.1/Desktop/Biometric Latest/Biometrico/routes/web.php" ;
 
 
 
@@ -177,9 +177,10 @@ class $SiteController_conifg extends Controller
 
          $dbName = ''.$SiteName.'_db';
 
-         $newSite->db_name = $dbName;
+         $newSite->db_name = strtolower($dbName);
          $newSite->site_code = '001'.$SiteName;
-         $newSite->end_point =   $_ENV['APP_URL']."api/v1".$site_api_ulr ;
+         $newSite->	connection_name = "mysql".$SiteName;
+//         $newSite->end_point =   $_ENV['APP_URL']."api/v1".$site_api_ulr ;
 
 
          \DB::statement(\DB::raw('CREATE DATABASE '.$dbName.''));
@@ -187,7 +188,7 @@ class $SiteController_conifg extends Controller
          $conn =new mysqli('localhost', 'root', '' , ''.$dbName.'');
 
          $query = '';
-         $sqlScript = file("C:/xampp/htdocs/Biometrico/public/Biometricodb.sql");
+         $sqlScript = file("C:/Users/Siyaleader-0.1/Desktop/Biometric Latest/Biometrico/public/Biometricodb.sql");
          foreach ($sqlScript as $line)	{
 
              $startWith = substr(trim($line), 0 ,2);
@@ -206,7 +207,7 @@ class $SiteController_conifg extends Controller
 
          $newSite->save();
 
-         return "successfuly created a site";
+         return redirect('/sites');
 
 
 

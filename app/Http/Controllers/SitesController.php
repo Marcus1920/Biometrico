@@ -8,6 +8,7 @@ use App\User;
 use App\Company;
 use Illuminate\Support\Facades\Auth;
 use DB;
+use Illuminate\Support\Facades\Redirect;
 use mysqli;
 
 class SitesController extends Controller
@@ -41,8 +42,7 @@ class SitesController extends Controller
                         sites.company_id ,
                         sites.site_name,
                         sites.db_name,
-                        sites.site_code,
-                        sites.end_point
+                        sites.site_code
                        
 				
                  
@@ -62,6 +62,36 @@ class SitesController extends Controller
         $site = Site::where('site_code',$request['site_code'])->get();
 
         return response()->json($site);
+    }
+
+    public function selectSite($id)
+    {
+        $site = Site::where('id',$id)->first();
+
+        $shedule= \DB::connection($site->connection_name)->table('clocking_temp_print')
+            ->select(
+                \DB::raw(
+                    "
+                                clocking_temp_print.CLOCK_DATE  ,             
+                                clocking_temp_print.CLOCK_DAY  ,                       
+                                clocking_temp_print.TIME_IN_1  ,
+                                clocking_temp_print.TIME_IN_2  ,
+                                clocking_temp_print.TIME_OUT_2  ,
+                                clocking_temp_print.TIME_IN_3  ,
+                                clocking_temp_print.TIME_OUT_3  ,
+                                clocking_temp_print.TIME_IN_4  ,
+                                clocking_temp_print.TIME_OUT_4,
+                                clocking_temp_print.TIME_IN_5    
+                                "
+                )
+            )
+            ->get();
+
+//        return json_encode($shedule) ;
+
+                return view('home',compact('shedule','site'));
+
+//        return $site;
     }
 
     public function create()

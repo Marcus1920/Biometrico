@@ -106,11 +106,13 @@
     <!-- Breadcrumb -->
     <ol class="breadcrumb hidden-xs">
         <li>
-            <a href="{{ route('logout') }}"
-               onclick="event.preventDefault();
+
+        <a href="{{ route('logout') }}"
+           onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                Logout /
-            </a>
+            Logout /
+        </a>
+
         </li>
 
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -432,9 +434,11 @@ jQuery UI -->
 
 
                     {data: function(d)
-                    {
-                        return "<a href='{!! url('selectSite/" + d.id + "') !!}' class='btn btn-sm glyphicon glyphicon-eye-open'>" + ' View' + "</a>";
-                    },"name" : 'name'},
+
+                        {
+                            return "<a href='{!! url('selectSite/" + d.id + "') !!}' class='btn btn-sm glyphicon glyphicon-eye-open'>" + ' View' + "</a>";
+                        },"name" : 'name'},
+
 
 
                 ],

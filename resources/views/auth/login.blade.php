@@ -81,7 +81,7 @@
             top: 50%;
             left: 45%;
             border-radius: 50%;
-background-color: black;
+background-color: rgba(0, 0, 0, 0.05);
           
             margin: -150px 0 0 -150px;
             width:400px;

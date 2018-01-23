@@ -98,12 +98,14 @@
 </head>
 
 <?php
-use App\User;
-use App\role;
 
-$user = User::where('id',Auth::user()->id )->with('company')->first();
+        use App\User;
+        use App\role;
 
-$role = role::where('id',$user->role)->first();
+        $user = User::where('id',Auth::user()->id )->with('company')->first();
+
+        $role = role::where('id',$user->role)->first();
+
 ?>
 
 <body>
@@ -181,7 +183,9 @@ $role = role::where('id',$user->role)->first();
 
 
 
-                    {{--                    {{$user}}--}}
+
+{{--                    {{$user}}--}}
+
                 @endif
                 <span style="margin-top:20px"></span>
                 <br/>
@@ -230,15 +234,17 @@ $role = role::where('id',$user->role)->first();
             </li>
 
             {{--<li {{ (Request::is('') ? "class=active dropdown" : 'dropdown') }}>--}}
-            {{--<a class="sa-side-user" href="#">--}}
-            {{--<span class="menu-item">App Users</span>--}}
-            {{--</a>--}}
-            {{--<ul class="list-unstyled menu-item">--}}
-            {{--<h6><b>APP USERS</b></h6>--}}
-            {{--<li><a href="{{ url('inactiveUsers') }}"><span class="badge badge-r"></span>Inactive Users</a></li>--}}
-            {{--<li><a href="{{ url('activeUsers') }}"><span class="badge badge-r"></span>Active Users</a></li>--}}
-            {{--<li><a href="{{ url('deactivatedUser') }}"><span class="badge badge-r"></span>Deactivated Users</a></li>--}}
-            {{--</ul>--}}
+
+                {{--<a class="sa-side-user" href="#">--}}
+                    {{--<span class="menu-item">App Users</span>--}}
+                {{--</a>--}}
+                {{--<ul class="list-unstyled menu-item">--}}
+                    {{--<h6><b>APP USERS</b></h6>--}}
+                    {{--<li><a href="{{ url('inactiveUsers') }}"><span class="badge badge-r"></span>Inactive Users</a></li>--}}
+                    {{--<li><a href="{{ url('activeUsers') }}"><span class="badge badge-r"></span>Active Users</a></li>--}}
+                    {{--<li><a href="{{ url('deactivatedUser') }}"><span class="badge badge-r"></span>Deactivated Users</a></li>--}}
+                {{--</ul>--}}
+
             {{--</li>--}}
 
             {{--<li {{ (Request::is('map') ? "class=active" : '') }}>--}}
@@ -248,25 +254,29 @@ $role = role::where('id',$user->role)->first();
             {{--</li>--}}
 
             {{--<li {{ (Request::is('posts') ? "class=active" : '') }}>--}}
-            {{--<a class="sa-side-cloking" href="{{ url('clockinglist') }}">--}}
-            {{--<span class="menu-item">Clocking Time Print</span>--}}
 
-            {{--</a>--}}
+                {{--<a class="sa-side-cloking" href="{{ url('clockinglist') }}">--}}
+                    {{--<span class="menu-item">Clocking Time Print</span>--}}
+
+                {{--</a>--}}
             {{--</li>--}}
 
             {{--<li {{ (Request::is('posts') ? "class=active" : '') }}>--}}
-            {{--<a class="sa-side-attendace" href="{{ url('attendance') }}">--}}
-            {{--<span class="menu-item">Attendance List</span>--}}
+                {{--<a class="sa-side-attendace" href="{{ url('attendance') }}">--}}
+                    {{--<span class="menu-item">Attendance List</span>--}}
 
-            {{--</a>--}}
+                {{--</a>--}}
+
             {{--</li>--}}
 
 
             {{--<li {{ (Request::is('research') ? "class=active" : '') }}>--}}
-            {{--<a class="sa-side-workshedule" href="{{ url('workshedul') }}">--}}
-            {{--<span class="menu-item">work schedule </span>--}}
 
-            {{--</a>--}}
+                {{--<a class="sa-side-workshedule" href="{{ url('workshedul') }}">--}}
+                    {{--<span class="menu-item">work schedule </span>--}}
+
+                {{--</a>--}}
+
             {{--</li>--}}
 
             {{--<li {{ (Request::is('public_wall') ? "class=active" : '') }}>--}}
@@ -277,10 +287,11 @@ $role = role::where('id',$user->role)->first();
             {{--</li>--}}
 
             {{--<li {{ (Request::is('reports') ? "class=active" : '') }}>--}}
-            {{--<a class="sa-side-reports" href="{{ url('reports') }}">--}}
-            {{--<span class="menu-item">Reports</span>--}}
+       {{--<a class="sa-side-reports" href="{{ url('reports') }}">--}}
+                    {{--<span class="menu-item">Reports</span>--}}
 
-            {{--</a>--}}
+                {{--</a>--}}
+
             {{--</li>--}}
 
             {{--<li {{ (Request::is('transaction') ? "class=active" : '') }}>--}}

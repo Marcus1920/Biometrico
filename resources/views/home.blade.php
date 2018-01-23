@@ -1,11 +1,42 @@
 @extends('master')
 
 @section('content')
+
+    <!-- Shortcuts -->
+    <div class="block-area shortcut-area">
+        <a class="shortcut tile"   href="{{ url('/selectSite',$site->id)}}">
+            <img src="{{ url('img/shortcuts/clock-in.png') }}" alt="Clock Listing">
+            <small class="t-overflow">Clock Listing</small>
+        </a>
+        <a class="shortcut tile" href="{{ url('/attendance',$site->id)}}">
+            <img src="{{ url('img/shortcuts/attended.png') }}" alt="">
+            <small class="t-overflow">Attendance List</small>
+        </a>
+        <a class="shortcut tile"  href="{{ url('/workshedul',$site->id)}}">
+            <img src="{{ url('img/shortcuts/Schedule.png') }}" alt="">
+            <small class="t-overflow">Work Schedule</small>
+        </a>
+        <a class="shortcut tile" href="">
+            <img src="{{ url('img/shortcuts/statistic.png') }}" alt="">
+            <small class="t-overflow">Statistics</small>
+        </a>
+        <a class="shortcut tile" href="">
+            <img src="{{ url('img/shortcuts/Document.png') }}" alt="">
+            <small class="t-overflow">Connection</small>
+        </a>
+        <a class="shortcut tile" href="">
+            <img src="{{ url('img/shortcuts/Copy.png') }}" alt="">
+            <small class="t-overflow">Reports</small>
+        </a>
+    </div>
+
+    <hr class="whiter" />
+
     <ol class="breadcrumb hidden-xs">
         <li><a href="{{ url('/users') }}">Home</a></li>
         <li class="active">Clock List</li>
     </ol>
-    <h4 class="page-title">Clock  Listing</h4>
+    <h4 class="page-title">Clock  Listing for {{$site->site_name}}</h4>
 
     <div class="row">
         <div class="col-md-12" >
@@ -48,14 +79,18 @@
 
         jQuery(document).ready(function($){
 
-            $.ajax({
-                url: '{!! url('/getClockingList/')!!}',
-                type: 'GET',
-                dataType: 'json',
-                success: function (data) {
-                    assignToEventsColumns(data);
-                }
-            });
+            var $data = {!! $shedule !!};
+
+            {{--$.ajax({--}}
+                {{--url: '{!! url('/getClockingList/')!!}',--}}
+                {{--type: 'GET',--}}
+                {{--dataType: 'json',--}}
+                {{--success: function (data) {--}}
+                    {{--assignToEventsColumns(data);--}}
+                {{--}--}}
+            {{--});--}}
+
+            assignToEventsColumns($data);
 
             function assignToEventsColumns(data) {
                 var table = $('#ClockingTimePrintTable').dataTable({

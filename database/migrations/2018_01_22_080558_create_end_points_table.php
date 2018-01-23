@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSitesTable extends Migration
+class CreateEndPointsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreateSitesTable extends Migration
      */
     public function up()
     {
-        Schema::create('sites', function (Blueprint $table) {
+        Schema::create('end_points', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('company_id')->unsigned();
-            $table->string('site_name');
-            $table->string('db_name');
-            $table->string('site_code');
-            $table->string('connection_name');
-            $table->foreign('company_id')->references('id')->on('companies');
+            $table->integer('site_id')->unsigned();
+            $table->string('name');
+            $table->string('end_point');
+            $table->foreign('site_id')->references('id')->on('sites');
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ class CreateSitesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sites');
+        Schema::dropIfExists('end_points');
     }
 }
