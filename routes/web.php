@@ -51,10 +51,10 @@ Route::post('/storeUser', 'UsersController@create')->name('register');
 Route::get('clockinglist', 'ClockingController@index')->name('clockinglist');
 Route::get('getClockingList', 'ClockingController@getClockingList')->name('getClockingList');
 Route::post('attendstoreance', 'AttendecyController@store')->name('attendstoreance');
-Route::get('attendance', 'AttendecyController@index')->name('attendance');
+Route::get('attendance/{id}', 'AttendecyController@index')->name('attendance');
 Route::get('getattendanceList', 'AttendecyController@getattendanceList')->name('getattendanceList');
 
-Route::get('workshedul', 'WorkScheduleController@index')->name('workshedul');
+Route::get('workshedul/{id}', 'WorkScheduleController@index')->name('workshedul');
 Route::get('getworksheduleList', 'WorkScheduleController@getworksheduleList')->name('getworksheduleList');
 Route::post('attendstoreance', 'AttendecyController@store')->name('attendstoreance');
 
@@ -333,5 +333,14 @@ Route::get('/sitec', 'SiteCController@index')->name('/sitec');
 Route::post('/sitec', 'SiteCController@index')->name('/sitec');
 Route::delete('/sitec', 'SiteCController@index')->name('/sitec');
 Route::put('/sitec', 'SiteCController@index')->name('/sitec');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/sited', 'SiteDController@index')->name('/sited');
+Route::post('/sited', 'SiteDController@index')->name('/sited');
+Route::delete('/sited', 'SiteDController@index')->name('/sited');
+Route::put('/sited', 'SiteDController@index')->name('/sited');
 
          });

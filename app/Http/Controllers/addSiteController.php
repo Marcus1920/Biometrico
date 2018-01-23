@@ -207,7 +207,7 @@ class $SiteController_conifg extends Controller
 
          $newSite->save();
 
-         return "successfuly created a site";
+         return redirect('/sites');
 
 
 

@@ -89,7 +89,7 @@ class SitesController extends Controller
 
 //        return json_encode($shedule) ;
 
-                return view('home',compact('shedule'));
+                return view('home',compact('shedule','site'));
 
 //        return $site;
     }
