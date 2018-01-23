@@ -6,8 +6,8 @@
     <div  style="position: absolute ; left: 15%; right: 15%" >
         <br> <br>
         <div class="container">
-            <form action="siteconfiguration" method="post"  onsubmit="$('#loading').show();">
-                <div id="loading" style="display:none">Uploading...</div>
+            <form action="siteconfiguration" method="post"  onsubmit="$('#loading').modal('show')">
+                <div id="loading"  style="position: absolute ; background-color: black; width: 100% ; height:100%; display: none"><img  style="border-radius: 70%"  width="100%" height="100%" src="{{ asset('/img/Loading-Full.gif') }}"  alt="" /></div>
 
                 {{ csrf_field() }}
 
@@ -99,14 +99,14 @@
                 <div>
 
                     <div   style="position: absolute" >
-                        <input type="submit" class="btn-info" id="inputPassword3" value="Add Site" onclick="$('#loading').show();">
+                        <input type="submit" class="btn-info" id="inputPassword3" value="Add Site" onclick="$('#loading').modal('show');">
                     </div>
                 </div>
 
 
             </form>
 
-            <div id="loading" style="display:none;"><img src="ajax_progress2.gif" alt="" /></div>
+            <div id="lo" style="display:none;"><img src="ajax_progress2.gif" alt="" /></div>
         </div>
 
 </div>
@@ -120,7 +120,7 @@
         jQuery(document).ready(function($){
 
 
-
+            $('#loading').hide();
 
         });
     </script>

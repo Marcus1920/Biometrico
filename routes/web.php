@@ -326,3 +326,183 @@ Route::delete('/zipokoto2018', 'ZipoKoto2018Controller@index')->name('/zipokoto2
 Route::put('/zipokoto2018', 'ZipoKoto2018Controller@index')->name('/zipokoto2018');
 
          });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/seandb', 'seandbController@index')->name('/seandb');
+Route::post('/seandb', 'seandbController@index')->name('/seandb');
+Route::delete('/seandb', 'seandbController@index')->name('/seandb');
+Route::put('/seandb', 'seandbController@index')->name('/seandb');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/seandb2018', 'seandb2018Controller@index')->name('/seandb2018');
+Route::post('/seandb2018', 'seandb2018Controller@index')->name('/seandb2018');
+Route::delete('/seandb2018', 'seandb2018Controller@index')->name('/seandb2018');
+Route::put('/seandb2018', 'seandb2018Controller@index')->name('/seandb2018');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/colorgroupe', 'colorgroupeController@index')->name('/colorgroupe');
+Route::post('/colorgroupe', 'colorgroupeController@index')->name('/colorgroupe');
+Route::delete('/colorgroupe', 'colorgroupeController@index')->name('/colorgroupe');
+Route::put('/colorgroupe', 'colorgroupeController@index')->name('/colorgroupe');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/colorgroupe2012', 'colorgroupe2012Controller@index')->name('/colorgroupe2012');
+Route::post('/colorgroupe2012', 'colorgroupe2012Controller@index')->name('/colorgroupe2012');
+Route::delete('/colorgroupe2012', 'colorgroupe2012Controller@index')->name('/colorgroupe2012');
+Route::put('/colorgroupe2012', 'colorgroupe2012Controller@index')->name('/colorgroupe2012');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/adsada', 'adsadaController@index')->name('/adsada');
+Route::post('/adsada', 'adsadaController@index')->name('/adsada');
+Route::delete('/adsada', 'adsadaController@index')->name('/adsada');
+Route::put('/adsada', 'adsadaController@index')->name('/adsada');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/siyaleadertest', 'siyaleadertestController@index')->name('/siyaleadertest');
+Route::post('/siyaleadertest', 'siyaleadertestController@index')->name('/siyaleadertest');
+Route::delete('/siyaleadertest', 'siyaleadertestController@index')->name('/siyaleadertest');
+Route::put('/siyaleadertest', 'siyaleadertestController@index')->name('/siyaleadertest');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/colorgroupesasa', 'colorgroupesasaController@index')->name('/colorgroupesasa');
+Route::post('/colorgroupesasa', 'colorgroupesasaController@index')->name('/colorgroupesasa');
+Route::delete('/colorgroupesasa', 'colorgroupesasaController@index')->name('/colorgroupesasa');
+Route::put('/colorgroupesasa', 'colorgroupesasaController@index')->name('/colorgroupesasa');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/colorgroupesasa', 'colorgroupesasaController@index')->name('/colorgroupesasa');
+Route::post('/colorgroupesasa', 'colorgroupesasaController@index')->name('/colorgroupesasa');
+Route::delete('/colorgroupesasa', 'colorgroupesasaController@index')->name('/colorgroupesasa');
+Route::put('/colorgroupesasa', 'colorgroupesasaController@index')->name('/colorgroupesasa');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/colorgroupesasa', 'colorgroupesasaController@index')->name('/colorgroupesasa');
+Route::post('/colorgroupesasa', 'colorgroupesasaController@index')->name('/colorgroupesasa');
+Route::delete('/colorgroupesasa', 'colorgroupesasaController@index')->name('/colorgroupesasa');
+Route::put('/colorgroupesasa', 'colorgroupesasaController@index')->name('/colorgroupesasa');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/colorgroupesasa', 'colorgroupesasaController@index')->name('/colorgroupesasa');
+Route::post('/colorgroupesasa', 'colorgroupesasaController@index')->name('/colorgroupesasa');
+Route::delete('/colorgroupesasa', 'colorgroupesasaController@index')->name('/colorgroupesasa');
+Route::put('/colorgroupesasa', 'colorgroupesasaController@index')->name('/colorgroupesasa');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/colorgroupesasa', 'colorgroupesasaController@index')->name('/colorgroupesasa');
+Route::post('/colorgroupesasa', 'colorgroupesasaController@index')->name('/colorgroupesasa');
+Route::delete('/colorgroupesasa', 'colorgroupesasaController@index')->name('/colorgroupesasa');
+Route::put('/colorgroupesasa', 'colorgroupesasaController@index')->name('/colorgroupesasa');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/colorgroupesasa', 'colorgroupesasaController@index')->name('/colorgroupesasa');
+Route::post('/colorgroupesasa', 'colorgroupesasaController@index')->name('/colorgroupesasa');
+Route::delete('/colorgroupesasa', 'colorgroupesasaController@index')->name('/colorgroupesasa');
+Route::put('/colorgroupesasa', 'colorgroupesasaController@index')->name('/colorgroupesasa');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/erew', 'erewController@index')->name('/erew');
+Route::post('/erew', 'erewController@index')->name('/erew');
+Route::delete('/erew', 'erewController@index')->name('/erew');
+Route::put('/erew', 'erewController@index')->name('/erew');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/erew', 'erewController@index')->name('/erew');
+Route::post('/erew', 'erewController@index')->name('/erew');
+Route::delete('/erew', 'erewController@index')->name('/erew');
+Route::put('/erew', 'erewController@index')->name('/erew');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/colorgroupesasas', 'colorgroupesasasController@index')->name('/colorgroupesasas');
+Route::post('/colorgroupesasas', 'colorgroupesasasController@index')->name('/colorgroupesasas');
+Route::delete('/colorgroupesasas', 'colorgroupesasasController@index')->name('/colorgroupesasas');
+Route::put('/colorgroupesasas', 'colorgroupesasasController@index')->name('/colorgroupesasas');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/colorgroupesasasss', 'colorgroupesasasssController@index')->name('/colorgroupesasasss');
+Route::post('/colorgroupesasasss', 'colorgroupesasasssController@index')->name('/colorgroupesasasss');
+Route::delete('/colorgroupesasasss', 'colorgroupesasasssController@index')->name('/colorgroupesasasss');
+Route::put('/colorgroupesasasss', 'colorgroupesasasssController@index')->name('/colorgroupesasasss');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/colorgroupesasasssss', 'colorgroupesasasssssController@index')->name('/colorgroupesasasssss');
+Route::post('/colorgroupesasasssss', 'colorgroupesasasssssController@index')->name('/colorgroupesasasssss');
+Route::delete('/colorgroupesasasssss', 'colorgroupesasasssssController@index')->name('/colorgroupesasasssss');
+Route::put('/colorgroupesasasssss', 'colorgroupesasasssssController@index')->name('/colorgroupesasasssss');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/qweqwe', 'qweqweController@index')->name('/qweqwe');
+Route::post('/qweqwe', 'qweqweController@index')->name('/qweqwe');
+Route::delete('/qweqwe', 'qweqweController@index')->name('/qweqwe');
+Route::put('/qweqwe', 'qweqweController@index')->name('/qweqwe');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/qweqwe', 'qweqweController@index')->name('/qweqwe');
+Route::post('/qweqwe', 'qweqweController@index')->name('/qweqwe');
+Route::delete('/qweqwe', 'qweqweController@index')->name('/qweqwe');
+Route::put('/qweqwe', 'qweqweController@index')->name('/qweqwe');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/test1292', 'test1292Controller@index')->name('/test1292');
+Route::post('/test1292', 'test1292Controller@index')->name('/test1292');
+Route::delete('/test1292', 'test1292Controller@index')->name('/test1292');
+Route::put('/test1292', 'test1292Controller@index')->name('/test1292');
+
+         });
