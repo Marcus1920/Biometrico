@@ -47,6 +47,12 @@ Route::get('/registerUser', 'UsersController@registerUser')->name('register');
 Route::post('/storeUser', 'UsersController@create')->name('register');
 
 
+//Route::get('forgetPassword','UsersController@forgotPassword');
+
+//Route::get('forgetPassword','UsersController@forget');
+Route::get('emails.forgotPassword','UsersController@forgotPassword');
+
+
 Route::get('clockinglist', 'ClockingController@index')->name('clockinglist');
 Route::get('getClockingList', 'ClockingController@getClockingList')->name('getClockingList');
 Route::post('attendstoreance', 'AttendecyController@store')->name('attendstoreance');
@@ -71,12 +77,9 @@ Route::group(array('prefix' => 'api/v1'), function() {
 });
 
 
-
 Route::get('addsite', 'addSiteController@index')->name('addsite');
 
 Route::post('siteconfiguration', 'addSiteController@siteconfiguration')->name('siteconfiguration');
-
-
 
 
 Route::get('biometrico', 'WorkScheduleController@index')->name('biometrico');

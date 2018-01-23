@@ -90,4 +90,50 @@ class UsersController extends Controller
             return "Wrong email";
         }
     }
+    public  function forgotPassword()
+    {
+        $response=array();
+
+        $email=input::get('emails');
+
+        $user=User::where('email','=',$email)->first();
+
+        if(($user)>0)
+
+        {
+            $message = "your  new  password  is  ";
+            $response["error"] = false;
+            $data = array(
+
+                'name' => $user->name,
+                'passsword' => $user->password,
+                'content' => $message
+
+            );
+
+            \Mail::send('emails.forgetPassword', $data, function ($message) use ($user) {
+                $message->from('Info@Biometrico.cloud', 'Biometrico');
+                $message->to($user->email)->subject("Biometrico Notification! ");
+
+            });
+
+            $response["message"] = "You have successfully resetted your password check  your  email for a new password";
+
+        } else {
+            $response["error"] = true;
+            $response["message"] = "Sorry, you have not registered yet";
+        }
+
+        return \Response::json($response);
+
+        }
+
+        public  function forget()
+        {
+            return view('emails.forgetPassword');
+        }
+
+
+
+
 }

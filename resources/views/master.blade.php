@@ -390,7 +390,6 @@ jQuery UI -->
 
 
 
-
 <!-- D3.js
         <script src="{{ asset('js/d3/plugins.js') }}"></script>
         <script src="{{ asset('js/d3/script.js') }}"></script>
