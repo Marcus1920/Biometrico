@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class garagistesLOboController extends Controller
+class Marcus18920Controller extends Controller
 {
     /**
      * Create a new controller instance.
@@ -22,24 +22,12 @@ class garagistesLOboController extends Controller
     {
         return view('home');
     }
-
-     public  function store  (Request  $request)
-     {
-
-         \DB::connection('mysqllaraconection')->table('attendance')->insert($request->all());
-          $response   = array () ;
-           $response['erro']= false  ;
-            $response['status']= 200  ;
-           $response['message']= 'success' ;
-         return  $response ;
-
-     }
-
+    
     
      public  function  index ()
     {
 
-        $shedule= \DB::connection('mysqlgaragistesLObo')->table('attendance')
+        $shedule= \DB::connection('mysqlMarcus18920')->table('attendance')
             ->select(
                 \DB::raw(
                     "

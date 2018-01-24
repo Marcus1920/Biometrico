@@ -36,7 +36,7 @@
     <link href="{{ asset('incl/animate.css') }}" rel="stylesheet">
     <link href="{{ asset('css/Treant.css') }}" rel="stylesheet">
     <link href="{{ asset('css/collapsable.css') }}" rel="stylesheet">
-
+    <link href="{{ asset('css/calendar.css') }}" rel="stylesheet">
     <link href="{{ asset('css/toggles.css') }}" rel="stylesheet">
     <link href="{{ asset('css/toggle-themes/toggles-all.css') }}" rel="stylesheet">
 
@@ -319,7 +319,7 @@ jQuery UI -->
 <script type="text/javascript" src="{{ asset('incl/oms.min.js') }}"></script>
 
 
-
+<script src="{{ asset('js/calendar.min.js') }}"></script> <!-- Calendar -->
 <!-- File Upload -->
 <script src="{{ asset('js/fileupload.min.js') }}"></script> <!-- File Upload -->
 

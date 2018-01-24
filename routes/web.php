@@ -338,9 +338,43 @@ Route::group(array('prefix' => 'api/v1'), function() {
 
 Route::group(array('prefix' => 'api/v1'), function() {
 
-    Route::get('/sited', 'SiteDController@index')->name('/sited');
-    Route::post('/sited', 'SiteDController@index')->name('/sited');
-    Route::delete('/sited', 'SiteDController@index')->name('/sited');
-    Route::put('/sited', 'SiteDController@index')->name('/sited');
+
+    Route::post('/sited', 'garagistesLOboController@store')->name('/sited');
+
 
 });
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/marcus1850', 'Marcus1850Controller@index')->name('/marcus1850');
+Route::post('/marcus1850', 'Marcus1850Controller@index')->name('/marcus1850');
+Route::delete('/marcus1850', 'Marcus1850Controller@index')->name('/marcus1850');
+Route::put('/marcus1850', 'Marcus1850Controller@index')->name('/marcus1850');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/marcus18920', 'Marcus18920Controller@index')->name('/marcus18920');
+Route::post('/marcus18920', 'Marcus18920Controller@index')->name('/marcus18920');
+Route::delete('/marcus18920', 'Marcus18920Controller@index')->name('/marcus18920');
+Route::put('/marcus18920', 'Marcus18920Controller@index')->name('/marcus18920');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/laraconection', 'laraconectionController@index')->name('/laraconection');
+Route::post('/laraconection', 'laraconectionController@index')->name('/laraconection');
+Route::delete('/laraconection', 'laraconectionController@index')->name('/laraconection');
+Route::put('/laraconection', 'laraconectionController@index')->name('/laraconection');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/siya_db', 'siya_dbController@index')->name('/siya_db');
+Route::post('/siya_db', 'siya_dbController@index')->name('/siya_db');
+Route::delete('/siya_db', 'siya_dbController@index')->name('/siya_db');
+Route::put('/siya_db', 'siya_dbController@index')->name('/siya_db');
+
+         });
