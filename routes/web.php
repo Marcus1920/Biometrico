@@ -32,7 +32,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/sites', 'SitesController@sites')->name('sites');
 Route::get('/getsitelist', 'SitesController@getsitelist')->name('getsitelist');
@@ -344,3 +344,20 @@ Route::group(array('prefix' => 'api/v1'), function() {
     Route::put('/sited', 'SiteDController@index')->name('/sited');
 
 });
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/site_a', 'Site_AController@index')->name('/site_a');
+Route::post('/site_a', 'Site_AController@index')->name('/site_a');
+Route::delete('/site_a', 'Site_AController@index')->name('/site_a');
+Route::put('/site_a', 'Site_AController@index')->name('/site_a');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/site_b', 'Site_BController@index')->name('/site_b');
+Route::post('/site_b', 'Site_BController@index')->name('/site_b');
+Route::delete('/site_b', 'Site_BController@index')->name('/site_b');
+Route::put('/site_b', 'Site_BController@index')->name('/site_b');
+
+         });

@@ -101,10 +101,13 @@
 
         use App\User;
         use App\role;
+        use App\Site;
 
         $user = User::where('id',Auth::user()->id )->with('company')->first();
 
         $role = role::where('id',$user->role)->first();
+
+        $sites = Site::with('company')->where('company_id',$user->company_id)->get();
 
 ?>
 
@@ -193,12 +196,43 @@
                 <a href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                    <h4>Logout</h4>
+                    <h4 class="glyphicon glyphicon-log-out">Logout</h4>
                 </a>
 
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     {{ csrf_field() }}
                 </form>
+                <br/>
+                <br/>
+
+                <!-- Calendar -->
+                <div class="s-widget m-b-25">
+                    <div id="sidebar-calendar"></div>
+                </div>
+
+                <div class="tile">
+                    <h5 class="glyphicon glyphicon-credit-card"> Sites</h5>
+                    <h2 class="tile-title">
+                    </h2>
+
+                <ol class="rounded-list">
+                    @foreach($sites as $site)
+                    <li><a href="{{ url('/selectSite',$site->id)}}">{{$site->site_name}}</a></li>
+                    @endforeach
+                    {{--<li><a href="">List item</a></li>--}}
+                    {{--<li><a href="">List item</a></li>--}}
+                    {{--<li><a href="">List item</a></li>--}}
+                </ol>
+
+                    <div class="media text-center whiter l-100">
+
+                    </div>
+
+{{--                    {{$sites}}--}}
+
+                </div>
+
+            </div>
 
 
             </div>
@@ -301,6 +335,7 @@
             {{--</li>--}}
 
         </ul>
+
     </aside>
 
 
