@@ -91,6 +91,26 @@ class UsersController extends Controller
         }
     }
 
+//    public function password()
+//    {
+//        return view('passwords.rest');
+//    }
+
+//    public function resetPasword( Request $request)
+//    {
+//        $this->validate($request, [
+//            'password' => 'required|confirmed|min:6',
+//        ]);
+//
+//        $user = $request->user();
+//        $user->password = bcrypt($request->get('password'));
+//        $user->save();
+//
+//        return redirect()->route('home');
+//
+//    }
+
+
     public  function forgotPassword()
     {
         $response=array();
@@ -112,8 +132,8 @@ class UsersController extends Controller
 
             );
 
-            \Mail::send('emails.forgetPassword', $data, function ($message) use ($user) {
-                $message->from('Info@Biometrico.cloud', 'Biometrico');
+            \Mail::send('passwords.reset', $data, function ($message) use ($user) {
+                $message->from('Info@Biometrico.com', 'Biometrico');
                 $message->to($user->email)->subject("Biometrico Notification! ");
 
             });

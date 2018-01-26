@@ -35,7 +35,9 @@ class addSiteController extends Controller
          $dbName = ''.$SiteName.'_db';
          // Function  to  configure  the  Datatabase  connection
 //            =  "C:/Users/Siyaleader-0.1/Desktop/Biometric Latest/Biometrico/config/database.php" ;
-         $db_config  = " C:\Users\user-04\Desktop\Biome\Biometrico\config\database.php";
+         $db_config  = "  C:/Users/user-04/Desktop/Biome/Biometrico/config/database/.php";
+
+
 //         $db_config    ="C:\Users\user-04\Dsktop\Biome\Biometrico";
          $connection   = "'mysql$SiteName' => [
              'driver' => 'mysql',
@@ -51,6 +53,8 @@ class addSiteController extends Controller
              'strict' => true,
              'engine' => null,
          ],";
+
+
 
          $replacement = $connection;
          $specific_line = 49; // sample value squeeze it on this line
@@ -144,7 +148,7 @@ class $SiteController_conifg extends Controller
             )
             ->get();
 
-        return json_encode($$shedule) ;
+        return json_encode($$shedule) ; 
     }
 }
 " ;

@@ -46,10 +46,13 @@
 
             <form class="box tile animated active" id="box-login" role="form" method="POST" action="{{ route('password.request')}}">
                 {{ csrf_field() }}
+                {{--<input type="hidden" name="token" value="{{ $token }}">--}}
                 <input type="hidden" name="token" value="{{ $token }}">
-                <center>
-                    <img src="{{ asset('img/Biometrico-Logo-Final.jpg') }}" alt="">
-                </center>
+                {{--<center>--}}
+                    {{--<img src="{{ asset('/img/Biometrico-Logo-Final.jpg') }}" alt="">--}}
+                {{--</center>--}}
+
+
                 <br/>
                 <h2 class="m-t-0 m-b-15">Reset Password</h2>
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -59,11 +62,12 @@
                 <br/>
                 <input type="password" class="login-control m-b-10" placeholder="Confirm Password" name="password_confirmation">
                 <br/>
+
                 <button class="btn btn-default btn-sm m-r-5" type="submit">Reset Password</button>
 
             </form>
         </div>
-        <div class="col-md-6" style="background-image: url(img/Biometrico-Logo-Final.jpg); height: 600px">
+        <div class="col-md-6" style="background-image: url(img/login_illustration.png); height: 600px">
 
 
         </div>
@@ -86,154 +90,3 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{{--@extends('layouts.app')--}}
-
-{{--@section('content')--}}
-{{--<div class="container">--}}
-    {{--<div class="row">--}}
-        {{--<div class="col-md-8 col-md-offset-2">--}}
-            {{--<div class="panel panel-default">--}}
-                {{--<div class="panel-heading" style="background-color: transparent">Reset Password</div>--}}
-
-                {{--<div class="panel-body">--}}
-                    {{--<form class="form-horizontal" method="POST" action="{{ route('password.request') }}">--}}
-                        {{--{{ csrf_field() }}--}}
-
-                        {{--<input type="hidden" name="token" value="{{ $token }}">--}}
-
-                        {{--<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">--}}
-                            {{--<label for="email" class="col-md-4 control-label">E-Mail Address</label>--}}
-
-                            {{--<div class="col-md-6">--}}
-                                {{--<input id="email" type="email" class="form-control" name="email" value="{{ $email or old('email') }}" required autofocus>--}}
-
-                                {{--@if ($errors->has('email'))--}}
-                                    {{--<span class="help-block">--}}
-                                        {{--<strong>{{ $errors->first('email') }}</strong>--}}
-                                    {{--</span>--}}
-                                {{--@endif--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-
-                        {{--<div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">--}}
-                            {{--<label for="password" class="col-md-4 control-label">Password</label>--}}
-
-                            {{--<div class="col-md-6">--}}
-                                {{--<input id="password" type="password" class="form-control" name="password" required>--}}
-
-                                {{--@if ($errors->has('password'))--}}
-                                    {{--<span class="help-block">--}}
-                                        {{--<strong>{{ $errors->first('password') }}</strong>--}}
-                                    {{--</span>--}}
-                                {{--@endif--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-
-                        {{--<div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">--}}
-                            {{--<label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>--}}
-                            {{--<div class="col-md-6">--}}
-                                {{--<input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>--}}
-
-                                {{--@if ($errors->has('password_confirmation'))--}}
-                                    {{--<span class="help-block">--}}
-                                        {{--<strong>{{ $errors->first('password_confirmation') }}</strong>--}}
-                                    {{--</span>--}}
-                                {{--@endif--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-
-                        {{--<div class="form-group">--}}
-                            {{--<div class="col-md-6 col-md-offset-4">--}}
-                                {{--<button type="submit" class="btn btn-primary">--}}
-                                    {{--Reset Password--}}
-                                {{--</button>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</form>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-{{--</div>--}}
-{{--@endsection--}}

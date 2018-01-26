@@ -1,6 +1,5 @@
 <?php
 
-
 use App\Company;
 use App\Site;
 
@@ -30,6 +29,12 @@ Route::get('/', function () {
     return view('auth.login', compact('allCompanies'));
 });
 
+
+//-------------------------------------------------------------------------------
+//Password Reset RoutesS
+//--------------------------------------------------------------------------------
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -51,7 +56,11 @@ Route::post('/storeUser', 'UsersController@create')->name('register');
 //Route::get('forgetPassword','UsersController@forgotPassword');
 
 //Route::get('forgetPassword','UsersController@forget');
-Route::get('emails.forgotPassword','UsersController@forgotPassword');
+//Route::get('emails.forgotPassword','UsersController@forgotPassword');
+
+Route::get('passwords.reset','UsersController@password');
+
+Route::post('passwords.reset','UsersController@resetPasword');
 
 
 Route::get('clockinglist', 'ClockingController@index')->name('clockinglist');
