@@ -361,3 +361,93 @@ Route::delete('/site_b', 'Site_BController@index')->name('/site_b');
 Route::put('/site_b', 'Site_BController@index')->name('/site_b');
 
          });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/site_c', 'Site_CController@index')->name('/site_c');
+Route::post('/site_c', 'Site_CController@index')->name('/site_c');
+Route::delete('/site_c', 'Site_CController@index')->name('/site_c');
+Route::put('/site_c', 'Site_CController@index')->name('/site_c');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendency/site_e', 'Site_EController@attendencystore')->name('attendency/site_e');
+Route::post('clockinglist/site_e', 'Site_EController@clockingliststore')->name('clockinglist/site_e');
+Route::post('workshedul/site_e', 'Site_EController@workshedulstore')->name('workshedul/site_e');
+   
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencysitef', 'SiteFController@attendencystore')->name('attendencysitef');
+Route::post('clockinglistsitef', 'SiteFController@clockingliststore')->name('clockinglistsitef');
+Route::post('workshedulsitef', 'SiteFController@workshedulstore')->name('workshedulsitef');
+   
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencysiteg', 'siteGController@attendencystore')->name('attendencysiteg');
+Route::post('clockinglistsiteg', 'siteGController@clockingliststore')->name('clockinglistsiteg');
+Route::post('workshedulsiteg', 'siteGController@workshedulstore')->name('workshedulsiteg');
+   
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencysih', 'SIHController@attendencystore')->name('attendencysih');
+Route::post('clockinglistsih', 'SIHController@clockingliststore')->name('clockinglistsih');
+Route::post('workshedulsih', 'SIHController@workshedulstore')->name('workshedulsih');
+   
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencysiter', 'siteRController@attendencystore')->name('attendencysiter');
+Route::post('clockinglistsiter', 'siteRController@clockingliststore')->name('clockinglistsiter');
+Route::post('workshedulsiter', 'siteRController@workshedulstore')->name('workshedulsiter');
+   
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencysitez', 'SiteZController@attendencystore')->name('attendencysitez');
+Route::post('clockinglistsitez', 'SiteZController@clockingliststore')->name('clockinglistsitez');
+Route::post('workshedulsitez', 'SiteZController@workshedulstore')->name('workshedulsitez');
+   
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencysiteq', 'SiteQController@attendencystore')->name('attendencysiteq');
+Route::post('clockinglistsiteq', 'SiteQController@clockingliststore')->name('clockinglistsiteq');
+Route::post('workshedulsiteq', 'SiteQController@workshedulstore')->name('workshedulsiteq');
+   
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencysitey', 'SiteYController@attendencystore')->name('attendencysitey');
+Route::post('clockinglistsitey', 'SiteYController@clockingliststore')->name('clockinglistsitey');
+Route::post('workshedulsitey', 'SiteYController@workshedulstore')->name('workshedulsitey');
+   
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencysiten', 'SiteNController@attendencystore')->name('attendencysiten');
+Route::post('clockinglistsiten', 'SiteNController@clockingliststore')->name('clockinglistsiten');
+Route::post('workshedulsiten', 'SiteNController@workshedulstore')->name('workshedulsiten');
+   
+
+         });
