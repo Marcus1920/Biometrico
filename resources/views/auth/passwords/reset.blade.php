@@ -49,7 +49,7 @@
                 {{--<input type="hidden" name="token" value="{{ $token }}">--}}
                 <input type="hidden" name="token" value="{{ $token }}">
                 {{--<center>--}}
-                    {{--<img src="{{ asset('/img/Biometrico-Logo-Final.jpg') }}" alt="">--}}
+                    <img src="{{ asset('/img/Biometrico-Logo-Final.jpg') }}" alt="">
                 {{--</center>--}}
 
 
