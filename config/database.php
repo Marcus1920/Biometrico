@@ -46,6 +46,7 @@ return [
             'strict' => true,
             'engine' => null,
         ],
+
 'mysqllivea' => [
              'driver' => 'mysql',
              'host' => env('DB_HOST', '127.0.0.1'),
@@ -53,6 +54,15 @@ return [
              'database' => env('DB_DATABASE_livea', 'shakasab_livea'),
              'username' => env('DB_USERNAME_livea', 'shakasab_livea'),
              'password' => env('DB_PASSWORD_livea', 'Null'),
+],
+'mysqlASD' => [
+             'driver' => 'mysql',
+             'host' => env('DB_HOST', '127.0.0.1'),
+             'port' => env('DB_PORT', '3306'),
+             'database' => env('DB_DATABASE_ASD', 'shakasab_ASD'),
+             'username' => env('DB_USERNAME_ASD', 'shakasab_ASD'),
+             'password' => env('DB_PASSWORD_ASD', 'biometri12B'),
+
              'unix_socket' => env('DB_SOCKET', ''),
              'charset' => 'utf8mb4',
              'collation' => 'utf8mb4_unicode_ci',
@@ -67,6 +77,14 @@ return [
              'database' => env('DB_DATABASE_tyboratuis', 'tyboratuis_db'),
              'username' => env('DB_USERNAME_tyboratuis', 'root'),
              'password' => env('DB_PASSWORD_tyboratuis', 'Null'),
+],
+'mysqlqrter' => [
+             'driver' => 'mysql',
+             'host' => env('DB_HOST', '127.0.0.1'),
+             'port' => env('DB_PORT', '3306'),
+             'database' => env('DB_DATABASE_qrter', 'shakasab_qrter'),
+             'username' => env('DB_USERNAME_qrter', 'shakasab_qrter'),
+             'password' => env('DB_PASSWORD_qrter', 'biometri12B'),
              'unix_socket' => env('DB_SOCKET', ''),
              'charset' => 'utf8mb4',
              'collation' => 'utf8mb4_unicode_ci',
@@ -74,6 +92,7 @@ return [
              'strict' => true,
              'engine' => null,
          ],
+
 'mysqltyboratui' => [
              'driver' => 'mysql',
              'host' => env('DB_HOST', '127.0.0.1'),
@@ -81,6 +100,14 @@ return [
              'database' => env('DB_DATABASE_tyboratui', 'tyboratui_db'),
              'username' => env('DB_USERNAME_tyboratui', 'root'),
              'password' => env('DB_PASSWORD_tyboratui', 'Null'),
+],
+'mysqlqrter' => [
+             'driver' => 'mysql',
+             'host' => env('DB_HOST', '127.0.0.1'),
+             'port' => env('DB_PORT', '3306'),
+             'database' => env('DB_DATABASE_qrter', 'shakasab_qrter'),
+             'username' => env('DB_USERNAME_qrter', 'shakasab_qrter'),
+             'password' => env('DB_PASSWORD_qrter', 'biometri12B'),
              'unix_socket' => env('DB_SOCKET', ''),
              'charset' => 'utf8mb4',
              'collation' => 'utf8mb4_unicode_ci',
@@ -88,6 +115,7 @@ return [
              'strict' => true,
              'engine' => null,
          ],
+
 'mysqltyb' => [
              'driver' => 'mysql',
              'host' => env('DB_HOST', '127.0.0.1'),
@@ -95,6 +123,14 @@ return [
              'database' => env('DB_DATABASE_tyb', 'tyb_db'),
              'username' => env('DB_USERNAME_tyb', 'root'),
              'password' => env('DB_PASSWORD_tyb', 'Null'),
+             ],
+'mysqlxw23' => [
+             'driver' => 'mysql',
+             'host' => env('DB_HOST', '127.0.0.1'),
+             'port' => env('DB_PORT', '3306'),
+             'database' => env('DB_DATABASE_xw23', 'shakasab_xw23'),
+             'username' => env('DB_USERNAME_xw23', 'shakasab_xw23'),
+             'password' => env('DB_PASSWORD_xw23', 'biometri12B'),
              'unix_socket' => env('DB_SOCKET', ''),
              'charset' => 'utf8mb4',
              'collation' => 'utf8mb4_unicode_ci',
@@ -102,6 +138,7 @@ return [
              'strict' => true,
              'engine' => null,
          ],
+
 'mysqltyz' => [
              'driver' => 'mysql',
              'host' => env('DB_HOST', '127.0.0.1'),
@@ -179,6 +216,14 @@ return [
              'database' => env('DB_DATABASE_123', '123_db'),
              'username' => env('DB_USERNAME_123', 'root'),
              'password' => env('DB_PASSWORD_123', 'Null'),
+],
+'mysqlsqw' => [
+             'driver' => 'mysql',
+             'host' => env('DB_HOST', '127.0.0.1'),
+             'port' => env('DB_PORT', '3306'),
+             'database' => env('DB_DATABASE_sqw', 'shakasab_sqw'),
+             'username' => env('DB_USERNAME_sqw', 'shakasab_sqw'),
+             'password' => env('DB_PASSWORD_sqw', 'biometri12B'),
              'unix_socket' => env('DB_SOCKET', ''),
              'charset' => 'utf8mb4',
              'collation' => 'utf8mb4_unicode_ci',

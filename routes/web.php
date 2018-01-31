@@ -526,14 +526,17 @@ Route::post('workshedulxx13', 'xx13Controller@workshedulstore')->name('workshedu
 
 Route::group(array('prefix' => 'api/v1'), function() {
 
-Route::post('attendencytyp', 'typController@attendencystore')->name('attendencytyp');
-Route::post('clockinglisttyp', 'typController@clockingliststore')->name('clockinglisttyp');
-Route::post('workshedultyp', 'typController@workshedulstore')->name('workshedultyp');
+
+Route::post('attendencysqw', 'sqwController@attendencystore')->name('attendencysqw');
+Route::post('clockinglistsqw', 'sqwController@clockingliststore')->name('clockinglistsqw');
+Route::post('workshedulsqw', 'sqwController@workshedulstore')->name('workshedulsqw');
+
    
 
          });
 
 Route::group(array('prefix' => 'api/v1'), function() {
+
 
 Route::post('attendencytyz', 'tyzController@attendencystore')->name('attendencytyz');
 Route::post('clockinglisttyz', 'tyzController@clockingliststore')->name('clockinglisttyz');
@@ -542,28 +545,37 @@ Route::post('workshedultyz', 'tyzController@workshedulstore')->name('workshedult
 
 Route::group(array('prefix' => 'api/v1'), function() {
 
-Route::post('attendencytyb', 'tybController@attendencystore')->name('attendencytyb');
-Route::post('clockinglisttyb', 'tybController@clockingliststore')->name('clockinglisttyb');
-Route::post('workshedultyb', 'tybController@workshedulstore')->name('workshedultyb');
+Route::post('attendencyxw23', 'xw23Controller@attendencystore')->name('attendencyxw23');
+Route::post('clockinglistxw23', 'xw23Controller@clockingliststore')->name('clockinglistxw23');
+Route::post('workshedulxw23', 'xw23Controller@workshedulstore')->name('workshedulxw23');
+
          });
 
 Route::group(array('prefix' => 'api/v1'), function() {
 
-Route::post('attendencytyboratui', 'tyboratuiController@attendencystore')->name('attendencytyboratui');
-Route::post('clockinglisttyboratui', 'tyboratuiController@clockingliststore')->name('clockinglisttyboratui');
-Route::post('workshedultyboratui', 'tyboratuiController@workshedulstore')->name('workshedultyboratui');
+
+Route::post('attendencyqrter', 'qrterController@attendencystore')->name('attendencyqrter');
+Route::post('clockinglistqrter', 'qrterController@clockingliststore')->name('clockinglistqrter');
+Route::post('workshedulqrter', 'qrterController@workshedulstore')->name('workshedulqrter');
+   
+
          });
 
 Route::group(array('prefix' => 'api/v1'), function() {
 
-Route::post('attendencytyboratuis', 'tyboratuisController@attendencystore')->name('attendencytyboratuis');
-Route::post('clockinglisttyboratuis', 'tyboratuisController@clockingliststore')->name('clockinglisttyboratuis');
-Route::post('workshedultyboratuis', 'tyboratuisController@workshedulstore')->name('workshedultyboratuis');
+
+Route::post('attendencyqrter', 'qrterController@attendencystore')->name('attendencyqrter');
+Route::post('clockinglistqrter', 'qrterController@clockingliststore')->name('clockinglistqrter');
+Route::post('workshedulqrter', 'qrterController@workshedulstore')->name('workshedulqrter');
+   
+
          });
 
 Route::group(array('prefix' => 'api/v1'), function() {
 
-Route::post('attendencylivea', 'liveaController@attendencystore')->name('attendencylivea');
-Route::post('clockinglistlivea', 'liveaController@clockingliststore')->name('clockinglistlivea');
-Route::post('workshedullivea', 'liveaController@workshedulstore')->name('workshedullivea');
+Route::post('attendencyasd', 'ASDController@attendencystore')->name('attendencyasd');
+Route::post('clockinglistasd', 'ASDController@clockingliststore')->name('clockinglistasd');
+Route::post('workshedulasd', 'ASDController@workshedulstore')->name('workshedulasd');
+   
+
          });
