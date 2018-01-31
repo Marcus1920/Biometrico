@@ -33,7 +33,7 @@
     <hr class="whiter" />
 
     <ol class="breadcrumb hidden-xs">
-        <li><a href="{{ url('/users') }}">Home</a></li>
+        <li><a href="{{ url('/sites') }}">Sites</a></li>
         <li class="active">Attendance List</li>
     </ol>
     <h4 class="page-title">Attendance Listing of {{$site->site_name}}</h4>

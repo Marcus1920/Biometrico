@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\classes\Marcus;
-use App\classes\xmlapi;
-class garagistesLOboController extends Controller
+use Illuminate\Support\Facades\Input;
+class SiteQController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -19,49 +18,64 @@ class garagistesLOboController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function getattendanceList()
+    public function attendencystore()
     {
-        return view('home');
+       $data = Input::all();
+
+       $record = \DB::connection('mysqlSiteQ')
+           ->table('attendance')
+           ->where('ATTENDANCE_KEY', Input::get('ATTENDANCE_KEY'))
+           ->first();
+
+       if($record == NULL)
+       {
+           \DB::connection('mysqlSiteQ')
+               ->table('attendance')
+               ->insert($data);
+
+           return 'ok';
+       }
+       else if($record != NULL)
+       {
+           \DB::connection('mysqlSiteQ')
+               ->table('attendance')
+               ->where('ATTENDANCE_KEY', Input::get('ATTENDANCE_KEY'))
+               ->delete();
+
+           \DB::connection('mysqlSiteQ')
+               ->table('attendance')
+               ->insert($data);
+
+           return 'ok';
+       }
+       
     }
-
-     public  function store  (Request  $request)
-     {
-
-
-
-
-
-
-
-         try {
-
-
-
-
-             \DB::connection('mysqllaraconection')->table('attendance')->insertUpdate($request->all());
-             $response   = array () ;
-             $response['erro']= false  ;
-             $response['status']= 200  ;
-             $response['message']= 'success' ;
-
-             return  1 ;
-         } catch (\Exception $e) {
-
-
-             return 0 ;
-         }
-
-
-        // \DB::connection('mysqllaraconection')->table('attendance')->insert($request->all());
-
-
-     }
-
+    
+    
+    public function workshedulstore()
+    {
+     $data = Input::all();
+      \DB::connection('mysqlSiteQ')->table('work_schedule')->insert($data);
+         
+         return  'ok' ;
+    }
+    
+    public function clockingliststore()
+    {
+      $data = Input::all();
+  
+  
+      \DB::connection('mysqlSiteQ')->table('clocking_temp_print')->insert($data);
+         
+         return  'ok' ;
+    }
+    
+    
     
      public  function  index ()
     {
 
-        $shedule= \DB::connection('mysqlgaragistesLObo')->table('attendance')
+        $shedule= \DB::connection('mysqlSiteQ')->table('attendance')
             ->select(
                 \DB::raw(
                     "

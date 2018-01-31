@@ -36,7 +36,7 @@
     <link href="{{ asset('incl/animate.css') }}" rel="stylesheet">
     <link href="{{ asset('css/Treant.css') }}" rel="stylesheet">
     <link href="{{ asset('css/collapsable.css') }}" rel="stylesheet">
-
+    <link href="{{ asset('css/calendar.css') }}" rel="stylesheet">
     <link href="{{ asset('css/toggles.css') }}" rel="stylesheet">
     <link href="{{ asset('css/toggle-themes/toggles-all.css') }}" rel="stylesheet">
 
@@ -160,8 +160,8 @@
                 <div class="tile quick-stats">
                     <div id="stats-line-2" class="pull-left"></div>
                     <div class="data">
-                        <h2 data-value="98">0</h2>
-                        <small>Tickets Today</small>
+                        <h2 data-value={{ count($sites,0) }}>0</h2>
+                        <small>Sites</small>
                     </div>
                 </div>
             </div>
@@ -319,7 +319,7 @@ jQuery UI -->
 <script type="text/javascript" src="{{ asset('incl/oms.min.js') }}"></script>
 
 
-
+<script src="{{ asset('js/calendar.min.js') }}"></script> <!-- Calendar -->
 <!-- File Upload -->
 <script src="{{ asset('js/fileupload.min.js') }}"></script> <!-- File Upload -->
 

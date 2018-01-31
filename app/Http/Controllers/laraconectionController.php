@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\classes\Marcus;
-use App\classes\xmlapi;
-class garagistesLOboController extends Controller
+
+class laraconectionController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -23,45 +22,12 @@ class garagistesLOboController extends Controller
     {
         return view('home');
     }
-
-     public  function store  (Request  $request)
-     {
-
-
-
-
-
-
-
-         try {
-
-
-
-
-             \DB::connection('mysqllaraconection')->table('attendance')->insertUpdate($request->all());
-             $response   = array () ;
-             $response['erro']= false  ;
-             $response['status']= 200  ;
-             $response['message']= 'success' ;
-
-             return  1 ;
-         } catch (\Exception $e) {
-
-
-             return 0 ;
-         }
-
-
-        // \DB::connection('mysqllaraconection')->table('attendance')->insert($request->all());
-
-
-     }
-
+    
     
      public  function  index ()
     {
 
-        $shedule= \DB::connection('mysqlgaragistesLObo')->table('attendance')
+        $shedule= \DB::connection('mysqllaraconection')->table('attendance')
             ->select(
                 \DB::raw(
                     "

@@ -81,6 +81,7 @@
 
 
             <div class="container">
+<<<<<<< HEAD
 
                 <div class="navbar-header">
 
@@ -98,6 +99,11 @@
                     </a>
 
                 </div>
+=======
+
+
+
+>>>>>>> 808d40cca60a5fb2c977026fbd271881fb12dd24
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
@@ -108,6 +114,11 @@
                         <!-- Authentication Links -->
                         @guest
 
+<<<<<<< HEAD
+=======
+
+                        @else
+>>>>>>> 808d40cca60a5fb2c977026fbd271881fb12dd24
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                     {{ Auth::user()->name }} <span class="caret"></span>
