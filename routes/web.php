@@ -559,3 +559,12 @@ Route::post('workshedulqrter', 'qrterController@workshedulstore')->name('workshe
    
 
          });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencyasd', 'ASDController@attendencystore')->name('attendencyasd');
+Route::post('clockinglistasd', 'ASDController@clockingliststore')->name('clockinglistasd');
+Route::post('workshedulasd', 'ASDController@workshedulstore')->name('workshedulasd');
+   
+
+         });
