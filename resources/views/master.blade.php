@@ -35,7 +35,8 @@
     <link href="{{ asset('incl/animate.css') }}" rel="stylesheet">
     <link href="{{ asset('css/Treant.css') }}" rel="stylesheet">
     <link href="{{ asset('css/collapsable.css') }}" rel="stylesheet">
-
+    <link href="{{ asset('css/calendar.css') }}" rel="stylesheet">
+    <link href="css/calendar.css" rel="stylesheet">
     <link href="{{ asset('css/toggles.css') }}" rel="stylesheet">
     <link href="{{ asset('css/toggle-themes/toggles-all.css') }}" rel="stylesheet">
 
@@ -460,7 +461,13 @@ jQuery UI -->
 <script src="js/easypiechart.js"></script> <!-- EasyPieChart - Animated Pie Charts -->
 <script src="js/charts.js"></script> <!-- All the above chart related functions -->
 
+<!-- Other -->
+<script src="js/calendar.min.js"></script> <!-- Calendar -->
+<script src="js/feeds.min.js"></script> <!-- News Feeds -->
 
+
+<!-- All JS functions -->
+<script src="js/functions.js"></script>
 <!-- D3.js
         <script src="{{ asset('js/d3/plugins.js') }}"></script>
         <script src="{{ asset('js/d3/script.js') }}"></script>

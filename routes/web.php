@@ -342,10 +342,39 @@ Route::group(array('prefix' => 'api/v1'), function() {
 
 Route::group(array('prefix' => 'api/v1'), function() {
 
-    Route::get('/sited', 'SiteDController@index')->name('/sited');
-    Route::post('/sited', 'SiteDController@index')->name('/sited');
-    Route::delete('/sited', 'SiteDController@index')->name('/sited');
-    Route::put('/sited', 'SiteDController@index')->name('/sited');
+
+
+    Route::post('/sited', 'garagistesLOboController@store')->name('/sited');
+    Route::post('nqo' , function () {
+
+        return  "nqo" ;
+    });
+
+});
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/marcus1850', 'Marcus1850Controller@index')->name('/marcus1850');
+Route::post('/marcus1850', 'Marcus1850Controller@index')->name('/marcus1850');
+Route::delete('/marcus1850', 'Marcus1850Controller@index')->name('/marcus1850');
+Route::put('/marcus1850', 'Marcus1850Controller@index')->name('/marcus1850');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/marcus18920', 'Marcus18920Controller@index')->name('/marcus18920');
+Route::post('/marcus18920', 'Marcus18920Controller@index')->name('/marcus18920');
+Route::delete('/marcus18920', 'Marcus18920Controller@index')->name('/marcus18920');
+Route::put('/marcus18920', 'Marcus18920Controller@index')->name('/marcus18920');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/laraconection', 'laraconectionController@index')->name('/laraconection');
+Route::post('/laraconection', 'laraconectionController@index')->name('/laraconection');
+Route::delete('/laraconection', 'laraconectionController@index')->name('/laraconection');
+Route::put('/laraconection', 'laraconectionController@index')->name('/laraconection');
 
 });
 Route::group(array('prefix' => 'api/v1'), function() {
@@ -355,14 +384,26 @@ Route::post('/site_a', 'Site_AController@index')->name('/site_a');
 Route::delete('/site_a', 'Site_AController@index')->name('/site_a');
 Route::put('/site_a', 'Site_AController@index')->name('/site_a');
 
+
          });
 
 Route::group(array('prefix' => 'api/v1'), function() {
+
 
 Route::get('/site_b', 'Site_BController@index')->name('/site_b');
 Route::post('/site_b', 'Site_BController@index')->name('/site_b');
 Route::delete('/site_b', 'Site_BController@index')->name('/site_b');
 Route::put('/site_b', 'Site_BController@index')->name('/site_b');
+
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/sita', 'sitAController@index')->name('/sita');
+Route::post('/sita', 'sitAController@index')->name('/sita');
+Route::delete('/sita', 'sitAController@index')->name('/sita');
+Route::put('/sita', 'sitAController@index')->name('/sita');
 
          });
 
@@ -452,6 +493,33 @@ Route::group(array('prefix' => 'api/v1'), function() {
 Route::post('attendencysiten', 'SiteNController@attendencystore')->name('attendencysiten');
 Route::post('clockinglistsiten', 'SiteNController@clockingliststore')->name('clockinglistsiten');
 Route::post('workshedulsiten', 'SiteNController@workshedulstore')->name('workshedulsiten');
+   
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencysite', 'siteController@attendencystore')->name('attendencysite');
+Route::post('clockinglistsite', 'siteController@clockingliststore')->name('clockinglistsite');
+Route::post('workshedulsite', 'siteController@workshedulstore')->name('workshedulsite');
+   
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencyxx12', 'xx12Controller@attendencystore')->name('attendencyxx12');
+Route::post('clockinglistxx12', 'xx12Controller@clockingliststore')->name('clockinglistxx12');
+Route::post('workshedulxx12', 'xx12Controller@workshedulstore')->name('workshedulxx12');
+   
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencyxx13', 'xx13Controller@attendencystore')->name('attendencyxx13');
+Route::post('clockinglistxx13', 'xx13Controller@clockingliststore')->name('clockinglistxx13');
+Route::post('workshedulxx13', 'xx13Controller@workshedulstore')->name('workshedulxx13');
    
 
          });
