@@ -132,7 +132,7 @@ class UsersController extends Controller
 
             );
 
-            \Mail::send('passwords.reset', $data, function ($message) use ($user) {
+            \Mail::send('Notifications.ResetPassword', $data, function ($message) use ($user) {
                 $message->from('Info@Biometrico.com', 'Biometrico');
                 $message->to($user->email)->subject("Biometrico Notification! ");
 

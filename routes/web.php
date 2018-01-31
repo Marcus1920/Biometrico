@@ -54,8 +54,8 @@ Route::post('/storeUser', 'UsersController@create')->name('register');
 
 
 //Route::get('forgetPassword','UsersController@forgotPassword');
-
-//Route::get('forgetPassword','UsersController@forget');
+Route::get('Notifications.ResetPassword','UsersController@forgotPassword');
+Route::get('emails.forgetPassword','UsersController@forget');
 //Route::get('emails.forgotPassword','UsersController@forgotPassword');
 
 Route::get('passwords.reset','UsersController@password');
