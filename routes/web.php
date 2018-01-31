@@ -21,6 +21,10 @@ Route::get('commad'   ,  function (){
 
 }) ;
 
+Route::get('404' , function (){
+    return view('404');
+});
+
 Route::get('/', function () {
 
     $allCompanies = Company::all();
