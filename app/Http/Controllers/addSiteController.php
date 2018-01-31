@@ -9,8 +9,10 @@ use App\Site;
 use App\role;
 use App\Company;
 use mysqli;
+use App\classes\xmlapi;
 class addSiteController extends Controller
 {
+
 
     public  function index()
     {
@@ -39,14 +41,15 @@ class addSiteController extends Controller
         // Function  to  configure  the  Datatabase  connection
 
 
-        $db_config    =  "C:/xampp/htdocs/Biometrico/config/database.php" ;
+     
+        $db_config    =  "/home/shakasabre/biometrico.shaka.cloud/config/database.php" ;
         $connection   = "'mysql$SiteName' => [
              'driver' => 'mysql',
              'host' => env('DB_HOST', '127.0.0.1'),
              'port' => env('DB_PORT', '3306'),
-             'database' => env('DB_DATABASE$SiteName_conif', '$dbName'),
-             'username' => env('DB_USERNAME$SiteName_conif', 'root'),
-             'password' => env('DB_PASSWORD$SiteName_conif', 'Null'),
+             'database' => env('DB_DATABASE$SiteName_conif', 'shakasab_$SiteName'),
+             'username' => env('DB_USERNAME$SiteName_conif', 'shakasab_$SiteName'),
+             'password' => env('DB_PASSWORD$SiteName_conif', 'biometri12B'),
              'unix_socket' => env('DB_SOCKET', ''),
              'charset' => 'utf8mb4',
              'collation' => 'utf8mb4_unicode_ci',
@@ -69,14 +72,14 @@ class addSiteController extends Controller
 
 
         // Function   to   write  on  the Eviromental  File
-        $fille  = "C:/xampp/htdocs/Biometrico/.env" ;
+        $fille  = "/home/shakasabre/biometrico.shaka.cloud/.env" ;
         $space  =   "\r\n";
         $DB_CONNECTION        ="DB_CONNECTION=" ."mysql"."\n";
 
-        $DB_HOST              ="DB_HOST =" . $request->input('DB_HOST')."\n";
-        $DB_DATABAS           = "DB_DATABAS$SiteName_conif =" .$dbName."\n";
-        $DB_USERNAME          = "DB_USERNAME$SiteName_conif =" .'root'."\n";
-        $DB_PASSWORD          = "DB_PASSWORD$SiteName_conif=" .$request->input('DB_PASSWORD')."\n";
+       $DB_HOST              ="DB_HOST =" . $request->input('DB_HOST')."\n";
+         $DB_DATABAS           = "DB_DATABAS$SiteName_conif =" ."shakasab_".$SiteName."\n";
+         $DB_USERNAME          = "DB_USERNAME$SiteName_conif =" ."shakasab_".$SiteName."\n";
+         $DB_PASSWORD          = "DB_PASSWORD$SiteName_conif=" .'biometri12B'."\n";
 
         file_put_contents($fille ,$space , FILE_APPEND);
         file_put_contents($fille , $DB_CONNECTION , FILE_APPEND);
@@ -88,9 +91,9 @@ class addSiteController extends Controller
         //End  Function
 
         // Function  to  create  a  Controller
-        $fn = "C:/xampp/htdocs/Biometrico/app/Http/Controllers/AttendecyController.php";
+        $fn = "/home/shakasabre/biometrico.shaka.cloud/app/Http/Controllers/AttendecyController.php";
 
-        $Create_controller = fopen("C:/xampp/htdocs/Biometrico/app/Http/Controllers/".$SiteController_conifg.".php", "w") ;
+        $Create_controller = fopen("/home/shakasabre/biometrico.shaka.cloud/app/Http/Controllers/".$SiteController_conifg.".php", "w") ;
 
         $methode  = "<?php
 
@@ -231,7 +234,7 @@ class $SiteController_conifg extends Controller
         fclose($Create_controller);
 //C:\xampp\htdocs\Biometrico\routes\web.php
         // add   Resource  Route
-        $route  = "C:/xampp/htdocs/Biometrico/routes/web.php" ;
+       $route  = "/home/shakasabre/biometrico.shaka.cloud/routes/web.php" ;
 
 
 
@@ -263,30 +266,32 @@ class $SiteController_conifg extends Controller
         $newSite->	connection_name = "mysql".$SiteName;
 //        $newSite->end_point =   $_ENV['APP_URL']."api/v1".$site_api_ulr ;
 
+                $db_host = '154.0.171.123'; 
+                $cpaneluser = 'shakasabre';
+                $cpanelpass = 'Sh@k@S@bre2018'; 
+                
+                $databasename = 'shakasab_'.$SiteName;
+                $databaseuser = 'shakasab_'.$SiteName; // Warning: in most of cases this can't be longer than 8 characters
+                $databasepass = 'biometri12B'; // Warning: be sure the password is strong enough, else the CPanel will reject it
+                
+                $xmlapi = new xmlapi($db_host); 
+                
+                
+                $xmlapi->password_auth("".$cpaneluser."","".$cpanelpass."");    
+                $xmlapi->set_port(2083);
+                $xmlapi->set_debug(1);//output actions in the error log 1 for true and 0 false  
+                $xmlapi->set_output('array');//set this for browser output  
+                //create database    
+                $createdb = $xmlapi->api1_query($cpaneluser, "Mysql", "adddb", array($databasename));   
+                //create user 
+                $usr = $xmlapi->api1_query($cpaneluser, "Mysql", "adduser", array($databaseuser, $databasepass));   
+                
+                
+                 //add user 
+                $addusr = $xmlapi->api1_query($cpaneluser, "Mysql", "adduserdb", array("".$cpaneluser."_".$databasename."", "".$cpaneluser."_".$databaseuser."", 'all')); 
 
-        \DB::statement(\DB::raw('CREATE DATABASE '.$dbName.''));
 
-        $conn =new mysqli('localhost', 'root', '' , ''.$dbName.'');
-
-        $query = '';
-        $sqlScript = file("C:/xampp/htdocs/Biometrico/public/Biometricodb.sql");
-        foreach ($sqlScript as $line)	{
-
-            $startWith = substr(trim($line), 0 ,2);
-            $endWith = substr(trim($line), -1 ,1);
-
-            if (empty($line) || $startWith == '--' || $startWith == '/*' || $startWith == '//') {
-                continue;
-            }
-
-            $query = $query . $line;
-            if ($endWith == ';') {
-                mysqli_query($conn,$query) or die('<div class="error-response sql-import-response">Problem in executing the SQL query <b>' . $query. '</b></div>');
-                $query= '';
-            }
-        }
-
-        $newSite->save();
+       $newSite->save();
 
         $newEndpoint = new EndPoint();
         $newEndpoint->site_id = $newSite->id;
@@ -305,9 +310,31 @@ class $SiteController_conifg extends Controller
         $newEndpoint->name = "workshedul$site_api_ulr";
         $newEndpoint->end_point = $_ENV['APP_URL']."api/v1/workshedul".$site_api_ulr;
         $newEndpoint->save();
+       // \DB::statement(\DB::raw('CREATE DATABASE '.$dbName.''));
+
+      $conn =new mysqli('localhost', $cpaneluser,$cpanelpass , ''.$databasename.'');
+
+        $query = '';
+       $sqlScript = file("/home/shakasabre/biometrico.shaka.cloud/public/Biometricodb.sql");
+        foreach ($sqlScript as $line)	{
+
+            $startWith = substr(trim($line), 0 ,2);
+            $endWith = substr(trim($line), -1 ,1);
+
+            if (empty($line) || $startWith == '--' || $startWith == '/*' || $startWith == '//') {
+                continue;
+            }
+
+            $query = $query . $line;
+            if ($endWith == ';') {
+                mysqli_query($conn,$query) or die('<div class="error-response sql-import-response">Problem in executing the SQL query <b>' . $query. '</b></div>');
+                $query= '';
+            }
+        }
+
+     
 
         return redirect('/sites');
-
 
 
 
