@@ -32,7 +32,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/sites', 'SitesController@sites')->name('sites');
 Route::get('/getsitelist', 'SitesController@getsitelist')->name('getsitelist');
@@ -339,8 +339,12 @@ Route::group(array('prefix' => 'api/v1'), function() {
 Route::group(array('prefix' => 'api/v1'), function() {
 
 
-    Route::post('/sited', 'garagistesLOboController@store')->name('/sited');
 
+    Route::post('/sited', 'garagistesLOboController@store')->name('/sited');
+    Route::post('nqo' , function () {
+
+        return  "nqo" ;
+    });
 
 });
 Route::group(array('prefix' => 'api/v1'), function() {
@@ -368,13 +372,33 @@ Route::post('/laraconection', 'laraconectionController@index')->name('/laraconec
 Route::delete('/laraconection', 'laraconectionController@index')->name('/laraconection');
 Route::put('/laraconection', 'laraconectionController@index')->name('/laraconection');
 
+});
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/site_a', 'Site_AController@index')->name('/site_a');
+Route::post('/site_a', 'Site_AController@index')->name('/site_a');
+Route::delete('/site_a', 'Site_AController@index')->name('/site_a');
+Route::put('/site_a', 'Site_AController@index')->name('/site_a');
+
+
          });
 
 Route::group(array('prefix' => 'api/v1'), function() {
 
-Route::get('/siya_db', 'siya_dbController@index')->name('/siya_db');
-Route::post('/siya_db', 'siya_dbController@index')->name('/siya_db');
-Route::delete('/siya_db', 'siya_dbController@index')->name('/siya_db');
-Route::put('/siya_db', 'siya_dbController@index')->name('/siya_db');
+
+Route::get('/site_b', 'Site_BController@index')->name('/site_b');
+Route::post('/site_b', 'Site_BController@index')->name('/site_b');
+Route::delete('/site_b', 'Site_BController@index')->name('/site_b');
+Route::put('/site_b', 'Site_BController@index')->name('/site_b');
+
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::get('/sita', 'sitAController@index')->name('/sita');
+Route::post('/sita', 'sitAController@index')->name('/sita');
+Route::delete('/sita', 'sitAController@index')->name('/sita');
+Route::put('/sita', 'sitAController@index')->name('/sita');
 
          });

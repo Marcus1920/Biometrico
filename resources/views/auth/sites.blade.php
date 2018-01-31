@@ -160,8 +160,8 @@
                 <div class="tile quick-stats">
                     <div id="stats-line-2" class="pull-left"></div>
                     <div class="data">
-                        <h2 data-value="98">0</h2>
-                        <small>Tickets Today</small>
+                        <h2 data-value={{ count($sites,0) }}>0</h2>
+                        <small>Sites</small>
                     </div>
                 </div>
             </div>
