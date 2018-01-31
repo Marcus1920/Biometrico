@@ -568,3 +568,12 @@ Route::post('workshedulasd', 'ASDController@workshedulstore')->name('workshedula
    
 
          });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencysitea', 'SiteAController@attendencystore')->name('attendencysitea');
+Route::post('clockinglistsitea', 'SiteAController@clockingliststore')->name('clockinglistsitea');
+Route::post('workshedulsitea', 'SiteAController@workshedulstore')->name('workshedulsitea');
+   
+
+         });
