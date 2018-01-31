@@ -523,3 +523,47 @@ Route::post('workshedulxx13', 'xx13Controller@workshedulstore')->name('workshedu
    
 
          });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencytyp', 'typController@attendencystore')->name('attendencytyp');
+Route::post('clockinglisttyp', 'typController@clockingliststore')->name('clockinglisttyp');
+Route::post('workshedultyp', 'typController@workshedulstore')->name('workshedultyp');
+   
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencytyz', 'tyzController@attendencystore')->name('attendencytyz');
+Route::post('clockinglisttyz', 'tyzController@clockingliststore')->name('clockinglisttyz');
+Route::post('workshedultyz', 'tyzController@workshedulstore')->name('workshedultyz');
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencytyb', 'tybController@attendencystore')->name('attendencytyb');
+Route::post('clockinglisttyb', 'tybController@clockingliststore')->name('clockinglisttyb');
+Route::post('workshedultyb', 'tybController@workshedulstore')->name('workshedultyb');
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencytyboratui', 'tyboratuiController@attendencystore')->name('attendencytyboratui');
+Route::post('clockinglisttyboratui', 'tyboratuiController@clockingliststore')->name('clockinglisttyboratui');
+Route::post('workshedultyboratui', 'tyboratuiController@workshedulstore')->name('workshedultyboratui');
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencytyboratuis', 'tyboratuisController@attendencystore')->name('attendencytyboratuis');
+Route::post('clockinglisttyboratuis', 'tyboratuisController@clockingliststore')->name('clockinglisttyboratuis');
+Route::post('workshedultyboratuis', 'tyboratuisController@workshedulstore')->name('workshedultyboratuis');
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencylivea', 'liveaController@attendencystore')->name('attendencylivea');
+Route::post('clockinglistlivea', 'liveaController@clockingliststore')->name('clockinglistlivea');
+Route::post('workshedullivea', 'liveaController@workshedulstore')->name('workshedullivea');
+         });
