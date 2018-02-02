@@ -68,7 +68,7 @@ class SitesController extends Controller
     {
         $site = Site::where('id',$id)->first();
 
-        try {
+     //   try {
 
             $shedule= \DB::connection($site->connection_name)->table('clocking_temp_print')
                 ->select(
@@ -91,11 +91,11 @@ class SitesController extends Controller
 
             return view('home',compact('shedule','site'));
 
-         } catch (\Exception $e) {
+      /*   } catch (\Exception $e) {
 
             return redirect('/404')->with('nick', $id);
         }
-
+*/
     }
 
     public function create()
