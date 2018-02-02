@@ -593,3 +593,17 @@ Route::post('attendencyjkl', 'jklController@attendencystore')->name('attendencyj
 Route::post('clockinglistjkl', 'jklController@clockingliststore')->name('clockinglistjkl');
 Route::post('worksheduljkl', 'jklController@workshedulstore')->name('worksheduljkl');
          });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencysitex', 'SiteXController@attendencystore')->name('attendencysitex');
+Route::post('clockinglistsitex', 'SiteXController@clockingliststore')->name('clockinglistsitex');
+Route::post('workshedulsitex', 'SiteXController@workshedulstore')->name('workshedulsitex');
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencysitep', 'SitePController@attendencystore')->name('attendencysitep');
+Route::post('clockinglistsitep', 'SitePController@clockingliststore')->name('clockinglistsitep');
+Route::post('workshedulsitep', 'SitePController@workshedulstore')->name('workshedulsitep');
+         });

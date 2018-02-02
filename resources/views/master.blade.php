@@ -108,7 +108,10 @@
 
         $role = role::where('id',$user->role)->first();
 
-        $sites = Site::with('company')->where('company_id',$user->company_id)->get();
+        $sites = Site::with('company')->where('company_id',$user->company_id)
+            ->orderBy('id','DESC')
+            ->take(5)
+            ->get();
 
 ?>
 
