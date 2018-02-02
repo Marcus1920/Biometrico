@@ -22,7 +22,7 @@ class SitesController extends Controller
 
       $sites = Site::with('company')->where('company_id',$user->company_id)->get();
 
-      return view('auth.sites',compact('sites','company'));
+      return view('auth.sites',compact('sites','company'))->with(alert()->flash('Welcome to Laravel SweetAlert By Rashid Ali!'));
 
 
 
@@ -68,7 +68,7 @@ class SitesController extends Controller
     {
         $site = Site::where('id',$id)->first();
 
-        try {
+//        try {
 
             $shedule= \DB::connection($site->connection_name)->table('clocking_temp_print')
                 ->select(
@@ -91,10 +91,10 @@ class SitesController extends Controller
 
             return view('home',compact('shedule','site'));
 
-         } catch (\Exception $e) {
-
-            return redirect('/404')->with('nick', $id);
-        }
+//         } catch (\Exception $e) {
+//
+//            return redirect('/404')->with('nick', $id);
+//        }
 
     }
 

@@ -42,6 +42,7 @@
 
     <link href="{{ asset('css/toggles.css') }}" rel="stylesheet">
     <link href="{{ asset('css/toggle-themes/toggles-all.css') }}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.8.6/sweetalert2.min.css" rel="stylesheet">
 
     <!-- DataTables CSS -->
     <link href="{{ asset('bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css') }}" rel="stylesheet">
@@ -94,12 +95,24 @@
             background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg,  #670d10 0%,#092756 100%);
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#092756',GradientType=1 );
         }
+
+        .swal-modal {
+            background-color:red;
+            border: 3px solid white;
+            text-decoration-color: white;
+        }
     </style>
 
 </head>
 <body>
 
-
+@if (alert()->ready())
+    <script>
+        swal({
+            title: "{!! alert()->message() !!}"
+        });
+    </script>
+@endif
 
 <div class="col-md-12" style="margin-top: 3%;">
 
@@ -345,7 +358,7 @@ jQuery UI -->
 <script src="{{ asset('js/calendar.min.js') }}"></script> <!-- Calendar -->
 
 <script src="{{ asset('js/raphael.js') }}"> </script>
-
+<script src="{{ asset('js/sweetalert.min.js') }}"> </script>
 
 <!-- Charts -->
 <script src="js/charts/jquery.flot.js"></script> <!-- Flot Main -->
@@ -368,6 +381,9 @@ jQuery UI -->
     -->
 
 <script>
+
+
+
     $("#country").tokenInput("{!! url('/getCountries')!!}",
         {tokenLimit: 1,
             animateDropdown: false,

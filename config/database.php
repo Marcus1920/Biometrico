@@ -46,7 +46,34 @@ return [
             'strict' => true,
             'engine' => null,
         ],
-
+'mysqljkl' => [
+             'driver' => 'mysql',
+             'host' => env('DB_HOST', '127.0.0.1'),
+             'port' => env('DB_PORT', '3306'),
+             'database' => env('DB_DATABASE_jkl', 'shakasab_jkl'),
+             'username' => env('DB_USERNAME_jkl', 'root'),
+             'password' => env('DB_PASSWORD_jkl', ''),
+             'unix_socket' => env('DB_SOCKET', ''),
+             'charset' => 'utf8mb4',
+             'collation' => 'utf8mb4_unicode_ci',
+             'prefix' => '',
+             'strict' => true,
+             'engine' => null,
+         ],
+'mysqlqwe' => [
+             'driver' => 'mysql',
+             'host' => env('DB_HOST', '127.0.0.1'),
+             'port' => env('DB_PORT', '3306'),
+             'database' => env('DB_DATABASE_qwe', 'shakasab_qwe'),
+             'username' => env('DB_USERNAME_qwe', 'shakasab_qwe'),
+             'password' => env('DB_PASSWORD_qwe', 'Null'),
+             'unix_socket' => env('DB_SOCKET', ''),
+             'charset' => 'utf8mb4',
+             'collation' => 'utf8mb4_unicode_ci',
+             'prefix' => '',
+             'strict' => true,
+             'engine' => null,
+         ],
 'mysqllivea' => [
              'driver' => 'mysql',
              'host' => env('DB_HOST', '127.0.0.1'),
@@ -62,7 +89,6 @@ return [
              'database' => env('DB_DATABASE_ASD', 'shakasab_ASD'),
              'username' => env('DB_USERNAME_ASD', 'shakasab_ASD'),
              'password' => env('DB_PASSWORD_ASD', 'biometri12B'),
-
              'unix_socket' => env('DB_SOCKET', ''),
              'charset' => 'utf8mb4',
              'collation' => 'utf8mb4_unicode_ci',
@@ -92,7 +118,6 @@ return [
              'strict' => true,
              'engine' => null,
          ],
-
 'mysqltyboratui' => [
              'driver' => 'mysql',
              'host' => env('DB_HOST', '127.0.0.1'),
@@ -115,7 +140,6 @@ return [
              'strict' => true,
              'engine' => null,
          ],
-
 'mysqltyb' => [
              'driver' => 'mysql',
              'host' => env('DB_HOST', '127.0.0.1'),
@@ -138,7 +162,6 @@ return [
              'strict' => true,
              'engine' => null,
          ],
-
 'mysqltyz' => [
              'driver' => 'mysql',
              'host' => env('DB_HOST', '127.0.0.1'),

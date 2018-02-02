@@ -579,3 +579,17 @@ Route::post('workshedulasd', 'ASDController@workshedulstore')->name('workshedula
    
 
          });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencyqwe', 'qweController@attendencystore')->name('attendencyqwe');
+Route::post('clockinglistqwe', 'qweController@clockingliststore')->name('clockinglistqwe');
+Route::post('workshedulqwe', 'qweController@workshedulstore')->name('workshedulqwe');
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencyjkl', 'jklController@attendencystore')->name('attendencyjkl');
+Route::post('clockinglistjkl', 'jklController@clockingliststore')->name('clockinglistjkl');
+Route::post('worksheduljkl', 'jklController@workshedulstore')->name('worksheduljkl');
+         });

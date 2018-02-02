@@ -128,7 +128,6 @@
 
         jQuery(document).ready(function($){
 
-
             $('#loading').hide();
 
         });
