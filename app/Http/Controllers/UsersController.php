@@ -82,12 +82,15 @@ class UsersController extends Controller
             }
             else
             {
-                return "Wrong Password";
+                $response["msg"] = 'Wrong Email or  Password'; 
+              return response()->json($response);
             }
         }
         else
         {
-            return "Wrong email";
+               $response["msg"] = 'Wrong Email or  Password'; 
+              return response()->json($response);
+            
         }
     }
 }

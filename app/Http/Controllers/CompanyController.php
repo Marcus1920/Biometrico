@@ -14,6 +14,7 @@ class CompanyController extends Controller
     public function index()
     {
         $company = Company::with('site')->get();
+
         return response()->json($company);
     }
 

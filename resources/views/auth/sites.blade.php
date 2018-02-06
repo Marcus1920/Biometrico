@@ -106,13 +106,6 @@
 </head>
 <body>
 
-@if (alert()->ready())
-    <script>
-        swal({
-            title: "{!! alert()->message() !!}"
-        });
-    </script>
-@endif
 
 <div class="col-md-12" style="margin-top: 3%;">
 
