@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use App\EndPoint;
 use Illuminate\Http\Request;
+use  App\ServerConfigurationServices\SiteConnectionServices;
+use App\ServerConfigurationServices\SiteControllesServices;
+use  App\ServerConfigurationServices\SiteRouteServices ;
+use  App\ServerConfigurationServices\SiteDataSchemaServices;
+use Illuminate\Support\Facades\Validator;
 use App\User;
 use App\Site;
 use App\role;
@@ -22,11 +27,11 @@ class addSiteController extends Controller
         return view('addsite.addsite',compact('companies','selectedCompany'));
 
     }
+
+
     public  function  siteconfiguration  (Request $request) {
         // Variable  Declation
-        $shedule  = "shedule" ;
-        $data   = "data" ;
-        $record = "record";
+
 
         $SiteName   = $request->input('SITE_NAME');
         $SiteName_conif = "_".$request->input('SITE_NAME');
@@ -34,294 +39,50 @@ class addSiteController extends Controller
         $SiteUrl = $request->input('SITE_NAME');
         $site_api_ulr = strtolower($SiteUrl) ;
         $dbName = ''.$SiteName.'_db';
+        $company_id   = $request->input('company_id');
+
+
+
+        $errors = Validator::make($request->all(), [
+            'SITE_NAME' => 'required|max:5',
+            'company_id' => 'required|max:255',
+        ]);
+
+        if ($errors->fails())
+        {
+            return redirect()->back()->withErrors($errors->errors());
+        }
+
+
         // Function  to  configure  the  Datatabase  connection
 
 
+        $new_site_connection = new SiteConnectionServices() ;
+        //$new_site_connection->SetupDatabaseConnection($dbName ,$SiteName  ,$SiteName_conif) ;
+        $new_site_connection->SetupDatabaseConnectionLocal($dbName ,$SiteName  ,$SiteName_conif);
+        // $new_site_connection->SetConnectionEnv($SiteName ,$SiteName_conif) ;
 
-         $db_config  = "C:/Users/user-04/Desktop/Biome/Biometrico/config/database.php";
+        $new_site_connection ->SetConnectionEnvLocal($SiteName ,$SiteName_conif);
 
+        $new_site_Controller  = new  SiteControllesServices() ;
 
-//         $db_config    ="C:\Users\user-04\Dsktop\Biome\Biometrico";
-         $connection   = "'mysql$SiteName' => [
+        $new_site_Controller ->SetupControllers($SiteController_conifg  , $SiteName) ;
+        $new_site_Routes    = new  SiteRouteServices() ;
 
-             'driver' => 'mysql',
-             'host' => env('DB_HOST', '127.0.0.1'),
-             'port' => env('DB_PORT', '3306'),
-             'database' => env('DB_DATABASE$SiteName_conif', '$dbName'),
-             'username' => env('DB_USERNAME$SiteName_conif', 'root'),
-             'password' => env('DB_PASSWORD$SiteName_conif', 'Null'),
-             'unix_socket' => env('DB_SOCKET', ''),
-             'charset' => 'utf8mb4',
-             'collation' => 'utf8mb4_unicode_ci',
-             'prefix' => '',
-             'strict' => true,
-             'engine' => null,
-         ],";
+        $new_site_Routes ->setupRoutes($site_api_ulr ,$SiteController_conifg )  ;
+        $new_site_Routes ->SaveEndpoint($SiteName  ,$company_id, $site_api_ulr) ;
 
+        $new_site_Schema   = new  SiteDataSchemaServices () ;
 
-        $replacement = $connection;
-        $specific_line = 49; // sample value squeeze it on this line
-        $contents = file($db_config, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-        if($specific_line > sizeof($contents)) {
-            $specific_line = sizeof($contents) + 1;
-        }
-        array_splice($contents, $specific_line-1, 0, array($replacement)); // arrays start at zero index
-        $contents = implode("\n", $contents);
-        file_put_contents($db_config, $contents);
+        $new_site_Schema->RunScriptlocal($dbName) ;
 
-        // End  Function
+        // $new_site_Schema->RunscriptRemote($SiteName);
 
 
 
 
 
-         // Function   to   write  on  the Eviromental  File
-         $fille  = "C:/Users/user-04/Desktop/Biome/Biometrico/.env" ;
-         $space  =   "\r\n";
-         $DB_CONNECTION        ="DB_CONNECTION=" ."mysql"."\n";
 
-        $DB_HOST              ="DB_HOST =" . $request->input('DB_HOST')."\n";
-        $DB_DATABAS           = "DB_DATABAS$SiteName_conif =" .$dbName."\n";
-        $DB_USERNAME          = "DB_USERNAME$SiteName_conif =" .'root'."\n";
-        $DB_PASSWORD          = "DB_PASSWORD$SiteName_conif=" .$request->input('DB_PASSWORD')."\n";
-
-
-        file_put_contents($fille ,$space , FILE_APPEND);
-        file_put_contents($fille , $DB_CONNECTION , FILE_APPEND);
-        file_put_contents($fille , $DB_HOST  , FILE_APPEND);
-        file_put_contents($fille , $DB_DATABAS  , FILE_APPEND);
-        file_put_contents($fille , $DB_USERNAME  , FILE_APPEND);
-        file_put_contents($fille , $DB_PASSWORD  , FILE_APPEND);
-
-        //End  Function
-
-        // Function  to  create  a  Controller
-        $fn = "C:/xampp/htdocs/Biometrico/app/Http/Controllers/AttendecyController.php";
-
-
-//         C:\Users\user-04\Desktop\Biome\Biometrico\app\Http\Controllers
-         // Function  to  create  a  Controller
-
-
-         $Create_controller = fopen("C:/Users/user-04/Desktop/Biome/Biometrico/app/Http/Controllers".$SiteController_conifg.".php", "w") ;
-         $methode  = "<?php
-
-      
-
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
-class $SiteController_conifg extends Controller
-{
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function attendencystore()
-    {
-       $$data = Input::all();
-       
-       $$record = \DB::connection('mysql$SiteName')
-           ->table('attendance')
-           ->where('ATTENDANCE_KEY', Input::get('ATTENDANCE_KEY'))
-           ->first();
-
-       if($$record == NULL)
-       {
-           \DB::connection('mysql$SiteName')
-               ->table('attendance')
-               ->insert($$data);
-
-           return 'ok';
-       }
-       else if($$record != NULL)
-       {
-           \DB::connection('mysql$SiteName')
-               ->table('attendance')
-               ->where('ATTENDANCE_KEY', Input::get('ATTENDANCE_KEY'))
-               ->delete();
-
-           \DB::connection('mysql$SiteName')
-               ->table('attendance')
-               ->insert($$data);
-
-           return 'ok';
-       }
-       
-    }
-    
-    
-    public function workshedulstore()
-    {
-     $$data = Input::all();
-     
-     $$record = \DB::connection('mysql$SiteName')
-           ->table('work_schedule')
-           ->where('WORK_SCHEDULE_KEY', Input::get('WORK_SCHEDULE_KEY'))
-           ->first();
-
-       if($$record == NULL)
-       {
-           \DB::connection('mysql$SiteName')
-               ->table('work_schedule')
-               ->insert($$data);
-
-           return 'ok';
-       }
-       else if($$record != NULL)
-       {
-           \DB::connection('mysql$SiteName')
-               ->table('work_schedule')
-               ->where('WORK_SCHEDULE_KEY', Input::get('WORK_SCHEDULE_KEY'))
-               ->delete();
-
-           \DB::connection('mysql$SiteName')
-               ->table('work_schedule')
-               ->insert($$data);
-
-           return 'ok';
-       }
-    
-    }
-    
-    public function clockingliststore()
-    {
-      $$data = Input::all();
-  
-           \DB::connection('mysql$SiteName')
-               ->table('clocking_temp_print')
-               ->insert($$data);
-
-           return 'ok';
-       
-    }
-    
-    
-    
-     public  function  index ()
-    {
-
-        $$shedule= \DB::connection('mysql$SiteName')->table('attendance')
-            ->select(
-                \DB::raw(
-                    \"
-                                attendance.ATTENDANCE_KEY     ,             
-                                attendance.COMPANY_KEY      ,                       
-                                attendance.TERMINAL_KEY      ,
-                                attendance.TERMINAL_REC_NO  ,
-                                attendance.DEPARTMENT_KEY    ,
-                                attendance.ATTENDANCE_DATE  ,
-                                attendance.ATTENDANCE_TIME  ,
-                                attendance.EVENT_KEY      ,
-                                
-                                attendance.DEVICE_CONFIGURATION_KEY    ,
-                                attendance.CALCULATED  ,
-                                attendance.VERIFIED       ,
-                               
-                                attendance.OPERATOR_KEY        ,
-                                attendance.ENROLL_ID        
-                            
-                                      
-                                \"
-                )
-            )
-            ->get();
-
-        return json_encode($$shedule) ; 
-    }
-}
-" ;
-
-
-         fwrite($Create_controller, $methode);
-         fclose($Create_controller);
-
-         // add   Resource  Route
-         $route  = "C:/Users/user-04/Desktop/Biome/Biometrico/routes/web.php" ;
-
-
-        $routes  ="Route::group(array('prefix' => 'api/v1'), function() {"."\n"."\n".
-
-            "Route::post('attendency$site_api_ulr', '$SiteController_conifg@attendencystore')->name('attendency$site_api_ulr');"."\n".
-            "Route::post('clockinglist$site_api_ulr', '$SiteController_conifg@clockingliststore')->name('clockinglist$site_api_ulr');"."\n".
-            "Route::post('workshedul$site_api_ulr', '$SiteController_conifg@workshedulstore')->name('workshedul$site_api_ulr');
-   
-
-         });
-";
-
-        file_put_contents($route ,$space , FILE_APPEND);
-        file_put_contents($route ,$routes , FILE_APPEND);
-
-
-        // Function  to  save  to  Database
-
-
-        $newSite = New Site();
-        $newSite->company_id = $request['company_id'];
-        $newSite->site_name = $SiteName;
-
-        $dbName = ''.$SiteName.'_db';
-
-        $newSite->db_name = strtolower($dbName);
-        $newSite->site_code = '001'.$SiteName;
-        $newSite->	connection_name = "mysql".$SiteName;
-//        $newSite->end_point =   $_ENV['APP_URL']."api/v1".$site_api_ulr ;
-
-
-        \DB::statement(\DB::raw('CREATE DATABASE '.$dbName.''));
-
-        $conn =new mysqli('localhost', 'root', '' , ''.$dbName.'');
-
-
-         $query = '';
-         $sqlScript = file("C:/Users/user-04/Desktop/Biome/Biometrico/database/Schema/Biometricodb.sql");
-
-         foreach ($sqlScript as $line)	{
-
-
-            $startWith = substr(trim($line), 0 ,2);
-            $endWith = substr(trim($line), -1 ,1);
-
-            if (empty($line) || $startWith == '--' || $startWith == '/*' || $startWith == '//') {
-                continue;
-            }
-
-            $query = $query . $line;
-            if ($endWith == ';') {
-                mysqli_query($conn,$query) or die('<div class="error-response sql-import-response">Problem in executing the SQL query <b>' . $query. '</b></div>');
-                $query= '';
-            }
-        }
-
-        $newSite->save();
-
-        $newEndpoint = new EndPoint();
-        $newEndpoint->site_id = $newSite->id;
-        $newEndpoint->name = "attendency$site_api_ulr";
-        $newEndpoint->end_point = $_ENV['APP_URL']."api/v1/attendency".$site_api_ulr;
-        $newEndpoint->save();
-
-        $newEndpoint = new EndPoint();
-        $newEndpoint->site_id = $newSite->id;
-        $newEndpoint->name = "clockinglist$site_api_ulr";
-        $newEndpoint->end_point = $_ENV['APP_URL']."api/v1/clockinglist".$site_api_ulr;
-        $newEndpoint->save();
-
-        $newEndpoint = new EndPoint();
-        $newEndpoint->site_id = $newSite->id;
-        $newEndpoint->name = "workshedul$site_api_ulr";
-        $newEndpoint->end_point = $_ENV['APP_URL']."api/v1/workshedul".$site_api_ulr;
-        $newEndpoint->save();
 
         return redirect('/sites');
 
