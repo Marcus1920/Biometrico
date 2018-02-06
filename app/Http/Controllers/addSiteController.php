@@ -8,6 +8,7 @@ use  App\ServerConfigurationServices\SiteConnectionServices;
 use App\ServerConfigurationServices\SiteControllesServices;
 use  App\ServerConfigurationServices\SiteRouteServices ;
 use  App\ServerConfigurationServices\SiteDataSchemaServices;
+use Illuminate\Support\Facades\Validator;
 use App\User;
 use App\Site;
 use App\role;
@@ -40,12 +41,28 @@ class addSiteController extends Controller
         $dbName = ''.$SiteName.'_db';
         $company_id   = $request->input('company_id');
 
+
+
+        $errors = Validator::make($request->all(), [
+            'SITE_NAME' => 'required|max:5',
+            'company_id' => 'required|max:255',
+        ]);
+
+        if ($errors->fails())
+        {
+            return redirect()->back()->withErrors($errors->errors());
+        }
+
+
         // Function  to  configure  the  Datatabase  connection
 
 
           $new_site_connection = new SiteConnectionServices() ;
           $new_site_connection->SetupDatabaseConnection($dbName ,$SiteName  ,$SiteName_conif) ;
+      //  $new_site_connection->SetupDatabaseConnectionLocal($dbName ,$SiteName  ,$SiteName_conif);
           $new_site_connection->SetConnectionEnv($SiteName ,$SiteName_conif) ;
+
+         // $new_site_connection ->SetConnectionEnvLocal($SiteName ,$SiteName_conif);
 
           $new_site_Controller  = new  SiteControllesServices() ;
 
@@ -57,7 +74,7 @@ class addSiteController extends Controller
 
           $new_site_Schema   = new  SiteDataSchemaServices () ;
 
-        //  $new_site_Schema->RunScriptlocal($dbName) ;
+         // $new_site_Schema->RunScriptlocal($dbName) ;
 
           $new_site_Schema->RunscriptRemote($SiteName);
 

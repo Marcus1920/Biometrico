@@ -14,13 +14,10 @@ class CompanyController extends Controller
     public function index()
     {
         $company = Company::with('site')->get();
-        return $company;
+          return response()->json($company)  ;
     }
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+  
 
 
 //    public function getAllCompany()

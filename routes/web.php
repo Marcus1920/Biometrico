@@ -582,6 +582,7 @@ Route::post('workshedulasd', 'ASDController@workshedulstore')->name('workshedula
 
 Route::group(array('prefix' => 'api/v1'), function() {
 
+
 Route::post('attendencysitea', 'SiteAController@attendencystore')->name('attendencysitea');
 Route::post('clockinglistsitea', 'SiteAController@clockingliststore')->name('clockinglistsitea');
 Route::post('workshedulsitea', 'SiteAController@workshedulstore')->name('workshedulsitea');
@@ -591,14 +592,46 @@ Route::post('workshedulsitea', 'SiteAController@workshedulstore')->name('workshe
 
 Route::group(array('prefix' => 'api/v1'), function() {
 
-Route::post('attendencysiteb', 'SiteBController@attendencystore')->name('attendencysiteb');
-Route::post('clockinglistsiteb', 'SiteBController@clockingliststore')->name('clockinglistsiteb');
-Route::post('workshedulsiteb', 'SiteBController@workshedulstore')->name('workshedulsiteb');
+
+Route::post('attendencyqwe', 'qweController@attendencystore')->name('attendencyqwe');
+Route::post('clockinglistqwe', 'qweController@clockingliststore')->name('clockinglistqwe');
+Route::post('workshedulqwe', 'qweController@workshedulstore')->name('workshedulqwe');
+
          });
 
 Route::group(array('prefix' => 'api/v1'), function() {
 
-Route::post('attendencyifs1', 'IFS1Controller@attendencystore')->name('attendencyifs1');
-Route::post('clockinglistifs1', 'IFS1Controller@clockingliststore')->name('clockinglistifs1');
-Route::post('workshedulifs1', 'IFS1Controller@workshedulstore')->name('workshedulifs1');
+
+Route::post('attendencyjkl', 'jklController@attendencystore')->name('attendencyjkl');
+Route::post('clockinglistjkl', 'jklController@clockingliststore')->name('clockinglistjkl');
+Route::post('worksheduljkl', 'jklController@workshedulstore')->name('worksheduljkl');
+
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencykfc', 'KFCController@attendencystore')->name('attendencykfc');
+Route::post('clockinglistkfc', 'KFCController@clockingliststore')->name('clockinglistkfc');
+Route::post('workshedulkfc', 'KFCController@workshedulstore')->name('workshedulkfc');
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencykfg', 'KFGController@attendencystore')->name('attendencykfg');
+Route::post('clockinglistkfg', 'KFGController@clockingliststore')->name('clockinglistkfg');
+Route::post('workshedulkfg', 'KFGController@workshedulstore')->name('workshedulkfg');
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencykfg', 'KFGController@attendencystore')->name('attendencykfg');
+Route::post('clockinglistkfg', 'KFGController@clockingliststore')->name('clockinglistkfg');
+Route::post('workshedulkfg', 'KFGController@workshedulstore')->name('workshedulkfg');
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencykfc', 'KFCController@attendencystore')->name('attendencykfc');
+Route::post('clockinglistkfc', 'KFCController@clockingliststore')->name('clockinglistkfc');
+Route::post('workshedulkfc', 'KFCController@workshedulstore')->name('workshedulkfc');
          });

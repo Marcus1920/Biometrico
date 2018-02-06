@@ -6,6 +6,15 @@
     <div  style="position: absolute ; left: 15%; right: 15%" >
         <br> <br>
         <div class="container">
+            @if (count($errors) > 0)
+                <div class = "alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <form action="siteconfiguration" method="post"  onsubmit="$('#loading').modal('show')">
                 <div id="loading"  style="position: absolute ; background-color: black; width: 100% ; height:100%; display: none"><img  style="border-radius: 70%"  width="100%" height="100%" src="{{ asset('/img/Loading-Full.gif') }}"  alt="" /></div>
 
@@ -36,7 +45,7 @@
                 <div class="form-group row">
                     <label for="inputPassword3" class="col-sm-2 col-form-label">SITE_NAME</label>
                     <div class="col-sm-10">
-                        <input type="text"  required="" name="SITE_NAME" class="form-control" id="inputPassword3" placeholder="">
+                        <input type="text"   name="SITE_NAME" class="form-control" id="inputPassword3" placeholder="">
                     </div>
                 </div>
 
@@ -118,7 +127,6 @@
     <script>
 
         jQuery(document).ready(function($){
-
 
             $('#loading').hide();
 
