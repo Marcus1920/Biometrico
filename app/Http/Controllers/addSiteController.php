@@ -22,8 +22,6 @@ class addSiteController extends Controller
         return view('addsite.addsite',compact('companies','selectedCompany'));
 
     }
-
-
     public  function  siteconfiguration  (Request $request) {
         // Variable  Declation
         $shedule  = "shedule" ;
@@ -40,7 +38,7 @@ class addSiteController extends Controller
 
 
 
-         $db_config  = "  C:/Users/user-04/Desktop/Biome/Biometrico/config/database/.php";
+         $db_config  = "C:/Users/user-04/Desktop/Biome/Biometrico/config/database.php";
 
 
 //         $db_config    ="C:\Users\user-04\Dsktop\Biome\Biometrico";
@@ -105,7 +103,7 @@ class addSiteController extends Controller
          // Function  to  create  a  Controller
 
 
-         $Create_controller = fopen(" C:/Users/user-04/Desktop/Biome/Biometrico/app/Http/Controllers".$SiteController_conifg.".php", "w") ;
+         $Create_controller = fopen("C:/Users/user-04/Desktop/Biome/Biometrico/app/Http/Controllers".$SiteController_conifg.".php", "w") ;
          $methode  = "<?php
 
       

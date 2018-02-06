@@ -541,3 +541,12 @@ Route::post('workshedulxx13', 'xx13Controller@workshedulstore')->name('workshedu
 
          });
 
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencysiteua', 'SiteUAController@attendencystore')->name('attendencysiteua');
+Route::post('clockinglistsiteua', 'SiteUAController@clockingliststore')->name('clockinglistsiteua');
+Route::post('workshedulsiteua', 'SiteUAController@workshedulstore')->name('workshedulsiteua');
+   
+
+         });

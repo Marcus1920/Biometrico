@@ -67,10 +67,6 @@
 
             </form>
         </div>
-        <div class="col-md-6" style="background-image: url(img/login_illustration.png); height: 600px">
-
-
-        </div>
 
         <div id="login_img" class="col-lg-6"></div>
 
