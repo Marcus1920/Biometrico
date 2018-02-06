@@ -14,12 +14,19 @@ class CompanyController extends Controller
     public function index()
     {
         $company = Company::with('site')->get();
-        return $company;
+        return response()->json($company);
     }
 
-    public function __construct()
+    public function create()
     {
-        $this->middleware('auth');
+
+    }
+
+    public function store(Request $request)
+    {
+        $newCompany = new Company();
+        $newCompany->name = $request['name'];
+        $newCompany->save();
     }
 
 

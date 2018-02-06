@@ -14,6 +14,13 @@ use mysqli;
 class SitesController extends Controller
 {
 
+    public function index()
+    {
+        $sites = Site::with('endpoint')->with('company')->get();
+
+        return response()->json($sites);
+    }
+
     public function sites()
     {
        $user = User::find(Auth::user()->id);

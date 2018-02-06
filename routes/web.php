@@ -69,6 +69,8 @@ Route::group(array('prefix' => 'api/v1'), function() {
     Route::post('attendstoreance', 'AttendecyController@store')->name('attendstoreance');
     Route::resource('/company','CompanyController');
 
+    Route::resource('/site','SitesController');
+
     Route::post('/loginUser','UsersController@login');
 
     Route::post('/getSite','SitesController@getSite');
