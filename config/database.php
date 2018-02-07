@@ -46,6 +46,7 @@ return [
             'strict' => true,
             'engine' => null,
         ],
+<<<<<<< HEAD
 'mysqlsitZA' => [
              'driver' => 'mysql',
              'host' => env('DB_HOST', '127.0.0.1'),
@@ -53,6 +54,15 @@ return [
              'database' => env('DB_DATABASE_sitZA', 'sitZA'),
              'username' => env('DB_USERNAME_sitZA', 'root'),
              'password' => env('DB_PASSWORD_sitZA', ''),
+=======
+'mysqlKFC' => [
+             'driver' => 'mysql',
+             'host' => env('DB_HOST', '127.0.0.1'),
+             'port' => env('DB_PORT', '3306'),
+             'database' => env('DB_DATABASE_KFC', 'shakasab_KFC'),
+             'username' => env('DB_USERNAME_KFC', 'shakasab_KFC'),
+             'password' => env('DB_PASSWORD_KFC', 'biometri12B'),
+>>>>>>> 5a3623c8f59c72c81a2ee2cab3465e5bd392a9dc
              'unix_socket' => env('DB_SOCKET', ''),
              'charset' => 'utf8mb4',
              'collation' => 'utf8mb4_unicode_ci',
@@ -60,6 +70,7 @@ return [
              'strict' => true,
              'engine' => null,
          ],
+<<<<<<< HEAD
 'mysqlSith' => [
              'driver' => 'mysql',
              'host' => env('DB_HOST', '127.0.0.1'),
@@ -67,6 +78,15 @@ return [
              'database' => env('DB_DATABASE_Sith', 'Sith'),
              'username' => env('DB_USERNAME_Sith', 'root'),
              'password' => env('DB_PASSWORD_Sith', ''),
+=======
+'mysqlKFG' => [
+             'driver' => 'mysql',
+             'host' => env('DB_HOST', '127.0.0.1'),
+             'port' => env('DB_PORT', '3306'),
+             'database' => env('DB_DATABASE_KFG', 'shakasab_KFG'),
+             'username' => env('DB_USERNAME_KFG', 'shakasab_KFG'),
+             'password' => env('DB_PASSWORD_KFG', 'biometri12B'),
+>>>>>>> 5a3623c8f59c72c81a2ee2cab3465e5bd392a9dc
              'unix_socket' => env('DB_SOCKET', ''),
              'charset' => 'utf8mb4',
              'collation' => 'utf8mb4_unicode_ci',
@@ -74,6 +94,7 @@ return [
              'strict' => true,
              'engine' => null,
          ],
+<<<<<<< HEAD
 'mysqlsiteJ' => [
              'driver' => 'mysql',
              'host' => env('DB_HOST', '127.0.0.1'),
@@ -81,6 +102,15 @@ return [
              'database' => env('DB_DATABASE_siteJ', 'siteJ'),
              'username' => env('DB_USERNAME_siteJ', 'root'),
              'password' => env('DB_PASSWORD_siteJ', ''),
+=======
+'mysqlKFG' => [
+             'driver' => 'mysql',
+             'host' => env('DB_HOST', '127.0.0.1'),
+             'port' => env('DB_PORT', '3306'),
+             'database' => env('DB_DATABASE_KFG', 'shakasab_KFG'),
+             'username' => env('DB_USERNAME_KFG', 'shakasab_KFG'),
+             'password' => env('DB_PASSWORD_KFG', 'biometri12B'),
+>>>>>>> 5a3623c8f59c72c81a2ee2cab3465e5bd392a9dc
              'unix_socket' => env('DB_SOCKET', ''),
              'charset' => 'utf8mb4',
              'collation' => 'utf8mb4_unicode_ci',
@@ -88,6 +118,7 @@ return [
              'strict' => true,
              'engine' => null,
          ],
+<<<<<<< HEAD
 'mysqlSiteUA' => [
              'driver' => 'mysql',
              'host' => env('DB_HOST', '127.0.0.1'),
@@ -96,6 +127,37 @@ return [
              'username' => env('DB_USERNAME_SiteUA', 'root'),
              'password' => env('DB_PASSWORD_SiteUA', 'Null'),
     ],
+=======
+'mysqlKFC' => [
+             'driver' => 'mysql',
+             'host' => env('DB_HOST', '127.0.0.1'),
+             'port' => env('DB_PORT', '3306'),
+             'database' => env('DB_DATABASE_KFC', 'shakasab_KFC'),
+             'username' => env('DB_USERNAME_KFC', 'shakasab_KFC'),
+             'password' => env('DB_PASSWORD_KFC', 'biometri12B'),
+             'unix_socket' => env('DB_SOCKET', ''),
+             'charset' => 'utf8mb4',
+             'collation' => 'utf8mb4_unicode_ci',
+             'prefix' => '',
+             'strict' => true,
+             'engine' => null,
+         ],
+'mysqlIFS1' => [
+             'driver' => 'mysql',
+             'host' => env('DB_HOST', '127.0.0.1'),
+             'port' => env('DB_PORT', '3306'),
+             'database' => env('DB_DATABASE_IFS1', 'shakasab_IFS1'),
+             'username' => env('DB_USERNAME_IFS1', 'shakasab_IFS1'),
+             'password' => env('DB_PASSWORD_IFS1', 'biometri12B'),
+             
+             'unix_socket' => env('DB_SOCKET', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'strict' => true,
+            'engine' => null,
+        ],
+>>>>>>> 5a3623c8f59c72c81a2ee2cab3465e5bd392a9dc
 'mysqljkl' => [
              'driver' => 'mysql',
              'host' => env('DB_HOST', '127.0.0.1'),
@@ -586,13 +648,13 @@ return [
              'strict' => true,
              'engine' => null,
          ],
-'mysqlMarcus18920' => [
+'mysqlSiteB' => [
              'driver' => 'mysql',
              'host' => env('DB_HOST', '127.0.0.1'),
              'port' => env('DB_PORT', '3306'),
-             'database' => env('DB_DATABASE_Marcus18920', 'Marcus18920_db'),
-             'username' => env('DB_USERNAME_Marcus18920', 'root'),
-             'password' => env('DB_PASSWORD_Marcus18920', 'Null'),
+             'database' => env('DB_DATABASE_SiteB', 'shakasab_SiteB'),
+             'username' => env('DB_USERNAME_SiteB', 'shakasab_SiteB'),
+             'password' => env('DB_PASSWORD_SiteB', 'biometri12B'),
              'unix_socket' => env('DB_SOCKET', ''),
              'charset' => 'utf8mb4',
              'collation' => 'utf8mb4_unicode_ci',
@@ -600,13 +662,13 @@ return [
              'strict' => true,
              'engine' => null,
          ],
-'mysqlSite_A' => [
+'mysqlSiteB' => [
              'driver' => 'mysql',
              'host' => env('DB_HOST', '127.0.0.1'),
              'port' => env('DB_PORT', '3306'),
-             'database' => env('DB_DATABASE_Site_A', 'Site_A_db'),
-             'username' => env('DB_USERNAME_Site_A', 'root'),
-             'password' => env('DB_PASSWORD_Site_A', 'Null'),
+             'database' => env('DB_DATABASE_SiteB', 'shakasab_SiteB'),
+             'username' => env('DB_USERNAME_SiteB', 'shakasab_SiteB'),
+             'password' => env('DB_PASSWORD_SiteB', 'Null'),
              'unix_socket' => env('DB_SOCKET', ''),
              'charset' => 'utf8mb4',
              'collation' => 'utf8mb4_unicode_ci',
@@ -614,13 +676,13 @@ return [
              'strict' => true,
              'engine' => null,
          ],
-'mysqlZipoKoto' => [
+'mysqlSiteA' => [
              'driver' => 'mysql',
              'host' => env('DB_HOST', '127.0.0.1'),
              'port' => env('DB_PORT', '3306'),
-             'database' => env('DB_DATABASE_ZipoKoto', '_ZipoKoto'),
-             'username' => env('DB_USERNAME_ZipoKoto', 'root'),
-             'password' => env('DB_PASSWORD_ZipoKoto', 'Null'),
+             'database' => env('DB_DATABASE_SiteA', 'shakasab_SiteA'),
+             'username' => env('DB_USERNAME_SiteA', 'shakasab_SiteA'),
+             'password' => env('DB_PASSWORD_SiteA', 'biometri12B'),
              'unix_socket' => env('DB_SOCKET', ''),
              'charset' => 'utf8mb4',
              'collation' => 'utf8mb4_unicode_ci',

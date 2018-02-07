@@ -21,7 +21,11 @@ class SiteRouteServices
 
          $space  =   "\r\n";
 
+<<<<<<< HEAD
          $route  = "C:/Users/user-04/Desktop/Biome/Biometrico/routes/web.php" ;
+=======
+         $route  = "/home/shakasabre/biometrico.shaka.cloud/routes/web.php" ;
+>>>>>>> 5a3623c8f59c72c81a2ee2cab3465e5bd392a9dc
          $routes  ="Route::group(array('prefix' => 'api/v1'), function() {"."\n"."\n".
 
 

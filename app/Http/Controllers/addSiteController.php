@@ -58,11 +58,11 @@ class addSiteController extends Controller
 
 
         $new_site_connection = new SiteConnectionServices() ;
-        //$new_site_connection->SetupDatabaseConnection($dbName ,$SiteName  ,$SiteName_conif) ;
-        $new_site_connection->SetupDatabaseConnectionLocal($dbName ,$SiteName  ,$SiteName_conif);
-        // $new_site_connection->SetConnectionEnv($SiteName ,$SiteName_conif) ;
+        $new_site_connection->SetupDatabaseConnection($dbName ,$SiteName  ,$SiteName_conif) ;
+        //  $new_site_connection->SetupDatabaseConnectionLocal($dbName ,$SiteName  ,$SiteName_conif);
+        $new_site_connection->SetConnectionEnv($SiteName ,$SiteName_conif) ;
 
-        $new_site_connection ->SetConnectionEnvLocal($SiteName ,$SiteName_conif);
+        // $new_site_connection ->SetConnectionEnvLocal($SiteName ,$SiteName_conif);
 
         $new_site_Controller  = new  SiteControllesServices() ;
 
@@ -74,9 +74,9 @@ class addSiteController extends Controller
 
         $new_site_Schema   = new  SiteDataSchemaServices () ;
 
-        $new_site_Schema->RunScriptlocal($dbName) ;
+        // $new_site_Schema->RunScriptlocal($dbName) ;
 
-        // $new_site_Schema->RunscriptRemote($SiteName);
+        $new_site_Schema->RunscriptRemote($SiteName);
 
 
 

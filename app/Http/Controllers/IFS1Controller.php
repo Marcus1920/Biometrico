@@ -1,38 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Marcus -TM
- * Date: 1/31/2018
- * Time: 21:42
- */
-
-namespace App\ServerConfigurationServices;
-
-
-class SiteControllesServices
-{
-
-    public  function  SetupControllers($SiteController_conifg  , $SiteName)
-    {
-        $data  = "data" ;
-        $shedule  = "shedule" ;
-        $record = "record";
-        // Function  to  create  a  Controller
-        $fn = "C:/Users/user-04/Desktop/Biome/Biometrico/app\Http/Controllers/AttendecyController.php";
-
-<<<<<<< HEAD
-        $Create_controller = fopen("C:/Users/user-04/Desktop/Biome/Biometrico/app/Http/Controllers/".$SiteController_conifg.".php", "w") ;
-=======
-        $Create_controller = fopen("/home/shakasabre/biometrico.shaka.cloud/app/Http/Controllers/".$SiteController_conifg.".php", "w") ;
->>>>>>> 5a3623c8f59c72c81a2ee2cab3465e5bd392a9dc
-
-        $methode  = "<?php
 
             namespace App\Http\Controllers;
             
             use Illuminate\Http\Request;
             use Illuminate\Support\Facades\Input;
-            class $SiteController_conifg extends Controller
+            class IFS1Controller extends Controller
             {
                 /**
                  * Create a new controller instance.
@@ -48,31 +20,31 @@ class SiteControllesServices
                  */
                 public function attendencystore()
                 {
-                   $$data = Input::all();
+                   $data = Input::all();
                    
-                   $$record = \DB::connection('mysql$SiteName')
+                   $record = \DB::connection('mysqlIFS1')
                        ->table('attendance')
                        ->where('ATTENDANCE_KEY', Input::get('ATTENDANCE_KEY'))
                        ->first();
             
-                   if($$record == NULL)
+                   if($record == NULL)
                    {
-                       \DB::connection('mysql$SiteName')
+                       \DB::connection('mysqlIFS1')
                            ->table('attendance')
-                           ->insert($$data);
+                           ->insert($data);
             
                        return 'ok';
                    }
-                   else if($$record != NULL)
+                   else if($record != NULL)
                    {
-                       \DB::connection('mysql$SiteName')
+                       \DB::connection('mysqlIFS1')
                            ->table('attendance')
                            ->where('ATTENDANCE_KEY', Input::get('ATTENDANCE_KEY'))
                            ->delete();
             
-                       \DB::connection('mysql$SiteName')
+                       \DB::connection('mysqlIFS1')
                            ->table('attendance')
-                           ->insert($$data);
+                           ->insert($data);
             
                        return 'ok';
                    }
@@ -82,31 +54,31 @@ class SiteControllesServices
                 
                 public function workshedulstore()
                 {
-                 $$data = Input::all();
+                 $data = Input::all();
                  
-                 $$record = \DB::connection('mysql$SiteName')
+                 $record = \DB::connection('mysqlIFS1')
                        ->table('work_schedule')
                        ->where('WORK_SCHEDULE_KEY', Input::get('WORK_SCHEDULE_KEY'))
                        ->first();
             
-                   if($$record == NULL)
+                   if($record == NULL)
                    {
-                       \DB::connection('mysql$SiteName')
+                       \DB::connection('mysqlIFS1')
                            ->table('work_schedule')
-                           ->insert($$data);
+                           ->insert($data);
             
                        return 'ok';
                    }
-                   else if($$record != NULL)
+                   else if($record != NULL)
                    {
-                       \DB::connection('mysql$SiteName')
+                       \DB::connection('mysqlIFS1')
                            ->table('work_schedule')
                            ->where('WORK_SCHEDULE_KEY', Input::get('WORK_SCHEDULE_KEY'))
                            ->delete();
             
-                       \DB::connection('mysql$SiteName')
+                       \DB::connection('mysqlIFS1')
                            ->table('work_schedule')
-                           ->insert($$data);
+                           ->insert($data);
             
                        return 'ok';
                    }
@@ -115,11 +87,11 @@ class SiteControllesServices
                 
                 public function clockingliststore()
                 {
-                  $$data = Input::all();
+                  $data = Input::all();
               
-                       \DB::connection('mysql$SiteName')
+                       \DB::connection('mysqlIFS1')
                            ->table('clocking_temp_print')
-                           ->insert($$data);
+                           ->insert($data);
             
                        return 'ok';
                    
@@ -130,10 +102,10 @@ class SiteControllesServices
                  public  function  index ()
                 {
             
-                    $$shedule= \DB::connection('mysql$SiteName')->table('attendance')
+                    $shedule= \DB::connection('mysqlIFS1')->table('attendance')
                         ->select(
                             \DB::raw(
-                                \"
+                                "
                                             attendance.ATTENDANCE_KEY     ,             
                                             attendance.COMPANY_KEY      ,                       
                                             attendance.TERMINAL_KEY      ,
@@ -151,20 +123,12 @@ class SiteControllesServices
                                             attendance.ENROLL_ID        
                                         
                                                   
-                                            \"
+                                            "
                             )
                         )
                         ->get();
             
-                    return json_encode($$shedule) ;
+                    return json_encode($shedule) ;
                 }
             }
-            " ;
-
-                    fwrite($Create_controller, $methode);
-                    fclose($Create_controller);
-
-          return   "controller sucfullly  created " ;
-    }
-
-}
+            

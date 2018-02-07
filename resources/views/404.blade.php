@@ -12,8 +12,9 @@
     <title>Biometrico</title>
 
     <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="css/example.css" type="text/css" />
-    <link rel="stylesheet" href="css/jquery.countdown.timer.css" type="text/css" />
+   
+       <link href="{{ asset('css/jquery.countdown.timer.css') }}" rel="stylesheet">
+       <link href="{{ asset('css/example.css') }}" rel="stylesheet">
 
 
     <style>
@@ -114,10 +115,16 @@
 <a class="btn btn-primary" style="color: gold" href="{{ route('sites') }}">
     Go Back to sites
 </a>
+   <script src="{{ asset('js/jquery.min.js') }}"></script>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="js/jquery.timeout.interval.idle.js" type="text/javascript"></script>
-<script src="js/jquery.countdown.counter.js" type="text/javascript"></script>
+    <!-- jQuery Library -->
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+
+
+
+<script src="{{ asset('js/jquery.timeout.interval.idle.js') }}"></script>
+<script src="{{ asset('js/jquery.countdown.counter.js') }}"></script>
+
 <script type="text/javascript">
     CounterInit();
 </script>

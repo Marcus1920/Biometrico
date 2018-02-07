@@ -4,7 +4,7 @@
             
             use Illuminate\Http\Request;
             use Illuminate\Support\Facades\Input;
-            class SController extends Controller
+            class KFGController extends Controller
             {
                 /**
                  * Create a new controller instance.
@@ -22,14 +22,14 @@
                 {
                    $data = Input::all();
                    
-                   $record = \DB::connection('mysql099')
+                   $record = \DB::connection('mysqlKFG')
                        ->table('attendance')
                        ->where('ATTENDANCE_KEY', Input::get('ATTENDANCE_KEY'))
                        ->first();
             
                    if($record == NULL)
                    {
-                       \DB::connection('mysql099')
+                       \DB::connection('mysqlKFG')
                            ->table('attendance')
                            ->insert($data);
             
@@ -37,12 +37,12 @@
                    }
                    else if($record != NULL)
                    {
-                       \DB::connection('mysql099')
+                       \DB::connection('mysqlKFG')
                            ->table('attendance')
                            ->where('ATTENDANCE_KEY', Input::get('ATTENDANCE_KEY'))
                            ->delete();
             
-                       \DB::connection('mysql099')
+                       \DB::connection('mysqlKFG')
                            ->table('attendance')
                            ->insert($data);
             
@@ -56,14 +56,14 @@
                 {
                  $data = Input::all();
                  
-                 $record = \DB::connection('mysql099')
+                 $record = \DB::connection('mysqlKFG')
                        ->table('work_schedule')
                        ->where('WORK_SCHEDULE_KEY', Input::get('WORK_SCHEDULE_KEY'))
                        ->first();
             
                    if($record == NULL)
                    {
-                       \DB::connection('mysql099')
+                       \DB::connection('mysqlKFG')
                            ->table('work_schedule')
                            ->insert($data);
             
@@ -71,12 +71,12 @@
                    }
                    else if($record != NULL)
                    {
-                       \DB::connection('mysql099')
+                       \DB::connection('mysqlKFG')
                            ->table('work_schedule')
                            ->where('WORK_SCHEDULE_KEY', Input::get('WORK_SCHEDULE_KEY'))
                            ->delete();
             
-                       \DB::connection('mysql099')
+                       \DB::connection('mysqlKFG')
                            ->table('work_schedule')
                            ->insert($data);
             
@@ -89,7 +89,7 @@
                 {
                   $data = Input::all();
               
-                       \DB::connection('mysql099')
+                       \DB::connection('mysqlKFG')
                            ->table('clocking_temp_print')
                            ->insert($data);
             
@@ -102,7 +102,7 @@
                  public  function  index ()
                 {
             
-                    $shedule= \DB::connection('mysql099')->table('attendance')
+                    $shedule= \DB::connection('mysqlKFG')->table('attendance')
                         ->select(
                             \DB::raw(
                                 "

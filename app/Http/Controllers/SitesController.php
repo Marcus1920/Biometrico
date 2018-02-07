@@ -14,21 +14,29 @@ use mysqli;
 class SitesController extends Controller
 {
 
+    public function index()
+    {
+        $sites = Site::with('endpoint')->with('company')->get();
+
+        return response()->json($sites);
+    }
+
     public function sites()
     {
-       $user = User::find(Auth::user()->id);
+        $user = User::find(Auth::user()->id);
 
-       $company = Company::find($user->company_id);
+        $company = Company::find($user->company_id);
 
-      $sites = Site::with('company')->where('company_id',$user->company_id)->get();
-//
-      return view('auth.sites',compact('sites','company'))->with(alert()->flash('Welcome to Laravel SweetAlert By Rashid Ali!'));
-//
-//
-//
-//
-//
+        $sites = Site::with('company')->where('company_id',$user->company_id)->get();
+
+        return view('auth.sites',compact('sites','company'));
+
+
+
+
+
     }
+
 
     public  function  getsitelist() {
 
@@ -43,7 +51,7 @@ class SitesController extends Controller
                         sites.db_name,
                         sites.site_code
                        
-				
+    
                  
                         
                         "
@@ -67,7 +75,9 @@ class SitesController extends Controller
     {
         $site = Site::where('id',$id)->first();
 
-//        try {
+
+        try {
+
 
             $shedule= \DB::connection($site->connection_name)->table('clocking_temp_print')
                 ->select(
@@ -90,10 +100,12 @@ class SitesController extends Controller
 
             return view('home',compact('shedule','site'));
 
-//         } catch (\Exception $e) {
-//
-//            return redirect('/404')->with('nick', $id);
-//        }
+
+        } catch (\Exception $e) {
+
+            return redirect('/404')->with('nick', $id);
+        }
+
 
     }
 
@@ -143,4 +155,3 @@ class SitesController extends Controller
 
 
 }
-
