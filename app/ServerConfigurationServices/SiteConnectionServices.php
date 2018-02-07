@@ -19,7 +19,7 @@ class SiteConnectionServices
         // Function  to  configure  the  Datatabase  connection
 
 
-        $db_config    =  "C:/xampp/htdocs/Biometrico/config/database.php" ;
+        $db_config    =  "C:/Users/user-04/Desktop/Biome/Biometrico/config/database.php" ;
         $connection   = "'mysql$SiteName' => [
              'driver' => 'mysql',
              'host' => env('DB_HOST', '127.0.0.1'),
@@ -56,7 +56,7 @@ class SiteConnectionServices
         // Function  to  configure  the  Datatabase  connection
 
 
-        $db_config    =  "C:/xampp/htdocs/Biometrico/config/database.php" ;
+        $db_config    =  "C:/Users/user-04/Desktop/Biome/Biometrico/config/database.php" ;
         $connection   = "'mysql$SiteName' => [
              'driver' => 'mysql',
              'host' => env('DB_HOST', '127.0.0.1'),
@@ -91,7 +91,7 @@ class SiteConnectionServices
     {
 
 
-        $fille  = "C:/xampp/htdocs/Biometrico/.env" ;
+        $fille  = "C:/Users/user-04/Desktop/Biome/Biometrico/.env" ;
         $space  =   "\r\n";
         $DB_CONNECTION        ="DB_CONNECTION=" ."mysql"."\n";
 
@@ -116,7 +116,7 @@ class SiteConnectionServices
     {
 
 
-        $fille  = "C:/xampp/htdocs/Biometrico/.env" ;
+        $fille  = "C:/Users/user-04/Desktop/Biome/Biometrico/.env" ;
         $space  =   "\r\n";
         $DB_CONNECTION        ="DB_CONNECTION=" ."mysql"."\n";
 

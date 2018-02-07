@@ -20,7 +20,8 @@ Route::get('commad'   ,  function (){
 
 }) ;
 
-Route::get('404' , function (){
+Route::get('404' , function ()
+{
     return view('404');
 });
 
@@ -37,7 +38,6 @@ Route::get('/', function () {
 //-------------------------------------------------------------------------------
 //Password Reset RoutesS
 //--------------------------------------------------------------------------------
-
 
 Auth::routes();
 
@@ -91,7 +91,6 @@ Route::group(array('prefix' => 'api/v1'), function() {
 });
 
 
-
 Route::get('addsite', 'addSiteController@index')->name('addsite');
 
 Route::post('siteconfiguration', 'addSiteController@siteconfiguration')->name('siteconfiguration');
@@ -102,12 +101,6 @@ Route::get('biometrico', 'WorkScheduleController@index')->name('biometrico');
 Route::post('biometrico', 'WorkScheduleController@index')->name('biometrico');
 Route::delete('biometrico', 'WorkScheduleController@index')->name('biometrico');
 Route::put('biometrico', 'WorkScheduleController@index')->name('biometrico');
-
-
-
-
-
-
 
 
 Route::get('/zipho', 'ziphoController@index')->name('/zipho');
@@ -545,7 +538,7 @@ Route::post('workshedulxx13', 'xx13Controller@workshedulstore')->name('workshedu
 
          });
 
-<<<<<<< HEAD
+
 
 Route::group(array('prefix' => 'api/v1'), function() {
 
@@ -555,7 +548,7 @@ Route::post('workshedulsiteua', 'SiteUAController@workshedulstore')->name('works
    
 
          });
-=======
+
 Route::group(array('prefix' => 'api/v1'), function() {
 
 
@@ -625,4 +618,25 @@ Route::post('attendencyjkl', 'jklController@attendencystore')->name('attendencyj
 Route::post('clockinglistjkl', 'jklController@clockingliststore')->name('clockinglistjkl');
 Route::post('worksheduljkl', 'jklController@workshedulstore')->name('worksheduljkl');
          });
->>>>>>> 9d1bdfab8a95e74786cf1287a0fb1a13a3b3b7a7
+
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencysitej', 'siteJController@attendencystore')->name('attendencysitej');
+Route::post('clockinglistsitej', 'siteJController@clockingliststore')->name('clockinglistsitej');
+Route::post('workshedulsitej', 'siteJController@workshedulstore')->name('workshedulsitej');
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencysith', 'SithController@attendencystore')->name('attendencysith');
+Route::post('clockinglistsith', 'SithController@clockingliststore')->name('clockinglistsith');
+Route::post('workshedulsith', 'SithController@workshedulstore')->name('workshedulsith');
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencysitza', 'sitZAController@attendencystore')->name('attendencysitza');
+Route::post('clockinglistsitza', 'sitZAController@clockingliststore')->name('clockinglistsitza');
+Route::post('workshedulsitza', 'sitZAController@workshedulstore')->name('workshedulsitza');
+         });

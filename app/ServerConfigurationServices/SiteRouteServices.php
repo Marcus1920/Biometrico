@@ -21,7 +21,7 @@ class SiteRouteServices
 
          $space  =   "\r\n";
 
-         $route  = "C:/xampp/htdocs/Biometrico/routes/web.php" ;
+         $route  = "C:/Users/user-04/Desktop/Biome/Biometrico/routes/web.php" ;
          $routes  ="Route::group(array('prefix' => 'api/v1'), function() {"."\n"."\n".
 
 

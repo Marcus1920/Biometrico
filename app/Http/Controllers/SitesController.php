@@ -21,15 +21,14 @@ class SitesController extends Controller
        $company = Company::find($user->company_id);
 
       $sites = Site::with('company')->where('company_id',$user->company_id)->get();
-
+//
       return view('auth.sites',compact('sites','company'))->with(alert()->flash('Welcome to Laravel SweetAlert By Rashid Ali!'));
-
-
-
-
-
+//
+//
+//
+//
+//
     }
-
 
     public  function  getsitelist() {
 

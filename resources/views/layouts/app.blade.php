@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Biometric') }}</title>
+    {{--<title>{{ config('app.name', 'Biometric') }}</title>--}}
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -99,10 +99,6 @@
                     </a>
 
                 </div>
-
-
-
-
 
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
