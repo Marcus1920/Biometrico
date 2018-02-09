@@ -16,18 +16,18 @@
             <img src="{{ url('img/shortcuts/Schedule.png') }}" alt="">
             <small class="t-overflow">Work Schedule</small>
         </a>
-        <a class="shortcut tile" href="">
-            <img src="{{ url('img/shortcuts/statistic.png') }}" alt="">
-            <small class="t-overflow">Statistics</small>
-        </a>
-        <a class="shortcut tile" href="">
-            <img src="{{ url('img/shortcuts/Document.png') }}" alt="">
-            <small class="t-overflow">Connection</small>
-        </a>
-        <a class="shortcut tile" href="">
-            <img src="{{ url('img/shortcuts/Copy.png') }}" alt="">
-            <small class="t-overflow">Reports</small>
-        </a>
+        {{--<a class="shortcut tile" href="">--}}
+            {{--<img src="{{ url('img/shortcuts/statistic.png') }}" alt="">--}}
+            {{--<small class="t-overflow">Statistics</small>--}}
+        {{--</a>--}}
+        {{--<a class="shortcut tile" href="">--}}
+            {{--<img src="{{ url('img/shortcuts/Document.png') }}" alt="">--}}
+            {{--<small class="t-overflow">Connection</small>--}}
+        {{--</a>--}}
+        {{--<a class="shortcut tile" href="">--}}
+            {{--<img src="{{ url('img/shortcuts/Copy.png') }}" alt="">--}}
+            {{--<small class="t-overflow">Reports</small>--}}
+        {{--</a>--}}
     </div>
 
     <hr class="whiter" />

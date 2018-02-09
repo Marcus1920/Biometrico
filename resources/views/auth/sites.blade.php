@@ -130,44 +130,45 @@
     <h1 class="page-title">DASHBOARD FOR {{$company->name}}</h1>
 
     <!-- Shortcuts -->
-    <div class="block-area shortcut-area">
-        <a class="shortcut tile" href="">
-            <img src="img/shortcuts/money.png" alt="">
-            <small class="t-overflow">Purchases</small>
-        </a>
-        <a class="shortcut tile" href="">
-            <img src="img/shortcuts/twitter.png" alt="">
-            <small class="t-overflow">Tweets</small>
-        </a>
-        <a class="shortcut tile" href="">
-            <img src="img/shortcuts/calendar.png" alt="">
-            <small class="t-overflow">Calendar</small>
-        </a>
-        <a class="shortcut tile" href="">
-            <img src="img/shortcuts/stats.png" alt="">
-            <small class="t-overflow">Statistics</small>
-        </a>
-        <a class="shortcut tile" href="">
-            <img src="img/shortcuts/connections.png" alt="">
-            <small class="t-overflow">Connection</small>
-        </a>
-        <a class="shortcut tile" href="">
-            <img src="img/shortcuts/reports.png" alt="">
-            <small class="t-overflow">Reports</small>
-        </a>
-    </div>
+    {{--<div class="block-area shortcut-area">--}}
+        {{--<a class="shortcut tile" href="">--}}
+            {{--<img src="img/shortcuts/money.png" alt="">--}}
+            {{--<small class="t-overflow">Purchases</small>--}}
+        {{--</a>--}}
+        {{--<a class="shortcut tile" href="">--}}
+            {{--<img src="img/shortcuts/twitter.png" alt="">--}}
+            {{--<small class="t-overflow">Tweets</small>--}}
+        {{--</a>--}}
+        {{--<a class="shortcut tile" href="">--}}
+            {{--<img src="img/shortcuts/calendar.png" alt="">--}}
+            {{--<small class="t-overflow">Calendar</small>--}}
+        {{--</a>--}}
+        {{--<a class="shortcut tile" href="">--}}
+            {{--<img src="img/shortcuts/stats.png" alt="">--}}
+            {{--<small class="t-overflow">Statistics</small>--}}
+        {{--</a>--}}
+        {{--<a class="shortcut tile" href="">--}}
+            {{--<img src="img/shortcuts/connections.png" alt="">--}}
+            {{--<small class="t-overflow">Connection</small>--}}
+        {{--</a>--}}
+        {{--<a class="shortcut tile" href="">--}}
+            {{--<img src="img/shortcuts/reports.png" alt="">--}}
+            {{--<small class="t-overflow">Reports</small>--}}
+        {{--</a>--}}
+    {{--</div>--}}
 
     <hr class="whiter" />
 
     <!-- Quick Stats -->
     <div class="block-area">
         <div class="row">
+
             <div class="col-md-3 col-xs-6">
-                <div class="tile quick-stats">
-                    <div id="stats-line-2" class="pull-left"></div>
-                    <div class="data">
-                        <h2 data-value={{ count($sites,0) }}>0</h2>
-                        <small>Sites</small>
+                <div class="tile quick-stats media">
+                    <div id="stats-line-4" class="pull-left"></div>
+                    <div class="media-body">
+                        <h2 data-value={{ count($companyOwner,0) }}>0</h2>
+                        <small>Company Owner</small>
                     </div>
                 </div>
             </div>
@@ -176,20 +177,8 @@
                 <div class="tile quick-stats media">
                     <div id="stats-line-3" class="pull-left"></div>
                     <div class="media-body">
-                        <h2 data-value="1452">0</h2>
-                        <small>Shipments today</small>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-xs-6">
-                <div class="tile quick-stats media">
-
-                    <div id="stats-line-4" class="pull-left"></div>
-
-                    <div class="media-body">
-                        <h2 data-value="4896">0</h2>
-                        <small>Orders today</small>
+                        <h2 data-value={{ count($users,0) }}>0</h2>
+                        <small>Admin</small>
                     </div>
                 </div>
             </div>
@@ -198,8 +187,18 @@
                 <div class="tile quick-stats media">
                     <div id="stats-line" class="pull-left"></div>
                     <div class="media-body">
-                        <h2 data-value="29356">0</h2>
-                        <small>Site visits today</small>
+                        <h2 data-value={{ count($installer,0) }}>0</h2>
+                        <small>Installer</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-xs-6">
+                <div class="tile quick-stats">
+                    <div id="stats-line-2" class="pull-left"></div>
+                    <div class="data">
+                        <h2 data-value={{ count($sites,0) }}>0</h2>
+                        <small>Sites</small>
                     </div>
                 </div>
             </div>

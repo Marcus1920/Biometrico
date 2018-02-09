@@ -27,9 +27,15 @@ class SitesController extends Controller
 
        $company = Company::find($user->company_id);
 
+       $users = User::where('company_id',$user->company_id)->where('role',1)->get();
+
+        $companyOwner = User::where('company_id',$user->company_id)->where('role',2)->get();
+
+        $installer = User::where('company_id',$user->company_id)->where('role',3)->get();
+
       $sites = Site::with('company')->where('company_id',$user->company_id)->get();
 
-      return view('auth.sites',compact('sites','company'));
+      return view('auth.sites',compact('sites','company','users','companyOwner','installer'));
 
 
 
