@@ -24,10 +24,10 @@
             {{--<img src="{{ url('img/shortcuts/Document.png') }}" alt="">--}}
             {{--<small class="t-overflow">Connection</small>--}}
         {{--</a>--}}
-        {{--<a class="shortcut tile" href="">--}}
-            {{--<img src="{{ url('img/shortcuts/Copy.png') }}" alt="">--}}
-            {{--<small class="t-overflow">Reports</small>--}}
-        {{--</a>--}}
+        <a class="shortcut tile" href="{{ url('/charts')}}">
+            <img src="{{ url('img/shortcuts/Copy.png') }}" alt="">
+            <small class="t-overflow">Reports</small>
+        </a>
     </div>
 
     <hr class="whiter" />

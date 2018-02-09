@@ -34,6 +34,9 @@ Route::get('/', function () {
     return view('auth.login', compact('allCompanies'));
 });
 
+Route::get('charts', 'ReportsController@index');
+
+
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
