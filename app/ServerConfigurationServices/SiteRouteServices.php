@@ -60,18 +60,21 @@ class SiteRouteServices
 
           $newEndpoint = new EndPoint();
           $newEndpoint->site_id = $newSite->id;
+          $newEndpoint->site_names =$SiteName;
           $newEndpoint->name = "attendency$site_api_ulr";
           $newEndpoint->end_point = $_ENV['APP_URL']."api/v1/attendency".$site_api_ulr;
           $newEndpoint->save();
 
           $newEndpoint = new EndPoint();
           $newEndpoint->site_id = $newSite->id;
+          $newEndpoint->site_names =$SiteName;
           $newEndpoint->name = "clockinglist$site_api_ulr";
           $newEndpoint->end_point = $_ENV['APP_URL']."api/v1/clockinglist".$site_api_ulr;
           $newEndpoint->save();
 
           $newEndpoint = new EndPoint();
           $newEndpoint->site_id = $newSite->id;
+          $newEndpoint->site_names =$SiteName;
           $newEndpoint->name = "workshedul$site_api_ulr";
           $newEndpoint->end_point = $_ENV['APP_URL']."api/v1/workshedul".$site_api_ulr;
           $newEndpoint->save();

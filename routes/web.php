@@ -73,6 +73,12 @@ Route::group(array('prefix' => 'api/v1'), function() {
 
     Route::post('/getSite','SitesController@getSite');
 
+  Route::get('/CompanyList','CompanyController@CompanyList');
+  Route::post('/SiteListDetails','CompanyController@SiteListDetails');
+  Route::get('/SiteListDetailsDrop','CompanyController@SiteListDetailsDrop');
+  
+  
+
 });
 
 Route::get('/selectSite/{id}', 'SitesController@selectSite');
@@ -634,4 +640,60 @@ Route::group(array('prefix' => 'api/v1'), function() {
 Route::post('attendencykfc', 'KFCController@attendencystore')->name('attendencykfc');
 Route::post('clockinglistkfc', 'KFCController@clockingliststore')->name('clockinglistkfc');
 Route::post('workshedulkfc', 'KFCController@workshedulstore')->name('workshedulkfc');
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencydbn', 'DBNController@attendencystore')->name('attendencydbn');
+Route::post('clockinglistdbn', 'DBNController@clockingliststore')->name('clockinglistdbn');
+Route::post('worksheduldbn', 'DBNController@workshedulstore')->name('worksheduldbn');
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencydbn', 'DBNController@attendencystore')->name('attendencydbn');
+Route::post('clockinglistdbn', 'DBNController@clockingliststore')->name('clockinglistdbn');
+Route::post('worksheduldbn', 'DBNController@workshedulstore')->name('worksheduldbn');
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencydbn', 'DBNController@attendencystore')->name('attendencydbn');
+Route::post('clockinglistdbn', 'DBNController@clockingliststore')->name('clockinglistdbn');
+Route::post('worksheduldbn', 'DBNController@workshedulstore')->name('worksheduldbn');
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencyab', 'ABController@attendencystore')->name('attendencyab');
+Route::post('clockinglistab', 'ABController@clockingliststore')->name('clockinglistab');
+Route::post('workshedulab', 'ABController@workshedulstore')->name('workshedulab');
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencyaxz', 'AXZController@attendencystore')->name('attendencyaxz');
+Route::post('clockinglistaxz', 'AXZController@clockingliststore')->name('clockinglistaxz');
+Route::post('workshedulaxz', 'AXZController@workshedulstore')->name('workshedulaxz');
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencyaxz', 'AXZController@attendencystore')->name('attendencyaxz');
+Route::post('clockinglistaxz', 'AXZController@clockingliststore')->name('clockinglistaxz');
+Route::post('workshedulaxz', 'AXZController@workshedulstore')->name('workshedulaxz');
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencyabx', 'ABXController@attendencystore')->name('attendencyabx');
+Route::post('clockinglistabx', 'ABXController@clockingliststore')->name('clockinglistabx');
+Route::post('workshedulabx', 'ABXController@workshedulstore')->name('workshedulabx');
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencyazb', 'AZBController@attendencystore')->name('attendencyazb');
+Route::post('clockinglistazb', 'AZBController@clockingliststore')->name('clockinglistazb');
+Route::post('workshedulazb', 'AZBController@workshedulstore')->name('workshedulazb');
          });
