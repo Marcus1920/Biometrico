@@ -2936,3 +2936,687 @@ SimpleXMLElement Object
     [error] => Mysql::adduserdb failed: (XID kdn6e6) The system user “shakasabre” does not control a MySQL database named “shakasab_shakasabre_shakasab_KFC”.
 )
 
+[10-Feb-2018 13:01:41 UTC] URL: https://154.0.171.123:2083/xml-api/cpanel
+[10-Feb-2018 13:01:41 UTC] DATA: cpanel_xmlapi_user=shakasabre&cpanel_xmlapi_module=Mysql&cpanel_xmlapi_func=adddb&cpanel_xmlapi_apiversion=1&arg-0=shakasab_DBN
+[10-Feb-2018 13:01:41 UTC] Authentication Header: Authorization: Basic c2hha2FzYWJyZTpTaEBrQFNAYnJlMjAxOA==
+
+
+[10-Feb-2018 13:01:42 UTC] RESPONSE:
+ <?xml version="1.0" ?>
+<cpanelresult><module>Mysql</module><func>adddb</func><type>event</type><source>internal</source><apiversion>1</apiversion><data><result></result></data>  <event>
+    <result>1</result>
+  </event>
+  <postevent>
+    <result>1</result>
+  </postevent>
+  <preevent>
+    <result>1</result>
+  </preevent>
+</cpanelresult>
+[10-Feb-2018 13:01:42 UTC] SimpleXML var_dump:
+SimpleXMLElement Object
+(
+    [module] => Mysql
+    [func] => adddb
+    [type] => event
+    [source] => internal
+    [apiversion] => 1
+    [data] => SimpleXMLElement Object
+        (
+            [result] => SimpleXMLElement Object
+                (
+                )
+
+        )
+
+    [event] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+    [postevent] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+    [preevent] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+)
+
+[10-Feb-2018 13:01:42 UTC] Associative Array var_dump:
+SimpleXMLElement Object
+(
+    [module] => Mysql
+    [func] => adddb
+    [type] => event
+    [source] => internal
+    [apiversion] => 1
+    [data] => SimpleXMLElement Object
+        (
+            [result] => SimpleXMLElement Object
+                (
+                )
+
+        )
+
+    [event] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+    [postevent] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+    [preevent] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+)
+
+[10-Feb-2018 13:01:42 UTC] URL: https://154.0.171.123:2083/xml-api/cpanel
+[10-Feb-2018 13:01:42 UTC] DATA: cpanel_xmlapi_user=shakasabre&cpanel_xmlapi_module=Mysql&cpanel_xmlapi_func=adduser&cpanel_xmlapi_apiversion=1&arg-0=shakasab_DBN&arg-1=biometri12B
+[10-Feb-2018 13:01:42 UTC] Authentication Header: Authorization: Basic c2hha2FzYWJyZTpTaEBrQFNAYnJlMjAxOA==
+
+
+[10-Feb-2018 13:01:43 UTC] RESPONSE:
+ <?xml version="1.0" ?>
+<cpanelresult><module>Mysql</module><func>adduser</func><type>event</type><source>internal</source><apiversion>1</apiversion><data><result></result></data>  <event>
+    <result>1</result>
+  </event>
+  <postevent>
+    <result>1</result>
+  </postevent>
+  <preevent>
+    <result>1</result>
+  </preevent>
+</cpanelresult>
+[10-Feb-2018 13:01:43 UTC] SimpleXML var_dump:
+SimpleXMLElement Object
+(
+    [module] => Mysql
+    [func] => adduser
+    [type] => event
+    [source] => internal
+    [apiversion] => 1
+    [data] => SimpleXMLElement Object
+        (
+            [result] => SimpleXMLElement Object
+                (
+                )
+
+        )
+
+    [event] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+    [postevent] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+    [preevent] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+)
+
+[10-Feb-2018 13:01:43 UTC] Associative Array var_dump:
+SimpleXMLElement Object
+(
+    [module] => Mysql
+    [func] => adduser
+    [type] => event
+    [source] => internal
+    [apiversion] => 1
+    [data] => SimpleXMLElement Object
+        (
+            [result] => SimpleXMLElement Object
+                (
+                )
+
+        )
+
+    [event] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+    [postevent] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+    [preevent] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+)
+
+[10-Feb-2018 13:01:43 UTC] URL: https://154.0.171.123:2083/xml-api/cpanel
+[10-Feb-2018 13:01:43 UTC] DATA: cpanel_xmlapi_user=shakasabre&cpanel_xmlapi_module=Mysql&cpanel_xmlapi_func=adduserdb&cpanel_xmlapi_apiversion=1&arg-0=shakasabre_shakasab_DBN&arg-1=shakasabre_shakasab_DBN&arg-2=all
+[10-Feb-2018 13:01:43 UTC] Authentication Header: Authorization: Basic c2hha2FzYWJyZTpTaEBrQFNAYnJlMjAxOA==
+
+
+[10-Feb-2018 13:01:43 UTC] RESPONSE:
+ <?xml version="1.0" ?>
+<cpanelresult><module>Mysql</module><func>adduserdb</func><type>event</type><source>internal</source><apiversion>1</apiversion><data><result></result></data>  <event>
+    <reason>Mysql::adduserdb failed: (XID 8ctwd4) The system user “shakasabre” does not control a MySQL database named “shakasab_shakasabre_shakasab_DBN”.</reason>
+    <result>0</result>
+  </event>
+  <postevent>
+    <result>1</result>
+  </postevent>
+  <preevent>
+    <result>1</result>
+  </preevent>
+<error>Mysql::adduserdb failed: (XID 8ctwd4) The system user “shakasabre” does not control a MySQL database named “shakasab_shakasabre_shakasab_DBN”.</error></cpanelresult>
+[10-Feb-2018 13:01:43 UTC] SimpleXML var_dump:
+SimpleXMLElement Object
+(
+    [module] => Mysql
+    [func] => adduserdb
+    [type] => event
+    [source] => internal
+    [apiversion] => 1
+    [data] => SimpleXMLElement Object
+        (
+            [result] => SimpleXMLElement Object
+                (
+                )
+
+        )
+
+    [event] => SimpleXMLElement Object
+        (
+            [reason] => Mysql::adduserdb failed: (XID 8ctwd4) The system user “shakasabre” does not control a MySQL database named “shakasab_shakasabre_shakasab_DBN”.
+            [result] => 0
+        )
+
+    [postevent] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+    [preevent] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+    [error] => Mysql::adduserdb failed: (XID 8ctwd4) The system user “shakasabre” does not control a MySQL database named “shakasab_shakasabre_shakasab_DBN”.
+)
+
+[10-Feb-2018 13:01:43 UTC] Associative Array var_dump:
+SimpleXMLElement Object
+(
+    [module] => Mysql
+    [func] => adduserdb
+    [type] => event
+    [source] => internal
+    [apiversion] => 1
+    [data] => SimpleXMLElement Object
+        (
+            [result] => SimpleXMLElement Object
+                (
+                )
+
+        )
+
+    [event] => SimpleXMLElement Object
+        (
+            [reason] => Mysql::adduserdb failed: (XID 8ctwd4) The system user “shakasabre” does not control a MySQL database named “shakasab_shakasabre_shakasab_DBN”.
+            [result] => 0
+        )
+
+    [postevent] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+    [preevent] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+    [error] => Mysql::adduserdb failed: (XID 8ctwd4) The system user “shakasabre” does not control a MySQL database named “shakasab_shakasabre_shakasab_DBN”.
+)
+
+[10-Feb-2018 13:02:12 UTC] URL: https://154.0.171.123:2083/xml-api/cpanel
+[10-Feb-2018 13:02:12 UTC] DATA: cpanel_xmlapi_user=shakasabre&cpanel_xmlapi_module=Mysql&cpanel_xmlapi_func=adduserdb&cpanel_xmlapi_apiversion=1&arg-0=shakasabre_shakasab_DBN&arg-1=shakasabre_shakasab_DBN&arg-2=all
+[10-Feb-2018 13:02:12 UTC] Authentication Header: Authorization: Basic c2hha2FzYWJyZTpTaEBrQFNAYnJlMjAxOA==
+
+
+[10-Feb-2018 13:02:13 UTC] RESPONSE:
+ <?xml version="1.0" ?>
+<cpanelresult><module>Mysql</module><func>adduserdb</func><type>event</type><source>internal</source><apiversion>1</apiversion><data><result></result></data>  <event>
+    <reason>Mysql::adduserdb failed: (XID q3b7nr) The system user “shakasabre” does not control a MySQL database named “shakasab_shakasabre_shakasab_DBN”.</reason>
+    <result>0</result>
+  </event>
+  <postevent>
+    <result>1</result>
+  </postevent>
+  <preevent>
+    <result>1</result>
+  </preevent>
+<error>Mysql::adduserdb failed: (XID q3b7nr) The system user “shakasabre” does not control a MySQL database named “shakasab_shakasabre_shakasab_DBN”.</error></cpanelresult>
+[10-Feb-2018 13:02:13 UTC] SimpleXML var_dump:
+SimpleXMLElement Object
+(
+    [module] => Mysql
+    [func] => adduserdb
+    [type] => event
+    [source] => internal
+    [apiversion] => 1
+    [data] => SimpleXMLElement Object
+        (
+            [result] => SimpleXMLElement Object
+                (
+                )
+
+        )
+
+    [event] => SimpleXMLElement Object
+        (
+            [reason] => Mysql::adduserdb failed: (XID q3b7nr) The system user “shakasabre” does not control a MySQL database named “shakasab_shakasabre_shakasab_DBN”.
+            [result] => 0
+        )
+
+    [postevent] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+    [preevent] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+    [error] => Mysql::adduserdb failed: (XID q3b7nr) The system user “shakasabre” does not control a MySQL database named “shakasab_shakasabre_shakasab_DBN”.
+)
+
+[10-Feb-2018 13:02:13 UTC] Associative Array var_dump:
+SimpleXMLElement Object
+(
+    [module] => Mysql
+    [func] => adduserdb
+    [type] => event
+    [source] => internal
+    [apiversion] => 1
+    [data] => SimpleXMLElement Object
+        (
+            [result] => SimpleXMLElement Object
+                (
+                )
+
+        )
+
+    [event] => SimpleXMLElement Object
+        (
+            [reason] => Mysql::adduserdb failed: (XID q3b7nr) The system user “shakasabre” does not control a MySQL database named “shakasab_shakasabre_shakasab_DBN”.
+            [result] => 0
+        )
+
+    [postevent] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+    [preevent] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+    [error] => Mysql::adduserdb failed: (XID q3b7nr) The system user “shakasabre” does not control a MySQL database named “shakasab_shakasabre_shakasab_DBN”.
+)
+
+[10-Feb-2018 14:54:36 UTC] URL: https://154.0.171.123:2083/xml-api/cpanel
+[10-Feb-2018 14:54:36 UTC] DATA: cpanel_xmlapi_user=shakasabre&cpanel_xmlapi_module=Mysql&cpanel_xmlapi_func=adddb&cpanel_xmlapi_apiversion=1&arg-0=shakasab_AZB
+[10-Feb-2018 14:54:36 UTC] Authentication Header: Authorization: Basic c2hha2FzYWJyZTpTaEBrQFNAYnJlMjAxOA==
+
+
+[10-Feb-2018 14:54:37 UTC] RESPONSE:
+ <?xml version="1.0" ?>
+<cpanelresult><module>Mysql</module><func>adddb</func><type>event</type><source>internal</source><apiversion>1</apiversion><data><result></result></data>  <event>
+    <result>1</result>
+  </event>
+  <postevent>
+    <result>1</result>
+  </postevent>
+  <preevent>
+    <result>1</result>
+  </preevent>
+</cpanelresult>
+[10-Feb-2018 14:54:37 UTC] SimpleXML var_dump:
+SimpleXMLElement Object
+(
+    [module] => Mysql
+    [func] => adddb
+    [type] => event
+    [source] => internal
+    [apiversion] => 1
+    [data] => SimpleXMLElement Object
+        (
+            [result] => SimpleXMLElement Object
+                (
+                )
+
+        )
+
+    [event] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+    [postevent] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+    [preevent] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+)
+
+[10-Feb-2018 14:54:37 UTC] Associative Array var_dump:
+SimpleXMLElement Object
+(
+    [module] => Mysql
+    [func] => adddb
+    [type] => event
+    [source] => internal
+    [apiversion] => 1
+    [data] => SimpleXMLElement Object
+        (
+            [result] => SimpleXMLElement Object
+                (
+                )
+
+        )
+
+    [event] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+    [postevent] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+    [preevent] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+)
+
+[10-Feb-2018 14:54:37 UTC] URL: https://154.0.171.123:2083/xml-api/cpanel
+[10-Feb-2018 14:54:37 UTC] DATA: cpanel_xmlapi_user=shakasabre&cpanel_xmlapi_module=Mysql&cpanel_xmlapi_func=adduser&cpanel_xmlapi_apiversion=1&arg-0=shakasab_AZB&arg-1=biometri12B
+[10-Feb-2018 14:54:37 UTC] Authentication Header: Authorization: Basic c2hha2FzYWJyZTpTaEBrQFNAYnJlMjAxOA==
+
+
+[10-Feb-2018 14:54:38 UTC] RESPONSE:
+ <?xml version="1.0" ?>
+<cpanelresult><module>Mysql</module><func>adduser</func><type>event</type><source>internal</source><apiversion>1</apiversion><data><result></result></data>  <event>
+    <result>1</result>
+  </event>
+  <postevent>
+    <result>1</result>
+  </postevent>
+  <preevent>
+    <result>1</result>
+  </preevent>
+</cpanelresult>
+[10-Feb-2018 14:54:38 UTC] SimpleXML var_dump:
+SimpleXMLElement Object
+(
+    [module] => Mysql
+    [func] => adduser
+    [type] => event
+    [source] => internal
+    [apiversion] => 1
+    [data] => SimpleXMLElement Object
+        (
+            [result] => SimpleXMLElement Object
+                (
+                )
+
+        )
+
+    [event] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+    [postevent] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+    [preevent] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+)
+
+[10-Feb-2018 14:54:38 UTC] Associative Array var_dump:
+SimpleXMLElement Object
+(
+    [module] => Mysql
+    [func] => adduser
+    [type] => event
+    [source] => internal
+    [apiversion] => 1
+    [data] => SimpleXMLElement Object
+        (
+            [result] => SimpleXMLElement Object
+                (
+                )
+
+        )
+
+    [event] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+    [postevent] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+    [preevent] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+)
+
+[10-Feb-2018 14:54:38 UTC] URL: https://154.0.171.123:2083/xml-api/cpanel
+[10-Feb-2018 14:54:38 UTC] DATA: cpanel_xmlapi_user=shakasabre&cpanel_xmlapi_module=Mysql&cpanel_xmlapi_func=adduserdb&cpanel_xmlapi_apiversion=1&arg-0=shakasabre_shakasab_AZB&arg-1=shakasabre_shakasab_AZB&arg-2=all
+[10-Feb-2018 14:54:38 UTC] Authentication Header: Authorization: Basic c2hha2FzYWJyZTpTaEBrQFNAYnJlMjAxOA==
+
+
+[10-Feb-2018 14:54:38 UTC] RESPONSE:
+ <?xml version="1.0" ?>
+<cpanelresult><module>Mysql</module><func>adduserdb</func><type>event</type><source>internal</source><apiversion>1</apiversion><data><result></result></data>  <event>
+    <reason>Mysql::adduserdb failed: (XID 3rqyfn) The system user “shakasabre” does not control a MySQL database named “shakasab_shakasabre_shakasab_AZB”.</reason>
+    <result>0</result>
+  </event>
+  <postevent>
+    <result>1</result>
+  </postevent>
+  <preevent>
+    <result>1</result>
+  </preevent>
+<error>Mysql::adduserdb failed: (XID 3rqyfn) The system user “shakasabre” does not control a MySQL database named “shakasab_shakasabre_shakasab_AZB”.</error></cpanelresult>
+[10-Feb-2018 14:54:38 UTC] SimpleXML var_dump:
+SimpleXMLElement Object
+(
+    [module] => Mysql
+    [func] => adduserdb
+    [type] => event
+    [source] => internal
+    [apiversion] => 1
+    [data] => SimpleXMLElement Object
+        (
+            [result] => SimpleXMLElement Object
+                (
+                )
+
+        )
+
+    [event] => SimpleXMLElement Object
+        (
+            [reason] => Mysql::adduserdb failed: (XID 3rqyfn) The system user “shakasabre” does not control a MySQL database named “shakasab_shakasabre_shakasab_AZB”.
+            [result] => 0
+        )
+
+    [postevent] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+    [preevent] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+    [error] => Mysql::adduserdb failed: (XID 3rqyfn) The system user “shakasabre” does not control a MySQL database named “shakasab_shakasabre_shakasab_AZB”.
+)
+
+[10-Feb-2018 14:54:38 UTC] Associative Array var_dump:
+SimpleXMLElement Object
+(
+    [module] => Mysql
+    [func] => adduserdb
+    [type] => event
+    [source] => internal
+    [apiversion] => 1
+    [data] => SimpleXMLElement Object
+        (
+            [result] => SimpleXMLElement Object
+                (
+                )
+
+        )
+
+    [event] => SimpleXMLElement Object
+        (
+            [reason] => Mysql::adduserdb failed: (XID 3rqyfn) The system user “shakasabre” does not control a MySQL database named “shakasab_shakasabre_shakasab_AZB”.
+            [result] => 0
+        )
+
+    [postevent] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+    [preevent] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+    [error] => Mysql::adduserdb failed: (XID 3rqyfn) The system user “shakasabre” does not control a MySQL database named “shakasab_shakasabre_shakasab_AZB”.
+)
+
+[10-Feb-2018 14:55:09 UTC] URL: https://154.0.171.123:2083/xml-api/cpanel
+[10-Feb-2018 14:55:09 UTC] DATA: cpanel_xmlapi_user=shakasabre&cpanel_xmlapi_module=Mysql&cpanel_xmlapi_func=adduserdb&cpanel_xmlapi_apiversion=1&arg-0=shakasabre_shakasab_AZB&arg-1=shakasabre_shakasab_AZB&arg-2=all
+[10-Feb-2018 14:55:09 UTC] Authentication Header: Authorization: Basic c2hha2FzYWJyZTpTaEBrQFNAYnJlMjAxOA==
+
+
+[10-Feb-2018 14:55:09 UTC] RESPONSE:
+ <?xml version="1.0" ?>
+<cpanelresult><module>Mysql</module><func>adduserdb</func><type>event</type><source>internal</source><apiversion>1</apiversion><data><result></result></data>  <event>
+    <reason>Mysql::adduserdb failed: (XID y2tcay) The system user “shakasabre” does not control a MySQL database named “shakasab_shakasabre_shakasab_AZB”.</reason>
+    <result>0</result>
+  </event>
+  <postevent>
+    <result>1</result>
+  </postevent>
+  <preevent>
+    <result>1</result>
+  </preevent>
+<error>Mysql::adduserdb failed: (XID y2tcay) The system user “shakasabre” does not control a MySQL database named “shakasab_shakasabre_shakasab_AZB”.</error></cpanelresult>
+[10-Feb-2018 14:55:09 UTC] SimpleXML var_dump:
+SimpleXMLElement Object
+(
+    [module] => Mysql
+    [func] => adduserdb
+    [type] => event
+    [source] => internal
+    [apiversion] => 1
+    [data] => SimpleXMLElement Object
+        (
+            [result] => SimpleXMLElement Object
+                (
+                )
+
+        )
+
+    [event] => SimpleXMLElement Object
+        (
+            [reason] => Mysql::adduserdb failed: (XID y2tcay) The system user “shakasabre” does not control a MySQL database named “shakasab_shakasabre_shakasab_AZB”.
+            [result] => 0
+        )
+
+    [postevent] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+    [preevent] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+    [error] => Mysql::adduserdb failed: (XID y2tcay) The system user “shakasabre” does not control a MySQL database named “shakasab_shakasabre_shakasab_AZB”.
+)
+
+[10-Feb-2018 14:55:09 UTC] Associative Array var_dump:
+SimpleXMLElement Object
+(
+    [module] => Mysql
+    [func] => adduserdb
+    [type] => event
+    [source] => internal
+    [apiversion] => 1
+    [data] => SimpleXMLElement Object
+        (
+            [result] => SimpleXMLElement Object
+                (
+                )
+
+        )
+
+    [event] => SimpleXMLElement Object
+        (
+            [reason] => Mysql::adduserdb failed: (XID y2tcay) The system user “shakasabre” does not control a MySQL database named “shakasab_shakasabre_shakasab_AZB”.
+            [result] => 0
+        )
+
+    [postevent] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+    [preevent] => SimpleXMLElement Object
+        (
+            [result] => 1
+        )
+
+    [error] => Mysql::adduserdb failed: (XID y2tcay) The system user “shakasabre” does not control a MySQL database named “shakasab_shakasabre_shakasab_AZB”.
+)
+

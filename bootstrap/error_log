@@ -1,0 +1,4 @@
+[11-Feb-2018 04:42:18 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Application' not found in /home/shakasabre/biometrico.shaka.cloud/bootstrap/app.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/shakasabre/biometrico.shaka.cloud/bootstrap/app.php on line 14

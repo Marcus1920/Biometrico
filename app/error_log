@@ -1,0 +1,3 @@
+[10-Feb-2018 22:55:26 UTC] PHP Fatal error:  Class 'Illuminate\Database\Eloquent\Model' not found in /home/shakasabre/biometrico.shaka.cloud/app/role.php on line 7
+[11-Feb-2018 07:30:39 UTC] PHP Fatal error:  Class 'Illuminate\Database\Eloquent\Model' not found in /home/shakasabre/biometrico.shaka.cloud/app/Company.php on line 7
+[11-Feb-2018 15:13:32 UTC] PHP Fatal error:  Class 'Illuminate\Database\Eloquent\Model' not found in /home/shakasabre/biometrico.shaka.cloud/app/EndPoint.php on line 7
