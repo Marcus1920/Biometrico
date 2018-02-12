@@ -76,9 +76,9 @@ class addSiteController extends Controller
 
           $new_site_Schema   = new  SiteDataSchemaServices () ;
 
-         // $new_site_Schema->RunScriptlocal($dbName) ;
+          $new_site_Schema->RunScriptlocal($dbName) ;
 
-          $new_site_Schema->RunscriptRemote($SiteName);
+//          $new_site_Schema->RunscriptRemote($SiteName);
 
 
 
