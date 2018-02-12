@@ -25,8 +25,13 @@ class addSiteController extends Controller
         $companies=Company::all();
         $selectedCompany=User::first()->company_id;
 
+        $user = User::find(Auth::user()->id);
 
-        return view('addsite.addsite',compact('companies','selectedCompany'));
+        $company = Company::find($user->company_id);
+
+
+
+        return view('addsite.addsite',compact('companies','selectedCompany','company'));
 
     }
 
@@ -34,6 +39,7 @@ class addSiteController extends Controller
     public  function  siteconfiguration  (Request $request) {
         // Variable  Declation
 
+        $user = User::find(Auth::user()->id);
 
         $SiteName   = $request->input('SITE_NAME');
         $SiteName_conif = "_".$request->input('SITE_NAME');
@@ -41,13 +47,12 @@ class addSiteController extends Controller
         $SiteUrl = $request->input('SITE_NAME');
         $site_api_ulr = strtolower($SiteUrl) ;
         $dbName = ''.$SiteName.'_db';
-        $company_id   = $request->input('company_id');
+        $company_id   = $user->company_id;
 
 
 
         $errors = Validator::make($request->all(), [
             'SITE_NAME' => 'required|max:5',
-            'company_id' => 'required|max:255',
         ]);
 
         if ($errors->fails())
