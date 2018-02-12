@@ -14,6 +14,8 @@ use App\Site;
 use App\role;
 use App\Company;
 use mysqli;
+use Illuminate\Support\Facades\Auth;
+
 class addSiteController extends Controller
 {
 

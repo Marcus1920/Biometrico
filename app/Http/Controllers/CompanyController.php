@@ -20,7 +20,7 @@ class CompanyController extends Controller
 
     public function create()
     {
-
+        return view('Company.create');
     }
 
     public function store(Request $request)
@@ -28,8 +28,16 @@ class CompanyController extends Controller
         $newCompany = new Company();
         $newCompany->name = $request['name'];
         $newCompany->save();
+
+        return redirect('/companies');
     }
 
+    public function getCompanyList()
+    {
+        $companies = Company::all();
+
+        return response()->json($companies);
+    }
 
 //    public function getAllCompany()
 //    {

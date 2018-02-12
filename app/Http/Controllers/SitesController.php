@@ -72,7 +72,7 @@ class SitesController extends Controller
 
     public function getSite(Request $request)
     {
-        $site = Site::where('site_code',$request['site_code'])->get();
+        $site = Site::where('site_code',$request['site_code'])->with('endpoint')->get();
 
         return response()->json($site);
     }

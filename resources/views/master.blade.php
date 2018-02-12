@@ -264,7 +264,7 @@
                 </a>
                 <ul class="list-unstyled menu-item">
                     <li><a href="{{ url('registerUser') }}"><span class="badge badge-r"></span>Register</a></li>
-                    {{--<li><a href="{{ url('adminUser') }}"><span class="badge badge-r"></span>Admin List</a></li>--}}
+                    <li><a href="{{ url('companyList') }}"><span class="badge badge-r"></span>Company List</a></li>
                     <li><a href="{{ url('addsite') }}"><span class="badge badge-r"></span>Add Site </a></li>
                     {{--<li><a href="{{ url('userroleslist')}}"><span class="badge badge-r"></span>User Roles List</a></li>--}}
 

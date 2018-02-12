@@ -34,6 +34,16 @@ Route::get('/', function () {
     return view('auth.login', compact('allCompanies'));
 });
 
+Route::get('/CreateCompany','CompanyController@create');
+
+Route::post('/storeCompany','CompanyController@store');
+
+Route::get('/companies','CompanyController@getCompanyList');
+
+Route::get('/companyList', function (){
+   return view('Company.list');
+});
+
 Route::get('charts', 'ReportsController@index');
 
 
