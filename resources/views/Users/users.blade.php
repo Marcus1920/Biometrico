@@ -1,11 +1,11 @@
 @extends('master')
 @section('content')
     <ol class="breadcrumb hidden-xs">
-        <li class="active">Roles List</li>
+        <li class="active">Users List</li>
         {{--<li class="active"><a>  </a></li>--}}
         {{--<li class="active"><a>Posts</a></li>--}}
     </ol>
-    <h4 class="page-title">Roles Listing</h4>
+    <h4 class="page-title">Users Listing</h4>
 
     <div class="row">
         <div class="col-md-12" >
@@ -13,15 +13,19 @@
                 <!-- Responsive Table -->
                 <div class="block-area" id="responsiveTable">
                     <div class="table-responsive">
-                        <h3 class="block-title">Roles</h3>
-                        <a href="{{ url('createRole') }}" class="btn btn-sm">
-                            <i class="fa fa-plus" aria-hidden="true" title="Add new role" data-toggle="tooltip"></i>
+                        <h3 class="block-title">Users</h3>
+                        <a href="{{ url('registerUser') }}" class="btn btn-sm">
+                            <i class="fa fa-plus" aria-hidden="true" title="Add new user" data-toggle="tooltip"></i>
                         </a>
-                        <table class="table tile table-striped" id="RolesTable">
+                        <table class="table tile table-striped" id="UsersTable">
                             <thead>
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
+                                <th>surname</th>
+                                <th>cellphone</th>
+                                <th>role</th>
+                                <th>email</th>
                                 {{--<th>Delete</th>--}}
                             </tr>
                             </thead>
@@ -36,7 +40,7 @@
     <script>
         jQuery(document).ready(function($){
 
-            var $data = {!! $roles !!};
+            var $data = {!! $users !!};
 
             {{--$.ajax({--}}
             {{--url: '{!! url('/getworksheduleList/')!!}',--}}
@@ -50,7 +54,7 @@
             assignToEventsColumns($data);
 
             function assignToEventsColumns(data) {
-                var table = $('#RolesTable').dataTable({
+                var table = $('#UsersTable').dataTable({
                     "dom": 'Bfrtip',
                     "scrollX": true,
                     "bAutoWidth": false,
@@ -73,7 +77,11 @@
                     "columns": [
                         //                    {data: 'id', name: 'id'},
                         {data: 'id', name: 'id'},
-                        {data: 'name', name: 'name'}
+                        {data: 'name', name: 'name'},
+                        {data: 'surname', name: 'surname'},
+                        {data: 'cellphone', name: 'cellphone'},
+                        {data: 'role.name', name: 'role.name'},
+                        {data: 'email', name: 'email'}
 
 
                         {{--{data: function(d)--}}

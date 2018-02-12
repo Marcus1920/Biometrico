@@ -25,7 +25,7 @@ class RolesController extends Controller
 
     public function create()
     {
-
+        return view('Role.create');
     }
 
     public function store(Request $request)
@@ -33,6 +33,15 @@ class RolesController extends Controller
         $newRole = new role();
         $newRole->name = $request['name'];
         $newRole->save();
+
+        return Redirect('/rolesList');
+    }
+
+    public function getRolesList()
+    {
+        $roles = role::all();
+
+        return view('Role.index',compact('roles'));
     }
 
 }

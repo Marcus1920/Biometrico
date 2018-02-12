@@ -5,7 +5,7 @@
         {{--<li class="active"><a>  </a></li>--}}
         {{--<li class="active"><a>Posts</a></li>--}}
     </ol>
-    <h4 class="page-title">Companny Listing</h4>
+    <h4 class="page-title">Company Listing</h4>
 
     <div class="row">
         <div class="col-md-12" >

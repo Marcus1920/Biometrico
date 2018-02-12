@@ -34,6 +34,14 @@ Route::get('/', function () {
     return view('auth.login', compact('allCompanies'));
 });
 
+Route::get('/createRole','RolesController@create');
+
+Route::post('/storeRole','RolesController@store');
+
+Route::get('/usersList','UsersController@getUserList');
+
+Route::get('/rolesList','RolesController@getRolesList');
+
 Route::get('/CreateCompany','CompanyController@create');
 
 Route::post('/storeCompany','CompanyController@store');
