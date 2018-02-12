@@ -31,7 +31,7 @@ class CompanyController extends Controller
         $newCompany->name = $request['name'];
         $newCompany->save();
 
-        return redirect('/companies');
+        return redirect('/companyList');
     }
     public function CompanyList()
     {
