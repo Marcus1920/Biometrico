@@ -1,36 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html >
 <head>
-
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-    <meta name="format-detection" content="telephone=no">
+    <!-- Site made with Mobirise Website Builder v4.5.4, https://mobirise.com -->
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Mobirise v4.5.4, mobirise.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="assets/images/biometrico-logo-final-1417x1417.jpg" type="image/x-icon">
     <meta name="description" content="">
-    <meta name="keywords" content="">
-    <link rel="icon" type="image/x-icon" sizes="16x16" href="{{ asset('img/Biometrico-Logo-Final.jpg') }}">
-
-    <title>Login</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
+    <title>Home</title>
+    <link rel="stylesheet" href="assets/web/assets/mobirise-icons-bold/mobirise-icons-bold.css">
+    <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+    <link rel="stylesheet" href="assets/tether/tether.min.css">
+    <link rel="stylesheet" href="assets/soundcloud-plugin/style.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="assets/socicon/css/styles.css">
+    <link rel="stylesheet" href="assets/dropdown/css/style.css">
+    <link rel="stylesheet" href="assets/theme/css/style.css">
+    <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
 
     <style>
-        /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
-        @import url(https://fonts.googleapis.com/css?family=Open+Sans);
-        .btn { display: inline-block; *display: inline; *zoom: 1; padding: 4px 10px 4px; margin-bottom: 0; font-size: 13px; line-height: 18px; color: #333333; text-align: center;text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75); vertical-align: middle; background-color: #f5f5f5; background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6); background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6)); background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6); background-image: -o-linear-gradient(top, #ffffff, #e6e6e6); background-image: linear-gradient(top, #ffffff, #e6e6e6); background-repeat: repeat-x; filter: progid:dximagetransform.microsoft.gradient(startColorstr=#ffffff, endColorstr=#e6e6e6, GradientType=0); border-color: #e6e6e6 #e6e6e6 #e6e6e6; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); border: 1px solid #e6e6e6; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); cursor: pointer; *margin-left: .3em; }
-        .btn:hover, .btn:active, .btn.active, .btn.disabled, .btn[disabled] { background-color: #e6e6e6; }
-        .btn-large { padding: 9px 14px; font-size: 15px; line-height: normal; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; }
-        .btn:hover { color: #333333; text-decoration: none; background-color: #e6e6e6; background-position: 0 -15px; -webkit-transition: background-position 0.1s linear; -moz-transition: background-position 0.1s linear; -ms-transition: background-position 0.1s linear; -o-transition: background-position 0.1s linear; transition: background-position 0.1s linear; }
-        .btn-primary, .btn-primary:hover { text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); color: #ffffff; }
-        .btn-primary.active { color: rgba(255, 255, 255, 0.75); }
-        .btn-primary { background-color: #4a77d4; background-image: -moz-linear-gradient(top, #6eb6de, #4a77d4); background-image: -ms-linear-gradient(top, #6eb6de, #4a77d4); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#6eb6de), to(#4a77d4)); background-image: -webkit-linear-gradient(top, #6eb6de, #4a77d4); background-image: -o-linear-gradient(top, #6eb6de, #4a77d4); background-image: linear-gradient(top, #6eb6de, #4a77d4); background-repeat: repeat-x; filter: progid:dximagetransform.microsoft.gradient(startColorstr=#6eb6de, endColorstr=#4a77d4, GradientType=0);  border: 1px solid #3762bc; text-shadow: 1px 1px 1px rgba(0,0,0,0.4); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.5); }
-        .btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] { filter: none; background-color: #4a77d4; }
-        .btn-block { width: 100%; display:block; }
 
-        * { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; }
-
-        html { width: 100%; height:100%; overflow:hidden; }
 
         body {
             margin: 0;
@@ -52,179 +44,264 @@
             height: auto;
             z-index: -100;
         }
-        /* These just style the content */
-        article {
-            /*  just a fancy border  */
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border: 10px solid rgba(255, 255, 255, 0.5);
-            margin: 10px;
-        }
-        h1 {
-            position: absolute;
-            top: 60%;
-            width: 100%;
-            font-size: 36px;
-            letter-spacing: 3px;
-            color: #fff;
-            font-family: Oswald, sans-serif;
-            text-align: center;
-        }
-
-        .login
-        {
-
-            position: absolute;
-            top: 50%;
-            left: 45%;
-            border-radius: 50%;
-background-color: rgba(0, 0, 0, 0.05);
-          
-            margin: -150px 0 0 -150px;
-            width:400px;
-            height:400px;
-        }
-        .login h1 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
-
-        input {
-            width: 75%;
-            margin-bottom: 10px;
-            background: rgba(0,0,0,0.3);
-            border: 2px;
-            margin-right: 5%;
-            border-color: whitesmoke;
-            outline: none;
-            padding: 10px;
-            font-size: 13px;
-            color: #fff;
-            text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            border-radius: 4px;
-            box-shadow: inset 0 -5px 45px rgba(100, 100, 100, 0), 0 1px 1px rgba(255,255,255,0.2);
-            -webkit-transition: box-shadow .5s ease;
-            -moz-transition: box-shadow .5s ease;
-            -o-transition: box-shadow .5s ease;
-            -ms-transition: box-shadow .5s ease;
-            transition: box-shadow .5s ease;
-        }
-        input:focus { box-shadow: inset 0 -5px 45px rgba(100, 100, 100, 0.02), 0 1px 1px rgba(255,255,255,0.2); }
-
-    </style>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-
-</head>
-
-<body>
-
-{{--<center>--}}
-{{--<img src="{{ asset('/img/Biometrico-Logo-Final.jpg') }}" alt="Biometrico" width="250px" height="250px" style="border-radius: 90%;">--}}
-{{--</center>--}}
-<center>
-
-
-    <div  style="margin-bottom: 300px; text-align: center">
-
-        <img src="{{ asset('/img/biometrico-logo.png') }}" alt="Biometrico" width="40%" height="40%" style="">
-    </div>
-
+        </style>
     <!--  Video is muted & autoplays, placed after major DOM elements for performance & has an image fallback  -->
     <video autoplay loop id="video-background" muted plays-inline>
         <source src="{{ asset('biometric.mp4') }}" type="video/mp4">
     </video>
-    <body>
+</head>
+<body>
+<section class="menu cid-qJxuiLW8sO" once="menu" id="menu1-9">
 
 
-<div class="login">
 
-<br> <br>
-    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-        {{ csrf_field() }}
-
-        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-
-            <div class="col-md-6">
-                <input id="email" placeholder="email" type="email" class="form-control" name="email" required autofocus>
-
-                @if ($errors->has('email'))
-                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                @endif
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="https://mobirise.com">
+                         <img src="assets/images/biometrico-logo-final-1417x1417.jpg" alt="Mobirise" title="" style="height: 3.8rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="https://mobirise.com">BIO CLOUD&nbsp;</a></span>
             </div>
         </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="https://mobirise.com">
+                       Home</a>
+                </li><li class="nav-item"><a class="nav-link link text-white display-4" href="https://mobirise.com">
+                    </a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="https://mobirise.com">
 
-        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                        Services
+                    </a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="page1.html">Register</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="https://mobirise.com">
+                    </a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="https://mobirise.com">
+                    </a></li>
+                <li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="https://mobirise.com"><span class="mbrib-cash mbr-iconfont mbr-iconfont-btn"></span>
+                        Pricing &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a>
+                </li></ul>
+            <div class="navbar-buttons mbr-section-btn">
+                <a class="btn btn-sm btn-primary display-4" href="https://mobirise.com">
 
-            <div class="col-md-6">
-                <input id="password" placeholder="password" type="password" class="form-control" name="password" required>
-
-                @if ($errors->has('password'))
-                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                @endif
-            </div>
-        </div>
-
-
-        {{--<div class="form-group">--}}
-
-
-            {{--<div class="col-md-6">--}}
-                {{--<select class="form-control" style="width: 300px; height: 30px">--}}
-                    {{--<option>Select Company</option>--}}
-                    {{--@if($allCompanies->count() > 0)--}}
-                        {{--@foreach($allCompanies as $allCompany)--}}
-                            {{--<option value="{{$allCompany->id}}">{{$allCompany->name}}</option>--}}
-                        {{--@endForeach--}}
-                    {{--@else--}}
-                        {{--No Record Found--}}
-                    {{--@endif--}}
-                {{--</select>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-
-
-        <table>
-            <tr>
-                <td width="250px">
-                    <h4 style="color: white;">Remember Me </h4>
-                </td>
-                <td width="50px">
-                    <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
-                </td>
-            </tr>
-        </table>
-
-        <br/>
-
-        <div class="form-group">
-            <div class="col-md-8 col-md-offset-4">
-
-                <a class="btn btn-link" href="{{ route('password.request') }}">
-                    Forgot Your Password?
+                    Try It Now!
                 </a>
-
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-                <button type="submit" class="btn btn-primary">
-                    Next
-                </button>
-
             </div>
         </div>
-    </form>
+    </nav>
+</section>
+
+<section class="engine"><a href="https://mobirise.co/k">bootstrap template</a></section><section class="cid-qJxsmVwJbm mbr-fullscreen" data-bg-video="https://www.youtube.com/watch?v=g5_DiXLbBfk" id="header15-4">
 
 
 
-</div>
-</center>
+    <div class="mbr-overlay" style="opacity: 0.2; background-color: rgb(7, 59, 76);"></div>
 
-<script  src="js/index.js"></script>
+    <div class="container align-right">
+        <div class="row">
+            <div class="mbr-white col-lg-8 col-md-7 content-container">
+                <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1">BIO CLOUD</h1>
+                <p class="mbr-text pb-3 mbr-fonts-style display-5">
+Some Description
+                </p>
+            </div>
+            <div class="col-lg-4 col-md-5">
+                <div class="form-container">
+                    <div class="media-container-column" >
+                        <div data-form-alert="" hidden="" class="align-center">
+                            Thanks for filling out the form!
+                        </div>
+                        <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                            {{ csrf_field() }}
+                            <div data-for="name">
+                                <div class="form-group">
+                                    <input type="text" class="form-control px-3" name="email"  placeholder="UserName" required="">
+                                </div>
+                            </div>
+                            <div data-for="email">
+                                <div class="form-group">
+                                    <input type="password" class="form-control px-3" name="password"  placeholder="Password" required="" >
+                                </div>
+                            </div>
+
+                            <span class="input-group-btn">
+                                <input type="submit" class="btn btn-success btn-form display-4" value="LOGIN"></span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mbr-arrow hidden-sm-down" aria-hidden="true">
+        <a href="#next">
+            <i class="mbri-down mbr-iconfont"></i>
+        </a>
+    </div>
+</section>
+
+<section class="features1 cid-qJxt2qy3IW" id="features1-6">
+
+
+
+
+    <div class="container">
+        <div class="media-container-row">
+
+            <div class="card p-3 col-12 col-md-6 col-lg-4">
+                <div class="card-img pb-3">
+                    <span class="mbr-iconfont mbri-edit"></span>
+                </div>
+                <div class="card-box">
+                    <h4 class="card-title py-3 mbr-fonts-style display-5">Shaka Bussiness</h4>
+                    <p class="mbr-text mbr-fonts-style display-7">
+                        Shaka Bussi nessis an easy website builder - just drop site elements to your page, add content and style it to look the way you like.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card p-3 col-12 col-md-6 col-lg-4">
+                <div class="card-img pb-3">
+                    <span class="mbri-touch mbr-iconfont"></span>
+                </div>
+                <div class="card-box">
+                    <h4 class="card-title py-3 mbr-fonts-style display-5">Shaka Clocking</h4>
+                    <p class="mbr-text mbr-fonts-style display-7">
+                        Shaka Clockingyou make with Mobirise are mobile-friendly. You don't have to create a special mobile version of your site.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card p-3 col-12 col-md-6 col-lg-4">
+                <div class="card-img pb-3">
+                    <span class="mbri-responsive mbr-iconfont"></span>
+                </div>
+                <div class="card-box">
+                    <h4 class="card-title py-3 mbr-fonts-style display-5">Sabre&nbsp;</h4>
+                    <p class="mbr-text mbr-fonts-style display-7">&nbsp;Sabre offers many site blocks in several themes, and though these blocks are pre-made, they are flexible.
+                    </p>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="cid-qJxteULEyR" id="footer2-7">
+
+
+
+
+
+    <div class="container">
+        <div class="media-container-row content mbr-white">
+            <div class="col-12 col-md-3 mbr-fonts-style display-7">
+                <p class="mbr-text">
+                    <strong>Address</strong>
+                    <br>
+                    <br>1234 Street Name
+                    <br>City, AA 99999
+                    <br>
+                    <br>
+                    <br><strong>Contacts</strong>
+                    <br>
+                    <br>Email: support@mobirise.com
+                    <br>Phone: +1 (0) 000 0000 001
+                    <br>Fax: +1 (0) 000 0000 002
+                </p>
+            </div>
+            <div class="col-12 col-md-3 mbr-fonts-style display-7">
+                <p class="mbr-text">
+                    <strong>Links</strong>
+                    <br>
+                    <br><a class="text-primary" href="https://mobirise.com/">Website builder</a>
+                    <br><a class="text-primary" href="https://mobirise.com/mobirise-free-win.zip">Download for Windows</a>
+                    <br><a class="text-primary" href="https: //mobirise.com/mobirise-free-mac.zip">Download for Mac</a>
+                    <br>
+                    <br><strong>Feedback</strong>
+                    <br>
+                    <br>Please send us your ideas, bug reports, suggestions! Any feedback would be appreciated.
+                </p>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="google-map"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0Dx_boXQiwvdz8sJHoYeZNVTdoWONYkU&amp;q=place_id:ChIJn6wOs6lZwokRLKy1iqRcoKw" allowfullscreen=""></iframe></div>
+            </div>
+        </div>
+        <div class="footer-lower">
+            <div class="media-container-row">
+                <div class="col-sm-12">
+                    <hr>
+                </div>
+            </div>
+            <div class="media-container-row mbr-white">
+                <div class="col-sm-6 copyright">
+                    <p class="mbr-text mbr-fonts-style display-7">
+                        © Copyright 2017 Mobirise - All Rights Reserved
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <div class="social-list align-right">
+                        <div class="soc-item">
+                            <a href="https://twitter.com/mobirise" target="_blank">
+                                <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://www.facebook.com/pages/Mobirise/1616226671953247" target="_blank">
+                                <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://www.youtube.com/c/mobirise" target="_blank">
+                                <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://instagram.com/mobirise" target="_blank">
+                                <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://plus.google.com/u/0/+Mobirise" target="_blank">
+                                <span class="socicon-googleplus socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://www.behance.net/Mobirise" target="_blank">
+                                <span class="socicon-behance socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script src="assets/web/assets/jquery/jquery.min.js"></script>
+<script src="assets/popper/popper.min.js"></script>
+<script src="assets/tether/tether.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/smoothscroll/smooth-scroll.js"></script>
+<script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+<script src="assets/ytplayer/jquery.mb.ytplayer.min.js"></script>
+<script src="assets/vimeoplayer/jquery.mb.vimeo_player.js"></script>
+<script src="assets/dropdown/js/script.min.js"></script>
+<script src="assets/theme/js/script.js"></script>
+<script src="assets/formoid/formoid.min.js"></script>
+
 
 </body>
 </html>
