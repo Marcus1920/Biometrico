@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="generator" content="Mobirise v4.5.4, mobirise.com">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    <link rel="shortcut icon" href="assets/images/biometrico-logo-final-1417x1417.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/images/BIOCLOUD.png" type="image/x-icon">
     <meta name="description" content="">
     <title>Home</title>
     <link rel="stylesheet" href="assets/web/assets/mobirise-icons-bold/mobirise-icons-bold.css">
@@ -145,10 +145,10 @@
             <div class="navbar-brand">
                 <span class="navbar-logo">
                     <a href="#">
-                         <img src="assets/images/biometrico-logo-final-1417x1417.jpg" alt="Mobirise" title="" style="height: 3.8rem;">
+                         <img src="assets/images/BIOCLOUD.png" alt="Mobirise" title="" style="height: 3.8rem;">
                     </a>
                 </span>
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="#">BIO CLOUD&nbsp;</a></span>
+                <span class="navbar-caption-wrap"><img src="assets/images/BIOCLOUD-NAME.png" alt="Mobirise" title="" style="height: 3.8rem;"></span>
             </div>
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
