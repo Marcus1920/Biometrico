@@ -183,7 +183,7 @@
     <div class="homepage-hero-module">
         <div class="video-container">
             <div class="title-container">
-               
+
 
                 <div class="container align-right">
                     <div class="row">
@@ -211,9 +211,27 @@
                                                 <input type="password" class="form-control px-3" name="password"  placeholder="Password" required="" >
                                             </div>
                                         </div>
-
                                         <span class="input-group-btn">
-                                <input type="submit" class="btn btn-success btn-form display-4" value="LOGIN"></span>
+                                 <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                                        </span>
+                                        <span class="input-group-btn">
+                                <input type="submit" class="btn btn-success btn-form display-4" value="LOGIN">
+                                        </span>
+                                        <span class="input-group-btn">
+                                 <a class="btn btn-link" href="{{ route('password.request') }}">
+                    Forgot Your Password
+                </a>
+                                        </span>
+
+                                <div class="col-md-8 col-md-offset-4">
+
+
+
+
+            </div>
+
+
                                     </form>
                                 </div>
                             </div>
