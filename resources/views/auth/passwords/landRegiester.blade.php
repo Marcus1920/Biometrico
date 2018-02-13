@@ -41,10 +41,10 @@
             <div class="navbar-brand">
                 <span class="navbar-logo">
                     <a href="#">
-                         <img src="assets/images/biometrico-logo-final-1417x1417.jpg" alt="" title="" style="height: 3.8rem;">
+                         <img src="assets/images/BIOCLOUD.png" alt="" title="" style="height: 3.8rem;">
                     </a>
                 </span>
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="#">BIO CLOUD&nbsp;</a></span>
+                <span class="navbar-caption-wrap"><img src="assets/images/BIOCLOUD-NAME.png" alt="Mobirise" title="" style="height: 3.8rem;"></span>
             </div>
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
