@@ -66,6 +66,13 @@ Route::get('/companyList', function (){
 Route::get('charts', 'ReportsController@index');
 
 
+Route::get('landregister' , function ()
+{
+
+
+    return view ('auth.passwords.landRegiester');
+});
+
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');

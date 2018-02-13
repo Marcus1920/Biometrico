@@ -44,6 +44,73 @@
             height: auto;
             z-index: -100;
         }
+
+        .homepage-hero-module {
+            border-right: none;
+            border-left: none;
+            position: relative;
+        }
+        .no-video .video-container video,
+        .touch .video-container video {
+            display: none;
+        }
+        .no-video .video-container .poster,
+        .touch .video-container .poster {
+            display: block !important;
+        }
+        .video-container {
+            position: relative;
+            bottom: 0%;
+            left: 0%;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background: #000;
+        }
+        .video-container .poster img {
+            width: 100%;
+            bottom: 0;
+            position: absolute;
+        }
+        .video-container .filter {
+            z-index: 100;
+            position: absolute;
+            background: rgba(0, 0, 0, 0.4);
+            width: 100%;
+        }
+        .video-container .title-container {
+            z-index: 1000;
+            position: absolute;
+            top: 35%;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+        }
+        .video-container .description .inner {
+            font-size: 1em;
+            width: 45%;
+            margin: 0 auto;
+        }
+        .video-container .link {
+            position: absolute;
+            bottom: 3em;
+            width: 100%;
+            text-align: center;
+            z-index: 1001;
+            font-size: 2em;
+            color: #fff;
+        }
+        .video-container .link a {
+            color: #fff;
+        }
+        .video-container video {
+            position: absolute;
+            z-index: 0;
+            bottom: 0;
+        }
+        .video-container video.fillWidth {
+            width: 100%;
+        }
         </style>
     <!--  Video is muted & autoplays, placed after major DOM elements for performance & has an image fallback  -->
     <video autoplay loop id="video-background" muted plays-inline>
@@ -51,6 +118,16 @@
     </video>
 </head>
 <body>
+
+<body>
+
+
+
+
+    <!--  Video is muted & autoplays, placed after major DOM elements for performance & has an image fallback  -->
+
+    <body>
+
 <section class="menu cid-qJxuiLW8sO" once="menu" id="menu1-9">
 
 
@@ -82,7 +159,7 @@
                     </a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="https://mobirise.com">
 
                         Services
-                    </a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="page1.html">Register</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="https://mobirise.com">
+                    </a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="landregister">Register</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="https://mobirise.com">
                     </a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="https://mobirise.com">
                     </a></li>
                 <li class="nav-item">
@@ -99,44 +176,57 @@
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.co/k">bootstrap template</a></section><section class="cid-qJxsmVwJbm mbr-fullscreen" data-bg-video="https://www.youtube.com/watch?v=g5_DiXLbBfk" id="header15-4">
+<section class="engine"><a href="#"></a></section>
+<section  class="">
 
 
+    <div class="homepage-hero-module">
+        <div class="video-container">
+            <div class="title-container">
+                <div class="mbr-overlay" style="opacity: 0.2; background-color: rgb(7, 59, 76);"></div>
 
-    <div class="mbr-overlay" style="opacity: 0.2; background-color: rgb(7, 59, 76);"></div>
-
-    <div class="container align-right">
-        <div class="row">
-            <div class="mbr-white col-lg-8 col-md-7 content-container">
-                <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1">BIO CLOUD</h1>
-                <p class="mbr-text pb-3 mbr-fonts-style display-5">
-Some Description
-                </p>
-            </div>
-            <div class="col-lg-4 col-md-5">
-                <div class="form-container">
-                    <div class="media-container-column" >
-                        <div data-form-alert="" hidden="" class="align-center">
-                            Thanks for filling out the form!
+                <div class="container align-right">
+                    <div class="row">
+                        <div class="mbr-white col-lg-8 col-md-7 content-container">
+                            <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1">BIO CLOUD</h1>
+                            <p class="mbr-text pb-3 mbr-fonts-style display-5">
+                                Some Description
+                            </p>
                         </div>
-                        <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-                            {{ csrf_field() }}
-                            <div data-for="name">
-                                <div class="form-group">
-                                    <input type="text" class="form-control px-3" name="email"  placeholder="UserName" required="">
-                                </div>
-                            </div>
-                            <div data-for="email">
-                                <div class="form-group">
-                                    <input type="password" class="form-control px-3" name="password"  placeholder="Password" required="" >
-                                </div>
-                            </div>
+                        <div class="col-lg-4 col-md-5">
+                            <div class="form-container">
+                                <div class="media-container-column" >
+                                    <div data-form-alert="" hidden="" class="align-center">
+                                        Thanks for filling out the form!
+                                    </div>
+                                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                                        {{ csrf_field() }}
+                                        <div data-for="name">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control px-3" name="email"  placeholder="UserName" required="">
+                                            </div>
+                                        </div>
+                                        <div data-for="email">
+                                            <div class="form-group">
+                                                <input type="password" class="form-control px-3" name="password"  placeholder="Password" required="" >
+                                            </div>
+                                        </div>
 
-                            <span class="input-group-btn">
+                                        <span class="input-group-btn">
                                 <input type="submit" class="btn btn-success btn-form display-4" value="LOGIN"></span>
-                        </form>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+            </div>
+            <div class="filter"></div>
+            <video autoplay loop class="fillWidth">
+                <source src="{{ asset('biometric.mp4') }}" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.</video>
+            <div class="poster hidden">
+                <img src="http://www.videojs.com/img/poster.jpg" alt="">
             </div>
         </div>
     </div>
@@ -225,9 +315,9 @@ Some Description
                 <p class="mbr-text">
                     <strong>Links</strong>
                     <br>
-                    <br><a class="text-primary" href="https://mobirise.com/">Website builder</a>
-                    <br><a class="text-primary" href="https://mobirise.com/mobirise-free-win.zip">Download for Windows</a>
-                    <br><a class="text-primary" href="https: //mobirise.com/mobirise-free-mac.zip">Download for Mac</a>
+                    <br><a class="text-primary" href="#">Website builder</a>
+                    <br><a class="text-primary" href="#">Download for Windows</a>
+                    <br><a class="text-primary" href="#">Download for Mac</a>
                     <br>
                     <br><strong>Feedback</strong>
                     <br>
@@ -247,7 +337,7 @@ Some Description
             <div class="media-container-row mbr-white">
                 <div class="col-sm-6 copyright">
                     <p class="mbr-text mbr-fonts-style display-7">
-                        © Copyright 2017 Mobirise - All Rights Reserved
+                        © Copyright 2017 BioCloud - All Rights Reserved
                     </p>
                 </div>
                 <div class="col-md-6">
@@ -302,6 +392,82 @@ Some Description
 <script src="assets/theme/js/script.js"></script>
 <script src="assets/formoid/formoid.min.js"></script>
 
+<script>
 
+    /** Document Ready Functions **/
+    /********************************************************************/
+
+    $( document ).ready(function() {
+
+        // Resive video
+        scaleVideoContainer();
+
+        initBannerVideoSize('.video-container .poster img');
+        initBannerVideoSize('.video-container .filter');
+        initBannerVideoSize('.video-container video');
+
+        $(window).on('resize', function() {
+            scaleVideoContainer();
+            scaleBannerVideoSize('.video-container .poster img');
+            scaleBannerVideoSize('.video-container .filter');
+            scaleBannerVideoSize('.video-container video');
+        });
+
+    });
+
+    /** Reusable Functions **/
+    /********************************************************************/
+
+    function scaleVideoContainer() {
+
+        var height = $(window).height();
+        var unitHeight = parseInt(height) + 'px';
+        $('.homepage-hero-module').css('height',unitHeight);
+
+    }
+
+    function initBannerVideoSize(element){
+
+        $(element).each(function(){
+            $(this).data('height', $(this).height());
+            $(this).data('width', $(this).width());
+        });
+
+        scaleBannerVideoSize(element);
+
+    }
+
+    function scaleBannerVideoSize(element){
+
+        var windowWidth = $(window).width(),
+            windowHeight = $(window).height(),
+            videoWidth,
+            videoHeight;
+
+        console.log(windowHeight);
+
+        $(element).each(function(){
+            var videoAspectRatio = $(this).data('height')/$(this).data('width'),
+                windowAspectRatio = windowHeight/windowWidth;
+
+            if (videoAspectRatio > windowAspectRatio) {
+                videoWidth = windowWidth;
+                videoHeight = videoWidth * videoAspectRatio;
+                $(this).css({'top' : -(videoHeight - windowHeight) / 2 + 'px', 'margin-left' : 0});
+            } else {
+                videoHeight = windowHeight;
+                videoWidth = videoHeight / videoAspectRatio;
+                $(this).css({'margin-top' : 0, 'margin-left' : -(videoWidth - windowWidth) / 2 + 'px'});
+            }
+
+            $(this).width(videoWidth).height(videoHeight);
+
+            $('.homepage-hero-module .video-container video').addClass('fadeIn animated');
+
+
+        });
+    }
+
+</script>
 </body>
 </html>
