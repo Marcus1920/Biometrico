@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html >
 <head>
-    <!-- Site made with Mobirise Website Builder v4.5.4, https://mobirise.com -->
+    <!-- Site made with Mobirise Website Builder v4.5.4, # -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="generator" content="Mobirise v4.5.4, mobirise.com">
@@ -144,30 +144,30 @@
         <div class="menu-logo">
             <div class="navbar-brand">
                 <span class="navbar-logo">
-                    <a href="https://mobirise.com">
+                    <a href="#">
                          <img src="assets/images/biometrico-logo-final-1417x1417.jpg" alt="Mobirise" title="" style="height: 3.8rem;">
                     </a>
                 </span>
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="https://mobirise.com">BIO CLOUD&nbsp;</a></span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="#">BIO CLOUD&nbsp;</a></span>
             </div>
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item">
-                    <a class="nav-link link text-white display-4" href="https://mobirise.com">
+                    <a class="nav-link link text-white display-4" href="#">
                        Home</a>
-                </li><li class="nav-item"><a class="nav-link link text-white display-4" href="https://mobirise.com">
-                    </a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="https://mobirise.com">
+                </li><li class="nav-item"><a class="nav-link link text-white display-4" href="#">
+                    </a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="#">
 
                         Services
-                    </a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="landregister">Register</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="https://mobirise.com">
-                    </a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="https://mobirise.com">
+                    </a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="landregister">Register</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="#">
+                    </a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="#">
                     </a></li>
                 <li class="nav-item">
-                    <a class="nav-link link text-white display-4" href="https://mobirise.com"><span class="mbrib-cash mbr-iconfont mbr-iconfont-btn"></span>
+                    <a class="nav-link link text-white display-4" href="#"><span class="mbrib-cash mbr-iconfont mbr-iconfont-btn"></span>
                         Pricing &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a>
                 </li></ul>
             <div class="navbar-buttons mbr-section-btn">
-                <a class="btn btn-sm btn-primary display-4" href="https://mobirise.com">
+                <a class="btn btn-sm btn-primary display-4" href="#">
 
                     Try It Now!
                 </a>
@@ -183,14 +183,14 @@
     <div class="homepage-hero-module">
         <div class="video-container">
             <div class="title-container">
-                <div class="mbr-overlay" style="opacity: 0.2; background-color: rgb(7, 59, 76);"></div>
+               
 
                 <div class="container align-right">
                     <div class="row">
                         <div class="mbr-white col-lg-8 col-md-7 content-container">
                             <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1">BIO CLOUD</h1>
                             <p class="mbr-text pb-3 mbr-fonts-style display-5">
-                                Some Description
+
                             </p>
                         </div>
                         <div class="col-lg-4 col-md-5">
