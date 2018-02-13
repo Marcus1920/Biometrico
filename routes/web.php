@@ -57,7 +57,7 @@ Route::get('/registerUser', 'UsersController@registerUser')->name('register');
 Route::post('/storeUser', 'UsersController@create')->name('register');
 
 
-//Route::get('forgetPassword','UsersController@forgotPassword');
+Route::get('forgetPassword','UsersController@forgotPassword');
 Route::get('Notifications.ResetPassword','UsersController@forgotPassword');
 Route::get('emails.forgetPassword','UsersController@forget');
 //Route::get('emails.forgotPassword','UsersController@forgotPassword');
@@ -681,4 +681,46 @@ Route::group(array('prefix' => 'api/v1'), function() {
 Route::post('attendencysitza', 'sitZAController@attendencystore')->name('attendencysitza');
 Route::post('clockinglistsitza', 'sitZAController@clockingliststore')->name('clockinglistsitza');
 Route::post('workshedulsitza', 'sitZAController@workshedulstore')->name('workshedulsitza');
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencystst', 'stsTController@attendencystore')->name('attendencystst');
+Route::post('clockingliststst', 'stsTController@clockingliststore')->name('clockingliststst');
+Route::post('workshedulstst', 'stsTController@workshedulstore')->name('workshedulstst');
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencyrfi', 'RFIController@attendencystore')->name('attendencyrfi');
+Route::post('clockinglistrfi', 'RFIController@clockingliststore')->name('clockinglistrfi');
+Route::post('workshedulrfi', 'RFIController@workshedulstore')->name('workshedulrfi');
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencysitf', 'sitFController@attendencystore')->name('attendencysitf');
+Route::post('clockinglistsitf', 'sitFController@clockingliststore')->name('clockinglistsitf');
+Route::post('workshedulsitf', 'sitFController@workshedulstore')->name('workshedulsitf');
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencymma', 'mmAController@attendencystore')->name('attendencymma');
+Route::post('clockinglistmma', 'mmAController@clockingliststore')->name('clockinglistmma');
+Route::post('workshedulmma', 'mmAController@workshedulstore')->name('workshedulmma');
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencynm', 'nmController@attendencystore')->name('attendencynm');
+Route::post('clockinglistnm', 'nmController@clockingliststore')->name('clockinglistnm');
+Route::post('workshedulnm', 'nmController@workshedulstore')->name('workshedulnm');
+         });
+
+Route::group(array('prefix' => 'api/v1'), function() {
+
+Route::post('attendencydrc', 'DRCController@attendencystore')->name('attendencydrc');
+Route::post('clockinglistdrc', 'DRCController@clockingliststore')->name('clockinglistdrc');
+Route::post('worksheduldrc', 'DRCController@workshedulstore')->name('worksheduldrc');
          });

@@ -28,11 +28,9 @@ class addSiteController extends Controller
 
     }
 
-
-    public  function  siteconfiguration  (Request $request) {
+    public  function  siteconfiguration  (Request $request)
+    {
         // Variable  Declation
-
-
         $SiteName   = $request->input('SITE_NAME');
         $SiteName_conif = "_".$request->input('SITE_NAME');
         $SiteController_conifg = $request->input('SITE_NAME')."Controller";
@@ -40,7 +38,6 @@ class addSiteController extends Controller
         $site_api_ulr = strtolower($SiteUrl) ;
         $dbName = ''.$SiteName.'_db';
         $company_id   = $request->input('company_id');
-
 
 
         $errors = Validator::make($request->all(), [
@@ -74,19 +71,11 @@ class addSiteController extends Controller
 
         $new_site_Schema   = new  SiteDataSchemaServices () ;
 
-        // $new_site_Schema->RunScriptlocal($dbName) ;
+         $new_site_Schema->RunScriptlocal($dbName) ;
 
-        $new_site_Schema->RunscriptRemote($SiteName);
-
-
-
-
-
-
+//        $new_site_Schema->RunscriptRemote($SiteName);
 
         return redirect('/sites');
-
-
 
 
     }

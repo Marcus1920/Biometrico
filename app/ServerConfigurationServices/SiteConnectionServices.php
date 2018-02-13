@@ -52,16 +52,13 @@ class SiteConnectionServices
     public  function  SetupDatabaseConnection ($dbName ,$SiteName  ,$SiteName_conif )
     {
 
-<<<<<<< HEAD
+
 
         // Function  to  configure  the  Datatabase  connection
 
 
         $db_config    =  "C:/Users/user-04/Desktop/Biome/Biometrico/config/database.php" ;
-=======
-       //  $db_config    =  "C:/xampp/htdocs/Biometrico/config/database.php" ;
-        $db_config    =  "/home/shakasabre/biometrico.shaka.cloud/config/database.php" ;
->>>>>>> 5a3623c8f59c72c81a2ee2cab3465e5bd392a9dc
+
         $connection   = "'mysql$SiteName' => [
              'driver' => 'mysql',
              'host' => env('DB_HOST', '127.0.0.1'),
@@ -96,11 +93,9 @@ class SiteConnectionServices
     {
 
 
-<<<<<<< HEAD
+
         $fille  = "C:/Users/user-04/Desktop/Biome/Biometrico/.env" ;
-=======
-        $fille  = "/home/shakasabre/biometrico.shaka.cloud/.env" ;
->>>>>>> 5a3623c8f59c72c81a2ee2cab3465e5bd392a9dc
+
         $space  =   "\r\n";
         $DB_CONNECTION        ="DB_CONNECTION=" ."mysql"."\n";
 

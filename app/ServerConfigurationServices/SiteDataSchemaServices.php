@@ -21,12 +21,11 @@ class SiteDataSchemaServices
             $conn =new mysqli('localhost', 'root', '' , ''.$dbName.'');
 
             $query = '';
-<<<<<<< HEAD
+
             $sqlScript = file("C:/Users/user-04/Desktop/Biome/Biometrico/public/Biometricodb.sql");
-=======
-            $sqlScript = file("/home/shakasabre/biometrico.shaka.cloud/public/Biometricodb.sql");
->>>>>>> 5a3623c8f59c72c81a2ee2cab3465e5bd392a9dc
-            foreach ($sqlScript as $line)	{
+
+            foreach ($sqlScript as $line)
+            {
 
                 $startWith = substr(trim($line), 0 ,2);
                 $endWith = substr(trim($line), -1 ,1);
@@ -77,11 +76,11 @@ class SiteDataSchemaServices
             $conn =new mysqli('localhost', $cpaneluser,$cpanelpass , ''.$databasename.'');
 
             $query = '';
-<<<<<<< HEAD
-            $sqlScript = file("C:/Users/user-04/Desktop/Biome/Biometrico/public/Biometricodb.sql");
-=======
+
+
+//            $sqlScript = file("C:/Users/user-04/Desktop/Biome/Biometrico/public/Biometricodb.sql");
             $sqlScript = file("/home/shakasabre/biometrico.shaka.cloud/public/Biometricodb.sql");
->>>>>>> 5a3623c8f59c72c81a2ee2cab3465e5bd392a9dc
+
             foreach ($sqlScript as $line)	{
 
                 $startWith = substr(trim($line), 0 ,2);

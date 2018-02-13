@@ -21,11 +21,9 @@ class SiteRouteServices
 
          $space  =   "\r\n";
 
-<<<<<<< HEAD
+
          $route  = "C:/Users/user-04/Desktop/Biome/Biometrico/routes/web.php" ;
-=======
-         $route  = "/home/shakasabre/biometrico.shaka.cloud/routes/web.php" ;
->>>>>>> 5a3623c8f59c72c81a2ee2cab3465e5bd392a9dc
+
          $routes  ="Route::group(array('prefix' => 'api/v1'), function() {"."\n"."\n".
 
 
@@ -60,25 +58,25 @@ class SiteRouteServices
 //        $newSite->end_point =   $_ENV['APP_URL']."api/v1".$site_api_ulr ;
 
 
-          $newSite->save();
-
-          $newEndpoint = new EndPoint();
-          $newEndpoint->site_id = $newSite->id;
-          $newEndpoint->name = "attendency$site_api_ulr";
-          $newEndpoint->end_point = $_ENV['APP_URL']."api/v1/attendency".$site_api_ulr;
-          $newEndpoint->save();
-
-          $newEndpoint = new EndPoint();
-          $newEndpoint->site_id = $newSite->id;
-          $newEndpoint->name = "clockinglist$site_api_ulr";
-          $newEndpoint->end_point = $_ENV['APP_URL']."api/v1/clockinglist".$site_api_ulr;
-          $newEndpoint->save();
-
-          $newEndpoint = new EndPoint();
-          $newEndpoint->site_id = $newSite->id;
-          $newEndpoint->name = "workshedul$site_api_ulr";
-          $newEndpoint->end_point = $_ENV['APP_URL']."api/v1/workshedul".$site_api_ulr;
-          $newEndpoint->save();
+//          $newSite->save();
+//
+//          $newEndpoint = new EndPoint();
+//          $newEndpoint->site_id = $newSite->id;
+//          $newEndpoint->name = "attendency$site_api_ulr";
+//          $newEndpoint->end_point = $_ENV['APP_URL']."api/v1/attendency".$site_api_ulr;
+//          $newEndpoint->save();
+//
+//          $newEndpoint = new EndPoint();
+//          $newEndpoint->site_id = $newSite->id;
+//          $newEndpoint->name = "clockinglist$site_api_ulr";
+//          $newEndpoint->end_point = $_ENV['APP_URL']."api/v1/clockinglist".$site_api_ulr;
+//          $newEndpoint->save();
+//
+//          $newEndpoint = new EndPoint();
+//          $newEndpoint->site_id = $newSite->id;
+//          $newEndpoint->name = "workshedul$site_api_ulr";
+//          $newEndpoint->end_point = $_ENV['APP_URL']."api/v1/workshedul".$site_api_ulr;
+//          $newEndpoint->save();
 
           return "End point  save" ;
 
