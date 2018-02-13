@@ -5,11 +5,11 @@
     <ol class="breadcrumb hidden-xs">
         <li><a href="{{ url('/master') }}">Home</a></li>
         <li><a href="{{ url('/companyList') }}">Company List</a></li>
-        <li class="active">Add Company</li>
+        <li class="active">Edit Company</li>
         {{--<li class="active"><a>  </a></li>--}}
         {{--<li class="active"><a>Posts</a></li>--}}
     </ol>
-    <h4 class="page-title">Add Company</h4>
+    <h4 class="page-title">Edit Company</h4>
 
     <div class="container-fluid">
         <div  class="row">
@@ -20,25 +20,28 @@
                 <br/>
                 <div class="container">
                     {{--<form class="form-horizontal" method="POST" action="{{ route('storeCompany') }}">--}}
-                        <form action="storeCompany" method="post" enctype="multipart/form-data">
+                    <form action="{{ url('saveCompany')}}" method="post" enctype="multipart/form-data">
+
+                        <input type="hidden" value="{{$company->id}}" class="form-control" name="id">
 
                         {{ csrf_field() }}
 
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Company Name</label>
                             <div class="col-sm-10">
-                                <input type="text"   name="name" class="form-control" placeholder="" required="required">
+                                <input type="text" value="{{$company->name}}"  name="name" class="form-control" placeholder="" required="required">
                             </div>
                         </div>
 
 
                         </br>
-                            <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Company Logo</label>
-                                <div class="col-sm-10">
-                                    <input type="file" name="image" id="file">
-                                </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Company Logo</label>
+                            <div class="col-sm-10">
+                                <img src="{{$company->logo}}" style="width: 200px;height: 150px" alt="logo">
+                                <input type="file" name="image" id="file" value="{{$company->logo}}">
                             </div>
+                        </div>
                         <div>
                             <br/>
 
