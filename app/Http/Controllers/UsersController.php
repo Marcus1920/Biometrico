@@ -10,6 +10,7 @@ use App\Company;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
@@ -39,7 +40,20 @@ class UsersController extends Controller
         $user->password = $hasher->make($data['password']);
         $user->save();
 
-        return Redirect('/home');
+        return Redirect('/usersList');
+    }
+
+    public function getUserList()
+    {
+        $user = User::find(Auth::user()->id);
+
+        $users = User::where('company_id',$user->company_id)
+            ->with('company')
+            ->with('role')
+            ->orderBy('id','DESC')
+            ->get();
+
+        return view('Users.users',compact('users'));
     }
 
     public function login()

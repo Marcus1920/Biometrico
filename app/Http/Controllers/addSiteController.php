@@ -14,6 +14,8 @@ use App\Site;
 use App\role;
 use App\Company;
 use mysqli;
+use Illuminate\Support\Facades\Auth;
+
 class addSiteController extends Controller
 {
 
@@ -23,26 +25,34 @@ class addSiteController extends Controller
         $companies=Company::all();
         $selectedCompany=User::first()->company_id;
 
+        $user = User::find(Auth::user()->id);
 
-        return view('addsite.addsite',compact('companies','selectedCompany'));
+        $company = Company::find($user->company_id);
+
+
+
+        return view('addsite.addsite',compact('companies','selectedCompany','company'));
 
     }
 
     public  function  siteconfiguration  (Request $request)
     {
         // Variable  Declation
+
+
+        $user = User::find(Auth::user()->id);
+
         $SiteName   = $request->input('SITE_NAME');
         $SiteName_conif = "_".$request->input('SITE_NAME');
         $SiteController_conifg = $request->input('SITE_NAME')."Controller";
         $SiteUrl = $request->input('SITE_NAME');
         $site_api_ulr = strtolower($SiteUrl) ;
         $dbName = ''.$SiteName.'_db';
-        $company_id   = $request->input('company_id');
+        $company_id   = $user->company_id;
 
 
         $errors = Validator::make($request->all(), [
             'SITE_NAME' => 'required|max:5',
-            'company_id' => 'required|max:255',
         ]);
 
         if ($errors->fails())
@@ -59,7 +69,19 @@ class addSiteController extends Controller
         //  $new_site_connection->SetupDatabaseConnectionLocal($dbName ,$SiteName  ,$SiteName_conif);
         $new_site_connection->SetConnectionEnv($SiteName ,$SiteName_conif) ;
 
-        // $new_site_connection ->SetConnectionEnvLocal($SiteName ,$SiteName_conif);
+
+//          $new_site_Controller ->SetupControllers($SiteController_conifg  , $SiteName) ;
+          $new_site_Routes    = new  SiteRouteServices() ;
+
+          $new_site_Routes ->setupRoutes($site_api_ulr ,$SiteController_conifg )  ;
+          $new_site_Routes ->SaveEndpoint($SiteName  ,$company_id, $site_api_ulr) ;
+
+          $new_site_Schema   = new  SiteDataSchemaServices () ;
+
+          $new_site_Schema->RunScriptlocal($dbName) ;
+
+//          $new_site_Schema->RunscriptRemote($SiteName);
+
 
         $new_site_Controller  = new  SiteControllesServices() ;
 

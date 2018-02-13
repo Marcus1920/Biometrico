@@ -58,6 +58,7 @@ class SiteRouteServices
 //        $newSite->end_point =   $_ENV['APP_URL']."api/v1".$site_api_ulr ;
 
 
+<<<<<<< HEAD
 //          $newSite->save();
 //
 //          $newEndpoint = new EndPoint();
@@ -77,6 +78,30 @@ class SiteRouteServices
 //          $newEndpoint->name = "workshedul$site_api_ulr";
 //          $newEndpoint->end_point = $_ENV['APP_URL']."api/v1/workshedul".$site_api_ulr;
 //          $newEndpoint->save();
+=======
+          $newSite->save();
+
+          $newEndpoint = new EndPoint();
+          $newEndpoint->site_id = $newSite->id;
+          $newEndpoint->site_names =$SiteName;
+          $newEndpoint->name = "attendency$site_api_ulr";
+          $newEndpoint->end_point = $_ENV['APP_URL']."api/v1/attendency".$site_api_ulr;
+          $newEndpoint->save();
+
+          $newEndpoint = new EndPoint();
+          $newEndpoint->site_id = $newSite->id;
+          $newEndpoint->site_names =$SiteName;
+          $newEndpoint->name = "clockinglist$site_api_ulr";
+          $newEndpoint->end_point = $_ENV['APP_URL']."api/v1/clockinglist".$site_api_ulr;
+          $newEndpoint->save();
+
+          $newEndpoint = new EndPoint();
+          $newEndpoint->site_id = $newSite->id;
+          $newEndpoint->site_names =$SiteName;
+          $newEndpoint->name = "workshedul$site_api_ulr";
+          $newEndpoint->end_point = $_ENV['APP_URL']."api/v1/workshedul".$site_api_ulr;
+          $newEndpoint->save();
+>>>>>>> b35657efb1fc4f7fd217a434934cded98588669d
 
           return "End point  save" ;
 

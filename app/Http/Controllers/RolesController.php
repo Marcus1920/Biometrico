@@ -13,9 +13,6 @@ class RolesController extends Controller
 
     public function index()
     {
-//        $roles=role::select(array('id','name','created_at','updated_at'));
-//
-//        return $roles;
         $roles=role::all();
         $selectedRole=User::first()->role_id;
 
@@ -24,18 +21,27 @@ class RolesController extends Controller
         $selectedCompany=User::first()->company_id;
 
         return view('auth.register',compact('roles','selectedRole','companies','selectedCompany'));
-
-
     }
 
+    public function create()
+    {
+        return view('Role.create');
+    }
 
-//
-//    public function show()
-//    {
-//        $roles=role::all();
-//
-//        return view('auth.register',compact('roles'));
-//    }
+    public function store(Request $request)
+    {
+        $newRole = new role();
+        $newRole->name = $request['name'];
+        $newRole->save();
 
+        return Redirect('/rolesList');
+    }
+
+    public function getRolesList()
+    {
+        $roles = role::all();
+
+        return view('Role.index',compact('roles'));
+    }
 
 }

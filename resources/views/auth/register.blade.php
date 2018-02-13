@@ -8,6 +8,7 @@
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+                        <form class="form-horizontal" action="storeUser" method="post">
                     {{--<form method="Post" action="/auth/register">--}}
                         {{ csrf_field() }}
 

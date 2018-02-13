@@ -178,6 +178,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        ConsoleTVs\Charts\ChartsServiceProvider::class,
+
 
     ],
 
@@ -229,6 +231,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
         //'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
+        'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
 
     ],
 

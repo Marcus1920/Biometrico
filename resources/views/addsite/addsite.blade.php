@@ -24,21 +24,10 @@
                 <div class="form-group row {{ $errors->has('company') ? ' has-error' : '' }}">
                     <label for="company"  class="col-sm-2 col-form-label">COMPANY</label>
 
-                    <div class="col-md-10 ">
+                        <div class="col-sm-10">
+                            <input type="text" disabled="disabled"  name="SITE_NAME" value={{$company->name}} class="form-control" id="inputPassword3" placeholder="">
+                        </div>
 
-                        <select class="form-control  " name="company_id">
-                            <option value="0" selected disabled>Select Company</option>
-
-                            @if($companies->count())
-
-                                @foreach($companies as $company)
-                                    <option value="{{$company->id}}"> {{$company->name}}</option>
-                                @endforeach
-                            @endif
-
-                        </select>
-
-                    </div>
                 </div>
  </br>
 
