@@ -27,12 +27,76 @@ class CompanyController extends Controller
 
     public function store(Request $request)
     {
+
+        $this->validate($request, [
+            'image' => 'mimes:jpeg,bmp,png', //only allow this type extension file.
+        ]);
+
+        $file = $request->file('image');
+        // image upload in public/upload folder.
+
+        $destinationFolder = "uploads";
+
+        if(!\File::exists($destinationFolder)) {
+            \File::makeDirectory($destinationFolder,0777,true);
+        }
+
+        $name =    $file->getClientOriginalName();
+
+        $file->move($destinationFolder,$name) ;
+
         $newCompany = new Company();
+        $newCompany->logo = env('APP_URL').$destinationFolder.'/'.$name;
         $newCompany->name = $request['name'];
+        $newCompany->color = env('APP_URL').$request->background;
         $newCompany->save();
 
         return redirect('/companyList');
     }
+
+    public function edit($id)
+    {
+        $company = Company::where('id',$id)->first();
+//        return $company->name;
+        return view('Company.edit',compact('company'));
+    }
+
+    public function save(Request $request)
+    {
+        $this->validate($request, [
+            'image' => 'mimes:jpeg,bmp,png', //only allow this type extension file.
+        ]);
+
+        $file = $request->file('image');
+        // image upload in public/upload folder.
+
+        if($file !=NULL)
+        {
+            $destinationFolder = "uploads";
+
+            if(!\File::exists($destinationFolder)) {
+                \File::makeDirectory($destinationFolder,0777,true);
+            }
+
+            $name =    $file->getClientOriginalName();
+
+            $file->move($destinationFolder,$name) ;
+
+            Company::where('id',$request['id'])
+                ->update(['logo'=>env('APP_URL').$destinationFolder.'/'.$name]);
+        }
+        if($request->background != NULL)
+        {
+            Company::where('id',$request['id'])
+                ->update(['color'=>env('APP_URL').$request->background]);
+        }
+
+        Company::where('id',$request['id'])
+            ->update(['name'=>$request['name']]);
+
+        return redirect('/companyList');
+    }
+
     public function CompanyList()
     {
        

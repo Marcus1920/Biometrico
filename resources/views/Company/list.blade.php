@@ -69,14 +69,14 @@
                     "columns": [
                         //                    {data: 'id', name: 'id'},
                         {data: 'id', name: 'id'},
-                        {data: 'name', name: 'name'}
+                        {data: 'name', name: 'name'},
 
 
-                        {{--{data: function(d)--}}
+                        {data: function(d)
 
-                            {{--{--}}
-                                {{--return "<a href='{!! url('selectSite/" + d.id + "') !!}' class='btn btn-sm glyphicon glyphicon-eye-open'>" + ' View' + "</a>";--}}
-                            {{--},"name" : 'name'},--}}
+                            {
+                                return "<a href='{!! url('editCompany/" + d.id + "') !!}' class='btn btn-sm glyphicon glyphicon-edit'>" + ' Edit' + "</a>";
+                            },"name" : 'name'},
 
 
 
