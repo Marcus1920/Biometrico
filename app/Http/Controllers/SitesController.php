@@ -49,7 +49,9 @@ class SitesController extends Controller
 
     public  function  getsitelist() {
 
-        $Site_tabs=Site::where('company_id',1)
+        $user = User::find(Auth::user()->id);
+
+        $Site_tabs=Site::where('company_id',$user->company_id)
             ->join('companies', 'sites.company_id', '=', 'companies.id')
             ->select(
                 \DB::raw(

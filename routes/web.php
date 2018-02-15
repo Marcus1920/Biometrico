@@ -14,6 +14,13 @@ use App\Site;
 |
 */
 
+
+// for image upload view
+Route::get('upload', 'UploadController@view');
+// for image upload
+Route::post('upload', 'UploadController@upload');
+
+
 Route::get('commad'   ,  function (){
 
     \Artisan::call('make:controller\n  commandccontrolller');
@@ -50,6 +57,10 @@ Route::get('/CreateCompany','CompanyController@create');
 
 Route::post('/storeCompany','CompanyController@store');
 
+Route::get('/editCompany/{id}','CompanyController@edit');
+
+Route::post('/saveCompany','CompanyController@save');
+
 Route::get('/companies','CompanyController@getCompanyList');
 
 Route::get('/companyList', function ()
@@ -59,6 +70,13 @@ Route::get('/companyList', function ()
 
 Route::get('charts', 'ReportsController@index');
 
+
+Route::get('landregister' , function ()
+{
+
+
+    return view ('auth.passwords.landRegiester');
+});
 
 Auth::routes();
 
