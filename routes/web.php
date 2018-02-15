@@ -14,13 +14,11 @@ use App\Site;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('createAdmin','SuperAdminController@create');
 
+Route::post('storeAdmin','SuperAdminController@store');
 
-// for image upload view
-Route::get('upload', 'UploadController@view');
-// for image upload
-Route::post('upload', 'UploadController@upload');
-
+Route::get('superAdminList','SuperAdminController@adminList');
 
 Route::get('commad'   ,  function (){
 

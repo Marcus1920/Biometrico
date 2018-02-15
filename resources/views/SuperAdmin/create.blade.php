@@ -3,12 +3,12 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <div> <h1>   Add     user  </h1>  </div>
+                <div> <h1>   Add Super Admin  </h1></div>
                 <div class="panel panel-default">
 
                     <div class="panel-body">
 
-                            <form class="form-horizontal" action="storeUser" method="post">
+                        <form class="form-horizontal" action="storeAdmin" method="post">
 
                             {{ csrf_field() }}
 
@@ -38,52 +38,6 @@
                                         <strong>{{ $errors->first('surname') }}</strong>
                                     </span>
                                     @endif
-                                </div>
-                            </div>
-
-                            </br>
-
-                            <div class="form-group{{ $errors->has('role') ? ' has-error' : '' }}">
-                                <label for="role"   style="text-align: left" class="col-md-4 control-label">ROLE</label>
-
-                                <div class="col-md-6 ">
-
-                                    <select class="form-control m-bot15" name="role">
-                                        <option value="0" selected disabled> Select Role</option>
-
-                                        @if ($roles->count())
-
-                                            @foreach($roles as $role)
-                                                <option value="{{ $role->id }}" {{ $selectedRole == $role->id ? 'selected="selected"' : '' }}>{{ $role->name }}
-                                                </option>
-                                            @endforeach
-
-                                        @endif
-
-                                    </select>
-
-                                </div>
-                            </div>
-
-                            </br>
-
-                            <div class="form-group{{ $errors->has('company') ? ' has-error' : '' }}">
-                                <label for="company"  style="text-align: left" class="col-md-4 control-label">COMPANY</label>
-
-                                <div class="col-md-6 ">
-
-                                    <select class="form-control m-bot15" name="company_id">
-                                        <option value="0" selected disabled>Select Company</option>
-
-                                        @if($companies->count())
-
-                                            @foreach($companies as $company)
-                                                <option value="{{$company->id}}"> {{$company->name}}</option>
-                                            @endforeach
-                                        @endif
-
-                                    </select>
-
                                 </div>
                             </div>
 
@@ -144,11 +98,11 @@
                                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                                 </div>
                             </div>
-  </br>
+                            </br>
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
                                     <button type="submit" class="btn  btn-danger"  style="background-color: forestgreen">
-                                         Add
+                                        Add
                                     </button>
                                 </div>
                             </div>
