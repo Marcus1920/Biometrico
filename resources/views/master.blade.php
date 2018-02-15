@@ -27,7 +27,7 @@ $sites = Site::with('company')->where('company_id',$user->company_id)
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <link rel="icon" type="image/x-icon" sizes="16x16" href="{{ asset('img/Biometrico-Logo-Final.jpg') }}">
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="{{ asset('img/BIOCLOUD.png') }}">
 
 
     <title>Biometrico</title>
