@@ -1,4 +1,5 @@
 <?php
+
 use App\Company;
 use App\Site;
 
@@ -76,10 +77,16 @@ Route::get('/registerUser', 'UsersController@registerUser')->name('register');
 
 Route::post('/storeUser', 'UsersController@create')->name('register');
 
+//Route::get('/regEmail', 'usersController@getname')->name('regEmail');
 
-Route::get('forgetPassword','UsersController@forgotPassword');
+Route::get('/regEmail', function ()
+{
+    return view('emails.forgetPassword');
+});
+
+//Route::get('forgetPassword','UsersController@forgotPassword');
 Route::get('Notifications.ResetPassword','UsersController@forgotPassword');
-Route::get('emails.forgetPassword','UsersController@forget');
+//Route::get('emails.forgetPassword','UsersController@__construct');
 //Route::get('emails.forgotPassword','UsersController@forgotPassword');
 
 Route::get('passwords.reset','UsersController@password');

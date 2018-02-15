@@ -1,13 +1,30 @@
 <?php
 
+namespace App\Services;
+
+use Illuminate\Foundation\Http\Requests;
+use App\User;
+
 class EmailService
 {
+
+    public function emailReg()
+    {
+
+//        return User::all();
+
+
+
+//        return $name;
+
+    }
+
         public  function forgotPassword($name,$password,$surname)
         {
         $response=array();
 
-        $email=input::get('emails');
-
+//        $email=input::get('emails');
+         $email='ok';
         $user=User::where('email','=',$email)->first();
 
         if(($user)>0)
@@ -23,7 +40,7 @@ class EmailService
 
             );
 
-            \Mail::send('email.forgetPassword', $data, function ($message) use ($user) {
+            \Mail::send('emails.forgetPassword', $data, function ($message) use ($user) {
                 $message->from('Info@Biometrico.com', 'Biometrico');
                 $message->to($user->email)->subject("Biometrico Notification! ");
 
@@ -31,7 +48,8 @@ class EmailService
 
             $response["message"] = "You have successfully resetted your password check  your  email for a new password";
 
-        } else {
+        } else
+            {
             $response["error"] = true;
             $response["message"] = "Sorry, you have not registered yet";
         }
@@ -39,13 +57,15 @@ class EmailService
         return \Response::json($response);
 
     }
-      public function registration()
-      {
-
-
-
-
-      }
+//
+//
+//      public function registration()
+//      {
+//
+//
+//
+//
+//      }
 
 
 

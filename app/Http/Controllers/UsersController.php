@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Egulias\EmailValidator\Warning\EmailTooLong;
 use Illuminate\Http\Request;
 use App\User;
 use App\Site;
@@ -11,17 +12,26 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth;
+use App\Services\EmailService;
 
 class UsersController extends Controller
 {
+//    protected $users;
+//
+//    public function  __construct(EmailService $users )
+//    {
+//        $this->User=$users;
+//    }
 
     public function registerUser()
     {
+
         $roles=role::all();
         $selectedRole=User::first()->role_id;
 
         $companies=Company::all();
         $selectedCompany=User::first()->company_id;
+
 
         return view('auth.registration',compact('roles','selectedRole','companies','selectedCompany'));
     }
@@ -55,6 +65,7 @@ class UsersController extends Controller
 
         return view('Users.users',compact('users'));
     }
+
 
     public function login()
     {
@@ -107,6 +118,29 @@ class UsersController extends Controller
             
         }
     }
+
+//    public function regEmail()
+//    {
+//        $email=new EmailService();
+//
+//        $email->emailReg();
+//
+//        return $email->emailReg();
+//    }
+
+
+  public function index(EmailService $service)
+
+  {
+      return $service->emailReg();
+
+  }
+  public function getname(EmailService $service)
+  {
+      return $service->forgotPassword('name','password','surname');
+  }
+
+
 
 //    public function password()
 //    {

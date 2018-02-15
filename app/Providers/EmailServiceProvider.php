@@ -2,12 +2,14 @@
 
 namespace App\Providers;
 
-//use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Event;
-use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use App\Services\EmailService;
+
+//use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
 
-class EmailService extends ServiceProvider
+class EmailServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -26,6 +28,11 @@ class EmailService extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(EmailService::class,function($app)
+        {
+            return new EmailService();
+
+        }
+        );
     }
 }
