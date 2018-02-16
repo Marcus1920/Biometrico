@@ -104,6 +104,7 @@ $sites = Site::with('company')->where('company_id',$user->company_id)
             width: 100%;
             height:100%;
             font-family: 'Open Sans', sans-serif;
+
             background-image: url("{{$user->company->color}}");
             background-repeat: no-repeat;
             background-size: cover;

@@ -63,6 +63,15 @@ Route::post('/saveCompany','CompanyController@save');
 
 Route::get('/companies','CompanyController@getCompanyList');
 
+
+
+Route::get('/registerConf',function()
+{
+    return view('emails.registrationEmail');
+});
+
+Route::get('/regServ','UsersController@create');
+
 Route::get('/companyList', function ()
 {
    return view('Company.list');
@@ -95,14 +104,18 @@ Route::get('/registerUser', 'UsersController@registerUser')->name('register');
 
 Route::post('/storeUser', 'UsersController@create')->name('register');
 
-//Route::get('/regEmail', 'usersController@getname')->name('regEmail');
 
-Route::get('/regEmail', function ()
-{
-    return view('emails.forgetPassword');
-});
 
+//---Reset Password----//
+
+//Route::get('/resetName', 'usersController@getname')->name('resetName');
+//
+//Route::get('/regEmail', function ()
+//{
+//    return view('emails.forgetPassword');
+//});
 //Route::get('forgetPassword','UsersController@forgotPassword');
+
 Route::get('Notifications.ResetPassword','UsersController@forgotPassword');
 //Route::get('emails.forgetPassword','UsersController@__construct');
 //Route::get('emails.forgotPassword','UsersController@forgotPassword');
@@ -856,4 +869,6 @@ Route::group(array('prefix' => 'api/v1'), function() {
 
 
     });
+
+
 });

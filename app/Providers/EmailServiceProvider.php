@@ -30,7 +30,9 @@ class EmailServiceProvider extends ServiceProvider
     {
         $this->app->bind(EmailService::class,function($app)
         {
-            return new EmailService();
+            return new EmailService(
+                $app->make('App\Service\EmailService')
+            );
 
         }
         );

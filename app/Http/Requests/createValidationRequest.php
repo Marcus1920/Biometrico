@@ -9,7 +9,7 @@ class createValidationRequest extends FormRequest
 
     public function authorize()
     {
-        return false;
+        return true;
     }
     public function rules()
     {
@@ -21,3 +21,4 @@ class createValidationRequest extends FormRequest
            ];
     }
 }
+

@@ -170,7 +170,7 @@
                 <div class="tile quick-stats media">
                     <div id="stats-line-4" class="pull-left"></div>
                     <div class="media-body">
-                        <h2 data-value={{ count($companyOwner,0) }}>0</h2>
+                        {{--<h2 data-value={{ count($companyOwner,0) }}>0</h2>--}}
                         <small>Company Owner</small>
                     </div>
                 </div>
@@ -180,7 +180,7 @@
                 <div class="tile quick-stats media">
                     <div id="stats-line-3" class="pull-left"></div>
                     <div class="media-body">
-                        <h2 data-value={{ count($users,0) }}>0</h2>
+                        {{--<h2 data-value={{ count($users,0) }}>0</h2>--}}
                         <small>Admin</small>
                     </div>
                 </div>
@@ -190,7 +190,7 @@
                 <div class="tile quick-stats media">
                     <div id="stats-line" class="pull-left"></div>
                     <div class="media-body">
-                        <h2 data-value={{ count($installer,0) }}>0</h2>
+                        {{--<h2 data-value={{ count($installer,0) }}>0</h2>--}}
                         <small>Installer</small>
                     </div>
                 </div>
@@ -200,7 +200,7 @@
                 <div class="tile quick-stats">
                     <div id="stats-line-2" class="pull-left"></div>
                     <div class="data">
-                        <h2 data-value={{ count($sites,0) }}>0</h2>
+                        {{--<h2 data-value={{ count($sites,0) }}>0</h2>--}}
                         <small>Sites</small>
                     </div>
                 </div>
