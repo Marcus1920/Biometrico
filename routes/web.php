@@ -66,8 +66,6 @@ Route::get('charts', 'ReportsController@index');
 
 Route::get('landregister' , function ()
 {
-
-
     return view ('auth.passwords.landRegiester');
 });
 

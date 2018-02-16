@@ -159,7 +159,9 @@
                     </a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="#">
 
                         Services
-                    </a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="landregister">Register</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="#">
+                    </a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="landregister">
+                        Register
+                    </a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="#">
                     </a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="#">
                     </a></li>
                 <li class="nav-item">
@@ -184,7 +186,10 @@
         <div class="video-container">
             <div class="title-container">
 
+                <section id="content" class="container">
 
+                    @yield('content')
+                </section>
                 <div class="container align-right">
                     <div class="row">
                         <div class="mbr-white col-lg-8 col-md-7 content-container">

@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Illuminate\Routing\Router;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -28,16 +29,33 @@ class RouteServiceProvider extends ServiceProvider
         parent::boot();
     }
 
+//    public function boot(Router $router)
+//    {
+//        //
+//
+//        parent::boot($router);
+//    }
+
     /**
      * Define the routes for the application.
      *
      * @return void
      */
-    public function map()
+    public function map(Router $router)
     {
+        $router->group(['namespace' => $this->namespace], function ($router) {
+            require base_path('/Routes/web1.php');
+        });
+
         $this->mapApiRoutes();
 
         $this->mapWebRoutes();
+
+//        $router->group(['domain' => 'status.example.com', 'namespace' => 'Status'], function($router) {
+////            require app_path('routes\web1.php');
+//            require "C:/xampp/htdocs/Biometrico/routes/web1.php";
+//        });
+
 
         //
     }
@@ -54,7 +72,18 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware('web')
              ->namespace($this->namespace)
              ->group(base_path('routes/web.php'));
+
+//        Route::middleware('web1')
+//            ->namespace($this->Web1Namespace)
+//            ->group(base_path('routes/web1.php'));
     }
+
+//    protected function mapWebRoutes1()
+//    {
+//        Route::middleware('web1')
+//            ->namespace($this->namespace)
+//            ->group(base_path('routes/web1.php'));
+//    }
 
     /**
      * Define the "api" routes for the application.
