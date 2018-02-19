@@ -21,7 +21,9 @@ class SiteRouteServices
 
          $space  =   "\r\n";
 
-         $route  = "/home/shakasabre/biometrico.shaka.cloud/routes/web.php" ;
+
+         $route  = "C:/Users/user-04/Desktop/Biome/Biometrico/routes/web.php" ;
+
          $routes  ="Route::group(array('prefix' => 'api/v1'), function() {"."\n"."\n".
 
 
@@ -56,6 +58,27 @@ class SiteRouteServices
 //        $newSite->end_point =   $_ENV['APP_URL']."api/v1".$site_api_ulr ;
 
 
+<<<<<<< HEAD
+//          $newSite->save();
+//
+//          $newEndpoint = new EndPoint();
+//          $newEndpoint->site_id = $newSite->id;
+//          $newEndpoint->name = "attendency$site_api_ulr";
+//          $newEndpoint->end_point = $_ENV['APP_URL']."api/v1/attendency".$site_api_ulr;
+//          $newEndpoint->save();
+//
+//          $newEndpoint = new EndPoint();
+//          $newEndpoint->site_id = $newSite->id;
+//          $newEndpoint->name = "clockinglist$site_api_ulr";
+//          $newEndpoint->end_point = $_ENV['APP_URL']."api/v1/clockinglist".$site_api_ulr;
+//          $newEndpoint->save();
+//
+//          $newEndpoint = new EndPoint();
+//          $newEndpoint->site_id = $newSite->id;
+//          $newEndpoint->name = "workshedul$site_api_ulr";
+//          $newEndpoint->end_point = $_ENV['APP_URL']."api/v1/workshedul".$site_api_ulr;
+//          $newEndpoint->save();
+=======
           $newSite->save();
 
           $newEndpoint = new EndPoint();
@@ -78,6 +101,7 @@ class SiteRouteServices
           $newEndpoint->name = "workshedul$site_api_ulr";
           $newEndpoint->end_point = $_ENV['APP_URL']."api/v1/workshedul".$site_api_ulr;
           $newEndpoint->save();
+>>>>>>> b35657efb1fc4f7fd217a434934cded98588669d
 
           return "End point  save" ;
 

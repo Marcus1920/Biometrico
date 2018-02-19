@@ -23,9 +23,14 @@ class SitesController extends Controller
 
     public function sites()
     {
-       $user = User::find(Auth::user()->id);
+        $user = User::find(Auth::user()->id);
 
-       $company = Company::find($user->company_id);
+        $company = Company::find($user->company_id);
+
+
+        $sites = Site::with('company')->where('company_id',$user->company_id)->get();
+
+        return view('auth.sites',compact('sites','company'));
 
        $users = User::where('company_id',$user->company_id)->where('role',1)->get();
 
@@ -36,8 +41,6 @@ class SitesController extends Controller
       $sites = Site::with('company')->where('company_id',$user->company_id)->get();
 
       return view('auth.sites',compact('sites','company','users','companyOwner','installer'));
-
-
 
 
 
@@ -59,7 +62,7 @@ class SitesController extends Controller
                         sites.db_name,
                         sites.site_code
                        
-				
+    
                  
                         
                         "
@@ -84,7 +87,7 @@ class SitesController extends Controller
         $site = Site::where('id',$id)->first();
 
 
-       try {
+        try {
 
 
             $shedule= \DB::connection($site->connection_name)->table('clocking_temp_print')
@@ -111,8 +114,8 @@ class SitesController extends Controller
 
         } catch (\Exception $e) {
 
-          return redirect('/404')->with('nick', $id);
-      }
+            return redirect('/404')->with('nick', $id);
+        }
 
 
     }
@@ -163,4 +166,3 @@ class SitesController extends Controller
 
 
 }
-

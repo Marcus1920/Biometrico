@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 @extends('master')
 
 @section('content')
@@ -47,3 +49,4 @@
     </div>
     </div>
 @endsection
+>>>>>>> b35657efb1fc4f7fd217a434934cded98588669d

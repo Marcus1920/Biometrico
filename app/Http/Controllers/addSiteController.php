@@ -35,9 +35,10 @@ class addSiteController extends Controller
 
     }
 
-
-    public  function  siteconfiguration  (Request $request) {
+    public  function  siteconfiguration  (Request $request)
+    {
         // Variable  Declation
+
 
         $user = User::find(Auth::user()->id);
 
@@ -48,7 +49,6 @@ class addSiteController extends Controller
         $site_api_ulr = strtolower($SiteUrl) ;
         $dbName = ''.$SiteName.'_db';
         $company_id   = $user->company_id;
-
 
 
         $errors = Validator::make($request->all(), [
@@ -64,16 +64,13 @@ class addSiteController extends Controller
         // Function  to  configure  the  Datatabase  connection
 
 
-          $new_site_connection = new SiteConnectionServices() ;
-          $new_site_connection->SetupDatabaseConnection($dbName ,$SiteName  ,$SiteName_conif) ;
-      //  $new_site_connection->SetupDatabaseConnectionLocal($dbName ,$SiteName  ,$SiteName_conif);
-          $new_site_connection->SetConnectionEnv($SiteName ,$SiteName_conif) ;
+        $new_site_connection = new SiteConnectionServices() ;
+        $new_site_connection->SetupDatabaseConnection($dbName ,$SiteName  ,$SiteName_conif) ;
+        //  $new_site_connection->SetupDatabaseConnectionLocal($dbName ,$SiteName  ,$SiteName_conif);
+        $new_site_connection->SetConnectionEnv($SiteName ,$SiteName_conif) ;
 
-         // $new_site_connection ->SetConnectionEnvLocal($SiteName ,$SiteName_conif);
 
-          $new_site_Controller  = new  SiteControllesServices() ;
-
-          $new_site_Controller ->SetupControllers($SiteController_conifg  , $SiteName) ;
+//          $new_site_Controller ->SetupControllers($SiteController_conifg  , $SiteName) ;
           $new_site_Routes    = new  SiteRouteServices() ;
 
           $new_site_Routes ->setupRoutes($site_api_ulr ,$SiteController_conifg )  ;
@@ -86,14 +83,21 @@ class addSiteController extends Controller
 //          $new_site_Schema->RunscriptRemote($SiteName);
 
 
+        $new_site_Controller  = new  SiteControllesServices() ;
 
+        $new_site_Controller ->SetupControllers($SiteController_conifg  , $SiteName) ;
+        $new_site_Routes    = new  SiteRouteServices() ;
 
+        $new_site_Routes ->setupRoutes($site_api_ulr ,$SiteController_conifg )  ;
+        $new_site_Routes ->SaveEndpoint($SiteName  ,$company_id, $site_api_ulr) ;
 
+        $new_site_Schema   = new  SiteDataSchemaServices () ;
 
+         $new_site_Schema->RunScriptlocal($dbName) ;
+
+//        $new_site_Schema->RunscriptRemote($SiteName);
 
         return redirect('/sites');
-
-
 
 
     }

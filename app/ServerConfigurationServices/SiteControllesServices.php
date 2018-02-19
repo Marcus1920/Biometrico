@@ -18,9 +18,11 @@ class SiteControllesServices
         $shedule  = "shedule" ;
         $record = "record";
         // Function  to  create  a  Controller
-        $fn = "C:/xampp/htdocs/Biometrico/app/Http/Controllers/AttendecyController.php";
+        $fn = "C:/Users/user-04/Desktop/Biome/Biometrico/app\Http/Controllers/AttendecyController.php";
 
-        $Create_controller = fopen("/home/shakasabre/biometrico.shaka.cloud/app/Http/Controllers/".$SiteController_conifg.".php", "w") ;
+
+        $Create_controller = fopen("C:/Users/user-04/Desktop/Biome/Biometrico/app/Http/Controllers/".$SiteController_conifg.".php", "w") ;
+
 
         $methode  = "<?php
 
