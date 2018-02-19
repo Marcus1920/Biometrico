@@ -100,6 +100,8 @@ Route::get('/registerUser', 'UsersController@registerUser')->name('register');
 
 Route::post('/storeUser', 'UsersController@create')->name('register');
 
+Route::post('/storeUserExternal','UsersController@createExternal');
+
 
 
 //---Reset Password----//

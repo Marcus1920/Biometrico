@@ -90,40 +90,57 @@
             </div>
             <div class="col-lg-4 col-md-5">
                 <div class="form-container">
-                    <div class="media-container-column" data-form-type="formoid">
+                    <div class="media-container-column">
                         <div data-form-alert="" hidden="" class="align-center">
                             Thanks for filling out the form!
                         </div>
-                        <form class="mbr-form" action="#" method="post" data-form-title="Mobirise Form"><input type="hidden" data-form-email="true" value="zCiAcMq8YtoRM1VGYxYMmoZMsLZmnwbHvgR3NG5pOBgGoY1HvVqYqWZfNkcDqnmcLGkwx7NCr+6B6/RTqM8FKlHzfkHzt0yeHVwkVcTsxN5mC5gEjfF4G8lCnyY/2Ddc">
+                        <form action="storeUserExternal" method="post" enctype="multipart/form-data">
+
+                            {{ csrf_field() }}
+
                             <div data-for="name">
                                 <div class="form-group">
-                                    <input type="text" class="form-control px-3" name="Company Name" data-form-field="Name" placeholder="First Name" required="" id="name-header15-c">
+                                    <input type="text" class="form-control px-3" name="companyName" data-form-field="Name" placeholder="Company Name" required="required" >
                                 </div>
                             </div>
                             <div data-for="name">
                                 <div class="form-group">
-                                    <input type="text" class="form-control px-3" name="name" data-form-field="Name" placeholder="Last Name " required="" id="name-header15-c">
+                                    <input type="file" name="image" id="file">
                                 </div>
                             </div>
                             <div data-for="name">
                                 <div class="form-group">
-                                    <input type="text" class="form-control px-3" name="name" data-form-field="Name" placeholder="Company Name" required="" id="name-header15-c">
+                                    <input type="text" class="form-control px-3" name="name" data-form-field="Name" placeholder="First Name " required="required">
                                 </div>
                             </div>
                             <div data-for="name">
                                 <div class="form-group">
-                                    <input type="email " class="form-control px-3" name="name" data-form-field="Name" placeholder="Email Adress " required="" id="name-header15-c">
+                                    <input type="text" class="form-control px-3" name="surname" data-form-field="Name" placeholder="Last Name " required="required">
                                 </div>
                             </div>
                             <div data-for="name">
                                 <div class="form-group">
-                                    <input type="text" class="form-control px-3" name="name" data-form-field="Name" placeholder="Phone Number" required="" id="name-header15-c">
+                                    <input type="text" class="form-control px-3" name="cellphone" data-form-field="Name" placeholder="cellphone" required="required">
+                                </div>
+                            </div>
+                            <div data-for="name">
+                                <div class="form-group">
+                                    <input type="email " class="form-control px-3" name="email" data-form-field="Name" placeholder="Email Adress " required="required">
+                                </div>
+                            </div>
+                            <div data-for="name">
+                                <div class="form-group">
+                                    <input type="text" class="form-control px-3" name="password" data-form-field="Name" placeholder="Password" required="required">
                                 </div>
                             </div>
 
 
 
-                            <span class="input-group-btn"><button href="" type="submit" class="btn btn-form btn-primary-outline display-4">REGISTER&nbsp;</button></span>
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn  btn-danger"  style="background-color: forestgreen">
+                                         Add
+                                    </button>
+                            </span>
                         </form>
                     </div>
                 </div>

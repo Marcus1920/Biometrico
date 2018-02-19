@@ -73,6 +73,51 @@ class UsersController extends Controller
 
     }
 
+    public function createExternal(Request $request)
+    {
+        $this->validate($request, [
+            'image' => 'mimes:jpeg,bmp,png', //only allow this type extension file.
+        ]);
+
+        $file = $request->file('image');
+        // image upload in public/upload folder.
+
+        $destinationFolder = "uploads";
+
+        if(!\File::exists($destinationFolder)) {
+            \File::makeDirectory($destinationFolder,0777,true);
+        }
+
+        $name =    $file->getClientOriginalName();
+
+        $file->move($destinationFolder,$name) ;
+
+        $default = "Background/5.jpg";
+
+        $newCompany = new Company();
+        $newCompany->logo = env('APP_URL').$destinationFolder.'/'.$name;
+        $newCompany->name = $request['companyName'];
+        $newCompany->color = env('APP_URL').$default;
+        $newCompany->save();
+
+
+        $hasher = app()->make('hash');
+
+        $user = new User();
+        $user->name = $request['name'];
+        $user->surname = $request['surname'];
+        $user->company_id = $newCompany->id;
+        $user->role = 2;
+        $user->cellphone = $request['cellphone'];
+        $user->email = $request['email'];
+        $user->password = $hasher->make($request['password']);
+
+        $user->save();
+
+        return "ok";
+
+    }
+
 
     public function getUserList()
     {

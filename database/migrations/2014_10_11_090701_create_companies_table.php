@@ -18,6 +18,7 @@ class CreateCompaniesTable extends Migration
             $table->string('name');
             $table->string('logo');
             $table->string('color');
+            $table->integer('active');
             $table->timestamps();
         });
     }

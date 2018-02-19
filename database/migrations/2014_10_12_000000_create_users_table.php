@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('cellphone');
             $table->string('email');
             $table->string('password');
+            $table->integer('active');
             $table->foreign('company_id')->references('id')->on('companies');
             $table->foreign('role')->references('id')->on('roles');
             $table->rememberToken();
