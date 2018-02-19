@@ -153,6 +153,8 @@ Route::group(array('prefix' => 'api/v1'), function()
 
 });
 
+Route::get('/selectSite/{id}', 'SitesController@selectSite');
+
 
 Route::get('addsite', 'addSiteController@index')->name('addsite');
 
