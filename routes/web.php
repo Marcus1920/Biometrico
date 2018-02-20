@@ -54,6 +54,8 @@ Route::post('/storeRole','RolesController@store');
 
 Route::get('/usersList','UsersController@getUserList');
 
+Route::get('/activeUserList','UsersController@getDeactivetedList');
+
 Route::get('/rolesList','RolesController@getRolesList');
 
 Route::get('/CreateCompany','CompanyController@create');
@@ -108,6 +110,7 @@ Route::post('/storeUser', 'UsersController@create')->name('register');
 Route::post('/storeUserExternal','UsersController@createExternal');
 
 Route::get('/activateUser/{id}','UsersController@activate');
+Route::get('/deactiveUser/{id}','UsersController@deactive');
 
 
 //---Reset Password----//

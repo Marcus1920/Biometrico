@@ -56,7 +56,7 @@
                             </tr>
                             <tr>
                                 <td width="100%" style="font-family: helvetica, Arial, sans-serif; font-size: 18px; letter-spacing: 0px; text-align: center; color:#2E363F;">
-                                    Thank you! for you registration. Please take note of your login credentials:
+                                   {{$content}}
                                 </td>
                             </tr>
                             <tr><!-- spacing bottom -->

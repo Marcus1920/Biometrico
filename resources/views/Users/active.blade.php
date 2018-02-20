@@ -5,7 +5,7 @@
         {{--<li class="active"><a>  </a></li>--}}
         {{--<li class="active"><a>Posts</a></li>--}}
     </ol>
-    <h4 class="page-title">DeActive Users Listing</h4>
+    <h4 class="page-title">Active Users Listing</h4>
 
     <div class="row">
         <div class="col-md-12" >
@@ -87,7 +87,7 @@
                         {data: function(d)
 
                         {
-                        return "<a href='{!! url('activateUser/" + d.id + "') !!}' class='btn btn-sm glyphicon glyphicon-edit'>" + ' Activate' + "</a>";
+                            return "<a href='{!! url('deactiveUser/" + d.id + "') !!}' class='btn btn-sm glyphicon glyphicon-edit'>" + ' DeActivate' + "</a>";
                         },"name" : 'name'},
 
 

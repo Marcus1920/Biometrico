@@ -8,15 +8,16 @@ use App\User;
 
 class EmailService
 {
-    public  function sendRegister($data,$email)
+    public  function sendRegister($data,$email,$subject)
     {
 
-        \Mail::send('emails.registrationEmail' ,$data, function ($message) use ($email)
+        \Mail::send('emails.registrationEmail' ,$data, function ($message) use ($email,$subject)
         {
             $message->from('info@biometrico.com', "BioCloud");
-            $message->subject("successfully registered");
+            $message->subject($subject);
             $message->to($email);
         });
+
 
         return redirect('usersList');
     }

@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth;
 use App\Services\EmailService;
 
+
 class UsersController extends Controller
 {
 //    protected $users;
@@ -61,12 +62,15 @@ class UsersController extends Controller
             'email' =>$user->email,
             'password'=>$data['password'],
 
-            'message1'=> "User Registration Confirmation"
+            'message1'=> "User Registration Confirmation",
+            'content'=>" Thank you! for you registration. Please take note of your login credentials"
         );
+
+        $subject = "successfully registered";
 
         $newEmailService= new EmailService();
 
-        $newEmailService->sendRegister($data,$email);
+        $newEmailService->sendRegister($data,$email,$subject);
 
 //        return "you are successufully registered";
         return redirect('usersList');
@@ -121,6 +125,8 @@ class UsersController extends Controller
 
     public function getUserList()
     {
+
+
         $user = User::find(Auth::user()->id);
 
         $users = User::where('company_id',$user->company_id)
@@ -134,16 +140,86 @@ class UsersController extends Controller
     }
 
 
+
     public function activate($id)
     {
-
-
-
 
         User::where('id',$id)
             ->update(['active'=>1]);
 
-        return "okay";
+        $users=User::find($id)->first();
+
+
+        $data = array(
+
+            'name'      =>      $users->name,
+            'email' =>      $users->email,
+            'password'=>   "",
+
+
+            'message1'=> "User Activation Confirmation",
+            'content'=>"Congratulations! You have been approved, you can use the following credentials to logging. Email: $users->email  Password: $users->password"
+
+                     );
+
+        $email=$users->email;
+
+        $subject = "Approval notification";
+
+        $newEmailService= new EmailService();
+
+        $newEmailService->sendRegister($data,$email,$subject);
+
+
+        return Redirect::to('/activeUserList');
+    }
+
+    public function getDeactivetedList()
+    {
+        $user = User::find(Auth::user()->id);
+
+        $users = User::where('company_id',$user->company_id)
+            ->where('active',1)
+            ->with('company')
+            ->with('role')
+            ->orderBy('id','DESC')
+            ->get();
+
+        return view('Users.active',compact('users'));
+    }
+
+    public function deactive($id)
+    {
+
+        User::where('id',$id)
+            ->update(['active'=>0]);
+
+
+        $users=User::find($id);
+
+        $data = array(
+
+            'name'      =>      $users->name,
+            'email' =>      $users->email,
+
+            'password'=>   $users->password,
+
+            'message1'=> "User DeActivation Confirmation",
+            'content'=>"Your account has been Suspended!!!:  "
+
+
+        );
+
+        $email=$users->email;
+
+        $subject = "Inactivation notification";
+
+        $newEmailService= new EmailService();
+
+        $newEmailService->sendRegister($data,$email,$subject);
+
+
+        return Redirect::to('/usersList');
     }
 
 

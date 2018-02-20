@@ -75,7 +75,6 @@
 <section class="engine"><a href="https://mobirise.co/l">free bootstrap themes</a></section><section class="cid-qJxBlyJKpn mbr-fullscreen mbr-parallax-background" id="header15-c">
 
 
-
     <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(7, 59, 76);"></div>
 
     <div class="container align-right">
@@ -134,8 +133,6 @@
                                 </div>
                             </div>
 
-
-
                             <span class="input-group-btn">
                                 <button type="submit" class="btn  btn-danger"  style="background-color: forestgreen">
                                          Add
@@ -149,7 +146,6 @@
     </div>
 
 </section>
-
 
 <script src="assets/web/assets/jquery/jquery.min.js"></script>
 <script src="assets/tether/tether.min.js"></script>
