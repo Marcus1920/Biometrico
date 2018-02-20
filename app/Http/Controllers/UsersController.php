@@ -124,12 +124,26 @@ class UsersController extends Controller
         $user = User::find(Auth::user()->id);
 
         $users = User::where('company_id',$user->company_id)
+            ->where('active',0)
             ->with('company')
             ->with('role')
             ->orderBy('id','DESC')
             ->get();
 
         return view('Users.users',compact('users'));
+    }
+
+
+    public function activate($id)
+    {
+
+
+
+
+        User::where('id',$id)
+            ->update(['active'=>1]);
+
+        return "okay";
     }
 
 

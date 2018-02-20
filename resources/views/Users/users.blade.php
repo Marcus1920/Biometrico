@@ -5,7 +5,7 @@
         {{--<li class="active"><a>  </a></li>--}}
         {{--<li class="active"><a>Posts</a></li>--}}
     </ol>
-    <h4 class="page-title">Users Listing</h4>
+    <h4 class="page-title">Inactive Users Listing</h4>
 
     <div class="row">
         <div class="col-md-12" >
@@ -26,7 +26,7 @@
                                 <th>cellphone</th>
                                 <th>role</th>
                                 <th>email</th>
-                                {{--<th>Delete</th>--}}
+                                <th>Activate</th>
                             </tr>
                             </thead>
                         </table>
@@ -81,14 +81,14 @@
                         {data: 'surname', name: 'surname'},
                         {data: 'cellphone', name: 'cellphone'},
                         {data: 'role.name', name: 'role.name'},
-                        {data: 'email', name: 'email'}
+                        {data: 'email', name: 'email'},
 
 
-                        {{--{data: function(d)--}}
+                        {data: function(d)
 
-                        {{--{--}}
-                        {{--return "<a href='{!! url('selectSite/" + d.id + "') !!}' class='btn btn-sm glyphicon glyphicon-eye-open'>" + ' View' + "</a>";--}}
-                        {{--},"name" : 'name'},--}}
+                        {
+                        return "<a href='{!! url('activateUser/" + d.id + "') !!}' class='btn btn-sm glyphicon glyphicon-edit'>" + ' Activate' + "</a>";
+                        },"name" : 'name'},
 
 
 
