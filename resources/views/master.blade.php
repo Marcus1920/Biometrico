@@ -271,7 +271,7 @@ $sites = Site::with('company')->where('company_id',$user->company_id)
                 <ul class="list-unstyled menu-item">
                     <li><a href="{{ url('superAdminList') }}"><span class="badge badge-r"></span>Super Admin List</a></li>
                     <li><a href="{{ url('registerUser') }}"><span class="badge badge-r"></span>Register User</a></li>
-                    <li><a href="{{ url('usersList') }}"><span class="badge badge-r"></span>User List</a></li>
+                    <li><a href="{{ url('usersList') }}"><span class="badge badge-r"></span>Inactive User List</a></li>
                     <li><a href="{{ url('companyList') }}"><span class="badge badge-r"></span>Company List</a></li>
                     <li><a href="{{ url('rolesList') }}"><span class="badge badge-r"></span>Roles List</a></li>
                     <li><a href="{{ url('addsite') }}"><span class="badge badge-r"></span>Add Site </a></li>

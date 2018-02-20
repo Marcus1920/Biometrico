@@ -102,6 +102,7 @@ Route::post('/storeUser', 'UsersController@create')->name('register');
 
 Route::post('/storeUserExternal','UsersController@createExternal');
 
+Route::get('/activateUser/{id}','UsersController@activate');
 
 
 //---Reset Password----//
