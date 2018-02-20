@@ -13,6 +13,11 @@ use App\Site;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('midleware' , function () {
+
+   return "i am  an  open  Mildle ware " ;
+})->middleware('lastlogin');
 Route::get('createAdmin','SuperAdminController@create');
 
 Route::post('storeAdmin','SuperAdminController@store');
