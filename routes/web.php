@@ -32,12 +32,23 @@ Route::get('404' , function ()
 
 Route::get('/', function () {
 
-    $allCompanies = Company::all();
-
-    $allSites = Site::all();
-
-    return view('auth.login', compact('allCompanies'));
+    return view('auth.login');
 });
+
+Route::group(['middleware' => ['web']], function () {
+Route::post('adminLogin','AdminController@login');
+});
+
+
+Route::group(['middleware' => ['web']], function () {
+
+    Route::get('/admin', 'AdminController@index');
+
+});
+
+Route::get('adminDashboard','AdminController@dashboard');
+
+
 
 //-------------------------------------------------------------------------------
 //Password Reset RoutesS
