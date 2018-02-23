@@ -255,6 +255,7 @@
                                 <th>ID</th>
                                 <th>Name</th>
                                 <th>Company</th>
+                                <th>View</th>
                             </tr>
                             </thead>
                         </table>
@@ -534,6 +535,11 @@ jQuery UI -->
                     {data: 'id', name: 'id'},
                     {data: 'site_name', name: 'site_name'},
                     {data: 'company.name', name: 'company.name'},
+                    {data: function(d)
+
+                        {
+                            return "<a href='{!! url('selectSite/" + d.id + "') !!}' class='btn btn-sm glyphicon glyphicon-edit'>" + ' View' + "</a>";
+                        },"name" : 'name'},
                 ],
 
                 "aoColumnDefs": [
