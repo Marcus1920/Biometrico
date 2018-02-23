@@ -16,7 +16,7 @@ use App\Site;
 
 Route::get('midleware' , function () {
 
-   return "i am  an  open  Mildle ware " ;
+
 })->middleware('lastlogin');
 Route::get('createAdmin','SuperAdminController@create')
 
@@ -43,12 +43,23 @@ Route::get('404' ,['middleware'=>'authenticated', function ()
 
 Route::get('/', function () {
 
-    $allCompanies = Company::all();
-
-    $allSites = Site::all();
-
-    return view('auth.login', compact('allCompanies'));
+    return view('auth.login');
 });
+
+Route::group(['middleware' => ['web']], function () {
+Route::post('adminLogin','AdminController@login');
+});
+
+
+Route::group(['middleware' => ['web']], function () {
+
+    Route::get('/admin', 'AdminController@index');
+
+});
+
+Route::get('adminDashboard','AdminController@dashboard');
+
+
 
 //-------------------------------------------------------------------------------
 //Password Reset RoutesS

@@ -27,21 +27,21 @@ class UsersController extends Controller
     public function registerUser()
     {
 
-        $roles=role::all();
-        $selectedRole=User::first()->role_id;
+        $roles = role::all();
+        $selectedRole = User::first()->role_id;
 
-        $companies=Company::all();
-        $selectedCompany=User::first()->company_id;
+        $companies = Company::all();
+        $selectedCompany = User::first()->company_id;
 
 
-        return view('auth.registration',compact('roles','selectedRole','companies','selectedCompany'));
+        return view('auth.registration', compact('roles', 'selectedRole', 'companies', 'selectedCompany'));
     }
 
 
     public function create(Request $data)
     {
 
-         $hasher = app()->make('hash');
+        $hasher = app()->make('hash');
 
         $user = new User();
         $user->name = $data['name'];
@@ -56,22 +56,22 @@ class UsersController extends Controller
 
         $email = $user->email;
 
-        $data=array
+        $data = array
         (
-            'name' =>$user->name,
-            'email' =>$user->email,
-            'password'=>$data['password'],
+            'name' => $user->name,
+            'email' => $user->email,
+            'password' => $data['password'],
 
-            'message1'=> "User Registration Confirmation",
-            'content'=>" Thank you! for your registration. Please take note of your login credentials"
+            'message1' => "User Registration Confirmation",
+            'content' => " Thank you! for your registration. Please take note of your login credentials"
         );
 
 
         $subject = "successfully registered";
 
-        $newEmailService= new EmailService();
+        $newEmailService = new EmailService();
 
-        $newEmailService->sendRegister($data,$email,$subject);
+        $newEmailService->sendRegister($data, $email, $subject);
 
 
 //        return "you are successufully registered";
@@ -82,6 +82,7 @@ class UsersController extends Controller
 
     public function createExternal(Request $request)
     {
+
         $this->validate($request, [
             'image' => 'mimes:jpeg,bmp,png', //only allow this type extension file.
         ]);
@@ -91,21 +92,24 @@ class UsersController extends Controller
 
         $destinationFolder = "uploads";
 
-        if(!\File::exists($destinationFolder)) {
-            \File::makeDirectory($destinationFolder,0777,true);
+        if (!\File::exists($destinationFolder)) {
+            \File::makeDirectory($destinationFolder, 0777, true);
         }
 
 //        $name =    $file->getClientOriginalName();
-        $name="";
+        $name = "";
 
 //        $file->move($destinationFolder,$name) ;
+
+        $defaultLogo = "img/Biometrico-Logo-Final.jpg";
+
 
         $default = "Background/5.jpg";
 
         $newCompany = new Company();
-        $newCompany->logo = env('APP_URL').$destinationFolder.'/'.$name;
+        $newCompany->logo = env('APP_URL') . $defaultLogo;
         $newCompany->name = $request['companyName'];
-        $newCompany->color = env('APP_URL').$default;
+        $newCompany->color = env('APP_URL') . $default;
         $newCompany->save();
 
 
@@ -125,23 +129,23 @@ class UsersController extends Controller
 
         $data = array(
 
-            'name'      =>      $user->name,
-            'email' =>      $user->email,
-            'password'=>  $request['password'],
+            'name' => $user->name,
+            'email' => $user->email,
+            'password' => $request['password'],
 
 
-            'message1'=> "Welcome to BioCloud",
-            'content'=>"Congratulations! We have received your registration,please wait for the approval email, you can use the following credentials to logging."
+            'message1' => "Welcome to BioCloud",
+            'content' => "Congratulations! We have received your registration,please wait for the approval email, you can use the following credentials to logging."
 
         );
 
-        $email=$user->email;
+        $email = $user->email;
 
         $subject = "Welcome User";
 
-        $newEmailService= new EmailService();
+        $newEmailService = new EmailService();
 
-        $newEmailService->sendRegister($data,$email,$subject);
+        $newEmailService->sendRegister($data, $email, $subject);
 
         return redirect('landregister');
 
@@ -156,46 +160,46 @@ class UsersController extends Controller
 
         $user = User::find(Auth::user()->id);
 
-        $users = User::where('company_id',$user->company_id)
-            ->where('active',0)
+        $users = User::where('company_id', $user->company_id)
+            ->where('active', 0)
             ->with('company')
             ->with('role')
-            ->orderBy('id','DESC')
+            ->orderBy('id', 'DESC')
             ->get();
 
-        return view('Users.users',compact('users'));
+        return view('Users.users', compact('users'));
     }
 
-    
+
     public function activate($id)
     {
 
-        User::where('id',$id)
-            ->update(['active'=>1]);
+        User::where('id', $id)
+            ->update(['active' => 1]);
 
-        $users=User::find($id)->first();
+        $users = User::find($id)->first();
 
 
         $data = array(
 
-            'name'      =>      $users->name,
-            'email' =>      $users->email,
-            'password'=>   "",
+            'name' => $users->name,
+            'email' => $users->email,
+            'password' => "",
 
 
-            'message1'=> "User Activation Confirmation",
-            'content'=>"Congratulations! You have been approved, you can use the following credentials to logging. Email: $users->email  Password: $users->password",
+            'message1' => "User Activation Confirmation",
+            'content' => "Congratulations! You have been approved, you can use the following credentials to logging. Email: $users->email  Password: $users->password",
             'login' => "click here to login"
 
-                     );
+        );
 
-        $email=$users->email;
+        $email = $users->email;
 
         $subject = "Approval notification";
 
-        $newEmailService= new EmailService();
+        $newEmailService = new EmailService();
 
-        $newEmailService->sendRegister($data,$email,$subject);
+        $newEmailService->sendRegister($data, $email, $subject);
 
 
         return Redirect::to('/activeUserList');
@@ -205,45 +209,45 @@ class UsersController extends Controller
     {
         $user = User::find(Auth::user()->id);
 
-        $users = User::where('company_id',$user->company_id)
-            ->where('active',1)
+        $users = User::where('company_id', $user->company_id)
+            ->where('active', 1)
             ->with('company')
             ->with('role')
-            ->orderBy('id','DESC')
+            ->orderBy('id', 'DESC')
             ->get();
 
-        return view('Users.active',compact('users'));
+        return view('Users.active', compact('users'));
     }
 
     public function deactive($id)
     {
 
 
-        User::where('id',$id)
-            ->update(['active'=>0]);
+        User::where('id', $id)
+            ->update(['active' => 0]);
 
 
-        $users=User::find($id);
+        $users = User::find($id);
         $data = array(
 
-            'name'      =>      $users->name,
-            'email' =>      $users->email,
+            'name' => $users->name,
+            'email' => $users->email,
 
-            'password'=>   $users->password,
+            'password' => $users->password,
 
-            'message1'=> "User DeActivation Confirmation",
-            'content'=>"Your account has been Suspended!!!:  ",
+            'message1' => "User DeActivation Confirmation",
+            'content' => "Your account has been Suspended!!!:  ",
             'login' => ""
 
         );
 
-        $email=$users->email;
+        $email = $users->email;
 
         $subject = "Inactivation notification";
 
-        $newEmailService= new EmailService();
+        $newEmailService = new EmailService();
 
-        $newEmailService->sendRegister($data,$email,$subject);
+        $newEmailService->sendRegister($data, $email, $subject);
 
 
         return Redirect::to('/usersList');
@@ -258,14 +262,12 @@ class UsersController extends Controller
         $email = Input::get('email');
         $password = Input::get('password');
 
-        $login = User::where('email',$email)
+        $login = User::where('email', $email)
             ->first();
 
-        if($login != NULL)
-        {
-            if ($hasher->check($password, $login->password))
-            {
-                $user  = User::where('email',$login->email)
+        if ($login != NULL) {
+            if ($hasher->check($password, $login->password)) {
+                $user = User::where('email', $login->email)
                     ->join('roles', 'users.role', '=', 'roles.id')
                     ->join('companies', 'users.company_id', '=', 'companies.id')
                     ->select(
@@ -286,33 +288,27 @@ class UsersController extends Controller
                     ->first();
 
                 return response()->json($user);
+            } else {
+                $response["msg"] = 'Wrong Email or  Password';
+                return response()->json($response);
             }
-            else
-            {
-                $response["msg"] = 'Wrong Email or  Password'; 
-              return response()->json($response);
-            }
-        }
-        else
-        {
-               $response["msg"] = 'Wrong Email or  Password'; 
-              return response()->json($response);
+        } else {
+            $response["msg"] = 'Wrong Email or  Password';
+            return response()->json($response);
 
         }
     }
 
 
-    public  function forgotPassword()
+    public function forgotPassword()
     {
-        $response=array();
+        $response = array();
 
-        $email=input::get('emails');
+        $email = input::get('emails');
 
-        $user=User::where('email','=',$email)->first();
+        $user = User::where('email', '=', $email)->first();
 
-        if(($user)>0)
-
-        {
+        if (($user) > 0) {
             $message = "your  new  password  is  ";
             $response["error"] = false;
             $data = array(
@@ -338,87 +334,12 @@ class UsersController extends Controller
 
         return \Response::json($response);
 
-        }
+    }
 
-        public  function forget()
-        {
-            return view('emails.forgetPassword');
-        }
-
-
-
-
-    //    public function regEmail()
-//    {
-//        $email=new EmailService();
-//
-//        $email->emailReg();
-//
-//        return $email->emailReg();
-//    }
-
-
-//  public function index(EmailService $service)
-//
-//  {
-//      return $service->emailReg();
-//
-//  }
-
-//  public function getname(EmailService $service)
-//  {
-//
-//
-//      $email=input::get('emails');
-//      return $service->forgotPassword('mozaamisi93@gmail.com');
-//  }
-//
-//
-//
-//  public function regSent( EmailService $service)
-//  {
-//
-//      $email= new EmailService();
-//
-//      $this->sendRegister($email);
-//
-//
-//  }
-
-//    public function password()
-//    {
-//        return view('passwords.rest');
-//    }
-
-//    public function resetPasword( Request $request)
-//    {
-//        $this->validate($request, [
-//            'password' => 'required|confirmed|min:6',
-//        ]);
-//
-//        $user = $request->user();
-//        $user->password = bcrypt($request->get('password'));
-//        $user->save();
-//
-//        return redirect()->route('home');
-//
-//    }
-
-
-//
-//        Mail::send('emails.registrationEmail',$data,function ($message) use ($user)
-//        {
-//            $message->from('biometrico.com', "Biometrico");
-//            $message->to($user->email('mozaamisi93@gmail.com'));
-//            $message->subject("successfully registered");
-////            $message->to($user['mozaamisi93@gmail.com']);
-//        });
-
-//        $email =new EmailService('name,surname,email');
-//
-//        return $data->sendRegister('mozaamisi93@gmail.com');
-
-//        return $service->forgotPassword('mozaamisi93@gmail.com');
+    public function forget()
+    {
+        return view('emails.forgetPassword');
+    }
 
 
 }

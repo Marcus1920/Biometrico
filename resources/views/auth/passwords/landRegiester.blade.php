@@ -104,11 +104,6 @@
                             </div>
                             <div data-for="name">
                                 <div class="form-group">
-                                    <input type="file" name="image" id="file">
-                                </div>
-                            </div>
-                            <div data-for="name">
-                                <div class="form-group">
                                     <input type="text" class="form-control px-3" name="name" data-form-field="Name" placeholder="First Name " required="required">
                                 </div>
                             </div>

@@ -8,6 +8,7 @@
 use App\User;
 use App\role;
 use App\Site;
+use App\SuperAdmin;
 
 $user = User::where('id',Auth::user()->id )->with('company')->first();
 
