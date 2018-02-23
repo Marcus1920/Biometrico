@@ -63,8 +63,9 @@ class UsersController extends Controller
             'password'=>$data['password'],
 
             'message1'=> "User Registration Confirmation",
-            'content'=>" Thank you! for you registration. Please take note of your login credentials"
+            'content'=>" Thank you! for your registration. Please take note of your login credentials"
         );
+
 
         $subject = "successfully registered";
 
@@ -72,8 +73,10 @@ class UsersController extends Controller
 
         $newEmailService->sendRegister($data,$email,$subject);
 
+
 //        return "you are successufully registered";
         return redirect('usersList');
+
 
     }
 
@@ -92,9 +95,10 @@ class UsersController extends Controller
             \File::makeDirectory($destinationFolder,0777,true);
         }
 
-        $name =    $file->getClientOriginalName();
+//        $name =    $file->getClientOriginalName();
+        $name="";
 
-        $file->move($destinationFolder,$name) ;
+//        $file->move($destinationFolder,$name) ;
 
         $default = "Background/5.jpg";
 
@@ -118,7 +122,30 @@ class UsersController extends Controller
 
         $user->save();
 
-        return "ok";
+
+        $data = array(
+
+            'name'      =>      $user->name,
+            'email' =>      $user->email,
+            'password'=>  $request['password'],
+
+
+            'message1'=> "Welcome to BioCloud",
+            'content'=>"Congratulations! We have received your registration,please wait for the approval email, you can use the following credentials to logging."
+
+        );
+
+        $email=$user->email;
+
+        $subject = "Welcome User";
+
+        $newEmailService= new EmailService();
+
+        $newEmailService->sendRegister($data,$email,$subject);
+
+        return redirect('landregister');
+
+//        return "ok";
 
     }
 
@@ -139,8 +166,7 @@ class UsersController extends Controller
         return view('Users.users',compact('users'));
     }
 
-
-
+    
     public function activate($id)
     {
 
@@ -158,7 +184,8 @@ class UsersController extends Controller
 
 
             'message1'=> "User Activation Confirmation",
-            'content'=>"Congratulations! You have been approved, you can use the following credentials to logging. Email: $users->email  Password: $users->password"
+            'content'=>"Congratulations! You have been approved, you can use the following credentials to logging. Email: $users->email  Password: $users->password",
+            'login' => "click here to login"
 
                      );
 
@@ -191,12 +218,12 @@ class UsersController extends Controller
     public function deactive($id)
     {
 
+
         User::where('id',$id)
             ->update(['active'=>0]);
 
 
         $users=User::find($id);
-
         $data = array(
 
             'name'      =>      $users->name,
@@ -205,8 +232,8 @@ class UsersController extends Controller
             'password'=>   $users->password,
 
             'message1'=> "User DeActivation Confirmation",
-            'content'=>"Your account has been Suspended!!!:  "
-
+            'content'=>"Your account has been Suspended!!!:  ",
+            'login' => ""
 
         );
 
@@ -221,7 +248,6 @@ class UsersController extends Controller
 
         return Redirect::to('/usersList');
     }
-
 
     public function login()
     {
@@ -271,7 +297,7 @@ class UsersController extends Controller
         {
                $response["msg"] = 'Wrong Email or  Password'; 
               return response()->json($response);
-            
+
         }
     }
 

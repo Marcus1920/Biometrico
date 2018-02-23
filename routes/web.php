@@ -18,11 +18,17 @@ Route::get('midleware' , function () {
 
    return "i am  an  open  Mildle ware " ;
 })->middleware('lastlogin');
-Route::get('createAdmin','SuperAdminController@create');
+Route::get('createAdmin','SuperAdminController@create')
+
+   ->name('createAdmin')
+   ->middleware('authenticated');
 
 Route::post('storeAdmin','SuperAdminController@store');
 
-Route::get('superAdminList','SuperAdminController@adminList');
+Route::get('superAdminList','SuperAdminController@adminList')
+
+   ->name('superAdminList')
+   ->middleware('authenticated');
 
 Route::get('commad'   ,  function (){
 
@@ -30,10 +36,10 @@ Route::get('commad'   ,  function (){
 
 }) ;
 
-Route::get('404' , function ()
+Route::get('404' ,['middleware'=>'authenticated', function ()
 {
     return view('404');
-});
+}]);
 
 Route::get('/', function () {
 
@@ -48,41 +54,61 @@ Route::get('/', function () {
 //Password Reset RoutesS
 //--------------------------------------------------------------------------------
 
-Route::get('/createRole','RolesController@create');
+Route::get('/createRole','RolesController@create')
+->name('createRole')
+->middleware('authenticated');
 
 Route::post('/storeRole','RolesController@store');
 
-Route::get('/usersList','UsersController@getUserList');
+Route::get('/usersList','UsersController@getUserList')
+->name('usersList')
+->middleware('authenticated');
 
-Route::get('/activeUserList','UsersController@getDeactivetedList');
+Route::get('/activeUserList','UsersController@getDeactivetedList')
+->name('activeUserList')
+->middleware('authenticated');
 
-Route::get('/rolesList','RolesController@getRolesList');
+Route::get('/rolesList','RolesController@getRolesList')
+->name('rolesList')
+->middleware('authenticated');
 
-Route::get('/CreateCompany','CompanyController@create');
+Route::get('/CreateCompany','CompanyController@create')
+->name('CreateCompany')
+->middleware('authenticated');
 
 Route::post('/storeCompany','CompanyController@store');
 
-Route::get('/editCompany/{id}','CompanyController@edit');
+Route::get('/editCompany/{id}','CompanyController@edit')
+->name('editCompany')
+->middleware('authenticated');
+
 
 Route::post('/saveCompany','CompanyController@save');
 
-Route::get('/companies','CompanyController@getCompanyList');
+Route::get('/companies','CompanyController@getCompanyList')
+
+   ->name('companies')
+   ->middleware('authenticated');
 
 
 
-Route::get('/registerConf',function()
+Route::get('/registerConf',['middleware'=>'authenticated',function()
 {
     return view('emails.registrationEmail');
-});
+}]);
 
-Route::get('/regServ','UsersController@create');
+Route::get('/regServ','UsersController@create')
+  ->name('regServ')
+  ->middleware('authenticated');
 
-Route::get('/companyList', function ()
+Route::get('/companyList',['middleware'=>'authenticated', function ()
 {
    return view('Company.list');
-});
+}]);
 
-Route::get('charts', 'ReportsController@index');
+Route::get('charts', 'ReportsController@index')
+    ->name('charts')
+    ->middleware('authenticated');
 
 
 Route::get('landregister' , function ()
@@ -94,23 +120,37 @@ Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/sites', 'SitesController@sites')->name('sites');
-Route::get('/getsitelist', 'SitesController@getsitelist')->name('getsitelist');
+Route::get('/sites', 'SitesController@sites')
+    ->name('sites')
+    ->middleware('authenticated');
+Route::get('/getsitelist', 'SitesController@getsitelist')
+    ->name('getsitelist')
+    ->middleware('authenticated');
 
-Route::get('/create', 'SitesController@create')->name('createSite');
+Route::get('/create', 'SitesController@create')
+    ->name('createSite');
 
-Route::post('/store', 'SitesController@createSite')->name('saveSite');
+Route::post('/store', 'SitesController@createSite')
+    ->name('saveSite');
 
-Route::get('/createDb', 'SitesController@createDatabase')->name('createDb');
+Route::get('/createDb', 'SitesController@createDatabase')
+    ->name('createDb')
+    ->middleware('authenticated');
 
-Route::get('/registerUser', 'UsersController@registerUser')->name('register');
+Route::get('/registerUser', 'UsersController@registerUser')
+    ->name('register')
+    ->middleware('authenticated');
 
 Route::post('/storeUser', 'UsersController@create')->name('register');
 
 Route::post('/storeUserExternal','UsersController@createExternal');
 
-Route::get('/activateUser/{id}','UsersController@activate');
-Route::get('/deactiveUser/{id}','UsersController@deactive');
+Route::get('/activateUser/{id}','UsersController@activate')
+       ->name('activateUser')
+       ->middleware('authenticated');
+Route::get('/deactiveUser/{id}','UsersController@deactive')
+     ->name('deactiveUser')
+      ->middleware('authenticated');
 
 
 //---Reset Password----//
@@ -132,16 +172,29 @@ Route::get('passwords.reset','UsersController@password');
 Route::post('passwords.reset','UsersController@resetPasword');
 
 
-Route::get('clockinglist', 'ClockingController@index')->name('clockinglist');
-Route::get('getClockingList', 'ClockingController@getClockingList')->name('getClockingList');
-Route::post('attendstoreance', 'AttendecyController@store')->name('attendstoreance');
-Route::get('attendance/{id}', 'AttendecyController@index')->name('attendance');
-Route::get('getattendanceList', 'AttendecyController@getattendanceList')->name('getattendanceList');
+Route::get('clockinglist', 'ClockingController@index')
 
-Route::get('workshedul/{id}', 'WorkScheduleController@index')->name('workshedul');
-Route::get('getworksheduleList', 'WorkScheduleController@getworksheduleList')->name('getworksheduleList');
-Route::post('attendstoreance', 'AttendecyController@store')->name('attendstoreance');
+    ->name('clockinglist')
+    ->middleware('authenticated');
 
+Route::get('getClockingList', 'ClockingController@getClockingList')
+    ->name('getClockingList');
+Route::post('attendstoreance', 'AttendecyController@store')
+    ->name('attendstoreance');
+Route::get('attendance/{id}', 'AttendecyController@index')
+    ->name('attendance');
+Route::get('getattendanceList', 'AttendecyController@getattendanceList')
+    ->name('getattendanceList')
+    ->middleware('authenticated');
+
+Route::get('workshedul/{id}', 'WorkScheduleController@index')
+    ->name('workshedul')
+    ->middleware('authenticated');
+Route::get('getworksheduleList', 'WorkScheduleController@getworksheduleList')
+    ->name('getworksheduleList')
+    ->middleware('authenticated');
+Route::post('attendstoreance', 'AttendecyController@store')
+    ->name('attendstoreance');
 
 
 Route::group(array('prefix' => 'api/v1'), function()
@@ -167,7 +220,9 @@ Route::group(array('prefix' => 'api/v1'), function()
 Route::get('/selectSite/{id}', 'SitesController@selectSite');
 
 
-Route::get('addsite', 'addSiteController@index')->name('addsite');
+Route::get('addsite', 'addSiteController@index')
+    ->name('addsite')
+    ->middleware('authenticated');
 
 Route::post('siteconfiguration', 'addSiteController@siteconfiguration')->name('siteconfiguration');
 
@@ -344,15 +399,7 @@ Route::group(array('prefix' => 'api/v1'), function()
 
 });
 
-Route::group(array('prefix' => 'api/v1'), function()
-{
 
-    Route::get('/bonjoure claseses', 'Bonjoure clasesesController@index')->name('/bonjoure claseses');
-    Route::post('/bonjoure claseses', 'Bonjoure clasesesController@index')->name('/bonjoure claseses');
-    Route::delete('/bonjoure claseses', 'Bonjoure clasesesController@index')->name('/bonjoure claseses');
-    Route::put('/bonjoure claseses', 'Bonjoure clasesesController@index')->name('/bonjoure claseses');
-
-});
 
 Route::group(array('prefix' => 'api/v1'), function()
 {

@@ -112,12 +112,11 @@
 
                                 <td width="100%" style="font-family:helvetica, Arial, sans-serif; font-size: 13px; text-align: center; color:#0DBE80; line-height: 24px;">
 
-                                    {{--<a href=" https://foodforus.cloud/"><strong>Visit the App Website</strong></a>--}}
+                                    <a href="{{ config('app.url') }}"><strong>Click here to login</strong></a>
 
                                 </td>
                             </tr>
-
-
+                            ss
                             <tr>
                                 <td width="100%" style="font-family: helvetica, Arial, sans-serif; font-size: 9px; letter-spacing: 0px; text-align: left; color:#2E363F;">
                                     <p style="padding:0px 0px 10px 10px;"> Enjoy The Application,<br>

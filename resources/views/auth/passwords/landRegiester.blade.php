@@ -91,7 +91,7 @@
                 <div class="form-container">
                     <div class="media-container-column">
                         <div data-form-alert="" hidden="" class="align-center">
-                            Thanks for filling out the form!
+                            Thanks for filling out the form!wait for email approval
                         </div>
                         <form action="storeUserExternal" method="post" enctype="multipart/form-data">
 
@@ -129,7 +129,9 @@
                             </div>
                             <div data-for="name">
                                 <div class="form-group">
-                                    <input type="text" class="form-control px-3" name="password" data-form-field="Name" placeholder="Password" required="required">
+                                    <input type="text" class="form-control px-3" name="password" data-form-field="Name" placeholder="Password"  value="" required="required">
+                                    {{--<input class="field"  class="form-control px-3" name="secret" type="password" value="">--}}
+
                                 </div>
                             </div>
 
