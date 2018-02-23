@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Middleware;
-
+use App\User;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,12 +16,19 @@ class LastLogin
      */
     public function handle($request, Closure $next)
     {
+
         if  (Auth::check())
         {
 
-            return "i  am 12 years old";
+         $rol_id  =  Auth::user()->role;
+         if($rol_id == 1)
+         {
+
+             return redirect('/home');
+         }
         }
 
-        return $next($request);
+
+       return view  ('auth.sites') ;
     }
 }

@@ -16,7 +16,7 @@ use App\Site;
 
 Route::get('midleware' , function () {
 
-   return "i am  an  open  Mildle ware " ;
+
 })->middleware('lastlogin');
 Route::get('createAdmin','SuperAdminController@create');
 
