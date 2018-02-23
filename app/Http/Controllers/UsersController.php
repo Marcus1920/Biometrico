@@ -75,27 +75,12 @@ class UsersController extends Controller
 
     public function createExternal(Request $request)
     {
-        $this->validate($request, [
-            'image' => 'mimes:jpeg,bmp,png', //only allow this type extension file.
-        ]);
-
-        $file = $request->file('image');
-        // image upload in public/upload folder.
-
-        $destinationFolder = "uploads";
-
-        if(!\File::exists($destinationFolder)) {
-            \File::makeDirectory($destinationFolder,0777,true);
-        }
-
-        $name =    $file->getClientOriginalName();
-
-        $file->move($destinationFolder,$name) ;
+        $defaultLogo = "img/Biometrico-Logo-Final.jpg";
 
         $default = "Background/5.jpg";
 
         $newCompany = new Company();
-        $newCompany->logo = env('APP_URL').$destinationFolder.'/'.$name;
+        $newCompany->logo = env('APP_URL').$defaultLogo;
         $newCompany->name = $request['companyName'];
         $newCompany->color = env('APP_URL').$default;
         $newCompany->save();

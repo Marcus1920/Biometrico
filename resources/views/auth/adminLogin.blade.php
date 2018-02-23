@@ -111,7 +111,7 @@
         .video-container video.fillWidth {
             width: 100%;
         }
-        </style>
+    </style>
     <!--  Video is muted & autoplays, placed after major DOM elements for performance & has an image fallback  -->
     <video autoplay loop id="video-background" muted plays-inline>
         <source src="{{ asset('biometric.mp4') }}" type="video/mp4">
@@ -124,9 +124,9 @@
 
 
 
-    <!--  Video is muted & autoplays, placed after major DOM elements for performance & has an image fallback  -->
+<!--  Video is muted & autoplays, placed after major DOM elements for performance & has an image fallback  -->
 
-    <body>
+<body>
 
 <section class="menu cid-qJxuiLW8sO" once="menu" id="menu1-9">
 
@@ -151,30 +151,6 @@
                 <span class="navbar-caption-wrap"><img src="assets/images/BIOCLOUD-NAME.png" alt="Mobirise" title="" style="height: 3.8rem;"></span>
             </div>
         </div>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item">
-                    <a class="nav-link link text-white display-4" href="#">
-                       Home</a>
-                </li><li class="nav-item"><a class="nav-link link text-white display-4" href="#">
-                    </a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="#">
-
-                        Services
-                    </a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="landregister">
-                        Register
-                    </a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="#">
-                    </a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="#">
-                    </a></li>
-                <li class="nav-item">
-                    <a class="nav-link link text-white display-4" href="#"><span class="mbrib-cash mbr-iconfont mbr-iconfont-btn"></span>
-                        Pricing &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a>
-                </li></ul>
-            <div class="navbar-buttons mbr-section-btn">
-                <a class="btn btn-sm btn-primary display-4" href="#">
-
-                    Try It Now!
-                </a>
-            </div>
-        </div>
     </nav>
 </section>
 
@@ -189,7 +165,7 @@
                 <div class="container align-right">
                     <div class="row">
                         <div class="mbr-white col-lg-8 col-md-7 content-container">
-                            <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1">BIO CLOUD</h1>
+                            <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1">ADMIN LOGIN</h1>
                             <p class="mbr-text pb-3 mbr-fonts-style display-5">
 
                             </p>
@@ -200,7 +176,7 @@
                                     <div data-form-alert="" hidden="" class="align-center">
                                         Thanks for filling out the form!
                                     </div>
-                                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                                    <form class="form-horizontal" method="POST" action="adminLogin">
                                         {{ csrf_field() }}
                                         <div data-for="name">
                                             <div class="form-group">
@@ -225,12 +201,12 @@
                 </a>
                                         </span>
 
-                                <div class="col-md-8 col-md-offset-4">
+                                        <div class="col-md-8 col-md-offset-4">
 
 
 
 
-            </div>
+                                        </div>
 
 
                                     </form>
@@ -256,146 +232,6 @@
     </div>
 </section>
 
-<section class="features1 cid-qJxt2qy3IW" id="features1-6">
-
-
-
-
-    <div class="container">
-        <div class="media-container-row">
-
-            <div class="card p-3 col-12 col-md-6 col-lg-4">
-                <div class="card-img pb-3">
-                    <span class="mbr-iconfont mbri-edit"></span>
-                </div>
-                <div class="card-box">
-                    <h4 class="card-title py-3 mbr-fonts-style display-5">Shaka Bussiness</h4>
-                    <p class="mbr-text mbr-fonts-style display-7">
-                        Shaka Bussi nessis an easy website builder - just drop site elements to your page, add content and style it to look the way you like.
-                    </p>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-4">
-                <div class="card-img pb-3">
-                    <span class="mbri-touch mbr-iconfont"></span>
-                </div>
-                <div class="card-box">
-                    <h4 class="card-title py-3 mbr-fonts-style display-5">Shaka Clocking</h4>
-                    <p class="mbr-text mbr-fonts-style display-7">
-                        Shaka Clockingyou make with Mobirise are mobile-friendly. You don't have to create a special mobile version of your site.
-                    </p>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-4">
-                <div class="card-img pb-3">
-                    <span class="mbri-responsive mbr-iconfont"></span>
-                </div>
-                <div class="card-box">
-                    <h4 class="card-title py-3 mbr-fonts-style display-5">Sabre&nbsp;</h4>
-                    <p class="mbr-text mbr-fonts-style display-7">&nbsp;Sabre offers many site blocks in several themes, and though these blocks are pre-made, they are flexible.
-                    </p>
-                </div>
-            </div>
-
-
-
-        </div>
-
-    </div>
-
-</section>
-
-<section class="cid-qJxteULEyR" id="footer2-7">
-
-
-
-
-
-    <div class="container">
-        <div class="media-container-row content mbr-white">
-            <div class="col-12 col-md-3 mbr-fonts-style display-7">
-                <p class="mbr-text">
-                    <strong>Address</strong>
-                    <br>
-                    <br>1234 Street Name
-                    <br>City, AA 99999
-                    <br>
-                    <br>
-                    <br><strong>Contacts</strong>
-                    <br>
-                    <br>Email: support@mobirise.com
-                    <br>Phone: +1 (0) 000 0000 001
-                    <br>Fax: +1 (0) 000 0000 002
-                </p>
-            </div>
-            <div class="col-12 col-md-3 mbr-fonts-style display-7">
-                <p class="mbr-text">
-                    <strong>Links</strong>
-                    <br>
-                    <br><a class="text-primary" href="#">Website builder</a>
-                    <br><a class="text-primary" href="#">Download for Windows</a>
-                    <br><a class="text-primary" href="#">Download for Mac</a>
-                    <br>
-                    <br><strong>Feedback</strong>
-                    <br>
-                    <br>Please send us your ideas, bug reports, suggestions! Any feedback would be appreciated.
-                </p>
-            </div>
-            <div class="col-12 col-md-6">
-                <div class="google-map"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0Dx_boXQiwvdz8sJHoYeZNVTdoWONYkU&amp;q=place_id:ChIJn6wOs6lZwokRLKy1iqRcoKw" allowfullscreen=""></iframe></div>
-            </div>
-        </div>
-        <div class="footer-lower">
-            <div class="media-container-row">
-                <div class="col-sm-12">
-                    <hr>
-                </div>
-            </div>
-            <div class="media-container-row mbr-white">
-                <div class="col-sm-6 copyright">
-                    <p class="mbr-text mbr-fonts-style display-7">
-                        © Copyright 2017 BioCloud - All Rights Reserved
-                    </p>
-                </div>
-                <div class="col-md-6">
-                    <div class="social-list align-right">
-                        <div class="soc-item">
-                            <a href="https://twitter.com/mobirise" target="_blank">
-                                <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
-                            </a>
-                        </div>
-                        <div class="soc-item">
-                            <a href="https://www.facebook.com/pages/Mobirise/1616226671953247" target="_blank">
-                                <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
-                            </a>
-                        </div>
-                        <div class="soc-item">
-                            <a href="https://www.youtube.com/c/mobirise" target="_blank">
-                                <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
-                            </a>
-                        </div>
-                        <div class="soc-item">
-                            <a href="https://instagram.com/mobirise" target="_blank">
-                                <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
-                            </a>
-                        </div>
-                        <div class="soc-item">
-                            <a href="https://plus.google.com/u/0/+Mobirise" target="_blank">
-                                <span class="socicon-googleplus socicon mbr-iconfont mbr-iconfont-social"></span>
-                            </a>
-                        </div>
-                        <div class="soc-item">
-                            <a href="https://www.behance.net/Mobirise" target="_blank">
-                                <span class="socicon-behance socicon mbr-iconfont mbr-iconfont-social"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </section>
 
 
