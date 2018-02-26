@@ -59,14 +59,9 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
 
         'lastlogin' =>\App\Http\Middleware\LastLogin::class,
-<<<<<<< HEAD
-        'authenticated' =>\App\Http\Middleware\AuthenticatedMiddleware::class
-=======
-
-
+        'authenticated' =>\App\Http\Middleware\AuthenticatedMiddleware::class,
         'superAdmin' => \App\Http\Middleware\RedirectIfNotAdmin::class,
 
->>>>>>> 918a234700ab358a55e40f5ef8e764cd82c88bc5
     ];
 
 }

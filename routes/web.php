@@ -90,8 +90,7 @@ Route::get('/CreateCompany','CompanyController@create')
 Route::post('/storeCompany','CompanyController@store');
 
 Route::get('/editCompany/{id}','CompanyController@edit')
-->name('editCompany')
-->middleware('authenticated');
+->name('editCompany');
 
 
 Route::post('/saveCompany','CompanyController@save');

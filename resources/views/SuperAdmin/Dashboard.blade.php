@@ -433,16 +433,20 @@ jQuery UI -->
 <script>
     jQuery(document).ready(function($){
 
-        $.ajax({
-            url: '{!! url('/companies/')!!}',
-            type: 'GET',
-            dataType: 'json',
-            success: function (data) {
-                assignToEventsColumns(data);
-            }
-        });
+        var $company = {!! $company !!};
 
-        function assignToEventsColumns(data) {
+        {{--$.ajax({--}}
+        {{--url: '{!! url('/getattendanceList/')!!}',--}}
+        {{--type: 'GET',--}}
+        {{--dataType: 'json',--}}
+        {{--success: function (data) {--}}
+        {{--assignToEventsColumns(data);--}}
+        {{--}--}}
+        {{--});--}}
+
+        assignToCompanyColumns($company);
+
+        function assignToCompanyColumns(data) {
             var table = $('#CompanyTable').dataTable({
                 "dom": 'Bfrtip',
                 "scrollX": true,
